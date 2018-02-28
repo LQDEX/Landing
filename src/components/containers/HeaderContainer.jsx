@@ -1,6 +1,10 @@
 
 import React, { Component } from 'react';
 
+// Import Functionals
+
+import { HeaderStats, HeaderNavbar } from '../functionals';
+
 // Import Styles
 // import { headerContainerStyle } from './styles';
 
@@ -10,10 +14,10 @@ class HeaderContainer extends Component {
     return (
       <div>
         <div>
-          {`<HeaderStats />`}
+          <HeaderStats />
         </div>
         <div>
-          {`<HeaderNavbar />`}
+          <HeaderNavbar />
         </div>
       </div>
     );

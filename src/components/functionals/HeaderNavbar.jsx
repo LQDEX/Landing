@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import injectSheet from 'react-jss';
-
-// Imports Containers
-
 
 //Import Styles
+import injectSheet from 'react-jss';
+import { headerNavbarStyle } from './styles';
 
-import { mobileLayoutStyle } from './styles';
-
-
-class MobileLayout extends Component {
-
+class HeaderNavbar extends Component {
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        MobileLayout
+        HeaderNavbar Functional Component
       </div>
     );
   }
@@ -27,9 +21,8 @@ const stateToProps = state => {
 };
 
 const dispatchToProps = dispatch => {
-  return {};
+  return {
+  };
 };
 
-export default connect(stateToProps, dispatchToProps)(
-  injectSheet(mobileLayoutStyle)(MobileLayout)
-);
+export default connect(stateToProps, dispatchToProps)(injectSheet(headerNavbarStyle)(HeaderNavbar));
