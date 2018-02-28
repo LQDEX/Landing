@@ -10,6 +10,9 @@ import actions from './redux/actions';
 import injectSheet from 'react-jss';
 import appStyles from './styles/appStyle';
 
+//Import components
+import { DesktopLayout } from './components/layouts';
+
 class App extends Component {
   state = {};
   componentWillMount() {
@@ -35,12 +38,15 @@ class App extends Component {
 
     return (
       <div className={classes.root}>
-        <Favicon url={require('./assets/img/logo.svg')} />
-        <Platform rules={{ DeviceType: undefined }}>
-          Descktop Version
-        </Platform>
+        <Favicon url={require('./assets/img/favicon.svg')} />
         <Platform rules={{ DeviceType: 'mobile' }}>
           Mobile Version
+        </Platform>
+        <Platform rules={{ DeviceType: 'tablet' }}>
+          Tablet Version
+        </Platform>
+        <Platform rules={{ DeviceType: undefined }}>
+          <DesktopLayout />
         </Platform>
       </div>
     );
