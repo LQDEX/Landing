@@ -1,4 +1,4 @@
-//Desktop Containers
+// Desktop Containers
 import HeaderContainer from './HeaderContainer';
 import WelcomeContainer from './WelcomeContainer';
 import DetailedInfoContainer from './DetailedInfoContainer';
@@ -7,7 +7,7 @@ import TeamAdvisorsContainer from './TeamAdvisorsContainer';
 import InvestorsContainer from './InvestorsContainer';
 import FooterContainer from './FooterContainer';
 
-//Mobile Containers
+// Mobile Containers
 
 export {
   HeaderContainer,
@@ -16,5 +16,5 @@ export {
   RoadmapContainer,
   TeamAdvisorsContainer,
   InvestorsContainer,
-  FooterContainer,
+  FooterContainer
 };

@@ -1,11 +1,11 @@
 import palette from './palette';
 
-//Desktop containers Styles
+// Desktop containers Styles
 import headerContainerStyle from './headerContainerStyle';
 
-//Mobile containers Styles
+// Mobile containers Styles
 
 export {
   palette,
-  headerContainerStyle,
+  headerContainerStyle
 };

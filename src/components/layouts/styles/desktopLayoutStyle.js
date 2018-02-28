@@ -15,7 +15,7 @@ export default {
       justifyContent: 'center',
       alignItems: 'center',
       width: 1440,
-      border: '1px solid green',
+      border: '1px solid green'
 
     }
   }
