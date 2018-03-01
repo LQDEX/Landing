@@ -25,9 +25,6 @@ class DesktopLayout extends Component {
         <div className="wrapper">
           <HeaderContainer />
           <WelcomeContainer />
-          <WelcomeContainer />
-          <WelcomeContainer />
-          <WelcomeContainer />
           <DetailedInfoContainer />
           <RoadmapContainer />
           <TeamAdvisorsContainer />
