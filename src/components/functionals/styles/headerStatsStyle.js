@@ -1,6 +1,6 @@
 import palette from './palette';
 
-const { green, red } = palette;
+const { up, down } = palette;
 
 export default {
   root: {
@@ -16,7 +16,7 @@ export default {
       fontSize: '16px'
 
     },
-    '& .up': { color: green },
-    '& .down': { color: red }
+    '& .up': { color: up },
+    '& .down': { color: down }
   }
 };

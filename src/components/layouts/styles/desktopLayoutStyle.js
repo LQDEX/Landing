@@ -8,14 +8,14 @@ export default {
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    border: '1px solid red',
+    // border: '1px solid red',
     '& .wrapper': {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      width: 1440,
-      border: '1px solid green'
+      width: 1440
+      // border: '1px solid green'
 
     }
   }

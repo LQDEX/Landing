@@ -12,7 +12,7 @@ export default {
     justifyContent: 'flex-start',
     alignItems: 'center',
     position: 'relative',
-    top: -80,
+    top: -83,
     background: videoBackground,
     clipPath: shape,
     '& .myVideo': {

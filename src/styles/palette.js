@@ -1,9 +1,12 @@
 /* eslint-disable */
 const basicColors = {
 
+  //basic
+  white: '#FFFFFF',
+
   // Good / Bad
-  green: '#387C2C',
-  red: '#EE3524',
+  up: '#387C2C',
+  down: '#EE3524',
 
   // Theme Color
   primary: '#488AFF',
