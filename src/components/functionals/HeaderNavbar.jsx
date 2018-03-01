@@ -14,9 +14,9 @@ class HeaderNavbar extends Component {
         <div className="menuWraper">
 
           <button className="btnMenu">EXCHANGE</button>
-          {/* <button className="btnMenu">ICO</button>
-          <button className="btnMenu">CONTACT</button> */}
-          <button className="btnSubscribe">Subscribe for Presale</button>
+          {/* <button className="btnMenu">ICO</button> */}
+          <button className="btnMenu">CONTACT</button>
+          {/* <button className="btnSubscribe">Subscribe for Presale</button> */}
         </div>
       </div>
     );
