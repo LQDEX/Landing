@@ -1,8 +1,8 @@
 import palette from './palette';
 
-const { videoBackground, textHeader, text } = palette;
+const { videoBackground, textHeader, text } = palette,
 
-const shape = 'polygon(100% 0, 100% 96%, 67% 84%, 0 100%, 0 0)';
+  shape = 'polygon(100% 0, 100% 96%, 67% 84%, 0 100%, 0 0)';
 
 export default {
   root: {
@@ -20,7 +20,7 @@ export default {
       clipPath: shape
     },
     '&  .overlay': {
-      //border: '1px solid blue',
+      // border: '1px solid blue',
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
@@ -30,11 +30,9 @@ export default {
       left: '0%',
       minWidth: '90%',
       margin: '3%',
-      '& .macBook': {
-
-      },
+      '& .macBook': {},
       '& .textArea': {
-        //border: '1px solid green',
+        // border: '1px solid green',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -47,13 +45,13 @@ export default {
         fontSize: '48px',
         fontWeight: 'bold',
         letterSpacing: '-1px',
-        color: textHeader,
+        color: textHeader
       },
       '& .txtBody': {
         fontFamily: 'Khand',
         fontSize: '40px',
         fontWeight: 'semibold',
-        color: text,
+        color: text
       }
     }
   }
