@@ -2,6 +2,9 @@
 
 import React, { Component } from 'react';
 
+// Import Functionals
+import { WelcomeBox } from '../functionals';
+
 
 // Import Styles
 // Import { welcomeContainerStyle } from './styles';
@@ -9,7 +12,9 @@ import React, { Component } from 'react';
 class WelcomeContainer extends Component {
   render() {
     return (
-      <div>WelcomeContainer</div>
+      <div>
+        <WelcomeBox />
+      </div>
     );
   }
 }

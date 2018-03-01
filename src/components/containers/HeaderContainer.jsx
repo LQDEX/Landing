@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 
 // Import Functionals
-
 import { HeaderStats, HeaderNavbar } from '../functionals';
 
 // Import Styles
