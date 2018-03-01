@@ -2,16 +2,23 @@
 
 import React, { Component } from 'react';
 
+// Import Functionals
+import { WelcomeBox } from '../functionals';
+
 
 // Import Styles
-// Import { welcomeContainerStyle } from './styles';
+import injectSheet from 'react-jss';
+import { welcomeContainerStyle } from './styles';
 
 class WelcomeContainer extends Component {
   render() {
+    const { classes } = this.props;
     return (
-      <div>WelcomeContainer</div>
+      <div clasName={classes.root}>
+        <WelcomeBox />
+      </div>
     );
   }
 }
 
-export default WelcomeContainer;
+export default injectSheet(welcomeContainerStyle)(WelcomeContainer);

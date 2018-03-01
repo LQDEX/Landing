@@ -1,27 +1,30 @@
 
 import React, { Component } from 'react';
 
-// Import Functionals
+// Import Modules
+import Sticky from 'react-sticky-el';
 
+// Import Functionals
 import { HeaderStats, HeaderNavbar } from '../functionals';
 
 // Import Styles
-// import { headerContainerStyle } from './styles';
+//Import Styles
+import injectSheet from 'react-jss';
+import { headerContainerStyle } from './styles';
 
 
 class HeaderContainer extends Component {
   render() {
+    const { classes } = this.props;
     return (
-      <div>
-        <div>
-          <HeaderStats />
-        </div>
-        <div>
+      <div className={classes.root}>
+        <HeaderStats />
+        <Sticky topOffset={-10} hideOnBoundaryHit={false} stickyClassName={'styckyNavbar'} >
           <HeaderNavbar />
-        </div>
+        </Sticky >
       </div>
     );
   }
 }
 
-export default HeaderContainer;
+export default injectSheet(headerContainerStyle)(HeaderContainer);

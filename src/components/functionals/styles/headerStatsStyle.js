@@ -1,5 +1,22 @@
-// import palette from './palette';
+import palette from './palette';
 
-// const primary = palette.primary;
+const { up, down } = palette;
 
-export default { root: { border: '1px solid blue' } };
+export default {
+  root: {
+    '& .Marquee': {
+      display: 'block',
+      overflowX: 'hidden',
+      fontFamily: 'Roboto',
+      margin: '21px 0'
+    },
+    '& .MarqueeContent': {
+      height: 18,
+      overflowY: 'hidden',
+      fontSize: '16px'
+
+    },
+    '& .up': { color: up },
+    '& .down': { color: down }
+  }
+};

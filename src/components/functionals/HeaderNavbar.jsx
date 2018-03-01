@@ -10,7 +10,14 @@ class HeaderNavbar extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        HeaderNavbar Functional Component
+        <img height={'80%'} src={require('../../assets/img/logo.png')} alt="Logo" />
+        <div className="menuWraper">
+
+          <button className="btnMenu">EXCHANGE</button>
+          <button className="btnMenu">ICO</button>
+          <button className="btnMenu">CONTACT</button>
+          <button className="btnSubscribe">Subscribe for Presale</button>
+        </div>
       </div>
     );
   }
