@@ -5,13 +5,16 @@ import React, { Component } from 'react';
 import { HeaderStats, HeaderNavbar } from '../functionals';
 
 // Import Styles
-// import { headerContainerStyle } from './styles';
+//Import Styles
+import injectSheet from 'react-jss';
+import { headerContainerStyle } from './styles';
 
 
 class HeaderContainer extends Component {
   render() {
+    const { classes } = this.props;
     return (
-      <div>
+      <div className={classes.root}>
         <div>
           <HeaderStats />
         </div>
@@ -23,4 +26,4 @@ class HeaderContainer extends Component {
   }
 }
 
-export default HeaderContainer;
+export default injectSheet(headerContainerStyle)(HeaderContainer);
