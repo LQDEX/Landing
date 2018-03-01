@@ -10,13 +10,8 @@ export default {
       fontFamily: 'Roboto',
       margin: '21px 0'
     },
-    '& .MarqueeContent': {
-    },
-    '& .up': {
-      color: green
-    },
-    '& .down': {
-      color: red
-    }
+    '& .MarqueeContent': {},
+    '& .up': { color: green },
+    '& .down': { color: red }
   }
 };

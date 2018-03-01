@@ -2,8 +2,4 @@
 
 // const primary = palette.primary;
 
-export default {
-  root: {
-    minWidth: '99%',
-  }
-};
+export default { root: { minWidth: '99%' } };
