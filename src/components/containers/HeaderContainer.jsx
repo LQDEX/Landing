@@ -1,6 +1,9 @@
 
 import React, { Component } from 'react';
 
+// Import Modules
+import Sticky from 'react-sticky-el';
+
 // Import Functionals
 import { HeaderStats, HeaderNavbar } from '../functionals';
 
@@ -15,12 +18,10 @@ class HeaderContainer extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <div>
-          <HeaderStats />
-        </div>
-        <div>
+        <HeaderStats />
+        <Sticky topOffset={-10} hideOnBoundaryHit={false} stickyClassName={'styckyNavbar'} >
           <HeaderNavbar />
-        </div>
+        </Sticky >
       </div>
     );
   }

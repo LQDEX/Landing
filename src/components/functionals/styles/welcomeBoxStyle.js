@@ -12,6 +12,7 @@ export default {
     justifyContent: 'flex-start',
     alignItems: 'center',
     position: 'relative',
+    top: -80,
     background: videoBackground,
     clipPath: shape,
     '& .myVideo': {
@@ -26,7 +27,7 @@ export default {
       justifyContent: 'space-between',
       alignItems: 'center',
       position: 'absolute',
-      top: '15%',
+      top: '20%',
       left: '0%',
       minWidth: '90%',
       margin: '3%',
