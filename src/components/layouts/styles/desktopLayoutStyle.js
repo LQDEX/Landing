@@ -15,7 +15,7 @@ export default {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'stretch',
-      width: '80%',
+      width: '80%'
       // border: '1px solid orange'
 
     }
