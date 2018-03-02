@@ -26,7 +26,8 @@ const textColors = {
   textHeader: basicColors.greyBlue,
   textTilte: basicColors.primary,
   text: basicColors.greyDark,
-  textLight: basicColors.grey
+  textLight: basicColors.grey,
+  textHighlight: basicColors.primaryHover,
 };
 
 export default {

@@ -6,7 +6,6 @@ const { videoBackground, textHeader, text } = palette,
 
 export default {
   root: {
-
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
@@ -17,8 +16,7 @@ export default {
     clipPath: shape,
     '& .myVideo': {
       maxWidth: '100%',
-      filter: 'opacity(80%)',
-      clipPath: shape
+      filter: 'opacity(80%)'
     },
     '&  .overlay': {
       // border: '1px solid blue',
