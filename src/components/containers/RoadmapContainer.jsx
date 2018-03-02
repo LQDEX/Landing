@@ -1,6 +1,9 @@
 
 import React, { Component } from 'react';
 
+// Import fFunctionals
+import { Roadmap } from '../functionals';
+
 // Import Styles
 // import { roadmapContainerStyle } from './styles';
 
@@ -8,7 +11,9 @@ import React, { Component } from 'react';
 class RoadmapContainer extends Component {
   render() {
     return (
-      <div>RoadmapContainer</div>
+      <div>
+        <Roadmap />
+      </div>
     );
   }
 }
