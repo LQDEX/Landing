@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 
+// Import Functionals
+import { DetailedInfo } from '../functionals';
+
+
 // Import Styles
-// Import { detailedInfoContainerStyle } from './styles';
+import injectSheet from 'react-jss';
+import { detailedInfoContainerStyle } from './styles';
 
 
 class DetailedInfoContainer extends Component {
   render() {
+    const { classes } = this.props;
     return (
-      <div>DetailedInfoContainer</div>
+      <div clasName={classes.root}>
+        <DetailedInfo />
+      </div>
     );
   }
 }
 
-export default DetailedInfoContainer;
+export default injectSheet(detailedInfoContainerStyle)(DetailedInfoContainer);
