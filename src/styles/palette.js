@@ -15,7 +15,7 @@ const basicColors = {
   secondaryHover: '#757F93',
   greyBlue: '#ABB8CE',
   greyDark: '#373B42',
-  grey: '#BDC3C7',
+  grey: '#79869C',
   videoBackground: '#969696',
 
 

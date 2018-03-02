@@ -4,6 +4,7 @@ import headerStatsStyle from './headerStatsStyle';
 import welcomeBoxStyle from './welcomeBoxStyle';
 import detailedInfoStyle from './detailedInfoStyle';
 import roadmapStyle from './roadmapStyle';
+import teamAdvisorsStyle from './teamAdvisorsStyle';
 
 // Mobile Containers
 
@@ -12,5 +13,6 @@ export {
   headerStatsStyle,
   welcomeBoxStyle,
   detailedInfoStyle,
-  roadmapStyle
+  roadmapStyle,
+  teamAdvisorsStyle
 };

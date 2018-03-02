@@ -43,7 +43,7 @@ export default {
         fontFamily: 'Khand',
         fontSize: '48px',
         fontWeight: 'bold',
-        letterSpacing: '-1px',
+
         color: textHeader
       },
       '& .txtBody': {

@@ -27,7 +27,7 @@ export default {
         fontSize: '48px',
         fontWeight: 'bold',
         textAlign: 'center',
-        letterSpacing: '-1px',
+
         color: textHeader,
         minWidth: '100%'
       },
