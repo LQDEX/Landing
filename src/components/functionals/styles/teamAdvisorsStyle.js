@@ -14,7 +14,6 @@ export default {
     justifyContent: 'flex-start',
     alignItems: 'center',
     '& .frameContainer': {
-
       transform: 'scale(0.8)',
       filter: `drop-shadow(0px 0px 5px ${frameShadow})`,
       '& .frameOutside0': {
@@ -24,7 +23,6 @@ export default {
         '& .frameInside0': {
           position: 'relative',
           transform: 'scale(0.92)',
-          // background: white,
           clipPath: shape0,
           '&:hover': {
             background: primary,
@@ -47,7 +45,6 @@ export default {
         '& .frameInside1': {
           position: 'relative',
           transform: 'scale(0.92)',
-          // background: white,
           clipPath: shape1,
           '&:hover': {
             background: primary,
@@ -70,7 +67,6 @@ export default {
         '& .frameInside2': {
           position: 'relative',
           transform: 'scale(0.92)',
-          // background: white,
           clipPath: shape2,
           '&:hover': {
             background: primary,
@@ -93,7 +89,6 @@ export default {
         '& .frameInside3': {
           position: 'relative',
           transform: 'scale(0.92)',
-          // background: white,
           clipPath: shape3,
           '&:hover': {
             background: primary,
@@ -116,7 +111,6 @@ export default {
         '& .frameInside4': {
           position: 'relative',
           transform: 'scale(0.92)',
-          // background: white,
           clipPath: shape4,
           '&:hover': {
             background: primary,

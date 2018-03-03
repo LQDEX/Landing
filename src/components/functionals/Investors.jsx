@@ -32,7 +32,7 @@ class Investors extends Component {
         <div className="firstLine">Investors</div>
         <div className="logosRow">
           {investors.map((item) =>
-            (<img src={require(`../../assets/img/${item.logoFile}`)} alt={item.name} />)
+            (<img className="investorLogo" src={require(`../../assets/img/${item.logoFile}`)} alt={item.name} />)
           )}
         </div>
       </div>

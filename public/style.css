@@ -1,6 +1,7 @@
 
 html *:not(i) {
   color: #464745;
+  overflow-x: hidden;
 }
 /* disable auto-zoom on iphone input field focus */
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-device-width:1024px) {
