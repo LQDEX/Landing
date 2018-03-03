@@ -23,7 +23,7 @@ const team = [
     name: 'Marie Williams',
     title: 'Developer (Back-end)'
   },
-]
+];
 
 const advisors = [
   {
@@ -51,23 +51,36 @@ const advisors = [
     title: 'CEO of Keynote',
     brief: 'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui qui eiusmod tempor incididunt.'
   },
-]
+];
+
+const AvatarFrame = (props) => {
+  const frameIndex = Math.floor(Math.random() * 5)
+  return (
+    <div style={{ width: '300px', height: '300px' }}>
+      <div className="frameContainer">
+        <div className={`frameOutside${frameIndex}`}>
+          <div className={`frameInside${frameIndex}`}>
+            <img className="in" src={require('../../assets/img/linkedinLogo.png')} alt="in" />
+            <img width={300} height={300} src={require('../../assets/img/' + props.imgName)} alt="avatar" />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+};
+
 
 const TeamCard = (props) => (
-  <div className="teamCard">
-    <div>
-      <img height={300} src={require('../../assets/img/' + props.mate.avatar)} alt="avatar" />
-    </div>
+  <div className="card">
+    <AvatarFrame imgName={props.mate.avatar} i={props.i} />
     <div className="mateName">{props.mate.name}</div>
     <div className="mateTitle">{props.mate.title}</div>
   </div>
-)
+);
 
 const AdvisorCard = (props) => (
-  <div className="advisorCard">
-    <div>
-      <img height={300} src={require('../../assets/img/' + props.advisor.avatar)} alt="avatar" />
-    </div>
+  <div className="card">
+    <AvatarFrame imgName={props.advisor.avatar} i={props.i} />
     <div className="mateName">{props.advisor.name}</div>
     <div className="mateTitle">{props.advisor.advisor}</div>
     <div className="mateTitle">{props.advisor.title}</div>
@@ -82,7 +95,7 @@ class TeamAdvisors extends Component {
       <div className={classes.root}>
         <div className="firstLine">Team</div>
         <div className="teamRow"     >
-          {team.map((mate) =>
+          {team.map((mate, i) =>
             <TeamCard mate={mate} />
           )}
         </div >
