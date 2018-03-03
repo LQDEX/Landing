@@ -10,13 +10,13 @@ class HeaderNavbar extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <img height={'80%'} src={require('../../assets/img/logo.png')} alt="Logo" />
+        <img height={'80%'} src={require('../../assets/img/logoLiquidx.png')} alt="Logo" />
         <div className="menuWraper">
 
-          <button className="btnMenu">EXCHANGE</button>
+          <button className="btnMenu">Exchange</button>
           {/* <button className="btnMenu">ICO</button> */}
-          <button className="btnMenu">CONTACT</button>
-          {/* <button className="btnSubscribe">Subscribe for Presale</button> */}
+          <button className="btnMenu">About US</button>
+          <button className="btnSubscribe">Sign up for Updates</button>
         </div>
       </div>
     );

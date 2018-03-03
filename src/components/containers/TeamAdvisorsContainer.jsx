@@ -1,6 +1,9 @@
 
 import React, { Component } from 'react';
 
+// Import fFunctionals
+import { TeamAdvisors } from '../functionals';
+
 // Import Styles
 // import { teamAdvisorsContainerStyle } from './styles';
 
@@ -8,7 +11,7 @@ import React, { Component } from 'react';
 class TeamAdvisorsContainer extends Component {
   render() {
     return (
-      <div>TeamAdvisorsContainer</div>
+      <div><TeamAdvisors /></div>
     );
   }
 }

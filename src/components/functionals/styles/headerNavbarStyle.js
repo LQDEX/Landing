@@ -9,7 +9,7 @@ export default {
     justifyContent: 'space-between',
     margin: '0 7% 0 7%',
     alignItems: 'center',
-    // border: '1px solid orange',
+
     height: 80,
     '& .menuWraper': {
       display: 'flex',

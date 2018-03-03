@@ -15,22 +15,23 @@ const basicColors = {
   secondaryHover: '#757F93',
   greyBlue: '#ABB8CE',
   greyDark: '#373B42',
-  grey: '#BDC3C7',
+  grey: '#79869C',
   videoBackground: '#969696',
+  frameShadow: 'rgba(0,0,0,0.25)',
 
 
 };
 
-const textColors = {
-
+const itemsColors = {
   textHeader: basicColors.greyBlue,
   textTilte: basicColors.primary,
   text: basicColors.greyDark,
   textLight: basicColors.grey,
   textHighlight: basicColors.primaryHover,
+  frameBorder: basicColors.white,
 };
 
 export default {
   ...basicColors,
-  ...textColors
+  ...itemsColors
 };
