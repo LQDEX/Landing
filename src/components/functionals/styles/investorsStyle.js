@@ -21,12 +21,13 @@ export default {
       minWidth: '100%'
     },
     '& .logosRow': {
-
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-evenly',
       alignItems: 'center',
-      minWidth: '100%'
+      flexWrap: 'wrap',
+      minWidth: '100%',
+      '& .investorLogo': { margin: '20px 0' }
     }
   }
 };

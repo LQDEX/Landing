@@ -21,6 +21,7 @@ export default {
       justifyContent: 'center',
       alignItems: 'stretch',
       minWidth: '100%',
+      overflowX: 'hidden',
       '& .firstLine': {
         margin: '0 0 40px 0',
         fontFamily: 'Khand',
@@ -32,7 +33,6 @@ export default {
         minWidth: '100%'
       },
       '& .roadmapRow': {
-        //        border: '1px solid cyan',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center'
@@ -43,19 +43,17 @@ export default {
         justifyContent: 'center',
         alignItems: 'flex-start',
         Sborder: '1px solid red',
-        minWidth: '39%'
+        minWidth: '100%'
       },
       '& .right': {
-        minWidth: '33%',
+        minWidth: '50%',
         padding: '0 1% 0 0',
         textAlign: 'right'
-        //  '1px solid green'
 
       },
       '& .left': {
-        minWidth: '33%',
+        minWidth: '50%',
         padding: '0 0 0 1%'
-        //  '1px solid green'
       },
       '& .exo': {
         fontFamily: 'Exo',

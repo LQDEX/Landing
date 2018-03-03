@@ -10,13 +10,14 @@ export default {
     justifyContent: 'flex-start',
     alignItems: 'center',
 
+
     '& .wrapper': {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'stretch',
       overflowX: 'hidden',
-      width: '80%'
+      width: '100.9%'
 
 
     }
