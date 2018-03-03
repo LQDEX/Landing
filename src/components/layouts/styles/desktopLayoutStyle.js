@@ -17,7 +17,8 @@ export default {
       justifyContent: 'center',
       alignItems: 'stretch',
       overflowX: 'hidden',
-      width: '100.9%'
+      width: '100.9%' // This value is for hide the horizontal scroll bar
+      //width: '80%' // The original design
 
 
     }
