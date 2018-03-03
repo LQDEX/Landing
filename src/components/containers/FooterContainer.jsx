@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+// Import Functionals
+import { Footer } from '../functionals';
+
 //Import Styles
 //import { footerContainerStyle } from './styles';
 
@@ -7,7 +10,7 @@ import React, { Component } from 'react';
 class FooterContainer extends Component {
   render() {
     return (
-      <div>FooterContainer</div>
+      <div><Footer /></div>
     );
   }
 }

@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
 
+// Import Functionals
+import { Investors } from '../functionals';
 // Import Styles
 // import { investorsContainerStyle } from './styles';
 
@@ -8,7 +10,9 @@ import React, { Component } from 'react';
 class InvestorsContainer extends Component {
   render() {
     return (
-      <div>InvestorsContainer</div>
+      <div>
+        <Investors />
+      </div>
     );
   }
 }

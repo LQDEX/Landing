@@ -21,12 +21,12 @@ class DetailedInfo extends Component {
             </span>
           </div>
           <div className="imgBlockTop">
-            <img src={require('../../assets/img/bgLong.gif')} alt="risksAnim" className="traslucent80" />
+            <img src={require('../../assets/img/bgDots.gif')} alt="risksAnim" className="traslucent80" />
           </div>
         </div>
         <div className="infoRow">
           <div className="imgBlockBottom">
-            <img src={require('../../assets/img/bg.gif')} alt="walletsAnim" className="traslucent80" />
+            <img src={require('../../assets/img/bgWallet.gif')} alt="walletsAnim" className="traslucent80" />
           </div>
           <div className="textBlockRight">
             <p className="firstLine">Transparency</p>

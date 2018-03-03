@@ -9,14 +9,15 @@ export default {
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    // border: '1px solid red',
+
     '& .wrapper': {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'stretch',
+      overflowX: 'hidden',
       width: '80%'
-      // border: '1px solid orange'
+
 
     }
   }

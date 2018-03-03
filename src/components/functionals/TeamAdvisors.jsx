@@ -60,7 +60,7 @@ const AvatarFrame = (props) => {
       <div className="frameContainer">
         <div className={`frameOutside${frameIndex}`}>
           <div className={`frameInside${frameIndex}`}>
-            <img className="in" src={require('../../assets/img/linkedinLogo.png')} alt="in" />
+            <img className="in" src={require('../../assets/img/logoLinkedin.png')} alt="in" />
             <img width={300} height={300} src={require('../../assets/img/' + props.imgName)} alt="avatar" />
           </div>
         </div>

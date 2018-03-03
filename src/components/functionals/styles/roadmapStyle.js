@@ -49,13 +49,13 @@ export default {
         minWidth: '33%',
         padding: '0 1% 0 0',
         textAlign: 'right'
-        // // border: '1px solid green'
+        //  '1px solid green'
 
       },
       '& .left': {
         minWidth: '33%',
         padding: '0 0 0 1%'
-        // // border: '1px solid green'
+        //  '1px solid green'
       },
       '& .exo': {
         fontFamily: 'Exo',

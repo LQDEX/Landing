@@ -14,7 +14,7 @@ export default {
     justifyContent: 'flex-start',
     alignItems: 'center',
     '& .frameContainer': {
-      // border: '1px solid blue',
+
       transform: 'scale(0.8)',
       filter: `drop-shadow(0px 0px 5px ${frameShadow})`,
       '& .frameOutside0': {
@@ -149,7 +149,7 @@ export default {
       margin: '0 0 100px 0'
     },
     '&  .card': {
-      // border: '1px solid green',
+
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',

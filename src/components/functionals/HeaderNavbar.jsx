@@ -10,7 +10,7 @@ class HeaderNavbar extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <img height={'80%'} src={require('../../assets/img/logo.png')} alt="Logo" />
+        <img height={'80%'} src={require('../../assets/img/logoLiquidx.png')} alt="Logo" />
         <div className="menuWraper">
 
           <button className="btnMenu">Exchange</button>

@@ -19,7 +19,7 @@ export default {
       filter: 'opacity(80%)'
     },
     '&  .overlay': {
-      // border: '1px solid blue',
+
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
@@ -31,7 +31,7 @@ export default {
       margin: '3%',
       '& .macBook': {},
       '& .textArea': {
-        // border: '1px solid green',
+
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
