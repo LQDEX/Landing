@@ -8,7 +8,7 @@ import { teamAdvisorsStyle } from './styles';
 const team = [
   {
     avatar: 'avatar1.png',
-    name: 'Nathan Chen',
+    name: 'Nataly Chen',
     title: 'Project Lead (Co-founder)'
   }, {
     avatar: 'avatar2.png',
@@ -16,11 +16,11 @@ const team = [
     title: 'Technical Lead (Co-founder)'
   }, {
     avatar: 'avatar3.png',
-    name: 'Joshua Jensen',
+    name: 'Jasmine Jensen',
     title: 'BizDev Lead (Co-founder)'
   }, {
     avatar: 'avatar4.png',
-    name: 'Marie Williams',
+    name: 'Mark Williams',
     title: 'Developer (Back-end)'
   },
 ];
@@ -28,7 +28,7 @@ const team = [
 const advisors = [
   {
     avatar: 'avatar5.png',
-    name: 'Bruce Carter',
+    name: ' Alice Carter',
     advisor: 'Strategy Advisor',
     title: 'CEO of Tapscott Group',
     brief: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
@@ -40,12 +40,12 @@ const advisors = [
     brief: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur minima veniam, quis nostrum exercitationem. '
   }, {
     avatar: 'avatar7.png',
-    name: 'Cheryl Ellis',
+    name: 'Catherine Ellis',
     advisor: 'Capital Markets Advisor',
     title: ' Former COO Soros Fund',
     brief: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.'
   }, {
-    avatar: 'avatar1.png',
+    avatar: 'avatar8.png',
     name: 'Gerald Curtis',
     advisor: 'Public Sector Advisor',
     title: 'CEO of Keynote',

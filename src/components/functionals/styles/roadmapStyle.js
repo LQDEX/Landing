@@ -43,7 +43,7 @@ export default {
         justifyContent: 'center',
         alignItems: 'flex-start',
         Sborder: '1px solid red',
-        minWidth: '50%'
+        minWidth: '39%'
       },
       '& .right': {
         minWidth: '33%',
