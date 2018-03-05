@@ -13,7 +13,7 @@ class DetailedInfoContainer extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div clasName={classes.root}>
+      <div className={classes.root}>
         <DetailedInfo />
       </div>
     );

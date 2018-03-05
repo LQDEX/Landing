@@ -22,7 +22,7 @@ class Roadmap extends Component {
             Roadmap
           </div>
           {roadmap.map((item, i) =>
-            <div className="roadmapRow">
+            <div className="roadmapRow" key={`item${i}`}>
               <div className="roadmapLine exo">
                 <div className="right">{this.isEven(i + 1) ? item.date : ''}</div>
                 <div className={i > 0 ? 'dot' : ''}>

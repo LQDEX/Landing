@@ -50,13 +50,13 @@ class TeamAdvisors extends Component {
         <div className="firstLine">Team</div>
         <div className="teamRow"     >
           {team.map((mate, i) =>
-            <TeamCard mate={mate} />
+            <TeamCard mate={mate} key={`item${i}`} />
           )}
         </div >
         <div className="firstLine">Advisors</div>
         <div className="teamRow"     >
-          {advisors.map((advisor) =>
-            <AdvisorCard advisor={advisor} />
+          {advisors.map((advisor, i) =>
+            <AdvisorCard advisor={advisor} key={`item${i}`} />
           )}
         </div >
       </div>

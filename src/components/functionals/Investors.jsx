@@ -12,8 +12,8 @@ class Investors extends Component {
       <div className={classes.root}>
         <div className="firstLine">Investors</div>
         <div className="logosRow">
-          {investors.map((item) =>
-            (<img className="investorLogo" src={require(`../../assets/img/${item.logoFile}`)} alt={item.name} />)
+          {investors.map((item, i) =>
+            (<img className="investorLogo" src={require(`../../assets/img/${item.logoFile}`)} alt={item.name} key={`item${i}`} />)
           )}
         </div>
       </div>
