@@ -1,6 +1,10 @@
 import palette from './palette';
 
-const { videoBackground, textHeader, text } = palette,
+const {
+    videoBackground,
+    textHeader,
+    text
+  } = palette,
 
   shape = 'polygon(100% 0, 100% 96%, 67% 84%, 0 100%, 0 0)';
 
@@ -13,28 +17,32 @@ export default {
     position: 'relative',
     top: -80,
     background: videoBackground,
+    '-webkit-clip-path': shape,
     clipPath: shape,
     '& .myVideo': {
       maxWidth: '100%',
       filter: 'opacity(80%)'
     },
     '&  .overlay': {
-
       display: 'flex',
       flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
+      justifyContent: 'space-around',
+      alignItems: 'stretch',
       position: 'absolute',
       top: '20%',
       left: '0%',
       minWidth: '90%',
       margin: '3%',
-      '& .macBook': {},
-      '& .textArea': {
-
+      '& .imageWrap': {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-start',
+        '& .macBook': { maxWidth: '100%' }
+      },
+      '& .textArea': {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'flex-end',
         minHeight: '80%'
       },

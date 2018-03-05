@@ -1,7 +1,10 @@
 import palette from './palette';
 
 // const { videoBackground, textHeader, text } = palette,
-const { textHeader, white } = palette,
+const {
+    textHeader,
+    white
+  } = palette,
   shape = 'polygon(29% 18%, 100% 0, 100% 99%, 65% 86%, 0 96%, 0 10%)';
 
 export default {
@@ -12,6 +15,7 @@ export default {
     alignItems: 'center',
     '& .imgClip': {
       width: '100%',
+      '-webkit-clip-path': shape,
       clipPath: shape
     },
     '& .overlay': {

@@ -9,45 +9,17 @@ import injectSheet from 'react-jss';
 import { headerStatsStyle } from './styles';
 
 class HeaderStats extends Component {
-  state = {
-    marketData: [
-      {
-        index: 'NIKKEI 225',
-        value: '21720.25',
-        balanceV: '255.27',
-        balanceP: '1.19',
-      },
-      {
-        index: 'OMXN40',
-        value: '157.86',
-        balanceV: '26.44',
-        balanceP: '1.71',
-      },
-      {
-        index: 'FTSE100',
-        value: '6859.15',
-        balanceV: '-34.77',
-        balanceP: '-0.5',
-      },
-      {
-        index: 'NIKKEI 225',
-        value: '21720.25',
-        balanceV: '255.27',
-        balanceP: '1.19',
-      }
-    ]
-  }
 
   render() {
-    const { classes } = this.props;
+    const { classes, marketData } = this.props;
     return (
       <div className={classes.root}>
         <Marquee velocity={0.05}>
           <span>
             US Market Closed Feb 16,2018&nbsp;-&nbsp;
-            {this.state.marketData.map(item => {
+            {marketData.map((item, i) => {
               return (
-                <span>
+                <span key={`stats${i}`}>
                   {item.index} {item.value}&nbsp;
                   <span className={parseInt(item.balanceV, 10) > 0 ? 'up' : 'down'} >
                     {item.balanceV}
@@ -63,7 +35,9 @@ class HeaderStats extends Component {
 }
 
 const stateToProps = state => {
-  return {};
+  return {
+    marketData: state.market.marketData,
+  };
 };
 
 const dispatchToProps = dispatch => {

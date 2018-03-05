@@ -18,9 +18,9 @@ export default {
       alignItems: 'stretch',
       overflowX: 'hidden',
       // The original design
-      width: '80%'
+      // width: '80%'
       // This value is for hide the horizontal scroll bar
-      // width: '100.9%'
+      width: '100.9%'
     }
   }
 };

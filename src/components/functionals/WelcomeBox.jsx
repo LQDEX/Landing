@@ -14,7 +14,9 @@ class WelcomeBox extends Component {
           <source src={require('../../assets/img/welcome2k.mp4')} type="video/mp4" />
         </video>
         <div className="overlay">
-          <img className="macBook" src={require('../../assets/img/macbookScreen.png')} alt="" />
+          <div className="imageWrap">
+            <img className="macBook" src={require('../../assets/img/macbookScreen.png')} alt="" />
+          </div>
           <div className="textArea ">
             <span className="firstLine">Title of the Exchange</span>
             <span className="txtBody">DECENTRALIZED</span>

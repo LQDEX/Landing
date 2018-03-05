@@ -5,34 +5,15 @@ import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
 import { investorsStyle } from './styles';
 
-const investors = [
-  {
-    name: 'spacex',
-    logoFile: 'logoSpacex.png'
-  }, {
-    name: 'tesla',
-    logoFile: 'logoTesla.png'
-  }, {
-    name: 'theBoringCompany',
-    logoFile: 'logoBoring.png'
-  }, {
-    name: 'solarCity',
-    logoFile: 'logoSolarcity.png'
-  }, {
-    name: 'openai',
-    logoFile: 'logoOpenai.png'
-  },
-];
-
 class Investors extends Component {
   render() {
-    const { classes } = this.props;
+    const { classes, investors } = this.props;
     return (
       <div className={classes.root}>
         <div className="firstLine">Investors</div>
         <div className="logosRow">
-          {investors.map((item) =>
-            (<img className="investorLogo" src={require(`../../assets/img/${item.logoFile}`)} alt={item.name} />)
+          {investors.map((item, i) =>
+            (<img className="investorLogo" src={require(`../../assets/img/${item.logoFile}`)} alt={item.name} key={`item${i}`} />)
           )}
         </div>
       </div>
@@ -41,7 +22,9 @@ class Investors extends Component {
 }
 
 const stateToProps = state => {
-  return {};
+  return {
+    investors: state.investors.members,
+  };
 };
 
 const dispatchToProps = dispatch => {

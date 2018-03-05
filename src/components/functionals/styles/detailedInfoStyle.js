@@ -1,6 +1,11 @@
 import palette from './palette';
 
-const { textHeader, text, textHighlight, videoBackground } = palette,
+const {
+    textHeader,
+    text,
+    textHighlight,
+    videoBackground
+  } = palette,
 
   shapeBottom = 'polygon(75% 0, 100% 48%, 50% 99%, 0 52%, 0 13%)',
   shapeTop = 'polygon(75% 0, 100% 19%, 100% 84%, 1% 99%)';
@@ -26,10 +31,12 @@ export default {
     },
     '& .imgBlockTop': {
       background: videoBackground,
+      '-webkit-clip-path': shapeTop,
       clipPath: shapeTop
     },
     '& .imgBlockBottom': {
       background: videoBackground,
+      '-webkit-clip-path': shapeBottom,
       clipPath: shapeBottom
     },
     '& .firstLine': {
