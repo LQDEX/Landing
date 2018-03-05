@@ -40,10 +40,12 @@ class App extends Component {
       <div className={classes.root}>
         <Favicon url={require('./assets/img/favicon.svg')} />
         <Platform rules={{ DeviceType: 'mobile' }}>
-          Mobile Version
+          {/* Put here the Mobile Layout */}
+          <DesktopLayout />
         </Platform>
         <Platform rules={{ DeviceType: 'tablet' }}>
-          Tablet Version
+          {/* Put here the Tablet Layout */}
+          <DesktopLayout />
         </Platform>
         <Platform rules={{ DeviceType: undefined }}>
           <DesktopLayout />

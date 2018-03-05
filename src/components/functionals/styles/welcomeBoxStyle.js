@@ -1,6 +1,10 @@
 import palette from './palette';
 
-const { videoBackground, textHeader, text } = palette,
+const {
+    videoBackground,
+    textHeader,
+    text
+  } = palette,
 
   shape = 'polygon(100% 0, 100% 96%, 67% 84%, 0 100%, 0 0)';
 
@@ -13,6 +17,7 @@ export default {
     position: 'relative',
     top: -80,
     background: videoBackground,
+    '-webkit-clip-path': shape,
     clipPath: shape,
     '& .myVideo': {
       maxWidth: '100%',
