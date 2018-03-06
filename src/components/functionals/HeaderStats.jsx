@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // Import Modules
-import Marquee from "react-smooth-marquee";
+import Marquee from "react-malarquee";
 
 //Import Styles
 import injectSheet from 'react-jss';
@@ -14,8 +14,11 @@ class HeaderStats extends Component {
     const { classes, marketData } = this.props;
     return (
       <div className={classes.root}>
-        <Marquee velocity={0.05}>
-          <span>
+        <Marquee
+          hoverToPause={false}
+          fill={true}
+          rate={70}>
+          <span className="MarqueeContent">
             US Market Closed Feb 16,2018&nbsp;-&nbsp;
             {marketData.map((item, i) => {
               return (

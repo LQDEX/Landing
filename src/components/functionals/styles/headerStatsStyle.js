@@ -1,18 +1,17 @@
 import palette from './palette';
 
-const { up, down } = palette;
+const {
+  up,
+  down
+} = palette;
 
 export default {
   root: {
-    '& .Marquee': {
-      display: 'block',
-      overflowX: 'hidden',
-      fontFamily: 'Roboto',
-      margin: '21px 0'
-    },
     '& .MarqueeContent': {
-      height: 18,
-      overflowY: 'hidden',
+      display: 'inline-block',
+      height: 25,
+      margin: '0.5% 500px 0.5% 0',
+      fontFamily: 'Roboto',
       fontSize: '16px'
 
     },
