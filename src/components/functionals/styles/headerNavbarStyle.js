@@ -1,6 +1,11 @@
 import palette from './palette';
 
-const { white, primary, primaryHover, text } = palette;
+const {
+  globalBackground,
+  primary,
+  primaryHover,
+  text
+} = palette;
 
 export default {
   root: {
@@ -26,7 +31,7 @@ export default {
         cursor: 'pointer',
         border: 'none',
         background: primary,
-        color: white,
+        color: globalBackground,
         '&:hover': { background: primaryHover }
       },
       '& .btnMenu': {

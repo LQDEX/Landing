@@ -1,6 +1,12 @@
 import palette from './palette';
 
-const { primary, primaryHover, white, grey, textHeader } = palette;
+const {
+  primary,
+  primaryHover,
+  globalBackground,
+  grey,
+  textHeader
+} = palette;
 
 export default {
   root: {
@@ -30,7 +36,7 @@ export default {
       cursor: 'pointer',
       border: 'none',
       background: primary,
-      color: white,
+      color: globalBackground,
       '&:hover': { background: primaryHover }
     },
     '& .copyRights': {

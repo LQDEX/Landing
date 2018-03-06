@@ -16,9 +16,13 @@ import { DesktopLayout } from './components/layouts';
 class App extends Component {
   state = {};
   componentWillMount() {
+    this.props.getCryptoData();
   }
+
   componentDidMount() {
 
+    /* let timer = setInterval(() => this.tick(), 5 * 60 * 1000);
+    this.setState({ timer }); */
     this.props.platformGet({
       os: Platform.OS || '',
       osVersion: Platform.OSVersion || '',
@@ -33,6 +37,10 @@ class App extends Component {
     });
   }
 
+  /*  tick() {
+     this.props.getCryptoData();
+   } */
+
   render() {
     const { classes } = this.props;
 
@@ -41,10 +49,12 @@ class App extends Component {
         <Favicon url={require('./assets/img/favicon.svg')} />
         <Platform rules={{ DeviceType: 'mobile' }}>
           {/* Put here the Mobile Layout */}
+          <p>Mobile</p>
           <DesktopLayout />
         </Platform>
         <Platform rules={{ DeviceType: 'tablet' }}>
           {/* Put here the Tablet Layout */}
+          <p>Tablet</p>
           <DesktopLayout />
         </Platform>
         <Platform rules={{ DeviceType: undefined }}>
@@ -63,18 +73,8 @@ const stateToProps = state => {
 
 const dispatchToProps = dispatch => {
   return {
-    setCurrentUser: user => dispatch(actions.setCurrentUser(user)),
-    getSysInfo: () => {
-      return (
-        dispatch(actions.getSysPrice()),
-        dispatch(actions.getSysMnTotal()),
-        dispatch(actions.getSysMnRegistered()),
-        dispatch(actions.getSysUserRegistered())
-      )
-    },
-
+    getCryptoData: () => dispatch(actions.getCryptoData()),
     platformGet: platformInfo => dispatch(actions.platformGet(platformInfo)),
-    setAuth: auth => dispatch(actions.setAuth(auth))
   };
 };
 

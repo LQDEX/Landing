@@ -23,6 +23,7 @@ const basicColors = {
 };
 
 const itemsColors = {
+  globalBackground: basicColors.white,
   textHeader: basicColors.greyBlue,
   textTilte: basicColors.primary,
   text: basicColors.greyDark,

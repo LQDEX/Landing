@@ -1,6 +1,7 @@
 import palette from './palette';
 
 const {
+  primary,
   up,
   down
 } = palette;
@@ -8,12 +9,12 @@ const {
 export default {
   root: {
     '& .MarqueeContent': {
-      display: 'inline-block',
+      // display: 'inline-block',
       height: 25,
-      margin: '0.5% 500px 0.5% 0',
+      margin: '10px 75px',
       fontFamily: 'Roboto',
-      fontSize: '16px'
-
+      fontSize: '16px',
+      '& .circulatingSupply': { color: primary }
     },
     '& .up': { color: up },
     '& .down': { color: down }

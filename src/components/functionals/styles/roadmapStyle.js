@@ -3,7 +3,7 @@ import palette from './palette';
 // const { videoBackground, textHeader, text } = palette,
 const {
     textHeader,
-    white
+    globalBackground
   } = palette,
   shape = 'polygon(29% 18%, 100% 0, 100% 99%, 65% 86%, 0 96%, 0 10%)';
 
@@ -62,14 +62,14 @@ export default {
       '& .exo': {
         fontFamily: 'Exo',
         fontSize: 16,
-        color: white
+        color: globalBackground
 
       },
       '& .arsenal': {
         fontFamily: 'Arsenal',
         fontWeight: 'bold',
         fontSize: 20,
-        color: white
+        color: globalBackground
       },
       '& .vLine': {
         position: 'relative',

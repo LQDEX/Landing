@@ -1,4 +1,7 @@
 /* eslint-disable */
 import actionsConst from './actionsConst';
+import apiURLsConst from './apiURLsConst';
 
-export default { ...actionsConst };
+export default { ...actionsConst,
+  ...apiURLsConst
+};

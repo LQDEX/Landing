@@ -12,26 +12,28 @@ class HeaderStats extends Component {
 
   render() {
     const { classes, marketData } = this.props;
+    console.log(marketData.length);
+
     return (
       <div className={classes.root}>
-        <Marquee
-          hoverToPause={false}
-          fill={true}
-          rate={70}>
-          <span className="MarqueeContent">
-            US Market Closed Feb 16,2018&nbsp;-&nbsp;
-            {marketData.map((item, i) => {
-              return (
-                <span key={`stats${i}`}>
-                  {item.index} {item.value}&nbsp;
-                  <span className={parseInt(item.balanceV, 10) > 0 ? 'up' : 'down'} >
-                    {item.balanceV}
-                    {parseInt(item.balanceV, 10) > 0 ? String.fromCharCode(9206) : String.fromCharCode(9207)}&nbsp;
-                    {item.balanceP}%</span>&nbsp;&nbsp;
-                </span>)
-            })}
-          </span>
-        </Marquee>
+        {marketData.length &&
+          <Marquee hoverToPause={true} fill={true} rate={100}        >
+            <div className="MarqueeContent">
+              <span>
+                {'Cryptocurrency Market - '}
+                {marketData.map((item, i) =>
+                  (<span key={`stats${i}`}>
+                    {item.name}({item.symbol}):
+                    <span className="circulatingSupply">{(parseInt(item.available_supply, 10) / 1000000).toFixed(2)} millions </span>&nbsp;
+                    <span className={parseInt(item.percent_change_7d, 10) > 0 ? 'up' : 'down'} >
+                      {item.percent_change_7d}%@24h
+                      {parseInt(item.percent_change_7d, 10) > 0 ? String.fromCharCode(9206) : String.fromCharCode(9207)}&nbsp;
+                    </span>&nbsp;&nbsp;
+                </span>
+                  ))}
+              </span>
+            </div>
+          </Marquee>}
       </div>
     );
   }
