@@ -1,20 +1,20 @@
 import palette from './palette';
 
-const { up, down } = palette;
+const {
+  primary,
+  up,
+  down
+} = palette;
 
 export default {
   root: {
-    '& .Marquee': {
-      display: 'block',
-      overflowX: 'hidden',
-      fontFamily: 'Roboto',
-      margin: '21px 0'
-    },
     '& .MarqueeContent': {
-      height: 18,
-      overflowY: 'hidden',
-      fontSize: '16px'
-
+      // display: 'inline-block',
+      height: 25,
+      margin: '10px 75px',
+      fontFamily: 'Roboto',
+      fontSize: '16px',
+      '& .circulatingSupply': { color: primary }
     },
     '& .up': { color: up },
     '& .down': { color: down }
