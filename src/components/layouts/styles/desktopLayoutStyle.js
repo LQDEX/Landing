@@ -16,7 +16,7 @@ export default {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'stretch',
-      overflowX: 'hidden',
+      // overflowX: 'hidden',
       // The original design
       // width: '80%'
       // This value is for hide the horizontal scroll bar
