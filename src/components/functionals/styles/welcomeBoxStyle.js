@@ -19,7 +19,7 @@ export default {
     background: videoBackground,
     '-webkit-clip-path': shape,
     clipPath: shape,
-    '& .myVideo': {
+    '& .movingLines': {
       maxWidth: '100%',
       filter: 'opacity(80%)'
     },

@@ -10,8 +10,8 @@ class WelcomeBox extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <video autoPlay muted loop className="myVideo">
-          <source src={require('../../assets/img/welcome2k.mp4')} type="video/mp4" />
+        <video autoPlay muted loop className="movingLines">
+          <source src={require('../../assets/img/movingLines.mp4')} type="video/mp4" />
         </video>
         <div className="overlay">
           <div className="imageWrap">
