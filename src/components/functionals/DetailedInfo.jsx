@@ -28,6 +28,18 @@ class DetailedInfo extends Component {
             </div>
             <div className="imgBlockTop">
               <img src={require('../../assets/img/dummy689x499.png')} alt="risksAnim" className="traslucent80" />
+              <div className="textRiskFreeWrap ">
+                <img src={require('../../assets/img/bigDot.png')} alt="risksAnim" />
+                <span className="innerText">
+                  Risk Free
+                </span>
+              </div>
+              <div className="textSecureWrap ">
+                <img src={require('../../assets/img/bigDot.png')} alt="risksAnim" />
+                <span className="innerText">
+                  Secure
+                </span>
+              </div>
               <div className="topWindow"></div>
             </div>
           </div>

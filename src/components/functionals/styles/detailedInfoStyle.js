@@ -15,10 +15,6 @@ const {
 
 export default {
   root: {
-    // display: 'flex',
-    // flexDirection: 'column',
-    // justifyContent: 'flex-start',
-    // alignItems: 'center',
     position: 'relative',
     background: videoBackground,
     '& .movingLines': {
@@ -54,6 +50,33 @@ export default {
       '& .imgBlockTop': {
         position: 'relative',
         maxHeight: 535,
+        display: 'flex',
+        '& .textRiskFreeWrap': {
+          position: 'absolute',
+          top: '39%',
+          left: '53%',
+          display: 'flex',
+          felxDirection: 'row',
+          alignItems: 'center',
+          opacity: 1
+        },
+        '& .textSecureWrap': {
+          position: 'absolute',
+          top: '54%',
+          left: '77%',
+          display: 'flex',
+          felxDirection: 'row',
+          alignItems: 'center',
+          opacity: 1
+
+        },
+        '& .innerText': {
+          margin: '0 0 0 10px',
+          fontFamily: 'Khand',
+          fontSize: 24,
+          color: text
+
+        },
         '& .topWindow': {
           position: 'absolute',
           top: 0,
