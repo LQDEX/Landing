@@ -1,12 +1,12 @@
 import palette from './palette';
 
 const {
-  videoBackground,
-  textHeader,
-  text
-} = palette,
+    videoBackground,
+    textHeader,
+    text
+  } = palette,
 
-shape = 'polygon(100% 0, 100% 96%, 67% 84%, 0 100%, 0 0)';
+  shape = 'polygon(100% 0, 100% 96%, 67% 84%, 0 100%, 0 0)';
 
 export default {
   root: {
@@ -42,9 +42,7 @@ export default {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
-        '& .macBook': {
-          maxWidth: '100%'
-        }
+        '& .macBook': { maxWidth: '100%' }
       },
       '& .textArea': {
         display: 'flex',
