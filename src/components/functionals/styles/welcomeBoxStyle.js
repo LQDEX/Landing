@@ -28,6 +28,7 @@ export default {
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems: 'stretch',
+      flexWrap: 'wrap',
       position: 'absolute',
       top: '20%',
       left: '0%',

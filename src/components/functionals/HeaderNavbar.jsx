@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 //Import Styles
@@ -15,7 +16,9 @@ class HeaderNavbar extends Component {
 
           <button className="btnMenu">Exchange</button>
           {/* <button className="btnMenu">ICO</button> */}
-          <button className="btnMenu">About US</button>
+          <Link to="/About">
+            <button className="btnMenu">About US</button>
+          </Link >
           <button className="btnSubscribe">Sign up for Updates</button>
         </div>
       </div>
