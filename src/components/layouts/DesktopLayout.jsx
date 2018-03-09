@@ -23,13 +23,20 @@ class DesktopLayout extends Component {
     return (
       <div className={classes.root}>
         <div className="wrapper">
-          <HeaderContainer />
-          <WelcomeContainer />
-          <DetailedInfoContainer />
-          <RoadmapContainer />
-          <TeamAdvisorsContainer />
-          <InvestorsContainer />
-          <FooterContainer />
+          <video autoPlay muted loop className="movingLines">
+            <source src={require('../../assets/img/movingLines.mp4')} type="video/mp4" />
+          </video>
+          <div className="overlay">
+            <div>
+              <HeaderContainer />
+              <WelcomeContainer />
+              <DetailedInfoContainer />
+              <RoadmapContainer />
+              <TeamAdvisorsContainer />
+              <InvestorsContainer />
+              <FooterContainer />
+            </div>
+          </div>
         </div>
       </div>
 

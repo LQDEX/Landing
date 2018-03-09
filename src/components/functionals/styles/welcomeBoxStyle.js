@@ -1,12 +1,12 @@
 import palette from './palette';
 
 const {
-    videoBackground,
-    textHeader,
-    text
-  } = palette,
+  videoBackground,
+  textHeader,
+  text
+} = palette,
 
-  shape = 'polygon(100% 0, 100% 96%, 67% 84%, 0 100%, 0 0)';
+shape = 'polygon(100% 0, 100% 96%, 67% 84%, 0 100%, 0 0)';
 
 export default {
   root: {
@@ -16,11 +16,15 @@ export default {
     alignItems: 'center',
     position: 'relative',
     top: -80,
+    bottom: 0,
+    minHeight: '1500px',
     background: videoBackground,
     '-webkit-clip-path': shape,
     clipPath: shape,
     '& .movingLines': {
+      objectFit: 'fill',
       maxWidth: '100%',
+      minHeight: '100%',
       filter: 'opacity(80%)'
     },
     '&  .overlay': {
@@ -38,7 +42,9 @@ export default {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
-        '& .macBook': { maxWidth: '100%' }
+        '& .macBook': {
+          maxWidth: '100%'
+        }
       },
       '& .textArea': {
         display: 'flex',

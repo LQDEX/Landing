@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { VideoCover } from 'react-video-cover';
 
 //Import Styles
 import injectSheet from 'react-jss';
@@ -8,8 +9,12 @@ import { welcomeBoxStyle } from './styles';
 class WelcomeBox extends Component {
   render() {
     const { classes } = this.props;
+    const videoOptions = {
+      src: require('../../assets/img/movingLines.mp4'),
+    };
     return (
-      <div className={classes.root}>
+      <div className={classes.root} >
+        {/*<VideoCover /> || null */}
         <video autoPlay muted loop className="movingLines">
           <source src={require('../../assets/img/movingLines.mp4')} type="video/mp4" />
         </video>
@@ -23,9 +28,8 @@ class WelcomeBox extends Component {
             <span className="txtBody">TRUSTLESS</span>
             <span className="txtBody">CROSS CHAIN EXCHANGE</span>
           </div>
-
         </div>
-      </div>
+      </div >
     );
   }
 }
