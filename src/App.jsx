@@ -8,6 +8,7 @@ import actions from './redux/actions';
 
 //JSS and styles
 import injectSheet from 'react-jss';
+import reset from 'reset-jss';
 import appStyles from './styles/appStyle';
 
 //Import components
@@ -78,5 +79,5 @@ const dispatchToProps = dispatch => {
   };
 };
 
-export default connect(stateToProps, dispatchToProps)(injectSheet(appStyles)(App));
+export default connect(stateToProps, dispatchToProps)(injectSheet(reset)(App));
 

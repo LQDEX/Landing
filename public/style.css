@@ -1,15 +1,15 @@
-
 html *:not(i) {
   color: #464745;
   overflow-x: hidden;
 }
-/* disable auto-zoom on iphone input field focus */
-@media screen and (-webkit-min-device-pixel-ratio:0) and (max-device-width:1024px) {
 
-	select:focus,
-	textarea:focus,
-	input:focus {
-		font-size: 16px;
+/* disable auto-zoom on iphone input field focus */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-device-width:1024px) {
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px;
   }
   select,
   textarea,
@@ -17,7 +17,11 @@ html *:not(i) {
     font-size: 16px;
   }
 }
+
 /* fix IOS smooth scrolling issue */
+
 * {
   -webkit-overflow-scrolling: touch;
 }
+
+/* Remove body margins */

@@ -20,7 +20,8 @@
     "react-sticky-el": "^1.0.16",
     "react-video-cover": "^1.1.0",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "reset-jss": "^1.0.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
@@ -40,7 +41,7 @@
     "lint"
   ],
   "devDependencies": {
-    "eslint": "^4.18.1",
+    "eslint": "^4.18.2",
     "eslint-plugin-react": "^7.7.0",
     "pre-commit": "^1.2.2"
   }

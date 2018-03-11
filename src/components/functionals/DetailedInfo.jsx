@@ -15,7 +15,6 @@ class DetailedInfo extends Component {
     return (
       <div className={classes.root}>
         <div className="infoRow">
-          <VideoBackground />
           <div className="overlay">
             <div className="textBlockLeft">
               <p className="firstLine">Secure & Risk Free</p>
@@ -45,7 +44,6 @@ class DetailedInfo extends Component {
           </div>
         </div>
         <div className="infoRow">
-          <VideoBackground />
           <div className="overlay">
             <div className="imgBlockBottom">
               <img src={require('../../assets/img/flyingWallets.gif')} alt="walletsAnim" className="traslucent80" />

@@ -1,4 +1,3 @@
-/* eslint-disable flowtype/require-valid-file-annotation */
 
 import React, { Component } from 'react';
 
@@ -7,18 +6,17 @@ import { WelcomeBox } from '../functionals';
 
 
 // Import Styles
-import injectSheet from 'react-jss';
-import { welcomeContainerStyle } from './styles';
+// import injectSheet from 'react-jss';
+
+// import { welcomeContainerStyle } from './styles';
 
 class WelcomeContainer extends Component {
   render() {
-    const { classes } = this.props;
     return (
-      <div className={classes.root}>
+      <div>
         <WelcomeBox />
       </div>
     );
   }
 }
-
-export default injectSheet(welcomeContainerStyle)(WelcomeContainer);
+export default WelcomeContainer;

@@ -13,7 +13,7 @@ class Roadmap extends Component {
   render() {
     const { classes, roadmap } = this.props;
     return (
-      <div className={classes.root}>
+      <div className={classes.root2}>
         <div className="imgClip">
           <img src={require('../../assets/img/mountainsRoad.png')} alt="" />
         </div>

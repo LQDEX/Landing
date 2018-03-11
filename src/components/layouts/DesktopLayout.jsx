@@ -22,21 +22,18 @@ class DesktopLayout extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <div className="wrapper">
-          <video autoPlay muted loop className="movingLines">
-            <source src={require('../../assets/img/movingLines.mp4')} type="video/mp4" />
-          </video>
-          <div className="overlay">
-            <div>
-              <HeaderContainer />
-              <WelcomeContainer />
-              <DetailedInfoContainer />
-              <RoadmapContainer />
-              <TeamAdvisorsContainer />
-              <InvestorsContainer />
-              <FooterContainer />
-            </div>
-          </div>
+        <video autoPlay muted loop className="movingLines">
+          <source src={require('../../assets/img/movingLines.mp4')} type="video/mp4" />
+        </video>
+
+        <div>
+          <HeaderContainer />
+          <WelcomeContainer />
+          <DetailedInfoContainer />
+          <RoadmapContainer />
+          <TeamAdvisorsContainer />
+          <InvestorsContainer />
+          <FooterContainer />
         </div>
       </div>
 

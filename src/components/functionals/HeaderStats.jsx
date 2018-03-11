@@ -17,7 +17,7 @@ class HeaderStats extends Component {
     return (
       <div className={classes.root}>
         {marketData.length &&
-          <Marquee hoverToPause={true} fill={true} rate={100}        >
+          <Marquee hoverToPause={false} fill={true} rate={100}        >
             <div className="MarqueeContent">
               <span>
                 {'Cryptocurrency Market - '}

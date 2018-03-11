@@ -8,11 +8,13 @@ const {
   shape = 'polygon(29% 18%, 100% 0, 100% 99%, 65% 86%, 0 96%, 0 10%)';
 
 export default {
-  root: {
+  root2: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    background: globalBackground,
+
     '& .imgClip': {
       width: '100%',
       '-webkit-clip-path': shape,
@@ -32,7 +34,6 @@ export default {
         fontSize: '48px',
         fontWeight: 'bold',
         textAlign: 'center',
-
         color: textHeader,
         minWidth: '100%'
       },
