@@ -14,7 +14,7 @@ import {
 
 //Import Styles
 import injectSheet from 'react-jss';
-import { desktopLayoutStyle } from './styles';
+import { desktopLandingLayoutStyle } from './styles';
 
 
 class DesktopLayout extends Component {
@@ -51,4 +51,4 @@ const dispatchToProps = dispatch => {
   return {};
 };
 
-export default connect(stateToProps, dispatchToProps)(injectSheet(desktopLayoutStyle)(DesktopLayout));
+export default connect(stateToProps, dispatchToProps)(injectSheet(desktopLandingLayoutStyle)(DesktopLayout));

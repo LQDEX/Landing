@@ -5,9 +5,6 @@ import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
 import { detailedInfoStyle } from './styles';
 
-const VideoBackground = (props) => (<video autoPlay muted loop className="movingLines">
-  <source src={require('../../assets/img/movingLines.mp4')} type="video/mp4" />
-</video>)
 
 class DetailedInfo extends Component {
   render() {

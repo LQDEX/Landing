@@ -7,22 +7,32 @@ import { welcomeBoxStyle } from './styles';
 
 class WelcomeBox extends Component {
   render() {
-    const { classes } = this.props;
+    const { classes, deviceType } = this.props;
+    const style = {
+      desktop: classes.root,
+      mobile: classes.mRoot
+    }[deviceType];
     return (
-      <div className={classes.root} >
+      <div className={style} >
         <div className="imgClip">
-          <img src={require('../../assets/img/dummy1920x800.png')} alt="" />
+          {deviceType !== "mobile" && <img src={require('../../assets/img/dummy1920x800.png')} alt="" />}
+          {deviceType === "mobile" && <img src={require('../../assets/img/dummy1920x600.png')} alt="" />}
         </div>
         <div className="overlay">
+          {deviceType === "mobile" && <div className="textArea ">
+            <span className="firstLine">Title of the Exchange</span>
+          </div>}
+
           <div className="imageWrap">
             <img className="macBook" src={require('../../assets/img/macbookScreen.png')} alt="" />
           </div>
           <div className="textArea ">
-            <span className="firstLine">Title of the Exchange</span>
+            {deviceType !== "mobile" && <span className="firstLine">Title of the Exchange</span>}
             <span className="txtBody">DECENTRALIZED</span>
             <span className="txtBody">TRUSTLESS</span>
             <span className="txtBody">CROSS CHAIN EXCHANGE</span>
           </div>
+          {deviceType === "mobile" && <button className="btnSubscribe">Sign up for Updates</button>}
         </div>
       </div>
     );
@@ -30,7 +40,9 @@ class WelcomeBox extends Component {
 }
 
 const stateToProps = state => {
-  return {};
+  return {
+    deviceType: state.app.platform.deviceType,
+  };
 };
 
 const dispatchToProps = dispatch => {

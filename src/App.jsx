@@ -9,10 +9,9 @@ import actions from './redux/actions';
 //JSS and styles
 import injectSheet from 'react-jss';
 import reset from 'reset-jss';
-import appStyles from './styles/appStyle';
 
 //Import components
-import { DesktopLayout } from './components/layouts';
+import { DesktopLandingLayout } from './components/layouts';
 
 class App extends Component {
   state = {};
@@ -22,7 +21,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    /* let timer = setInterval(() => this.tick(), 5 * 60 * 1000);
+    /* let timer = setInterval(() => this.tick(), 30 * 24 * 60 * 60 * 1000);
     this.setState({ timer }); */
     this.props.platformGet({
       os: Platform.OS || '',
@@ -38,9 +37,9 @@ class App extends Component {
     });
   }
 
-  /*  tick() {
-     this.props.getCryptoData();
-   } */
+  /* tick() {
+    this.props.getCryptoData();
+  } */
 
   render() {
     const { classes } = this.props;
@@ -50,16 +49,15 @@ class App extends Component {
         <Favicon url={require('./assets/img/favicon.svg')} />
         <Platform rules={{ DeviceType: 'mobile' }}>
           {/* Put here the Mobile Layout */}
-          <p>Mobile</p>
-          <DesktopLayout />
+          <DesktopLandingLayout />
         </Platform>
         <Platform rules={{ DeviceType: 'tablet' }}>
           {/* Put here the Tablet Layout */}
           <p>Tablet</p>
-          <DesktopLayout />
+          <DesktopLandingLayout />
         </Platform>
         <Platform rules={{ DeviceType: undefined }}>
-          <DesktopLayout />
+          <DesktopLandingLayout />
         </Platform>
       </div>
     );

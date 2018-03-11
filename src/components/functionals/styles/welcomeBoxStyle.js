@@ -1,12 +1,15 @@
 import palette from './palette';
 
 const {
+    primary,
+    primaryHover,
     globalBackground,
     textHeader,
     text
   } = palette,
 
-  shape = 'polygon(0 100%, 67% 84%, 100% 100%)';
+  dShape = 'polygon(0 100%, 67% 84%, 100% 100%)',
+  mShape = 'polygon(0 100%, 77% 94%, 100% 98%, 100% 100%)';
 
 export default {
   root: {
@@ -17,13 +20,14 @@ export default {
     '& .imgClip': {
       background: globalBackground,
       width: '100%',
-      '-webkit-clip-path': shape,
-      clipPath: shape
+      '-webkit-clip-path': dShape,
+      clipPath: dShape
     },
     '& .overlay': {
       position: 'absolute',
       display: 'flex',
       flexDirection: 'row',
+      flexWrap: 'wrap',
       justifyContent: 'space-evenly',
       alignItems: 'center',
       minWidth: '100%',
@@ -45,7 +49,6 @@ export default {
         fontFamily: 'Khand',
         fontSize: '48px',
         fontWeight: 'bold',
-
         color: textHeader
       },
       '& .txtBody': {
@@ -53,6 +56,54 @@ export default {
         fontSize: '40px',
         fontWeight: 'semibold',
         color: text
+      }
+    }
+  },
+  mRoot: {
+    extend: 'root',
+    justifyContent: 'flex-start',
+    '& .imgClip': {
+      '-webkit-clip-path': mShape,
+      clipPath: mShape
+    },
+    '& .overlay': {
+      extend: 'overlay',
+      '& .imageWrap': {
+        extend: 'imageWrap',
+        alignItems: 'center',
+        margin: '0 0 30px 0',
+        '& .macBook': { maxWidth: '80%' }
+      },
+      '& .textArea': {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '80%'
+      },
+      '& .firstLine': {
+        extend: 'firstLine',
+        margin: '30px 0 30px 0',
+        fontSize: '38px'
+      },
+      '& .txtBody': {
+        extend: 'txtBody',
+        margin: '0 0 10px 0',
+        fontSize: '30px'
+      },
+      '& .btnSubscribe': {
+        fontFamily: 'Roboto',
+        fontSize: '1em',
+        fontWeight: 'semi-Bold',
+        display: 'inline-block',
+        margin: 20,
+        padding: '1em 1.25em',
+        boxSizing: 'content-box',
+        cursor: 'pointer',
+        border: 'none',
+        background: primary,
+        color: globalBackground,
+        '&:hover': { background: primaryHover }
       }
     }
   }
