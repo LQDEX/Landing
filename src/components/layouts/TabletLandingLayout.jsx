@@ -7,7 +7,7 @@ import injectSheet from 'react-jss';
 
 //Import Styles
 
-import { mobileLayoutStyle } from './styles';
+import { tabletLandingLayoutStyle } from './styles';
 
 
 class MobileLayout extends Component {
@@ -31,5 +31,5 @@ const dispatchToProps = dispatch => {
 };
 
 export default connect(stateToProps, dispatchToProps)(
-  injectSheet(mobileLayoutStyle)(MobileLayout)
+  injectSheet(tabletLandingLayoutStyle)(MobileLayout)
 );

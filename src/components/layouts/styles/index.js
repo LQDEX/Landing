@@ -1,7 +1,9 @@
 import desktopLandingLayoutStyle from './desktopLandingLayoutStyle';
-import mobileLayoutStyle from './mobileLayoutStyle';
+import mobileLandingLayoutStyle from './mobileLandingLayoutStyle';
+import tabletLandingLayoutStyle from './tabletLandingLayoutStyle';
 
 export {
   desktopLandingLayoutStyle,
-  mobileLayoutStyle
+  mobileLandingLayoutStyle,
+  tabletLandingLayoutStyle
 };

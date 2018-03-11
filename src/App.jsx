@@ -11,7 +11,7 @@ import injectSheet from 'react-jss';
 import reset from 'reset-jss';
 
 //Import components
-import { DesktopLandingLayout } from './components/layouts';
+import { DesktopLandingLayout, MobileLandingLayout } from './components/layouts';
 
 class App extends Component {
   state = {};
@@ -49,7 +49,7 @@ class App extends Component {
         <Favicon url={require('./assets/img/favicon.svg')} />
         <Platform rules={{ DeviceType: 'mobile' }}>
           {/* Put here the Mobile Layout */}
-          <DesktopLandingLayout />
+          <MobileLandingLayout />
         </Platform>
         <Platform rules={{ DeviceType: 'tablet' }}>
           {/* Put here the Tablet Layout */}
@@ -57,6 +57,7 @@ class App extends Component {
           <DesktopLandingLayout />
         </Platform>
         <Platform rules={{ DeviceType: undefined }}>
+          {/* Put here the Desktop Layout */}
           <DesktopLandingLayout />
         </Platform>
       </div>
