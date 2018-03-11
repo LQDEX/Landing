@@ -9,8 +9,10 @@ const {
 
   // shapeTop = 'polygon(75% 0, 100% 19%, 100% 84%, 1% 99%)';
   // shapeBottom = 'polygon(75% 0, 100% 48%, 50% 99%, 0 52%, 0 13%)';
-  shapeBottom = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0 52%, 50% 99%, 100% 48%, 75% 0, 0 13%)',
-  shapeTop = 'polygon(0% 0%, 100% 0%, 100% 19%, 75% 0%, 0% 100%, 100% 82%, 100% 100%, 0% 100%)';
+  dShapeBottom = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0 52%, 50% 99%, 100% 48%, 75% 0, 0 13%)',
+  dShapeTop = 'polygon(0% 0%, 100% 0%, 100% 19%, 75% 0%, 0% 100%, 100% 82%, 100% 100%, 0% 100%)',
+  mShapeBottom = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0 40%, 50% 99%, 100% 60%, 100% 15%, 90% 0, 0 13%)',
+  mShapeTop = 'polygon(0% 0%, 100% 0%, 100% 10%, 65% 0%, 0% 65%, 0% 100% , 100% 90%, 100% 100%, 0% 100%)';
 
 export default {
   root: {
@@ -74,8 +76,8 @@ export default {
           height: '100%',
           width: '100%',
           backgroundColor: white,
-          '-webkit-clip-path': shapeTop,
-          clipPath: shapeTop
+          '-webkit-clip-path': dShapeTop,
+          clipPath: dShapeTop
         }
       },
       '& .textBlockRight': {
@@ -97,8 +99,8 @@ export default {
           height: '100%',
           width: '100%',
           backgroundColor: white,
-          '-webkit-clip-path': shapeBottom,
-          clipPath: shapeBottom
+          '-webkit-clip-path': dShapeBottom,
+          clipPath: dShapeBottom
         }
       },
       '& .firstLine': {
@@ -121,6 +123,58 @@ export default {
         fontWeight: 'bold'
       },
       '& .traslucent80': { filter: 'opacity(80%)' }
+    }
+  },
+  mRoot: {
+    extend: 'root',
+    '& .infoRow': {
+      extend: 'infoRow',
+      flexDirection: 'column',
+      maxHeight: 1000,
+      '& .textBlockLeft': {
+        extend: 'textBlockLeft',
+        borderTop: '50px solid white',
+        borderBottom: '50px solid white',
+        padding: '10%'
+      },
+      '& .textBlockRight': {
+        extend: 'textBlockRight',
+        borderTop: '20px solid white',
+        borderBottom: '50px solid white',
+        width: '91%',
+        padding: '0 7% 0 2%'
+      },
+      '& .imgBlockTop': {
+        extend: 'imgBlockTop',
+        '& .topWindow': {
+          extend: 'topWindow',
+          '-webkit-clip-path': mShapeTop,
+          clipPath: mShapeTop
+        },
+        '& .textRiskFreeWrap': {
+          extend: 'textRiskFreeWrap',
+          top: '25%',
+          left: '60%'
+        },
+        '& .textSecureWrap': {
+          extend: 'textSecureWrap',
+          top: '54%',
+          left: '43%'
+        }
+      },
+      '& .imgBlockBottom': {
+        extend: 'imgBlockBottom',
+        maxHeight: 450,
+        '& .bottomWindow': {
+          extend: 'bottomWindow',
+          '-webkit-clip-path': mShapeBottom,
+          clipPath: mShapeBottom
+        }
+      },
+      '& .firstLine': {
+        extend: 'firstLine',
+        fontSize: '38px'
+      }
     }
   }
 };

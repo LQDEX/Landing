@@ -8,9 +8,13 @@ import { detailedInfoStyle } from './styles';
 
 class DetailedInfo extends Component {
   render() {
-    const { classes } = this.props;
+    const { classes, deviceType } = this.props;
+    const style = {
+      desktop: classes.root,
+      mobile: classes.mRoot
+    }[deviceType];
     return (
-      <div className={classes.root}>
+      <div className={style}>
         <div className="infoRow">
           {/* <div className="overlay"> */}
           <div className="textBlockLeft">
@@ -23,7 +27,8 @@ class DetailedInfo extends Component {
             </span>
           </div>
           <div className="imgBlockTop">
-            <img src={require('../../assets/img/dummy689x499.png')} alt="risksAnim" className="traslucent80" />
+            {deviceType !== "mobile" && <img src={require('../../assets/img/dummy689x499.png')} alt="risksAnim" className="traslucent80" />}
+            {deviceType === "mobile" && <img height="350px" src={require('../../assets/img/dummy600x600.png')} alt="risksAnim" className="traslucent80" />}
             <div className="textRiskFreeWrap ">
               <img src={require('../../assets/img/bigDot.png')} alt="risksAnim" />
               <span className="innerText">
@@ -31,7 +36,7 @@ class DetailedInfo extends Component {
                 </span>
             </div>
             <div className="textSecureWrap ">
-              <img src={require('../../assets/img/bigDot.png')} alt="risksAnim" />
+              <img src={require('../../assets/img/bigDot.png')} alt="secure" />
               <span className="innerText">
                 Secure
                 </span>
@@ -41,12 +46,7 @@ class DetailedInfo extends Component {
           {/* </div> */}
         </div>
         <div className="infoRow">
-          {/* <div className="overlay"> */}
-          <div className="imgBlockBottom">
-            <img src={require('../../assets/img/flyingWallets.gif')} alt="walletsAnim" className="traslucent80" />
-            <div className="bottomWindow"></div>
-          </div>
-          <div className="textBlockRight">
+          {deviceType === "mobile" && <div className="textBlockRight">
             <p className="firstLine">Transparency</p>
 
             <span className="txtBody">
@@ -55,8 +55,21 @@ class DetailedInfo extends Component {
               {' Instead,'} <span className="txtHighlight">{`we provide you with your own LiquidX wallet`}</span>
               {` to safely and securely hold any tokens involved in the exchange.`}
             </span>
+          </div>}
+          <div className="imgBlockBottom">
+            <img src={require('../../assets/img/flyingWallets.gif')} alt="walletsAnim" className="traslucent80" />
+            <div className="bottomWindow"></div>
           </div>
-          {/* </div> */}
+          {deviceType !== "mobile" && <div className="textBlockRight">
+            <p className="firstLine">Transparency</p>
+
+            <span className="txtBody">
+              {'LiquidX does not take custody of your proxy tokens or external blockchain tokens.'}
+              <br />
+              {' Instead,'} <span className="txtHighlight">{`we provide you with your own LiquidX wallet`}</span>
+              {` to safely and securely hold any tokens involved in the exchange.`}
+            </span>
+          </div>}
         </div>
       </div>
     );
@@ -64,7 +77,9 @@ class DetailedInfo extends Component {
 }
 
 const stateToProps = state => {
-  return {};
+  return {
+    deviceType: state.app.platform.deviceType,
+  };
 };
 
 const dispatchToProps = dispatch => {
