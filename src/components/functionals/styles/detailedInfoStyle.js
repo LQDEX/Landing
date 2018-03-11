@@ -1,7 +1,7 @@
 import palette from './palette';
 
 const {
-    white,
+    globalBackground,
     textHeader,
     text,
     textHighlight
@@ -36,7 +36,7 @@ export default {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        backgroundColor: white,
+        backgroundColor: globalBackground,
         padding: '0 2% 0% 7%'
       },
       '& .imgBlockTop': {
@@ -75,7 +75,7 @@ export default {
           left: 0,
           height: '100%',
           width: '100%',
-          backgroundColor: white,
+          backgroundColor: globalBackground,
           '-webkit-clip-path': dShapeTop,
           clipPath: dShapeTop
         }
@@ -84,7 +84,7 @@ export default {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        backgroundColor: white,
+        backgroundColor: globalBackground,
         width: '100%',
         padding: '0 2% 0 7%',
         textAlign: 'right'
@@ -98,7 +98,7 @@ export default {
           left: 0,
           height: '100%',
           width: '100%',
-          backgroundColor: white,
+          backgroundColor: globalBackground,
           '-webkit-clip-path': dShapeBottom,
           clipPath: dShapeBottom
         }
@@ -133,14 +133,14 @@ export default {
       maxHeight: 1000,
       '& .textBlockLeft': {
         extend: 'textBlockLeft',
-        borderTop: '50px solid white',
-        borderBottom: '50px solid white',
+        borderTop: `50px solid ${globalBackground}`,
+        borderBottom: `50px solid ${globalBackground}`,
         padding: '10%'
       },
       '& .textBlockRight': {
         extend: 'textBlockRight',
-        borderTop: '20px solid white',
-        borderBottom: '50px solid white',
+        borderTop: `20px solid ${globalBackground}`,
+        borderBottom: `50px solid ${globalBackground}`,
         width: '91%',
         padding: '0 7% 0 2%'
       },

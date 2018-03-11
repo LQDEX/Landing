@@ -7,9 +7,13 @@ import { investorsStyle } from './styles';
 
 class Investors extends Component {
   render() {
-    const { classes, investors } = this.props;
+    const { classes, investors, deviceType } = this.props;
+    const style = {
+      desktop: classes.root,
+      mobile: classes.mRoot
+    }[deviceType];
     return (
-      <div className={classes.root}>
+      <div className={style}>
         <div className="firstLine">Investors</div>
         <div className="logosRow">
           {investors.map((item, i) =>
@@ -24,6 +28,7 @@ class Investors extends Component {
 const stateToProps = state => {
   return {
     investors: state.investors.members,
+    deviceType: state.app.platform.deviceType,
   };
 };
 

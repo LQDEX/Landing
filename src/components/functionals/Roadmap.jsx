@@ -11,9 +11,15 @@ class Roadmap extends Component {
   isOdd(value) { return value % 2 !== 0 };
 
   render() {
-    const { classes, roadmap } = this.props;
+    const { classes, roadmap, deviceType } = this.props;
+
+    const style = {
+      desktop: classes.root,
+      mobile: classes.mRoot
+    }[deviceType];
+
     return (
-      <div className={classes.root2}>
+      <div className={style}>
         <div className="imgClip">
           <img src={require('../../assets/img/mountainsRoad.png')} alt="" />
         </div>
@@ -47,6 +53,8 @@ class Roadmap extends Component {
 const stateToProps = state => {
   return {
     roadmap: state.roadmap.milestones,
+    deviceType: state.app.platform.deviceType,
+
   };
 };
 

@@ -5,10 +5,11 @@ const {
     textHeader,
     globalBackground
   } = palette,
+  mShape = 'polygon(20% 7%, 100% 0%, 100% 99%, 65% 95%, 0 99%, 0 5%)',
   shape = 'polygon(29% 18%, 100% 0, 100% 99%, 65% 86%, 0 96%, 0 10%)';
 
 export default {
-  root2: {
+  root: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -77,6 +78,22 @@ export default {
         top: 2
       }
     }
+  },
+  mRoot: {
+    extend: 'root',
+    borderBottom: `50px solid ${globalBackground}`,
+    '& .imgClip': {
+      extend: 'imgClip',
+      maxHeight: 800,
+      '-webkit-clip-path': mShape,
+      clipPath: mShape
+    },
+    '& .overlay': {
+      extend: 'overlay',
+      '& .firstLine': {
+        extend: 'firstLine',
+        fontSize: '38px'
+      }
+    }
   }
-
 };

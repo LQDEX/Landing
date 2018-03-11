@@ -32,5 +32,12 @@ export default {
       minWidth: '100%',
       '& .investorLogo': { margin: '25px 20px' }
     }
+  },
+  mRoot: {
+    extend: 'root',
+    '& .firstLine': {
+      extend: 'firstLine',
+      fontSize: '38px'
+    }
   }
 };

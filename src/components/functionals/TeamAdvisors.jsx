@@ -44,9 +44,15 @@ const AdvisorCard = (props) => (
 
 class TeamAdvisors extends Component {
   render() {
-    const { classes, team, advisors } = this.props;
+    const { classes, team, advisors, deviceType } = this.props;
+
+    const style = {
+      desktop: classes.root,
+      mobile: classes.mRoot
+    }[deviceType];
+
     return (
-      <div className={classes.root}>
+      <div className={style}>
         <div className="firstLine">Team</div>
         <div className="teamRow"     >
           {team.map((mate, i) =>
@@ -68,6 +74,7 @@ const stateToProps = state => {
   return {
     team: state.team.members,
     advisors: state.advisors.members,
+    deviceType: state.app.platform.deviceType,
   };
 };
 

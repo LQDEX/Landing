@@ -19,9 +19,10 @@ import { desktopLandingLayoutStyle } from './styles';
 
 class DesktopLayout extends Component {
   render() {
-    const { classes } = this.props;
+    const { classes, deviceType } = this.props;
+    const style = classes.root;
     return (
-      <div className={classes.root}>
+      <div className={style} >
         <div className="bkTone"></div>
         <video autoPlay muted loop className="movingLines">
           <source src={require('../../assets/img/movingLines.mp4')} type="video/mp4" />

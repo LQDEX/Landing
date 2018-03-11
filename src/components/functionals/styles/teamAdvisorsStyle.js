@@ -191,5 +191,12 @@ export default {
       color: text,
       margin: '7px 0 0 0'
     }
+  },
+  mRoot: {
+    extend: 'root',
+    '& .firstLine': {
+      extend: 'firstLine',
+      fontSize: '38px'
+    }
   }
 };

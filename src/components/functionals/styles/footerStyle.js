@@ -49,5 +49,12 @@ export default {
       border: 'none',
       color: grey
     }
+  },
+  mRoot: {
+    extend: 'root',
+    '& .firstLine': {
+      extend: 'firstLine',
+      fontSize: '38px'
+    }
   }
 };

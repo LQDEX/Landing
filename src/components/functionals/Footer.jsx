@@ -7,9 +7,13 @@ import { footerStyle } from './styles';
 
 class Footer extends Component {
   render() {
-    const { classes } = this.props;
+    const { classes, deviceType } = this.props;
+    const style = {
+      desktop: classes.root,
+      mobile: classes.mRoot
+    }[deviceType];
     return (
-      <div className={classes.root}>
+      <div className={style} >
         <div className="firstLine">Sign up for Updates</div>
         <button className="btnSubscribe">Sign up</button>
         <div className="copyRights">© 2018 Title of the Ecxhange. All Rights Reserved.</div>
@@ -20,7 +24,9 @@ class Footer extends Component {
 }
 
 const stateToProps = state => {
-  return {};
+  return {
+    deviceType: state.app.platform.deviceType,
+  };
 };
 
 const dispatchToProps = dispatch => {
