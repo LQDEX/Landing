@@ -29,7 +29,7 @@ class MobileLandingLayout extends Component {
         <video autoPlay muted loop className="movingLines">
           <source src={require('../../assets/img/movingLines.mp4')} type="video/mp4" />
         </video>
-        <div id="mySidenav" className="sideNav">
+        {/* <div id="mySidenav" className="sideNav">
           <button className="menuButton">
             <FontAwesome
               name='bars'
@@ -41,7 +41,7 @@ class MobileLandingLayout extends Component {
           <a href="#">Services</a>
           <a href="#">Clients</a>
           <a href="#">Contact</a>
-        </div>
+        </div> */}
         <div>
           <HeaderContainer />
           <WelcomeContainer />
