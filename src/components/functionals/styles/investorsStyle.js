@@ -1,6 +1,9 @@
 import palette from './palette';
 
-const { textHeader } = palette;
+const {
+  textHeader,
+  globalBackground
+} = palette;
 
 export default {
   root: {
@@ -8,7 +11,9 @@ export default {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: '0 0 100px 0',
+    padding: '0 0 100px 0',
+    background: globalBackground,
+
     '& .firstLine': {
       margin: '0 0 80px 0',
       fontFamily: 'Khand',

@@ -4,8 +4,7 @@ const {
     white,
     textHeader,
     text,
-    textHighlight,
-    videoBackground
+    textHighlight
   } = palette,
 
   // shapeTop = 'polygon(75% 0, 100% 19%, 100% 84%, 1% 99%)';
@@ -15,31 +14,22 @@ const {
 
 export default {
   root: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'stretch',
     position: 'relative',
-    background: videoBackground,
-    '& .movingLines': {
-      maxWidth: '100%',
-      filter: 'opacity(80%)'
-    },
+    minWidth: '100%',
     '& .infoRow': {
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: 'row',
       justifyContent: 'flex-start',
       alignItems: 'stretch',
       position: 'relative',
       minWidth: '100%',
       maxHeight: 535,
       overflow: 'hidden',
-      '& .overlay': {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        alignItems: 'stretch',
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        top: 0
-      },
+
       '& .textBlockLeft': {
         display: 'flex',
         flexDirection: 'column',

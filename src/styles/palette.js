@@ -13,16 +13,17 @@ const basicColors = {
   primaryHover: '#286CE5',
   secondary: '#FFFFFF',
   secondaryHover: '#757F93',
+  greyBrown: '#969696',
   greyBlue: '#ABB8CE',
   greyDark: '#373B42',
   grey: '#79869C',
-  videoBackground: '#969696',
   frameShadow: 'rgba(0,0,0,0.25)',
 
 
 };
 
 const itemsColors = {
+  videoBackground: basicColors.greyBrown,
   globalBackground: basicColors.white,
   textHeader: basicColors.greyBlue,
   textTilte: basicColors.primary,

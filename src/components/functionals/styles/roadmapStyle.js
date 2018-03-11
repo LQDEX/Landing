@@ -27,7 +27,7 @@ export default {
       justifyContent: 'center',
       alignItems: 'stretch',
       minWidth: '100%',
-      overflowX: 'hidden',
+      overflow: 'hidden',
       '& .firstLine': {
         margin: '0 0 40px 0',
         fontFamily: 'Khand',

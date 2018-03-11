@@ -10,12 +10,12 @@ const {
 
 export default {
   root: {
-
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: '0 0 100px 0',
+    padding: '0 0 100px 0',
+    background: globalBackground,
     '& .firstLine': {
       margin: '0 0 30px 0',
       fontFamily: 'Khand',

@@ -22,10 +22,10 @@ class DesktopLayout extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
+        <div className="bkTone"></div>
         <video autoPlay muted loop className="movingLines">
           <source src={require('../../assets/img/movingLines.mp4')} type="video/mp4" />
         </video>
-
         <div>
           <HeaderContainer />
           <WelcomeContainer />
