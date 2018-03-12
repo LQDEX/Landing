@@ -2,7 +2,10 @@ import palette from './palette';
 
 const {
   primary,
+  primaryHover,
+  greyBlue,
   grey,
+  text,
   globalBackground,
   videoBackground
 } = palette;
@@ -30,14 +33,14 @@ export default {
       height: '100%',
       width: '75%',
       position: 'fixed',
-      zIndex: 10000,
+      zIndex: 1000,
       top: 0,
       right: 0,
       backgroundColor: globalBackground,
-      paddingTop: '80px',
+      paddingTop: '90px',
       overflowX: 'hidden',
       boxShadow: `0px 2px 20px 0px ${grey}`,
-      transition: '0.5s',
+      // transition: '0.5s',
       '& .menuButton': {
         position: 'absolute',
         top: 15,
@@ -54,6 +57,35 @@ export default {
         color: '#818181',
         display: 'block',
         transition: '0.3s'
+      },
+      '& .menuWraper': {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        alignItems: 'flex-start',
+        padding: '5px 0 5px 0px'
+      },
+      '& .btnMenu': {
+        outline: 'none',
+        fontFamily: 'Exo',
+        fontSize: '1em',
+        fontWeight: 'semi-Bold',
+        display: 'inline-block',
+        boxSizing: 'content-box',
+        cursor: 'pointer',
+        border: 'none',
+        background: 'none',
+        color: text,
+        '&:hover': { color: primaryHover }
+      },
+      '& .privacy': {
+        fontFamily: 'Roboto',
+        fontSize: 14
+      },
+      '& .hr': {
+        borderTop: `0.5px solid ${greyBlue}`,
+        margin: '10px 32px',
+        width: '85%'
       }
     }
   }

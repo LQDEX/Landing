@@ -8,5 +8,11 @@ export default {
       data: value
     };
   },
+  sideNavToggle:()=>{
+    return{
+    type:constants.APP_SIDENAV_TOGGLE,
+    data:null,
+    };
+  }
 
 };

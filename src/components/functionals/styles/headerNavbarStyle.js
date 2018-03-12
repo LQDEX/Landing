@@ -16,6 +16,7 @@ export default {
     alignItems: 'center',
     height: 80,
     '& .menuButton': {
+      outline: 'none',
       border: 'none',
       background: 'none',
       color: primary

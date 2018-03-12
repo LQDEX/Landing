@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+// Redux actions
+import actions from '../../redux/actions';
 
-//Import Styles
+// Import Styles
 import injectSheet from 'react-jss';
 import { headerNavbarStyle } from './styles';
 
@@ -13,21 +15,22 @@ const FontAwesome = require('react-fontawesome');
 class HeaderNavbar extends Component {
   render() {
     const { classes, deviceType } = this.props;
+
     return (
       <div className={classes.root}>
         <img height={'80%'} src={require('../../assets/img/logoLiquidx.png')} alt="Logo" />
-        {deviceType !== "mobile" && <div className="menuWraper">
+        {deviceType !== 'mobile' && <div className="menuWraper">
           <button className="btnMenu">Exchange</button>
           <Link to="/About">
             <button className="btnMenu">About US</button>
           </Link >
           <button className="btnSubscribe">Sign up for Updates</button>
         </div>}
-        {deviceType === "mobile" &&
-          <button className="menuButton">
+        {deviceType === 'mobile' &&
+          <button className="menuButton" onClick={() => this.props.sideNavToggle()}>
             <FontAwesome
-              name='bars'
-              size='3x'
+              name="bars"
+              size="3x"
               spin={false}
             />
           </button>
@@ -37,15 +40,8 @@ class HeaderNavbar extends Component {
   }
 }
 
-const stateToProps = state => {
-  return {
-    deviceType: state.app.platform.deviceType,
-  };
-};
+const stateToProps = state => ({ deviceType: state.app.platform.deviceType });
 
-const dispatchToProps = dispatch => {
-  return {
-  };
-};
+const dispatchToProps = dispatch => ({ sideNavToggle: () => dispatch(actions.sideNavToggle()) });
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(headerNavbarStyle)(HeaderNavbar));
