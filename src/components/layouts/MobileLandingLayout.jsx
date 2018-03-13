@@ -1,20 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 // Redux actions
 import actions from '../../redux/actions';
 
-import {
-  HeaderContainer,
-  WelcomeContainer,
-  DetailedInfoContainer,
-  RoadmapContainer,
-  TeamAdvisorsContainer,
-  InvestorsContainer,
-  FooterContainer
-} from '../containers/';
+// Import Components
+import { HeaderContainer } from '../containers';
+import { Landing } from '../pages/';
 
 // Import Styles
 import injectSheet from 'react-jss';
@@ -27,8 +20,9 @@ class MobileLandingLayout extends Component {
 
   render() {
     const
-      { classes, showSidePanel } = this.props,
+      { classes, app, showSidePanel } = this.props,
       style = classes.root;
+    // alert(showSidePanel);
 
     return (
       <div className={style} >
@@ -54,12 +48,7 @@ class MobileLandingLayout extends Component {
         </div>}
         <div>
           <HeaderContainer />
-          <WelcomeContainer />
-          <DetailedInfoContainer />
-          <RoadmapContainer />
-          <TeamAdvisorsContainer />
-          <InvestorsContainer />
-          <FooterContainer />
+          {app.showPage === 'landing' && <Landing /> }
         </div>
       </div>
 

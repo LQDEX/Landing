@@ -1,7 +1,8 @@
 export default {
 
   // App States
-  APP_PLATFORM_GET: 'APP_PLATFORM_GET',
+  APP_SHOW_PAGE: 'APP_SHOW_PAGE',
+  APP_PLATFORM_SET: 'APP_PLATFORM_SET',
   APP_SIDENAV_TOGGLE: 'APP_SIDENAV_TOGGLE',
 
   // Crypto Markets State

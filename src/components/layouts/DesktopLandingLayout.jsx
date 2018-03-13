@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// Import Components
+import { HeaderContainer } from '../containers';
+import { Landing } from '../pages/';
 
-import {
-  HeaderContainer,
-  WelcomeContainer,
-  DetailedInfoContainer,
-  RoadmapContainer,
-  TeamAdvisorsContainer,
-  InvestorsContainer,
-  FooterContainer,
-} from '../containers/';
-
-//Import Styles
+// Import Styles
 import injectSheet from 'react-jss';
 import { desktopLandingLayoutStyle } from './styles';
 
 
 class DesktopLayout extends Component {
   render() {
-    const { classes, deviceType } = this.props;
-    const style = classes.root;
+    // const { classes, deviceType } = this.props;
+    const
+      { classes, app } = this.props,
+      style = classes.root;
+
     return (
       <div className={style} >
         <div className="bkTone"></div>
@@ -29,12 +25,7 @@ class DesktopLayout extends Component {
         </video>
         <div>
           <HeaderContainer />
-          <WelcomeContainer />
-          <DetailedInfoContainer />
-          <RoadmapContainer />
-          <TeamAdvisorsContainer />
-          <InvestorsContainer />
-          <FooterContainer />
+          {app.showPage === 'landing' && <Landing /> }
         </div>
       </div>
 
@@ -42,14 +33,8 @@ class DesktopLayout extends Component {
   }
 }
 
-const stateToProps = state => {
-  return {
-    app: state.app
-  };
-};
+const stateToProps = state => ({ app: state.app });
 
-const dispatchToProps = dispatch => {
-  return {};
-};
+const dispatchToProps = dispatch => ({});
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(desktopLandingLayoutStyle)(DesktopLayout));

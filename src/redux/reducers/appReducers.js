@@ -1,15 +1,21 @@
 import constants from '../constants';
 
 const initialState = {
-  platform: {},
-  showSidenav: false
+  showPage: 'landing',
+  showSidenav: false,
+  platform: {}
 };
 
 /* eslint-disable */
 const app = (state = initialState, action) => {
   switch (action.type) {
-
-    case constants.APP_PLATFORM_GET: {
+    case constants.APP_SHOW_PAGE: {
+      return {
+        ...state,
+        showPage: action.data
+      };
+    }
+    case constants.APP_PLATFORM_SET: {
       return {
         ...state,
         platform: action.data

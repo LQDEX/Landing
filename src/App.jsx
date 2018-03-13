@@ -3,43 +3,62 @@ import { connect } from 'react-redux';
 import Platform from 'react-platform-js';
 import Favicon from 'react-favicon';
 
-//Redux actions
+// Redux actions
 import actions from './redux/actions';
 
-//JSS and styles
+// JSS and styles
 import injectSheet from 'react-jss';
 import reset from 'reset-jss';
 
-//Import components
+// Import components
 import { DesktopLandingLayout, MobileLandingLayout } from './components/layouts';
 
+
 class App extends Component {
-  state = {};
+  updateDeviceType() {
+    const wWidth = window.innerWidth;
+    if (wWidth < 750) {
+      this.props.platformSet({ deviceType: 'mobile' });
+      console.log(wWidth);
+      
+return;
+    }
+    // else if (wWidth<970){
+    //   this.props.platformSet({deviceType:'tablet'});
+    //   return;
+    // }
+    this.props.platformSet({ deviceType: 'desktop' });
+  }
+
+
   componentWillMount() {
     this.props.getCryptoData();
   }
 
   componentDidMount() {
-
-    /* let timer = setInterval(() => this.tick(), 30 * 24 * 60 * 60 * 1000);
-    this.setState({ timer }); */
-    this.props.platformGet({
-      os: Platform.OS || '',
-      osVersion: Platform.OSVersion || '',
-      browser: Platform.Browser || '',
-      browserVersion: Platform.BrowserVersion || '',
-      engine: Platform.Engine || '',
-      cpu: Platform.CPU || '',
-      deviceType: Platform.DeviceType || 'desktop',
-      deviceModel: Platform.DeviceModel || '',
-      deviceVendor: Platform.DeviceVendor || '',
-      ua: Platform.UA || ''
+    // let timer = setInterval(() => this.tick(), 30 * 24 * 60 * 60 * 1000);
+    // this.setState({ timer });
+    window.addEventListener('resize', () => this.updateDeviceType());
+    this.props.platformSet({
+      // os: Platform.OS || '',
+      // osVersion: Platform.OSVersion || '',
+      // browser: Platform.Browser || '',
+      // browserVersion: Platform.BrowserVersion || '',
+      // engine: Platform.Engine || '',
+      // cpu: Platform.CPU || '',
+      deviceType: Platform.DeviceType || 'desktop'
+      // deviceModel: Platform.DeviceModel || '',
+      // deviceVendor: Platform.DeviceVendor || '',
+      // ua: Platform.UA || ''
     });
   }
 
-  /* tick() {
-    this.props.getCryptoData();
-  } */
+  // tick() {
+  // this.props.getCryptoData();
+  // }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDeviceType.bind(this));
+  }
 
   render() {
     const { classes } = this.props;
@@ -65,18 +84,12 @@ class App extends Component {
   }
 }
 
-const stateToProps = state => {
-  return {
-    app: state.app
-  };
-};
+const stateToProps = state => ({ app: state.app });
 
-const dispatchToProps = dispatch => {
-  return {
-    getCryptoData: () => dispatch(actions.getCryptoData()),
-    platformGet: platformInfo => dispatch(actions.platformGet(platformInfo)),
-  };
-};
+const dispatchToProps = dispatch => ({
+  getCryptoData: () => dispatch(actions.getCryptoData()),
+  platformSet: platformInfo => dispatch(actions.platformSet(platformInfo))
+});
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(reset)(App));
 

@@ -2,9 +2,15 @@
 import constants from '../constants';
 
 export default {
-  platformGet: value => {
+  appShowPage: value => {
     return {
-      type: constants.APP_PLATFORM_GET,
+      type: constants.APP_SHOW_PAGE,
+      data: value
+    };
+  },
+  platformSet: value => {
+    return {
+      type: constants.APP_PLATFORM_SET,
       data: value
     };
   },

@@ -13,6 +13,10 @@ import { headerNavbarStyle } from './styles';
 const FontAwesome = require('react-fontawesome');
 
 class HeaderNavbar extends Component {
+  goToPage(page) {
+    alert(`Go to ${page}`);
+  }
+
   render() {
     const { classes, deviceType } = this.props;
 
@@ -20,11 +24,9 @@ class HeaderNavbar extends Component {
       <div className={classes.root}>
         <img height={'80%'} src={require('../../assets/img/logoLiquidx.png')} alt="Logo" />
         {deviceType !== 'mobile' && <div className="menuWraper">
-          <button className="btnMenu">Exchange</button>
-          <Link to="/About">
-            <button className="btnMenu">About US</button>
-          </Link >
-          <button className="btnSubscribe">Sign up for Updates</button>
+          <button className="btnMenu" onClick={() => this.goToPage('exchange')}>Exchange</button>
+          <button className="btnMenu" onClick={() => this.goToPage('about')}>About US</button>
+          <button className="btnSubscribe" onClick={() => this.goToPage('register')}>Sign up for Updates</button>
         </div>}
         {deviceType === 'mobile' &&
           <button className="menuButton" onClick={() => this.props.sideNavToggle()}>
