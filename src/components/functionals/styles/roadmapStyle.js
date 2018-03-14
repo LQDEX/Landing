@@ -5,6 +5,7 @@ const {
     textHeader,
     globalBackground
   } = palette,
+
   mShape = 'polygon(20% 7%, 100% 0%, 100% 99%, 65% 95%, 0 99%, 0 5%)',
   shape = 'polygon(29% 18%, 100% 0, 100% 99%, 65% 86%, 0 96%, 0 10%)';
 
@@ -95,5 +96,6 @@ export default {
         fontSize: '38px'
       }
     }
-  }
+  },
+  tRoot: { extend: 'root' }
 };

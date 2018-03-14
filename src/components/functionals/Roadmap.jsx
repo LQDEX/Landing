@@ -19,7 +19,7 @@ class Roadmap extends Component {
     const { classes, roadmap, deviceType } = this.props;
     const style = {
       desktop: classes.root,
-      tablet: classes.root,
+      tablet: classes.tRoot,
       mobile: classes.mRoot
     }[deviceType];
 
@@ -61,7 +61,6 @@ const stateToProps = state => ({
 
 });
 
-const dispatchToProps = dispatch => ({
-});
+const dispatchToProps = dispatch => ({});
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(roadmapStyle)(Roadmap));
