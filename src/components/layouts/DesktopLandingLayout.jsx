@@ -25,7 +25,7 @@ class DesktopLayout extends Component {
         </video>
         <div>
           <HeaderContainer />
-          {app.showPage === 'landing' && <Landing /> }
+          {app.activePage.page === 'landing' && <Landing /> }
         </div>
       </div>
 

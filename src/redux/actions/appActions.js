@@ -2,10 +2,10 @@
 import constants from '../constants';
 
 export default {
-  appShowPage: value => {
+  goToPage: (page,params) => {
     return {
       type: constants.APP_SHOW_PAGE,
-      data: value
+      data:  {page, params }
     };
   },
   platformSet: value => {

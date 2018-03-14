@@ -1,7 +1,10 @@
 import constants from '../constants';
 
 const initialState = {
-  showPage: 'landing',
+  activePage: {
+    page: 'landing',
+    params: ''
+  },
   showSidenav: false,
   platform: {}
 };
@@ -12,7 +15,11 @@ const app = (state = initialState, action) => {
     case constants.APP_SHOW_PAGE: {
       return {
         ...state,
-        showPage: action.data
+        activePage: {
+          page:action.data.page,
+          params:action.data.params || ""
+        },
+        showSidenav: false
       };
     }
     case constants.APP_PLATFORM_SET: {

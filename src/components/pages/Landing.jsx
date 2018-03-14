@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 // Import containers
 import {
-  HeaderContainer,
   WelcomeContainer,
   DetailedInfoContainer,
   RoadmapContainer,

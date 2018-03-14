@@ -48,6 +48,7 @@ export default {
         padding: '5px 0',
         boxSizing: 'content-box',
         cursor: 'pointer',
+        outline: 'none',
         border: 'none',
         borderBottom: `1px solid transparent`,
         background: 'none',

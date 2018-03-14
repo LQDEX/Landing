@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 // Redux actions
 import actions from '../../redux/actions';
@@ -17,6 +16,10 @@ import { mobileLandingLayoutStyle } from './styles';
 const FontAwesome = require('react-fontawesome');
 
 class MobileLandingLayout extends Component {
+
+  goToPage(page, param) {
+    this.props.goToPage(page, param);
+  }
 
   render() {
     const
@@ -40,15 +43,15 @@ class MobileLandingLayout extends Component {
             />
           </button>
           <div className="menuWraper">
-            <Link to="#"><button className="btnMenu">EXCHANGE</button></Link>
-            <Link to="#"><button className="btnMenu">ABOUT US</button></Link>
+            <button className="btnMenu" onClick={() => this.goToPage('exchange')} >EXCHANGE</button>
+            <button className="btnMenu" onClick={() => this.goToPage('about')}>ABOUT US</button>
             <div className="hr"></div>
-            <Link to="#"><span className="privacy">Privacy Policy<br/>Terms & Conditions</span></Link>
+            <span className="privacy" onClick={() => this.goToPage('privacy')}>Privacy Policy<br/>Terms & Conditions</span>
           </div>
         </div>}
         <div>
           <HeaderContainer />
-          {app.showPage === 'landing' && <Landing /> }
+          {app.activePage.page === 'landing' && <Landing /> }
         </div>
       </div>
 
@@ -61,6 +64,9 @@ const
     app: state.app,
     showSidePanel: state.app.showSidenav
   }),
-  dispatchToProps = dispatch => ({ sideNavToggle: () => dispatch(actions.sideNavToggle()) });
+  dispatchToProps = dispatch => ({
+    sideNavToggle: () => dispatch(actions.sideNavToggle()),
+    goToPage: (page, params) => dispatch(actions.goToPage(page, params))
+  });
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(mobileLandingLayoutStyle)(MobileLandingLayout));

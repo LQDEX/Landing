@@ -23,5 +23,3 @@ html *:not(i) {
 * {
   -webkit-overflow-scrolling: touch;
 }
-
-/* Remove body margins */

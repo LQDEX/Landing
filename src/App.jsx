@@ -16,17 +16,24 @@ import { DesktopLandingLayout, MobileLandingLayout } from './components/layouts'
 
 class App extends Component {
   updateDeviceType() {
+
+    /**
+     * Extra small <576px
+     * Small ≥576px
+     * Medium ≥768px
+     * Large ≥992px
+     * Extra large ≥1200px
+     */
     const wWidth = window.innerWidth;
-    if (wWidth < 750) {
+    if (wWidth < 768) {
       this.props.platformSet({ deviceType: 'mobile' });
-      console.log(wWidth);
-      
-return;
+
+      return;
+    } else if (wWidth < 1200) {
+      this.props.platformSet({ deviceType: 'tablet' });
+
+      return;
     }
-    // else if (wWidth<970){
-    //   this.props.platformSet({deviceType:'tablet'});
-    //   return;
-    // }
     this.props.platformSet({ deviceType: 'desktop' });
   }
 
@@ -61,24 +68,18 @@ return;
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, app } = this.props;
+    console.log(app.platform.deviceType);
 
     return (
       <div className={classes.root}>
         <Favicon url={require('./assets/img/favicon.svg')} />
-        <Platform rules={{ DeviceType: 'mobile' }}>
-          {/* Put here the Mobile Layout */}
-          <MobileLandingLayout />
-        </Platform>
-        <Platform rules={{ DeviceType: 'tablet' }}>
-          {/* Put here the Tablet Layout */}
-          <p>Tablet</p>
-          <DesktopLandingLayout />
-        </Platform>
-        <Platform rules={{ DeviceType: undefined }}>
-          {/* Put here the Desktop Layout */}
-          <DesktopLandingLayout />
-        </Platform>
+        {/* Put here the Mobile Layout */}
+        {app.platform.deviceType === 'mobile' && <MobileLandingLayout />}
+        {/* Put here the Tablet Layout*/}
+        {app.platform.deviceType === 'tablet' && <DesktopLandingLayout />}
+        {/* Put here the Desktop Layout*/}
+        {app.platform.deviceType === 'desktop' && <DesktopLandingLayout /> }
       </div>
     );
   }

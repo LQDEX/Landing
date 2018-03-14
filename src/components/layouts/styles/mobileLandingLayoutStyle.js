@@ -63,29 +63,32 @@ export default {
         flexDirection: 'column',
         justifyContent: 'flex-end',
         alignItems: 'flex-start',
-        padding: '5px 0 5px 0px'
-      },
-      '& .btnMenu': {
-        outline: 'none',
-        fontFamily: 'Exo',
-        fontSize: '1em',
-        fontWeight: 'semi-Bold',
-        display: 'inline-block',
-        boxSizing: 'content-box',
-        cursor: 'pointer',
-        border: 'none',
-        background: 'none',
-        color: text,
-        '&:hover': { color: primaryHover }
-      },
-      '& .privacy': {
-        fontFamily: 'Roboto',
-        fontSize: 14
-      },
-      '& .hr': {
-        borderTop: `0.5px solid ${greyBlue}`,
-        margin: '10px 32px',
-        width: '85%'
+        padding: '5px 0 5px 0px',
+        '& .btnMenu': {
+          outline: 'none',
+          fontFamily: 'Exo',
+          fontSize: '1em',
+          fontWeight: 'semi-Bold',
+          display: 'inline-block',
+          boxSizing: 'content-box',
+          cursor: 'pointer',
+          margin: '10px 30px',
+          border: 'none',
+          background: 'none',
+          color: text,
+          '&:hover': { color: primaryHover }
+        },
+        '& .privacy': {
+          fontFamily: 'Roboto',
+          fontSize: 14,
+          color: greyBlue,
+          margin: '10px 30px'
+        },
+        '& .hr': {
+          borderTop: `0.5px solid ${greyBlue}`,
+          margin: '10px 32px',
+          width: '85%'
+        }
       }
     }
   }

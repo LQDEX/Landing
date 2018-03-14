@@ -9,7 +9,8 @@ const {
   } = palette,
 
   dShape = 'polygon(0 100%, 67% 84%, 100% 100%)',
-  mShape = 'polygon(0 100%, 77% 94%, 100% 98%, 100% 100%)';
+  mShape = 'polygon(0 100%, 77% 94%, 100% 98%, 100% 100%)',
+  tShape = 'polygon(0 100%, 90% 90%, 100% 94%, 100% 100%)';
 
 export default {
   root: {
@@ -105,6 +106,13 @@ export default {
         color: globalBackground,
         '&:hover': { background: primaryHover }
       }
+    }
+  },
+  tRoot: {
+    extend: 'root',
+    '& .imgClip': {
+      '-webkit-clip-path': tShape,
+      clipPath: tShape
     }
   }
 };

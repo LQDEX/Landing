@@ -36,6 +36,7 @@ export default {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
+        lineHeight: '2em',
         backgroundColor: globalBackground,
         padding: '0 2% 0% 7%'
       },
@@ -87,7 +88,8 @@ export default {
         backgroundColor: globalBackground,
         width: '100%',
         padding: '0 2% 0 7%',
-        textAlign: 'right'
+        textAlign: 'right',
+        lineHeight: '2em'
       },
       '& .imgBlockBottom': {
         position: 'relative',
@@ -175,6 +177,13 @@ export default {
         extend: 'firstLine',
         fontSize: '38px'
       }
+    }
+  },
+  tRoot: {
+    extend: 'root',
+    '& .infoRow': {
+      extend: 'infoRow',
+      borderTop: `100px solid ${globalBackground}`
     }
   }
 };
