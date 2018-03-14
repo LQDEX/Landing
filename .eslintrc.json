@@ -81,7 +81,7 @@
     "function-paren-newline": "off",
     "generator-star-spacing": "error",
     "getter-return": "error",
-    "global-require": "error",
+    "global-require": "off",
     "guard-for-in": "error",
     "handle-callback-err": "error",
     "id-blacklist": "error",
@@ -275,7 +275,7 @@
     ],
     "sort-imports": "off",
     "sort-keys": "off",
-    "sort-vars": "error",
+    "sort-vars": "off",
     "space-before-blocks": "error",
     "space-before-function-paren": "off",
     "space-in-parens": [

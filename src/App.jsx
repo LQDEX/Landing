@@ -3,80 +3,94 @@ import { connect } from 'react-redux';
 import Platform from 'react-platform-js';
 import Favicon from 'react-favicon';
 
-//Redux actions
+// Redux actions
 import actions from './redux/actions';
 
-//JSS and styles
+// JSS and styles
 import injectSheet from 'react-jss';
-import appStyles from './styles/appStyle';
+import reset from 'reset-jss';
 
-//Import components
-import { DesktopLayout } from './components/layouts';
+// Import components
+import { DesktopLandingLayout, MobileLandingLayout } from './components/layouts';
+
 
 class App extends Component {
-  state = {};
+  updateDeviceType() {
+
+    /**
+     * Extra small <576px
+     * Small ≥576px
+     * Medium ≥768px
+     * Large ≥992px
+     * Extra large ≥1200px
+     */
+    const wWidth = window.innerWidth;
+    if (wWidth < 768) {
+      this.props.platformSet({ deviceType: 'mobile' });
+
+      return;
+    } else if (wWidth < 1200) {
+      this.props.platformSet({ deviceType: 'tablet' });
+
+      return;
+    }
+    this.props.platformSet({ deviceType: 'desktop' });
+  }
+
+
   componentWillMount() {
     this.props.getCryptoData();
   }
 
   componentDidMount() {
-
-    /* let timer = setInterval(() => this.tick(), 5 * 60 * 1000);
-    this.setState({ timer }); */
-    this.props.platformGet({
-      os: Platform.OS || '',
-      osVersion: Platform.OSVersion || '',
-      browser: Platform.Browser || '',
-      browserVersion: Platform.BrowserVersion || '',
-      engine: Platform.Engine || '',
-      cpu: Platform.CPU || '',
-      deviceType: Platform.DeviceType || 'desktop',
-      deviceModel: Platform.DeviceModel || '',
-      deviceVendor: Platform.DeviceVendor || '',
-      ua: Platform.UA || ''
+    // let timer = setInterval(() => this.tick(), 30 * 24 * 60 * 60 * 1000);
+    // this.setState({ timer });
+    window.addEventListener('resize', () => this.updateDeviceType());
+    this.props.platformSet({
+      // os: Platform.OS || '',
+      // osVersion: Platform.OSVersion || '',
+      // browser: Platform.Browser || '',
+      // browserVersion: Platform.BrowserVersion || '',
+      // engine: Platform.Engine || '',
+      // cpu: Platform.CPU || '',
+      deviceType: Platform.DeviceType || 'desktop'
+      // deviceModel: Platform.DeviceModel || '',
+      // deviceVendor: Platform.DeviceVendor || '',
+      // ua: Platform.UA || ''
     });
   }
 
-  /*  tick() {
-     this.props.getCryptoData();
-   } */
+  // tick() {
+  // this.props.getCryptoData();
+  // }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDeviceType.bind(this));
+  }
 
   render() {
-    const { classes } = this.props;
+    const { classes, app } = this.props;
+    console.log(app.platform.deviceType);
 
     return (
       <div className={classes.root}>
         <Favicon url={require('./assets/img/favicon.svg')} />
-        <Platform rules={{ DeviceType: 'mobile' }}>
-          {/* Put here the Mobile Layout */}
-          <p>Mobile</p>
-          <DesktopLayout />
-        </Platform>
-        <Platform rules={{ DeviceType: 'tablet' }}>
-          {/* Put here the Tablet Layout */}
-          <p>Tablet</p>
-          <DesktopLayout />
-        </Platform>
-        <Platform rules={{ DeviceType: undefined }}>
-          <DesktopLayout />
-        </Platform>
+        {/* Put here the Mobile Layout */}
+        {app.platform.deviceType === 'mobile' && <MobileLandingLayout />}
+        {/* Put here the Tablet Layout*/}
+        {app.platform.deviceType === 'tablet' && <DesktopLandingLayout />}
+        {/* Put here the Desktop Layout*/}
+        {app.platform.deviceType === 'desktop' && <DesktopLandingLayout /> }
       </div>
     );
   }
 }
 
-const stateToProps = state => {
-  return {
-    app: state.app
-  };
-};
+const stateToProps = state => ({ app: state.app });
 
-const dispatchToProps = dispatch => {
-  return {
-    getCryptoData: () => dispatch(actions.getCryptoData()),
-    platformGet: platformInfo => dispatch(actions.platformGet(platformInfo)),
-  };
-};
+const dispatchToProps = dispatch => ({
+  getCryptoData: () => dispatch(actions.getCryptoData()),
+  platformSet: platformInfo => dispatch(actions.platformSet(platformInfo))
+});
 
-export default connect(stateToProps, dispatchToProps)(injectSheet(appStyles)(App));
+export default connect(stateToProps, dispatchToProps)(injectSheet(reset)(App));
 

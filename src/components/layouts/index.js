@@ -1,5 +1,9 @@
-import DesktopLayout from './DesktopLayout';
-import MobileLayout from './MobileLayout';
-import TabletLayout from './TabletLayout';
+import DesktopLandingLayout from './DesktopLandingLayout';
+import MobileLandingLayout from './MobileLandingLayout';
+import TabletLandingLayout from './TabletLandingLayout';
 
-export { DesktopLayout, MobileLayout, TabletLayout };
+export {
+  DesktopLandingLayout,
+  MobileLandingLayout,
+  TabletLandingLayout
+};

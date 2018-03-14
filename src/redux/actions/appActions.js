@@ -2,11 +2,23 @@
 import constants from '../constants';
 
 export default {
-  platformGet: value => {
+  goToPage: (page,params) => {
     return {
-      type: constants.APP_PLATFORM_GET,
+      type: constants.APP_SHOW_PAGE,
+      data:  {page, params }
+    };
+  },
+  platformSet: value => {
+    return {
+      type: constants.APP_PLATFORM_SET,
       data: value
     };
   },
+  sideNavToggle:()=>{
+    return{
+    type:constants.APP_SIDENAV_TOGGLE,
+    data:null,
+    };
+  }
 
 };

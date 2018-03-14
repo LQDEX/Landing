@@ -14,8 +14,13 @@ export default {
     justifyContent: 'space-between',
     margin: '0 7% 0 7%',
     alignItems: 'center',
-
     height: 80,
+    '& .menuButton': {
+      outline: 'none',
+      border: 'none',
+      background: 'none',
+      color: primary
+    },
     '& .menuWraper': {
       display: 'flex',
       flexDirection: 'row',
@@ -43,6 +48,7 @@ export default {
         padding: '5px 0',
         boxSizing: 'content-box',
         cursor: 'pointer',
+        outline: 'none',
         border: 'none',
         borderBottom: `1px solid transparent`,
         background: 'none',

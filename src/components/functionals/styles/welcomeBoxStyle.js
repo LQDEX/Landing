@@ -1,39 +1,37 @@
 import palette from './palette';
 
 const {
-    videoBackground,
+    primary,
+    primaryHover,
+    globalBackground,
     textHeader,
     text
   } = palette,
 
-  shape = 'polygon(100% 0, 100% 96%, 67% 84%, 0 100%, 0 0)';
+  dShape = 'polygon(0 100%, 67% 84%, 100% 100%)',
+  mShape = 'polygon(0 100%, 77% 94%, 100% 98%, 100% 100%)',
+  tShape = 'polygon(0 100%, 90% 90%, 100% 94%, 100% 100%)';
 
 export default {
   root: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
-    position: 'relative',
-    top: -80,
-    background: videoBackground,
-    '-webkit-clip-path': shape,
-    clipPath: shape,
-    '& .movingLines': {
-      maxWidth: '100%',
-      filter: 'opacity(80%)'
+    '& .imgClip': {
+      background: globalBackground,
+      width: '100%',
+      '-webkit-clip-path': dShape,
+      clipPath: dShape
     },
-    '&  .overlay': {
+    '& .overlay': {
+      position: 'absolute',
       display: 'flex',
       flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'stretch',
       flexWrap: 'wrap',
-      position: 'absolute',
-      top: '20%',
-      left: '0%',
-      minWidth: '90%',
-      margin: '3%',
+      justifyContent: 'space-evenly',
+      alignItems: 'center',
+      minWidth: '100%',
       '& .imageWrap': {
         display: 'flex',
         flexDirection: 'column',
@@ -52,7 +50,6 @@ export default {
         fontFamily: 'Khand',
         fontSize: '48px',
         fontWeight: 'bold',
-
         color: textHeader
       },
       '& .txtBody': {
@@ -61,6 +58,61 @@ export default {
         fontWeight: 'semibold',
         color: text
       }
+    }
+  },
+  mRoot: {
+    extend: 'root',
+    justifyContent: 'flex-start',
+    '& .imgClip': {
+      '-webkit-clip-path': mShape,
+      clipPath: mShape
+    },
+    '& .overlay': {
+      extend: 'overlay',
+      '& .imageWrap': {
+        extend: 'imageWrap',
+        alignItems: 'center',
+        margin: '0 0 30px 0',
+        '& .macBook': { maxWidth: '80%' }
+      },
+      '& .textArea': {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '80%'
+      },
+      '& .firstLine': {
+        extend: 'firstLine',
+        margin: '30px 0 30px 0',
+        fontSize: '38px'
+      },
+      '& .txtBody': {
+        extend: 'txtBody',
+        margin: '0 0 10px 0',
+        fontSize: '30px'
+      },
+      '& .btnSubscribe': {
+        fontFamily: 'Roboto',
+        fontSize: '1em',
+        fontWeight: 'semi-Bold',
+        display: 'inline-block',
+        margin: 20,
+        padding: '1em 1.25em',
+        boxSizing: 'content-box',
+        cursor: 'pointer',
+        border: 'none',
+        background: primary,
+        color: globalBackground,
+        '&:hover': { background: primaryHover }
+      }
+    }
+  },
+  tRoot: {
+    extend: 'root',
+    '& .imgClip': {
+      '-webkit-clip-path': tShape,
+      clipPath: tShape
     }
   }
 };

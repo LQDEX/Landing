@@ -5,6 +5,7 @@ const {
     textHeader,
     globalBackground
   } = palette,
+  mShape = 'polygon(20% 7%, 100% 0%, 100% 99%, 65% 95%, 0 99%, 0 5%)',
   shape = 'polygon(29% 18%, 100% 0, 100% 99%, 65% 86%, 0 96%, 0 10%)';
 
 export default {
@@ -13,6 +14,8 @@ export default {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    background: globalBackground,
+
     '& .imgClip': {
       width: '100%',
       '-webkit-clip-path': shape,
@@ -25,14 +28,13 @@ export default {
       justifyContent: 'center',
       alignItems: 'stretch',
       minWidth: '100%',
-      overflowX: 'hidden',
+      overflow: 'hidden',
       '& .firstLine': {
         margin: '0 0 40px 0',
         fontFamily: 'Khand',
         fontSize: '48px',
         fontWeight: 'bold',
         textAlign: 'center',
-
         color: textHeader,
         minWidth: '100%'
       },
@@ -76,6 +78,22 @@ export default {
         top: 2
       }
     }
+  },
+  mRoot: {
+    extend: 'root',
+    borderBottom: `50px solid ${globalBackground}`,
+    '& .imgClip': {
+      extend: 'imgClip',
+      maxHeight: 800,
+      '-webkit-clip-path': mShape,
+      clipPath: mShape
+    },
+    '& .overlay': {
+      extend: 'overlay',
+      '& .firstLine': {
+        extend: 'firstLine',
+        fontSize: '38px'
+      }
+    }
   }
-
 };

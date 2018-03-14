@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-//Import Styles
+// Import Styles
 import injectSheet from 'react-jss';
 import { roadmapStyle } from './styles';
 
 class Roadmap extends Component {
 
-  isEven(value) { return value % 2 === 0 };
-  isOdd(value) { return value % 2 !== 0 };
+  isEven(value) {
+    return value % 2 === 0;
+  }
+
+  isOdd(value) {
+    return value % 2 !== 0;
+  }
 
   render() {
-    const { classes, roadmap } = this.props;
+    const { classes, roadmap, deviceType } = this.props;
+    const style = {
+      desktop: classes.root,
+      tablet: classes.root,
+      mobile: classes.mRoot
+    }[deviceType];
+
     return (
-      <div className={classes.root}>
+      <div className={style}>
         <div className="imgClip">
           <img src={require('../../assets/img/mountainsRoad.png')} alt="" />
         </div>
@@ -32,9 +43,9 @@ class Roadmap extends Component {
               </div>
               <div className="roadmapLine arsenal">
                 <div className="right">{this.isEven(i + 1) ? item.desc : ''}</div>
-                {roadmap.length !== i + 1 && (<div className="vLine">
+                {roadmap.length !== i + 1 && <div className="vLine">
                   <img width={12} height={70} src={require('../../assets/img/verticaline.png')} alt="" />
-                </div>)}
+                </div>}
                 <div className="left">{this.isOdd(i + 1) ? item.desc : ''}</div>
               </div>
             </div>)}
@@ -44,15 +55,13 @@ class Roadmap extends Component {
   }
 }
 
-const stateToProps = state => {
-  return {
-    roadmap: state.roadmap.milestones,
-  };
-};
+const stateToProps = state => ({
+  roadmap: state.roadmap.milestones,
+  deviceType: state.app.platform.deviceType
 
-const dispatchToProps = dispatch => {
-  return {
-  };
-};
+});
+
+const dispatchToProps = dispatch => ({
+});
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(roadmapStyle)(Roadmap));

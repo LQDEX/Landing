@@ -2,6 +2,7 @@ import palette from './palette';
 
 const {
     primary,
+    globalBackground,
     textHeader,
     text,
     grey,
@@ -20,6 +21,7 @@ export default {
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
+    background: globalBackground,
     '& .frameLink': {
       outline: 'none',
       '& .frameContainer': {
@@ -188,6 +190,13 @@ export default {
       padding: '0 30px',
       color: text,
       margin: '7px 0 0 0'
+    }
+  },
+  mRoot: {
+    extend: 'root',
+    '& .firstLine': {
+      extend: 'firstLine',
+      fontSize: '38px'
     }
   }
 };
