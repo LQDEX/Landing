@@ -8,7 +8,6 @@ const {
   text,
   globalBackground,
   videoBackground
-  , headerFont 
 } = palette;
 
 export default {

@@ -3,7 +3,7 @@ import palette from './palette';
 const {
   textHeader,
   globalBackground
-  , headerFont 
+  , headerFont
 } = palette;
 
 export default {

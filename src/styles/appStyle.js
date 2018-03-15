@@ -1,5 +1,5 @@
 import palette from './palette';
 
-const { globalBackground, headerFont } = palette;
+const { globalBackground } = palette;
 
 export default { root: { backgroundColor: globalBackground } };
