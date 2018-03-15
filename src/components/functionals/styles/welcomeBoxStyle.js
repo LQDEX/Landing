@@ -5,7 +5,8 @@ const {
     primaryHover,
     globalBackground,
     textHeader,
-    text
+    text,
+    headerFont
   } = palette,
 
   dShape = 'polygon(0 100%, 67% 84%, 100% 100%)',
@@ -47,13 +48,13 @@ export default {
       },
       '& .firstLine': {
         margin: '0 0 51px 0',
-        fontFamily: 'Khand',
+        fontFamily: headerFont,
         fontSize: '48px',
         fontWeight: 'bold',
         color: textHeader
       },
       '& .txtBody': {
-        fontFamily: 'Khand',
+        fontFamily: headerFont,
         fontSize: '40px',
         fontWeight: 'semibold',
         color: text
