@@ -7,7 +7,8 @@ const {
     text,
     grey,
     frameBorder,
-    frameShadow
+    frameShadow,
+    headerFont
   } = palette,
   shape0 = 'polygon(20% 0, 85% 9%, 100% 54%, 66% 100%, 0 61%)',
   shape1 = 'polygon(79% 0, 100% 50%, 60% 100%, 7% 90%, 0 19%)',
@@ -151,7 +152,7 @@ export default {
     },
     '& .firstLine': {
       margin: '0 0 51px 0',
-      fontFamily: 'Khand',
+      fontFamily: headerFont,
       fontSize: '48px',
       fontWeight: 'bold',
       color: textHeader
@@ -173,7 +174,7 @@ export default {
       width: '300px'
     },
     '& .mateName': {
-      fontFamily: 'Khand',
+      fontFamily: headerFont,
       color: primary,
       margin: '0 0 5px 0'
 

@@ -3,6 +3,7 @@ import palette from './palette';
 const {
   textHeader,
   globalBackground
+  , headerFont 
 } = palette;
 
 export default {
@@ -16,7 +17,7 @@ export default {
 
     '& .firstLine': {
       margin: '0 0 80px 0',
-      fontFamily: 'Khand',
+      fontFamily: headerFont,
       fontSize: '48px',
       fontWeight: 'bold',
       textAlign: 'center',

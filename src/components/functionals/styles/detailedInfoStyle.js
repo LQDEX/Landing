@@ -4,7 +4,8 @@ const {
     globalBackground,
     textHeader,
     text,
-    textHighlight
+    textHighlight,
+    headerFont
   } = palette,
 
   // shapeTop = 'polygon(75% 0, 100% 19%, 100% 84%, 1% 99%)';
@@ -65,7 +66,7 @@ export default {
         },
         '& .innerText': {
           margin: '0 0 0 10px',
-          fontFamily: 'Khand',
+          fontFamily: headerFont,
           fontSize: 24,
           color: text
 
@@ -107,7 +108,7 @@ export default {
       },
       '& .firstLine': {
         margin: '0 0 51px 0',
-        fontFamily: 'Khand',
+        fontFamily: headerFont,
         fontSize: '48px',
         fontWeight: 'bold',
 
@@ -174,7 +175,7 @@ export default {
         }
       },
       '& .firstLine': {
-        extend: 'firstLine',
+        extend: headerFont,
         fontSize: '38px'
       }
     }

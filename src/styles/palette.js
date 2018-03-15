@@ -33,7 +33,15 @@ const itemsColors = {
   frameBorder: basicColors.white,
 };
 
+const fontFamily = {
+  headerFont: 'Roboto', //Khand
+  subHeaderFont: 'Khand'
+  
+
+}
+
 export default {
   ...basicColors,
-  ...itemsColors
+  ...itemsColors,
+  ...fontFamily
 };

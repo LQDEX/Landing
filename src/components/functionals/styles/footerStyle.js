@@ -5,7 +5,8 @@ const {
   primaryHover,
   globalBackground,
   grey,
-  textHeader
+  textHeader,
+  headerFont
 } = palette;
 
 export default {
@@ -18,7 +19,7 @@ export default {
     background: globalBackground,
     '& .firstLine': {
       margin: '0 0 30px 0',
-      fontFamily: 'Khand',
+      fontFamily: headerFont,
       fontSize: '48px',
       fontWeight: 'bold',
       textAlign: 'center',

@@ -3,7 +3,8 @@ import palette from './palette';
 // const { videoBackground, textHeader, text } = palette,
 const {
     textHeader,
-    globalBackground
+    globalBackground,
+    headerFont
   } = palette,
 
   mShape = 'polygon(20% 7%, 100% 0%, 100% 99%, 65% 95%, 0 99%, 0 5%)',
@@ -32,7 +33,7 @@ export default {
       overflow: 'hidden',
       '& .firstLine': {
         margin: '0 0 40px 0',
-        fontFamily: 'Khand',
+        fontFamily: headerFont,
         fontSize: '48px',
         fontWeight: 'bold',
         textAlign: 'center',
