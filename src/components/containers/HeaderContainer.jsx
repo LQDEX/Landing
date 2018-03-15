@@ -8,7 +8,7 @@ import Sticky from 'react-sticky-el';
 import { HeaderStats, HeaderNavbar } from '../functionals';
 
 // Import Styles
-//Import Styles
+// Import Styles
 import injectSheet from 'react-jss';
 import { headerContainerStyle } from './styles';
 
@@ -16,10 +16,11 @@ import { headerContainerStyle } from './styles';
 class HeaderContainer extends Component {
   render() {
     const { classes } = this.props;
-    return (
+    
+return (
       <div className={classes.root}>
         <HeaderStats />
-        <Sticky topOffset={-10} hideOnBoundaryHit={false} stickyClassName={'styckyNavbar'} >
+        <Sticky topOffset={-10} hideOnBoundaryHit={true} stickyClassName={'styckyNavbar'} >
           <HeaderNavbar />
         </Sticky >
       </div>

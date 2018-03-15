@@ -12,7 +12,7 @@ import reset from 'reset-jss';
 
 // Import components
 import { DesktopLandingLayout, MobileLandingLayout } from './components/layouts';
-
+const state = { wWidth: 0 };
 
 class App extends Component {
   updateDeviceType() {
@@ -25,6 +25,7 @@ class App extends Component {
      * Extra large ≥1200px
      */
     const wWidth = window.innerWidth;
+    this.setState({ wWidth });
     if (wWidth < 768) {
       this.props.platformSet({ deviceType: 'mobile' });
 

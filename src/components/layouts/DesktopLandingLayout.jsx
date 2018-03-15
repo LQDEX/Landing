@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+
 // Import Components
 import { HeaderContainer } from '../containers';
 import { Landing } from '../pages/';
@@ -25,7 +26,9 @@ class DesktopLayout extends Component {
         </video>
         <div>
           <HeaderContainer />
-          {app.activePage.page === 'landing' && <Landing /> }
+          <div>
+            {app.activePage.page === 'landing' && <Landing /> }
+          </div>
         </div>
       </div>
 
