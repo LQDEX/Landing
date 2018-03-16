@@ -12,7 +12,6 @@ import reset from 'reset-jss';
 
 // Import components
 import { DesktopLandingLayout, MobileLandingLayout } from './components/layouts';
-const state = { wWidth: 0 };
 
 class App extends Component {
   updateDeviceType() {

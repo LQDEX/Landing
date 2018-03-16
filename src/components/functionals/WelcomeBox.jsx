@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// Redux actions
+import actions from '../../redux/actions';
+
 // Import Styles
 import injectSheet from 'react-jss';
 import { welcomeBoxStyle } from './styles';
 
 class WelcomeBox extends Component {
+  goToPage(page, param) {
+    this.props.goToPage(page, param);
+  }
+
   render() {
-    const { classes, deviceType } = this.props;
-    const style = {
-      desktop: classes.root,
-      tablet: classes.tRoot,
-      mobile: classes.mRoot
-    }[deviceType];
+    const
+      { classes, deviceType } = this.props,
+      style = {
+        desktop: classes.root,
+        tablet: classes.tRoot,
+        mobile: classes.mRoot
+      }[deviceType];
+
 
     return (
       <div className={style} >
@@ -34,17 +43,15 @@ class WelcomeBox extends Component {
             <span className="txtBody">TRUSTLESS</span>
             <span className="txtBody">CROSS CHAIN EXCHANGE</span>
           </div>
-          {deviceType === 'mobile' && <button className="btnSubscribe">Sign up for Updates</button>}
+          {deviceType === 'mobile' && <button className="btnSubscribe" onClick={() => this.goToPage('signUp')}>Sign up for Updates</button>}
         </div>
       </div>
     );
   }
 }
 
-const stateToProps = state => ({
-  deviceType: state.app.platform.deviceType
-});
+const stateToProps = state => ({deviceType: state.app.platform.deviceType});
 
-const dispatchToProps = dispatch => ({});
+const dispatchToProps = dispatch => ({ goToPage: (page, params) => dispatch(actions.goToPage(page, params)) });
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(welcomeBoxStyle)(WelcomeBox));

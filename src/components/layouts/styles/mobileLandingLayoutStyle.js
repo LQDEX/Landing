@@ -7,7 +7,9 @@ const {
   grey,
   text,
   globalBackground,
-  videoBackground
+  videoBackground,
+  txtCaptionFont,
+  txtBlueBottonFont
 } = palette;
 
 export default {
@@ -66,7 +68,7 @@ export default {
         padding: '5px 0 5px 0px',
         '& .btnMenu': {
           outline: 'none',
-          fontFamily: 'Exo',
+          fontFamily: txtCaptionFont,
           fontSize: '1em',
           fontWeight: 'semi-Bold',
           display: 'inline-block',
@@ -79,7 +81,7 @@ export default {
           '&:hover': { color: primaryHover }
         },
         '& .privacy': {
-          fontFamily: 'Roboto',
+          fontFamily: txtBlueBottonFont,
           fontSize: 14,
           color: greyBlue,
           margin: '10px 30px'

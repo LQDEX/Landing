@@ -8,7 +8,9 @@ const {
     grey,
     frameBorder,
     frameShadow,
-    headerFont
+    txtHeaderFont,
+    txtBodyFont,
+    txtCaptionFont
   } = palette,
   shape0 = 'polygon(20% 0, 85% 9%, 100% 54%, 66% 100%, 0 61%)',
   shape1 = 'polygon(79% 0, 100% 50%, 60% 100%, 7% 90%, 0 19%)',
@@ -152,7 +154,7 @@ export default {
     },
     '& .firstLine': {
       margin: '0 0 51px 0',
-      fontFamily: headerFont,
+      fontFamily: txtHeaderFont,
       fontSize: '48px',
       fontWeight: 'bold',
       color: textHeader
@@ -174,18 +176,18 @@ export default {
       width: '300px'
     },
     '& .mateName': {
-      fontFamily: headerFont,
+      fontFamily: txtHeaderFont,
       color: primary,
       margin: '0 0 5px 0'
 
     },
     '& .mateTitle': {
-      fontFamily: 'Exo',
+      fontFamily: txtCaptionFont,
       fontWeight: 'semibold',
       color: grey
     },
     '& .mateBrief': {
-      fontFamily: 'Arsenal',
+      fontFamily: txtBodyFont,
       fontWeight: 'semibold',
       textAlign: 'center',
       padding: '0 30px',

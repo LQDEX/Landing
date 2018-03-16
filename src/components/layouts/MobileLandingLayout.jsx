@@ -6,7 +6,8 @@ import actions from '../../redux/actions';
 
 // Import Components
 import { HeaderContainer } from '../containers';
-import { Landing } from '../pages/';
+import { Landing, About, Exchange, SignUp } from '../pages/';
+
 
 // Import Styles
 import injectSheet from 'react-jss';
@@ -51,7 +52,14 @@ class MobileLandingLayout extends Component {
         </div>}
         <div>
           <HeaderContainer />
-          {app.activePage.page === 'landing' && <Landing /> }
+          {
+            {
+              landing: <Landing />,
+              about: <About />,
+              exchange: <Exchange />,
+              signUp: <SignUp />
+            }[app.activePage.page]
+          }
         </div>
       </div>
 

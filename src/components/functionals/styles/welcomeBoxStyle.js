@@ -6,7 +6,9 @@ const {
     globalBackground,
     textHeader,
     text,
-    headerFont
+    txtHeaderFont,
+    txtSubheaderFont,
+    txtBlueBottonFont
   } = palette,
 
   dShape = 'polygon(0 100%, 67% 84%, 100% 100%)',
@@ -48,13 +50,13 @@ export default {
       },
       '& .firstLine': {
         margin: '0 0 51px 0',
-        fontFamily: headerFont,
+        fontFamily: txtHeaderFont,
         fontSize: '48px',
         fontWeight: 'bold',
         color: textHeader
       },
       '& .txtBody': {
-        fontFamily: headerFont,
+        fontFamily: txtSubheaderFont,
         fontSize: '40px',
         fontWeight: 'semibold',
         color: text
@@ -94,7 +96,7 @@ export default {
         fontSize: '30px'
       },
       '& .btnSubscribe': {
-        fontFamily: 'Roboto',
+        fontFamily: txtBlueBottonFont,
         fontSize: '1em',
         fontWeight: 'semi-Bold',
         display: 'inline-block',

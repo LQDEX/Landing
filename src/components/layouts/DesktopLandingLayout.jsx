@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 // Import Components
 import { HeaderContainer } from '../containers';
-import { Landing } from '../pages/';
+import { Landing, About, Exchange, SignUp } from '../pages/';
 
 // Import Styles
 import injectSheet from 'react-jss';
@@ -27,7 +27,14 @@ class DesktopLayout extends Component {
         <div>
           <HeaderContainer />
           <div>
-            {app.activePage.page === 'landing' && <Landing /> }
+            {
+              {
+                landing: <Landing />,
+                about: <About />,
+                exchange: <Exchange />,
+                signUp: <SignUp />
+              }[app.activePage.page]
+            }
           </div>
         </div>
       </div>

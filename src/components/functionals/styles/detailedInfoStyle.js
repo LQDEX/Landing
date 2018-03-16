@@ -5,7 +5,8 @@ const {
     textHeader,
     text,
     textHighlight,
-    headerFont
+    txtHeaderFont,
+    txtBodyFont
   } = palette,
 
   // shapeTop = 'polygon(75% 0, 100% 19%, 100% 84%, 1% 99%)';
@@ -66,7 +67,7 @@ export default {
         },
         '& .innerText': {
           margin: '0 0 0 10px',
-          fontFamily: headerFont,
+          fontFamily: txtHeaderFont,
           fontSize: 24,
           color: text
 
@@ -108,14 +109,14 @@ export default {
       },
       '& .firstLine': {
         margin: '0 0 51px 0',
-        fontFamily: headerFont,
+        fontFamily: txtHeaderFont,
         fontSize: '48px',
         fontWeight: 'bold',
 
         color: textHeader
       },
       '& .txtBody': {
-        fontFamily: 'Arsenal',
+        fontFamily: txtBodyFont,
         fontSize: '20px',
         fontWeight: 'normal',
         color: text
@@ -175,7 +176,7 @@ export default {
         }
       },
       '& .firstLine': {
-        extend: headerFont,
+        extend: txtHeaderFont,
         fontSize: '38px'
       }
     }

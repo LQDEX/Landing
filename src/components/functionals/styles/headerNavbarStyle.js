@@ -4,7 +4,9 @@ const {
   globalBackground,
   primary,
   primaryHover,
-  text
+  text,
+  txtCaptionFont,
+  txtBlueBottonFont
 } = palette;
 
 export default {
@@ -27,7 +29,7 @@ export default {
       justifyContent: 'flex-end',
       alignItems: 'center',
       '& .btnSubscribe': {
-        fontFamily: 'Roboto',
+        fontFamily: txtBlueBottonFont,
         fontSize: '1em',
         fontWeight: 'semi-Bold',
         display: 'inline-block',
@@ -40,7 +42,7 @@ export default {
         '&:hover': { background: primaryHover }
       },
       '& .btnMenu': {
-        fontFamily: 'Exo',
+        fontFamily: txtCaptionFont,
         fontSize: '1em',
         fontWeight: 'semi-Bold',
         display: 'inline-block',

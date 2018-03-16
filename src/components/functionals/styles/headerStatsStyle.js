@@ -4,7 +4,8 @@ const {
   primary,
   white,
   up,
-  down
+  down,
+  txtMarqueeFont
 } = palette;
 
 export default {
@@ -14,7 +15,7 @@ export default {
       // display: 'inline-block',
       height: 25,
       padding: '20px 75px 10px 75px',
-      fontFamily: 'Roboto',
+      fontFamily: txtMarqueeFont,
       fontSize: '16px',
       '& .circulatingSupply': { color: primary }
     },

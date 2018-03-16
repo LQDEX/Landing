@@ -25,7 +25,7 @@ class HeaderNavbar extends Component {
         {deviceType !== 'mobile' && <div className="menuWraper">
           <button className="btnMenu" onClick={() => this.goToPage('exchange', 'lola')}>Exchange</button>
           <button className="btnMenu" onClick={() => this.goToPage('about')}>About US</button>
-          <button className="btnSubscribe" onClick={() => this.goToPage('register')}>Sign up for Updates</button>
+          <button className="btnSubscribe" onClick={() => this.goToPage('signUp')}>Sign up for Updates</button>
         </div>}
         {deviceType === 'mobile' &&
           <button className="menuButton" onClick={() => this.props.sideNavToggle()}>

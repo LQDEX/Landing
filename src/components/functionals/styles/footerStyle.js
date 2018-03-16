@@ -6,7 +6,8 @@ const {
   globalBackground,
   grey,
   textHeader,
-  headerFont
+  txtHeaderFont,
+  txtBlueBottonFont
 } = palette;
 
 export default {
@@ -19,7 +20,7 @@ export default {
     background: globalBackground,
     '& .firstLine': {
       margin: '0 0 30px 0',
-      fontFamily: headerFont,
+      fontFamily: txtHeaderFont,
       fontSize: '48px',
       fontWeight: 'bold',
       textAlign: 'center',
@@ -27,7 +28,7 @@ export default {
       minWidth: '100%'
     },
     '& .btnSubscribe': {
-      fontFamily: 'Roboto',
+      fontFamily: txtBlueBottonFont,
       fontSize: '1em',
       fontWeight: 'semi-Bold',
       display: 'inline-block',
@@ -41,7 +42,7 @@ export default {
       '&:hover': { background: primaryHover }
     },
     '& .copyRights': {
-      fontFamily: 'Roboto',
+      fontFamily: txtBlueBottonFont,
       fontSize: '0.9em',
       fontWeight: 'semi-Bold',
       display: 'inline-block',
