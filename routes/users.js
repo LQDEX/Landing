@@ -9,8 +9,8 @@ router.get('/', function(req, res, next) {
   //   res.send(JSON.stringify(results));
   // });
   res.json([
-    {id:1, username:'paco'},
-    {id:2, username:'maria'}
+    // {id:1, username:'paco'},
+    // {id:2, username:'maria'}
   ]);
 });
 
