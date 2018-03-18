@@ -14,6 +14,8 @@ import reset from 'reset-jss';
 import { DesktopLandingLayout, MobileLandingLayout } from './components/layouts';
 
 class App extends Component {
+  state = {users:[]}
+
   updateDeviceType() {
 
     /**
@@ -58,6 +60,10 @@ class App extends Component {
       // deviceVendor: Platform.DeviceVendor || '',
       // ua: Platform.UA || ''
     });
+    fetch('/users')
+      .then(res => res.json())
+      .then(users => this.setState({ users }));
+  
   }
 
   // tick() {
@@ -73,6 +79,14 @@ class App extends Component {
 
     return (
       <div className={classes.root}>
+      <div>
+        <h1>Users</h1>
+        <ul>
+        {this.state.users.map(user =>
+          <li key={user.id}>{user.username}</li>
+        )}
+        </ul>
+      </div>
         <Favicon url={require('./assets/img/favicon.svg')} />
         {/* Put here the Mobile Layout */}
         {app.platform.deviceType === 'mobile' && <MobileLandingLayout />}
