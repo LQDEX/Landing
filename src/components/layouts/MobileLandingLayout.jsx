@@ -22,6 +22,11 @@ class MobileLandingLayout extends Component {
     this.props.goToPage(page, param);
   }
 
+  scrollTo(section) {
+    this.props.goToPage('landing');
+    window.location.href = section;
+  }
+
   render() {
     const
       { classes, app, showSidePanel } = this.props,
@@ -44,8 +49,9 @@ class MobileLandingLayout extends Component {
             />
           </button>
           <div className="menuWraper">
-            <button className="btnMenu" onClick={() => this.goToPage('exchange')} >EXCHANGE</button>
-            <button className="btnMenu" onClick={() => this.goToPage('about')}>ABOUT US</button>
+            <button className="btnMenu" onClick={() => this.scrollTo('#Roadmap')} >EXCHANGE</button>
+            <button className="btnMenu" onClick={() => this.scrollTo('#Team')}>ABOUT</button>
+            <button className="btnMenu" onClick={() => this.scrollTo('#Footer')}>CONTACT</button>
             <div className="hr"></div>
             <span className="privacy" onClick={() => this.goToPage('privacy')}>Privacy Policy<br/>Terms & Conditions</span>
           </div>

@@ -25,7 +25,7 @@ class HeaderNavbar extends Component {
 
     return (
       <div className={classes.root}>
-        <img height={'80%'} src={require('../../assets/img/logoLiquidx.png')} alt="Logo" />
+        <img height={'80%'} src={require('../../assets/img/logoLiquidx.png')} alt="Logo" onClick={() => this.scrollTo('/')}/>
         {deviceType !== 'mobile' && <div className="menuWraper">
           <button className="btnMenu" onClick={() => this.scrollTo('#Roadmap')}>Exchange</button>
           <button className="btnMenu" onClick={() => this.scrollTo('#Team')}>About</button>
