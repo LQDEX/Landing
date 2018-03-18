@@ -6,7 +6,7 @@ import actions from '../../redux/actions';
 
 // Import Components
 import { HeaderContainer } from '../containers';
-import { Landing, About, Exchange, SignUp } from '../pages/';
+import { Landing, SignUp } from '../pages/';
 
 
 // Import Styles
@@ -55,8 +55,6 @@ class MobileLandingLayout extends Component {
           {
             {
               landing: <Landing />,
-              about: <About />,
-              exchange: <Exchange />,
               signUp: <SignUp />
             }[app.activePage.page]
           }

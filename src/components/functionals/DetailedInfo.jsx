@@ -8,12 +8,12 @@ import { detailedInfoStyle } from './styles';
 
 class DetailedInfo extends Component {
   render() {
-    const { classes, deviceType } = this.props;
-    const style = {
-      desktop: classes.root,
-      tablet: classes.tRoot,
-      mobile: classes.mRoot
-    }[deviceType];
+    const { classes, deviceType } = this.props,
+      style = {
+        desktop: classes.root,
+        tablet: classes.tRoot,
+        mobile: classes.mRoot
+      }[deviceType];
 
     return (
       <div className={style}>
@@ -28,20 +28,8 @@ class DetailedInfo extends Component {
             </span>
           </div>
           <div className="imgBlockTop">
-            {deviceType !== 'mobile' && <img src={require('../../assets/img/flyingCoins.gif')} alt="risksAnim" className="traslucent80" />}
-            {deviceType === 'mobile' && <img height="350px" src={require('../../assets/img/flyingCoins.gif')} alt="risksAnim" className="traslucent80" />}
-            <div className="textRiskFreeWrap ">
-              <img src={require('../../assets/img/bigDot.png')} alt="risksAnim" />
-              <span className="innerText">
-                Risk Free
-              </span>
-            </div>
-            <div className="textSecureWrap ">
-              <img src={require('../../assets/img/bigDot.png')} alt="secure" />
-              <span className="innerText">
-                Secure
-              </span>
-            </div>
+            {deviceType !== 'mobile' && <img src={require('../../assets/img/flyingCoins.gif')} alt="risksAnim"/>}
+            {deviceType === 'mobile' && <img height="350px" src={require('../../assets/img/flyingCoins.gif')} alt="risksAnim" />}
             <div className="topWindow"></div>
           </div>
         </div>
@@ -57,7 +45,7 @@ class DetailedInfo extends Component {
             </span>
           </div>}
           <div className="imgBlockBottom">
-            <img src={require('../../assets/img/flyingWallets.gif')} alt="walletsAnim" className="traslucent80" />
+            <img src={require('../../assets/img/flyingWallets.gif')} alt="walletsAnim" />
             <div className="bottomWindow"></div>
           </div>
           {deviceType !== 'mobile' && <div className="textBlockRight">
@@ -76,8 +64,7 @@ class DetailedInfo extends Component {
   }
 }
 
-const stateToProps = state => ({
-  deviceType: state.app.platform.deviceType });
+const stateToProps = state => ({ deviceType: state.app.platform.deviceType });
 
 const dispatchToProps = dispatch => ({});
 

@@ -9,8 +9,6 @@ const {
     txtBodyFont
   } = palette,
 
-  // shapeTop = 'polygon(75% 0, 100% 19%, 100% 84%, 1% 99%)';
-  // shapeBottom = 'polygon(75% 0, 100% 48%, 50% 99%, 0 52%, 0 13%)';
   dShapeBottom = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0 52%, 50% 99%, 100% 48%, 75% 0, 0 13%)',
   dShapeTop = 'polygon(0% 0%, 100% 0%, 100% 19%, 75% 0%, 0% 100%, 100% 82%, 100% 100%, 0% 100%)',
   mShapeBottom = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0 40%, 50% 99%, 100% 60%, 100% 15%, 90% 0, 0 13%)',
@@ -24,6 +22,8 @@ export default {
     alignItems: 'stretch',
     position: 'relative',
     minWidth: '100%',
+    borderTop: `100px solid ${globalBackground}`,
+    borderBottom: `100px solid ${globalBackground}`,
     '& .infoRow': {
       display: 'flex',
       flexDirection: 'row',
@@ -46,32 +46,30 @@ export default {
         position: 'relative',
         maxHeight: 535,
         display: 'flex',
-        '& .textRiskFreeWrap': {
-          position: 'absolute',
-          top: '39%',
-          left: '53%',
-          display: 'flex',
-          felxDirection: 'row',
-          alignItems: 'center',
-          opacity: 1
-        },
-        '& .textSecureWrap': {
-          position: 'absolute',
-          top: '54%',
-          left: '77%',
-          display: 'flex',
-          felxDirection: 'row',
-          alignItems: 'center',
-          opacity: 1
-
-        },
-        '& .innerText': {
-          margin: '0 0 0 10px',
-          fontFamily: txtHeaderFont,
-          fontSize: 24,
-          color: text
-
-        },
+        // '& .textRiskFreeWrap': {
+        //   position: 'absolute',
+        //   top: '39%',
+        //   left: '53%',
+        //   display: 'flex',
+        //   felxDirection: 'row',
+        //   alignItems: 'center',
+        //   opacity: 1
+        // },
+        // '& .textSecureWrap': {
+        //   position: 'absolute',
+        //   top: '54%',
+        //   left: '77%',
+        //   display: 'flex',
+        //   felxDirection: 'row',
+        //   alignItems: 'center',
+        //   opacity: 1
+        // },
+        // '& .innerText': {
+        //   margin: '0 0 0 10px',
+        //   fontFamily: txtHeaderFont,
+        //   fontSize: 24,
+        //   color: text
+        // },
         '& .topWindow': {
           position: 'absolute',
           top: 0,
@@ -154,17 +152,17 @@ export default {
           extend: 'topWindow',
           '-webkit-clip-path': mShapeTop,
           clipPath: mShapeTop
-        },
-        '& .textRiskFreeWrap': {
-          extend: 'textRiskFreeWrap',
-          top: '25%',
-          left: '60%'
-        },
-        '& .textSecureWrap': {
-          extend: 'textSecureWrap',
-          top: '54%',
-          left: '43%'
         }
+        // '& .textRiskFreeWrap': {
+        //   extend: 'textRiskFreeWrap',
+        //   top: '25%',
+        //   left: '60%'
+        // },
+        // '& .textSecureWrap': {
+        //   extend: 'textSecureWrap',
+        //   top: '54%',
+        //   left: '43%'
+        // }
       },
       '& .imgBlockBottom': {
         extend: 'imgBlockBottom',

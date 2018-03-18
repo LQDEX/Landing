@@ -34,10 +34,10 @@ const itemsColors = {
 };
 
 const txtFontFamily = {
-  txtHeaderFont: 'Roboto', //Khand
-  txtSubheaderFont: 'Roboto', //Khand
-  txtBodyFont: 'Roboto', //Arsenal
-  txtCaptionFont: 'Roboto', // Exo
+  txtHeaderFont: 'Khand', //Khand
+  txtSubheaderFont: 'Khand', //Khand
+  txtBodyFont: 'Arsenal', //Arsenal
+  txtCaptionFont: 'Exo', // Exo
   txtBlueBottonFont: 'Roboto', // Roboto
   txtMarqueeFont: 'Roboto' // Roboto
 
