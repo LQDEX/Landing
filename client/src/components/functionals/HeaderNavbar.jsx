@@ -21,7 +21,7 @@ class HeaderNavbar extends Component {
   }
 
   render() {
-    const { classes, deviceType } = this.props;
+    const { classes, deviceType, activePage } = this.props;
 
     return (
       <div className={classes.root}>
@@ -30,7 +30,9 @@ class HeaderNavbar extends Component {
           <button className="btnMenu" onClick={() => this.scrollTo('#Roadmap')}>Exchange</button>
           <button className="btnMenu" onClick={() => this.scrollTo('#Team')}>About</button>
           <button className="btnMenu" onClick={() => this.scrollTo('#Footer')}>Contact</button>
-          <button className="btnSubscribe" onClick={() => this.goToPage('signUp')}>Sign up for Updates</button>
+          {activePage.page !== 'signUp' &&
+            <button className="btnSubscribe" onClick={() => this.goToPage('signUp')}>Sign up for Updates</button>
+          }
         </div>}
         {deviceType === 'mobile' &&
           <button className="menuButton" onClick={() => this.props.sideNavToggle()}>
@@ -46,7 +48,10 @@ class HeaderNavbar extends Component {
   }
 }
 
-const stateToProps = state => ({ deviceType: state.app.platform.deviceType });
+const stateToProps = state => ({
+  activePage: state.app.activePage,
+  deviceType: state.app.platform.deviceType
+});
 
 const dispatchToProps = dispatch => ({
   sideNavToggle: () => dispatch(actions.sideNavToggle()),

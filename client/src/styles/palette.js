@@ -39,7 +39,8 @@ const txtFontFamily = {
   txtBodyFont: 'Arsenal', //Arsenal
   txtCaptionFont: 'Exo', // Exo
   txtBlueBottonFont: 'Roboto', // Roboto
-  txtMarqueeFont: 'Roboto' // Roboto
+  txtMarqueeFont: 'Roboto', // Roboto
+  txtInputs: 'Roboto' // Roboto
 
 
   
