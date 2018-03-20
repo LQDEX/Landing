@@ -6,7 +6,27 @@ const initialState = {
     params: ''
   },
   showSidenav: false,
-  platform: {}
+  platform: {},
+  navBar: {
+    active: '',
+    options: [
+      {
+        name: 'exchange',
+        caption: 'EXCHANGE',
+        pointTo: '#Roadmap'
+      },
+      {
+        name: 'aboutUs',
+        caption: 'ABOUT US',
+        pointTo: '#Team'
+      },
+      {
+        name: 'contact',
+        caption: 'CONTACT',
+        pointTo: '#Footer'
+      }
+    ]
+  }
 };
 
 /* eslint-disable */

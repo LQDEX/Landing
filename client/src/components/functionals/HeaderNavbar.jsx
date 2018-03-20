@@ -21,15 +21,21 @@ class HeaderNavbar extends Component {
   }
 
   render() {
-    const { classes, deviceType, activePage } = this.props;
+    const { classes, deviceType, activePage, navBar } = this.props;
 
     return (
       <div className={classes.root}>
         <img height={'80%'} src={require('../../assets/img/logoLiquidx.png')} alt="Logo" onClick={() => this.scrollTo('/')}/>
         {deviceType !== 'mobile' && <div className="menuWraper">
-          <button className="btnMenu" onClick={() => this.scrollTo('#Roadmap')}>Exchange</button>
-          <button className="btnMenu" onClick={() => this.scrollTo('#Team')}>About</button>
-          <button className="btnMenu" onClick={() => this.scrollTo('#Footer')}>Contact</button>
+          {navBar.options.map(option =>
+            <button
+              key={option.name}
+              className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' :''}`}
+              onClick={() => this.scrollTo(option.pointTo)}
+            >
+              {option.caption}
+            </button>
+          )}
           {activePage.page !== 'signUp' &&
             <button className="btnSubscribe" onClick={() => this.goToPage('signUp')}>Sign up for Updates</button>
           }
@@ -50,7 +56,8 @@ class HeaderNavbar extends Component {
 
 const stateToProps = state => ({
   activePage: state.app.activePage,
-  deviceType: state.app.platform.deviceType
+  deviceType: state.app.platform.deviceType,
+  navBar: state.app.navBar
 });
 
 const dispatchToProps = dispatch => ({

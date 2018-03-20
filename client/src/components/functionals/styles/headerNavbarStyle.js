@@ -5,6 +5,7 @@ const {
   primary,
   primaryHover,
   text,
+  textNavBar,
   txtCaptionFont,
   txtBlueBottonFont
 } = palette;
@@ -30,8 +31,8 @@ export default {
       alignItems: 'center',
       '& .btnSubscribe': {
         fontFamily: txtBlueBottonFont,
-        fontSize: '1em',
-        fontWeight: 'semi-Bold',
+        fontSize: '16px',
+        fontWeight: '500',
         display: 'inline-block',
         padding: '1em 1.25em',
         boxSizing: 'content-box',
@@ -43,8 +44,8 @@ export default {
       },
       '& .btnMenu': {
         fontFamily: txtCaptionFont,
-        fontSize: '1em',
-        fontWeight: 'semi-Bold',
+        fontSize: '15px',
+        fontWeight: 'normal',
         display: 'inline-block',
         margin: '0 45px 0 0',
         padding: '5px 0',
@@ -54,8 +55,12 @@ export default {
         border: 'none',
         borderBottom: `1px solid transparent`,
         background: 'none',
-        color: text,
-        '&:hover': { borderBottom: `1px solid ${text}` }
+        color: textNavBar,
+        '&:hover': { borderBottom: `1px solid ${textNavBar}` }
+      },
+      '& .btnMenuActive': {
+        extend: 'btnMenu',
+        borderBottom: `1px solid ${textNavBar}`
       }
     }
 
