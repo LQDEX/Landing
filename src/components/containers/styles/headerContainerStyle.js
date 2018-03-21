@@ -1,7 +1,7 @@
 import palette from './palette';
 
 const {
-  grey,
+  shadowSoft,
   globalBackground
 } = palette;
 
@@ -12,7 +12,7 @@ export default {
     '& .styckyNavbar': {
       background: globalBackground,
       overflowX: 'hidden',
-      boxShadow: `0px 2px 20px 0px ${grey}`,
+      boxShadow: `0px 2px 10px 0px ${shadowSoft}`,
       zIndex: 1000
     }
   }

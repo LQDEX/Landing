@@ -27,14 +27,14 @@ export default {
     '& .infoRow': {
       display: 'flex',
       flexDirection: 'row',
-      justifyContent: 'flex-start',
+      justifyContent: 'space-between',
       alignItems: 'stretch',
       position: 'relative',
       minWidth: '100%',
-      maxHeight: 535,
       overflow: 'hidden',
 
       '& .textBlockLeft': {
+        flex: '2 0 auto',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -43,33 +43,9 @@ export default {
         padding: '0 2% 0% 7%'
       },
       '& .imgBlockTop': {
+        felx: '1 0 auto',
         position: 'relative',
-        maxHeight: 535,
         display: 'flex',
-        // '& .textRiskFreeWrap': {
-        //   position: 'absolute',
-        //   top: '39%',
-        //   left: '53%',
-        //   display: 'flex',
-        //   felxDirection: 'row',
-        //   alignItems: 'center',
-        //   opacity: 1
-        // },
-        // '& .textSecureWrap': {
-        //   position: 'absolute',
-        //   top: '54%',
-        //   left: '77%',
-        //   display: 'flex',
-        //   felxDirection: 'row',
-        //   alignItems: 'center',
-        //   opacity: 1
-        // },
-        // '& .innerText': {
-        //   margin: '0 0 0 10px',
-        //   fontFamily: txtHeaderFont,
-        //   fontSize: 24,
-        //   color: text
-        // },
         '& .topWindow': {
           position: 'absolute',
           top: 0,
@@ -117,6 +93,7 @@ export default {
         fontFamily: txtBodyFont,
         fontSize: '20px',
         fontWeight: 'normal',
+        maxWidth: '660px',
         color: text
       },
       '& .txtHighlight': {

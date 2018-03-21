@@ -20,7 +20,7 @@ const basicColors = {
   greyDark: '#373B42',
   greyText:'#4D5055',
   grey: '#79869C',
-  frameShadow: 'rgba(0,0,0,0.25)',
+  shadowSoft: 'rgba(0,0,0,0.25)',
 
 
 };

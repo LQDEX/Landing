@@ -7,7 +7,7 @@ const {
     text,
     grey,
     frameBorder,
-    frameShadow,
+    shadowSoft,
     txtHeaderFont,
     txtBodyFont,
     txtCaptionFont
@@ -29,7 +29,7 @@ export default {
       outline: 'none',
       '& .frameContainer': {
         transform: 'scale(0.8)',
-        filter: `drop-shadow(0px 0px 5px ${frameShadow})`,
+        filter: `drop-shadow(0px 0px 5px ${shadowSoft})`,
         '& .frameOutside0': {
           position: 'static',
           background: frameBorder,

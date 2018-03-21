@@ -59,6 +59,7 @@ export default {
         fontFamily: txtSubheaderFont,
         fontSize: '40px',
         fontWeight: 'semibold',
+        margin: '0 0 47px 0',
         color: text
       }
     }

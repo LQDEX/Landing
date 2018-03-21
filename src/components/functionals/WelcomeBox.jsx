@@ -38,7 +38,7 @@ class WelcomeBox extends Component {
             <img className="macBook" src={require('../../assets/img/macbookScreen.png')} alt="" />
           </div>
           <div className="textArea ">
-            {deviceType !== 'mobile' && <span className="firstLine">Title of the Exchange</span>}
+            {deviceType !== 'mobile' && <span className="firstLine">LQDEX</span>}
             <span className="txtBody">DECENTRALIZED</span>
             <span className="txtBody">TRUSTLESS</span>
             <span className="txtBody">CROSS CHAIN EXCHANGE</span>
@@ -50,7 +50,7 @@ class WelcomeBox extends Component {
   }
 }
 
-const stateToProps = state => ({deviceType: state.app.platform.deviceType});
+const stateToProps = state => ({ deviceType: state.app.platform.deviceType });
 
 const dispatchToProps = dispatch => ({ goToPage: (page, params) => dispatch(actions.goToPage(page, params)) });
 
