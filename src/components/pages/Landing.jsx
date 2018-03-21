@@ -26,6 +26,13 @@ class Landing extends Component {
 
   }
 
+  onEnterViewport() {
+    alert('You are IN');
+  }
+
+  onExitViewport() {
+    alert('You are OUT');
+  }
 
   render() {
     return (

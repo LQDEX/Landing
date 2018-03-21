@@ -3,9 +3,10 @@ import palette from './palette';
 const {
   primary,
   primaryHover,
-  greyBlue,
+  greyLine,
+  greyBlueLight,
   grey,
-  text,
+  textNavBar,
   globalBackground,
   videoBackground,
   txtCaptionFont,
@@ -69,25 +70,30 @@ export default {
         '& .btnMenu': {
           outline: 'none',
           fontFamily: txtCaptionFont,
-          fontSize: '1em',
-          fontWeight: 'semi-Bold',
+          fontSize: '14px',
+          fontWeight: '400',
           display: 'inline-block',
           boxSizing: 'content-box',
           cursor: 'pointer',
           margin: '10px 30px',
           border: 'none',
           background: 'none',
-          color: text,
+          color: textNavBar,
           '&:hover': { color: primaryHover }
+        },
+        '& .btnMenuActive': {
+          extend: 'btnMenu',
+          borderBottom: `1px solid ${textNavBar}`
         },
         '& .privacy': {
           fontFamily: txtBlueBottonFont,
-          fontSize: 14,
-          color: greyBlue,
+          fontSize: '14px',
+          lineHeight: '36px',
+          color: greyBlueLight,
           margin: '10px 30px'
         },
         '& .hr': {
-          borderTop: `0.5px solid ${greyBlue}`,
+          borderTop: `0.5px solid ${greyLine}`,
           margin: '10px 32px',
           width: '85%'
         }

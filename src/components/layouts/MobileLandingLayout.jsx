@@ -29,7 +29,7 @@ class MobileLandingLayout extends Component {
 
   render() {
     const
-      { classes, app, showSidePanel } = this.props,
+      { classes, app, showSidePanel, navBar } = this.props,
       style = classes.root;
     // alert(showSidePanel);
 
@@ -49,9 +49,15 @@ class MobileLandingLayout extends Component {
             />
           </button>
           <div className="menuWraper">
-            <button className="btnMenu" onClick={() => this.scrollTo('#Roadmap')} >EXCHANGE</button>
-            <button className="btnMenu" onClick={() => this.scrollTo('#Team')}>ABOUT</button>
-            <button className="btnMenu" onClick={() => this.scrollTo('#Footer')}>CONTACT</button>
+            {navBar.options.map(option =>
+              <button
+                key={option.name}
+                className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`}
+                onClick={() => this.scrollTo(option.pointTo)}
+              >
+                {option.caption}
+              </button>
+            )}
             <div className="hr"></div>
             <span className="privacy" onClick={() => this.goToPage('privacy')}>Privacy Policy<br/>Terms & Conditions</span>
           </div>
@@ -74,7 +80,8 @@ class MobileLandingLayout extends Component {
 const
   stateToProps = state => ({
     app: state.app,
-    showSidePanel: state.app.showSidenav
+    showSidePanel: state.app.showSidenav,
+    navBar: state.app.navBar
   }),
   dispatchToProps = dispatch => ({
     sideNavToggle: () => dispatch(actions.sideNavToggle()),

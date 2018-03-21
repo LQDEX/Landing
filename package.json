@@ -42,6 +42,7 @@
     "lint:log": "eslint . > eslint.log",
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
   },
+  "proxy": "http://localhost:5000",
   "pre-commit": [
     "precommit-msg",
     "lint"
