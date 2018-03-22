@@ -39,7 +39,6 @@ class DetailedInfo extends Component {
 
             <span className="txtBody">
               {'LiquidX does not take custody of your proxy tokens or external blockchain tokens.'}
-              <br />
               {' Instead,'} <span className="txtHighlight">{`we provide you with your own LiquidX wallet`}</span>
               {` to safely and securely hold any tokens involved in the exchange.`}
             </span>
@@ -50,10 +49,8 @@ class DetailedInfo extends Component {
           </div>
           {deviceType !== 'mobile' && <div className="textBlockRight">
             <p className="firstLine">Transparency</p>
-
             <span className="txtBody">
               {'LiquidX does not take custody of your proxy tokens or external blockchain tokens.'}
-              <br />
               {' Instead,'} <span className="txtHighlight">{`we provide you with your own LiquidX wallet`}</span>
               {` to safely and securely hold any tokens involved in the exchange.`}
             </span>

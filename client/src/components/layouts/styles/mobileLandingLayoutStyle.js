@@ -6,7 +6,6 @@ const {
   greyLine,
   greyBlueLight,
   grey,
-  text,
   textNavBar,
   globalBackground,
   videoBackground,

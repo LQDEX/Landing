@@ -9,7 +9,7 @@ const {
     txtBodyFont
   } = palette,
 
-  dShapeBottom = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0 52%, 50% 99%, 100% 48%, 75% 0, 0 13%)',
+  dShapeBottom = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0 40%, 40% 99%, 90% 50%, 75% 0, 0 13%)',
   dShapeTop = 'polygon(0% 0%, 100% 0%, 100% 19%, 75% 0%, 0% 100%, 100% 82%, 100% 100%, 0% 100%)',
   mShapeBottom = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0 40%, 50% 99%, 100% 60%, 100% 15%, 90% 0, 0 13%)',
   mShapeTop = 'polygon(0% 0%, 100% 0%, 100% 10%, 65% 0%, 0% 65%, 0% 100% , 100% 90%, 100% 100%, 0% 100%)';
@@ -27,14 +27,14 @@ export default {
     '& .infoRow': {
       display: 'flex',
       flexDirection: 'row',
-      justifyContent: 'flex-start',
+      justifyContent: 'space-between',
       alignItems: 'stretch',
       position: 'relative',
       minWidth: '100%',
-      maxHeight: 535,
       overflow: 'hidden',
 
       '& .textBlockLeft': {
+        flex: '2 0 auto',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -43,33 +43,9 @@ export default {
         padding: '0 2% 0% 7%'
       },
       '& .imgBlockTop': {
+        // flex: '1 0 auto',
         position: 'relative',
-        maxHeight: 535,
         display: 'flex',
-        // '& .textRiskFreeWrap': {
-        //   position: 'absolute',
-        //   top: '39%',
-        //   left: '53%',
-        //   display: 'flex',
-        //   felxDirection: 'row',
-        //   alignItems: 'center',
-        //   opacity: 1
-        // },
-        // '& .textSecureWrap': {
-        //   position: 'absolute',
-        //   top: '54%',
-        //   left: '77%',
-        //   display: 'flex',
-        //   felxDirection: 'row',
-        //   alignItems: 'center',
-        //   opacity: 1
-        // },
-        // '& .innerText': {
-        //   margin: '0 0 0 10px',
-        //   fontFamily: txtHeaderFont,
-        //   fontSize: 24,
-        //   color: text
-        // },
         '& .topWindow': {
           position: 'absolute',
           top: 0,
@@ -85,15 +61,16 @@ export default {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
+        alignItems: 'flex-end',
         backgroundColor: globalBackground,
         width: '100%',
-        padding: '0 2% 0 7%',
+        padding: '0 5% 0 7%',
         textAlign: 'right',
         lineHeight: '2em'
       },
       '& .imgBlockBottom': {
         position: 'relative',
-        maxHeight: 543,
+        // maxHeight: 543,
         '& .bottomWindow': {
           position: 'absolute',
           top: 0,
@@ -117,6 +94,7 @@ export default {
         fontFamily: txtBodyFont,
         fontSize: '20px',
         fontWeight: 'normal',
+        maxWidth: '660px',
         color: text
       },
       '& .txtHighlight': {

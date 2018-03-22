@@ -30,7 +30,7 @@ class HeaderNavbar extends Component {
           {navBar.options.map(option =>
             <button
               key={option.name}
-              className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' :''}`}
+              className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`}
               onClick={() => this.scrollTo(option.pointTo)}
             >
               {option.caption}
@@ -42,11 +42,8 @@ class HeaderNavbar extends Component {
         </div>}
         {deviceType === 'mobile' &&
           <button className="menuButton" onClick={() => this.props.sideNavToggle()}>
-            <FontAwesome
-              name="bars"
-              size="3x"
-              spin={false}
-            />
+            <i class="fal fa-bars fa-3x"></i>
+
           </button>
         }
       </div>

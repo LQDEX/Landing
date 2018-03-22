@@ -42,11 +42,7 @@ class MobileLandingLayout extends Component {
 
         {showSidePanel && <div id="mySidenav" className="sideNav">
           <button className="menuButton" onClick={() => this.props.sideNavToggle()}>
-            <FontAwesome
-              name="bars"
-              size="3x"
-              spin={false}
-            />
+            <i class="fa fa-bars fa-3x"></i>
           </button>
           <div className="menuWraper">
             {navBar.options.map(option =>

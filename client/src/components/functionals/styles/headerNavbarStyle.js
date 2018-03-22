@@ -4,7 +4,6 @@ const {
   globalBackground,
   primary,
   primaryHover,
-  text,
   textNavBar,
   txtCaptionFont,
   txtBlueBottonFont
