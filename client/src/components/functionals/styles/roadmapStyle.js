@@ -34,7 +34,7 @@ export default {
       minWidth: '100%',
       overflow: 'hidden',
       '& .firstLine': {
-        margin: '0 0 40px 0',
+        margin: '0 0 80px 0',
         fontFamily: txtHeaderFont,
         fontSize: '48px',
         fontWeight: 'bold',
@@ -67,6 +67,7 @@ export default {
       },
       '& .exo': {
         fontFamily: txtCaptionFont,
+        fontWeight: '500',
         fontSize: 16,
         color: globalBackground
 
@@ -74,7 +75,7 @@ export default {
       '& .arsenal': {
         fontFamily: txtBodyFont,
         fontWeight: 'bold',
-        fontSize: 20,
+        fontSize: 26,
         color: globalBackground
       },
       '& .vLine': {
