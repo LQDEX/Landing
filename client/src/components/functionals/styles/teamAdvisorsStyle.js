@@ -139,16 +139,18 @@ export default {
       margin: '0 0 15px 0'
 
     },
-    '& .mateTitle': {
+    '& .matePosition': {
       fontFamily: txtCaptionFont,
       fontSize: 15,
       fontWeight: 400,
+      lineHeight: '23px',
       color: grey
     },
     '& .mateBrief': {
       fontFamily: txtBodyFont,
-      fontWeight: 'semibold',
+      fontWeight: 400,
       textAlign: 'center',
+      lineHeight: '22px',
       padding: '0 30px',
       color: text,
       margin: '7px 0 0 0'

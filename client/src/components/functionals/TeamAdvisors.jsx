@@ -32,14 +32,14 @@ const TeamCard = props =>
   <div className="card">
     <AvatarFrame imgName={props.mate.avatar} linkTo={props.mate.myLink} i={props.i} />
     <div className="mateName">{props.mate.name}</div>
-    <div className="mateTitle">{props.mate.title}</div>
+    <div className="matePosition">{props.mate.title}</div>
   </div>;
 const AdvisorCard = props =>
   <div className="card">
     <AvatarFrame imgName={props.advisor.avatar} linkTo={props.advisor.myLink} i={props.i} />
     <div className="mateName">{props.advisor.name}</div>
-    <div className="mateTitle">{props.advisor.advisor}</div>
-    <div className="mateTitle">{props.advisor.title}</div>
+    <div className="matePosition">{props.advisor.advisor}</div>
+    <div className="matePosition">{props.advisor.title}</div>
     <div className="mateBrief">{props.advisor.brief}</div>
   </div>;
 class TeamAdvisors extends Component {
