@@ -31,7 +31,7 @@ class WelcomeBox extends Component {
         </div>
         <div className="overlay">
           {deviceType === 'mobile' && <div className="textArea ">
-            <span className="firstLine">Title of the Exchange</span>
+            <span className="firstLine">LQDEX</span>
           </div>}
 
           <div className="imageWrap">

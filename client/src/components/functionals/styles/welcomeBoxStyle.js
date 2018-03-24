@@ -73,11 +73,13 @@ export default {
     },
     '& .overlay': {
       extend: 'overlay',
+      display: 'flex',
+      flexDirection: 'column',
       '& .imageWrap': {
         extend: 'imageWrap',
         alignItems: 'center',
         margin: '0 0 30px 0',
-        '& .macBook': { maxWidth: '80%' }
+        '& .macBook': { maxWidth: '70%' }
       },
       '& .textArea': {
         display: 'flex',

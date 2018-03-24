@@ -16,20 +16,20 @@ class HeaderStats extends Component {
     return (
       <div className={classes.root}>
         {marketData.length &&
-          <Marquee hoverToPause={false} fill={true} rate={100} >
+          <Marquee className="MarqueeWrap" hoverToPause={false} fill={true} rate={100} >
             <div className="MarqueeContent">
               <span>
                 {'Cryptocurrency Market - '}
                 {marketData.map((item, i) =>
                   <span key={`stats${i}`}>
-                    {item.name}({item.symbol}):
+                    {item.name}&nbsp;({item.symbol}):&nbsp;
                     <span className="circulatingSupply">{(parseInt(item.available_supply, 10) / 1000000).toFixed(2)} millions </span>&nbsp;
                     <span className={parseInt(item.percent_change_7d, 10) > 0 ? 'up' : 'down'} >
                       {item.percent_change_7d}%@7d
                       {parseInt(item.percent_change_7d, 10) > 0 ? String.fromCharCode(9206) : String.fromCharCode(9207)}&nbsp;
                     </span>&nbsp;&nbsp;
-                </span>
-                  )}
+                  </span>
+                )}
               </span>
             </div>
           </Marquee>}
@@ -38,11 +38,8 @@ class HeaderStats extends Component {
   }
 }
 
-const stateToProps = state => ({
-    marketData: state.market.marketData,
-  });
+const stateToProps = state => ({ marketData: state.market.marketData });
 
-const dispatchToProps = dispatch => ({
-  });
+const dispatchToProps = dispatch => ({});
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(headerStatsStyle)(HeaderStats));
