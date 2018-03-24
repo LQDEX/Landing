@@ -6,7 +6,7 @@ import actions from '../../redux/actions';
 
 // Import Components
 import { HeaderContainer } from '../containers';
-import { Landing, SignUp } from '../pages/';
+import { Landing, SignUp, Contact } from '../pages/';
 
 
 // Import Styles
@@ -18,13 +18,15 @@ const FontAwesome = require('react-fontawesome');
 
 class MobileLandingLayout extends Component {
 
-  goToPage(page, param) {
-    this.props.goToPage(page, param);
-  }
 
-  scrollTo(section) {
-    this.props.goToPage('landing');
-    window.location.href = section;
+  goTo(section, page) {
+    if (page) {
+      this.props.goToPage(page, null);
+    }
+    if (section) {
+      this.props.navBarActive(section);
+      window.location.href = `#${section}`;
+    }
   }
 
   render() {
@@ -49,13 +51,13 @@ class MobileLandingLayout extends Component {
               <button
                 key={option.name}
                 className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`}
-                onClick={() => this.scrollTo(option.pointTo)}
+                onClick={() => this.goTo(option.pointTo, option.pageTo)}
               >
                 {option.caption}
               </button>
             )}
             <div className="hr"></div>
-            <span className="privacy" onClick={() => this.goToPage('privacy')}>Privacy Policy<br/>Terms & Conditions</span>
+            <span className="privacy" onClick={() => this.goTo('privacy', 'privacy')}>Privacy Policy<br/>Terms & Conditions</span>
           </div>
         </div>}
         <div>
@@ -63,7 +65,8 @@ class MobileLandingLayout extends Component {
           {
             {
               landing: <Landing />,
-              signUp: <SignUp />
+              signUp: <SignUp />,
+              contact: <Contact />
             }[app.activePage.page]
           }
         </div>
@@ -81,7 +84,8 @@ const
   }),
   dispatchToProps = dispatch => ({
     sideNavToggle: () => dispatch(actions.sideNavToggle()),
-    goToPage: (page, params) => dispatch(actions.goToPage(page, params))
+    goToPage: (page, params) => dispatch(actions.goToPage(page, params)),
+    navBarActive: option => dispatch(actions.navBarActive(option))
   });
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(mobileLandingLayoutStyle)(MobileLandingLayout));
