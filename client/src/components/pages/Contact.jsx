@@ -50,9 +50,9 @@ class Contact extends Component {
             </span>
           </div>
           <div className="inputWraper">
-            <div className="inputIcon"><i class="fas fa-phone"></i></div>
+            <div className="inputIcon"><i class="fas fa-envelope"></i></div>
             <span className="inputBox">
-              <input type="text" name="phone" placeHolder="Phone Numbre" autofocus/>
+              <input type="text" name="phone" placeHolder="Email Address" autofocus/>
             </span>
 
           </div>
