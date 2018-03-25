@@ -8,7 +8,7 @@ const initialState = {
   showSidenav: false,
   platform: {},
   navBar: {
-    active: '',
+    active: 'exchange',
     options: [
       {
         name: 'exchange',

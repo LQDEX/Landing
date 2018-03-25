@@ -17,9 +17,16 @@ const FontAwesome = require('react-fontawesome');
 
 class SignUp extends Component {
 
-  goToPage(page, param) {
-    this.props.goToPage(page, param);
+  goTo(section, page) {
+    if (page) {
+      this.props.goToPage(page, null);
+    }
+    if (section) {
+      this.props.navBarActive(section);
+      window.location.href = `#${section}`;
+    }
   }
+
 
   render() {
     const
@@ -29,39 +36,33 @@ class SignUp extends Component {
     return (
       <div className={style} >
         <div className="signUpWrapper">
-          <div className="closeWrapper">
-            <button className="btnClose" onClick={() => this.goToPage('landing')}>
-              <FontAwesome
-                name="times"
-                size="2x"
-                spin={false}
-              />
-            </button>
-          </div>
           <div className="headerWrapper">
             <span className="firstLine">Subscribe for Updates</span>
+            <button className="btnClose" onClick={() => this.goTo('exchange', 'landing')}><i class="fas fa-times fa-2x"></i></button>
           </div>
           <div className="inputWraper">
-            <div className="inputIcon"><FontAwesome name="user" size="1x" spin={false} /></div>
+            <div className="inputIcon"><i class="fas fa-user"></i></div>
             <span className="inputBox">
-              <input type="text" name="firstname" placeHolder="Name" autofocus/>
+              <input type="text" name="name" placeHolder="Name" autofocus/>
             </span>
           </div>
           <div className="inputWraper">
-            <div className="inputIcon"><FontAwesome name="phone" size="1x" spin={false} /></div>
+            <div className="inputIcon"><i class="fas fa-phone"></i></div>
             <span className="inputBox">
-              <input type="text" name="firstname" placeHolder="Phone Numbre" autofocus/>
-            </span>
-
-          </div>
-          <div className="inputWraper">
-            <div className="inputIcon"><FontAwesome name="envelope" size="1x" spin={false} /></div>
-            <span className="inputBox">
-              <input type="text" name="firstname" placeHolder="Email" autofocus/>
+              <input type="text" name="phone" placeHolder="Phone Numbre" autofocus/>
             </span>
 
           </div>
-          <div></div>
+          <div className="inputWraper">
+            <div className="inputIcon"><i class="fas fa-envelope"></i></div>
+            <span className="inputBox">
+              <input type="text" name="email" placeHolder="Email" autofocus/>
+            </span>
+          </div>
+          <div className="buttonsWraper">
+            <button className="btnCancel" onClick={() => this.goTo('exchange', 'landing')}> Cancel</button>
+            <button className="btnSubscribe"> Subscribe</button>
+          </div>
 
 
         </div>
@@ -72,6 +73,9 @@ class SignUp extends Component {
 
 const stateToProps = state => ({ });
 
-const dispatchToProps = dispatch => ({ goToPage: (page, params) => dispatch(actions.goToPage(page, params)) });
+const dispatchToProps = dispatch => ({
+  goToPage: (page, params) => dispatch(actions.goToPage(page, params)),
+  navBarActive: option => dispatch(actions.navBarActive(option))
+});
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(signUpStyle)(SignUp));

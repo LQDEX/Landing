@@ -20,7 +20,7 @@ class Landing extends Component {
 
   componentDidMount() {
     configureAnchors({
-      offset: -100,
+      offset: -200,
       scrollDuration: 500
     });
 
@@ -42,19 +42,19 @@ class Landing extends Component {
           <ScrollableAnchor id={'exchange'}><WelcomeContainer/></ScrollableAnchor>
         </div>
         <div key="Detail" >
-          <ScrollableAnchor id={'Detail'}><DetailedInfoContainer /></ScrollableAnchor>
+          <DetailedInfoContainer />
         </div>
         <div key="Roadmap" >
           <ScrollableAnchor id={'aboutUs'}><RoadmapContainer /></ScrollableAnchor>
         </div>
         <div key="Team" >
-          <ScrollableAnchor id={'Team'}><TeamAdvisorsContainer /></ScrollableAnchor>
+          <TeamAdvisorsContainer />
         </div>
         <div key="Investors" >
-          <ScrollableAnchor id={'Investors'}><InvestorsContainer /></ScrollableAnchor>
+          <InvestorsContainer />
         </div>
         <div key="Footer" >
-          <ScrollableAnchor id={'Footer'}><FooterContainer /></ScrollableAnchor>
+          <FooterContainer />
         </div>
       </div>
     );
