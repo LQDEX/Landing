@@ -27,7 +27,7 @@ class WelcomeBox extends Component {
       <div className={style} >
         <div className="imgClip">
           {deviceType !== 'mobile' && <img src={require('../../assets/img/dummy1920x800.png')} alt="" />}
-          {deviceType === 'mobile' && <img src={require('../../assets/img/dummy1920x600.png')} alt="" />}
+          {deviceType === 'mobile' && <img src={require('../../assets/img/dummy1920x800.png')} alt="" />}
         </div>
         <div className="overlay">
           {deviceType === 'mobile' && <div className="textArea ">

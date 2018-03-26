@@ -27,7 +27,8 @@ class App extends Component {
      */
     const wWidth = window.innerWidth;
     this.setState({ wWidth });
-    if (wWidth < 768) {
+    // 768
+    if (wWidth < 901) {
       this.props.platformSet({ deviceType: 'mobile' });
 
       return;
