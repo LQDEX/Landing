@@ -26,7 +26,7 @@ class HeaderStats extends Component {
                     <span className="circulatingSupply">{(parseInt(item.available_supply, 10) / 1000000).toFixed(2)} millions </span>&nbsp;
                     <span className={parseInt(item.percent_change_7d, 10) > 0 ? 'up' : 'down'} >
                       {item.percent_change_7d}%@7d
-                      {parseInt(item.percent_change_7d, 10) > 0 ? <i class="fas fa-caret-up"></i> : <i class="fas fa-caret-down"></i>}&nbsp;
+                      {parseInt(item.percent_change_7d, 10) > 0 ? <i className="fas fa-caret-up"></i> : <i className="fas fa-caret-down"></i>}&nbsp;
                     </span>&nbsp;&nbsp;
                   </span>
                 )}

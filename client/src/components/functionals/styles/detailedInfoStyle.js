@@ -34,7 +34,7 @@ export default {
       overflow: 'hidden',
 
       '& .textBlockLeft': {
-        flex: '2 0 auto',
+        flex: '2 1 auto',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -64,7 +64,7 @@ export default {
         alignItems: 'flex-end',
         backgroundColor: globalBackground,
         width: '100%',
-        padding: '0 5% 0 7%',
+        padding: '0 7% 0 2%',
         textAlign: 'right',
         lineHeight: '2em'
       },
@@ -87,8 +87,9 @@ export default {
         fontFamily: txtHeaderFont,
         fontSize: '48px',
         fontWeight: 'bold',
-
-        color: textHeader
+        color: textHeader,
+        '@media only screen and (max-width: 1020px)': { fontSize: '4vw' },
+        '@media only screen and (max-width: 933px)': { fontSize: '3.5vw' }
       },
       '& .txtBody': {
         fontFamily: txtBodyFont,
@@ -152,8 +153,9 @@ export default {
         }
       },
       '& .firstLine': {
-        extend: txtHeaderFont,
-        fontSize: '38px'
+        extend: 'firstLine',
+        '@media only screen and (min-width: 100px)': { fontSize: '38px' }
+        // fontSize: '48px'
       }
     }
   },

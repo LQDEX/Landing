@@ -45,7 +45,7 @@ class HeaderNavbar extends Component {
         </div>}
         {deviceType === 'mobile' &&
           <button className="menuButton" onClick={() => this.props.sideNavToggle()}>
-            <i class="fas fa-bars fa-3x"></i>
+            <i className="fas fa-bars fa-3x"></i>
 
           </button>
         }

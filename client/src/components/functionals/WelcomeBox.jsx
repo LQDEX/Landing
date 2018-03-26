@@ -13,6 +13,16 @@ class WelcomeBox extends Component {
     this.props.goToPage(page, param);
   }
 
+  goTo(section, page) {
+    if (page) {
+      this.props.goToPage(page, null);
+    }
+    if (section) {
+      this.props.navBarActive(section);
+      window.location.href = `#${section}`;
+    }
+  }
+
   render() {
     const
       { classes, deviceType } = this.props,
@@ -43,7 +53,7 @@ class WelcomeBox extends Component {
             <span className="txtBody">TRUSTLESS</span>
             <span className="txtBody">CROSS CHAIN EXCHANGE</span>
           </div>
-          {deviceType === 'mobile' && <button className="btnSubscribe" onClick={() => this.goToPage('signUp')}>Sign up for Updates</button>}
+          {deviceType === 'mobile' && <button className="btnSubscribe" onClick={() => this.goTo('signUp', 'signUp')}>Sign up for Updates</button>}
         </div>
       </div>
     );
@@ -52,6 +62,9 @@ class WelcomeBox extends Component {
 
 const stateToProps = state => ({ deviceType: state.app.platform.deviceType });
 
-const dispatchToProps = dispatch => ({ goToPage: (page, params) => dispatch(actions.goToPage(page, params)) });
+const dispatchToProps = dispatch => ({
+  goToPage: (page, params) => dispatch(actions.goToPage(page, params)),
+  navBarActive: option => dispatch(actions.navBarActive(option))
+});
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(welcomeBoxStyle)(WelcomeBox));

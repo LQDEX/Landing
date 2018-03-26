@@ -38,25 +38,25 @@ class SignUp extends Component {
         <div className="signUpWrapper">
           <div className="headerWrapper">
             <span className="firstLine">Subscribe for Updates</span>
-            <button className="btnClose" onClick={() => this.goTo('exchange', 'landing')}><i class="fas fa-times fa-2x"></i></button>
+            <button className="btnClose" onClick={() => this.goTo('exchange', 'landing')}><i className="fas fa-times fa-2x"></i></button>
           </div>
           <div className="inputWraper">
-            <div className="inputIcon"><i class="fas fa-user"></i></div>
+            <div className="inputIcon"><i className="fas fa-user"></i></div>
             <span className="inputBox">
-              <input type="text" name="name" placeHolder="Name" autofocus/>
+              <input type="text" name="name" placeholder="Name" autoFocus/>
             </span>
           </div>
           <div className="inputWraper">
-            <div className="inputIcon"><i class="fas fa-phone"></i></div>
+            <div className="inputIcon"><i className="fas fa-phone"></i></div>
             <span className="inputBox">
-              <input type="text" name="phone" placeHolder="Phone Numbre" autofocus/>
+              <input type="text" name="phone" placeholder="Phone Numbre" />
             </span>
 
           </div>
           <div className="inputWraper">
-            <div className="inputIcon"><i class="fas fa-envelope"></i></div>
+            <div className="inputIcon"><i className="fas fa-envelope"></i></div>
             <span className="inputBox">
-              <input type="text" name="email" placeHolder="Email" autofocus/>
+              <input type="text" name="email" placeholder="Email" />
             </span>
           </div>
           <div className="buttonsWraper">
