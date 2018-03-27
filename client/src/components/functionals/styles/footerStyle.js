@@ -43,8 +43,9 @@ export default {
     },
     '& .copyRights': {
       fontFamily: txtBlueBottonFont,
-      fontSize: '0.9em',
-      fontWeight: 'semi-Bold',
+      fontSize: 14,
+      fontWeight: 400,
+      margin: '0 0 15px 0',
       display: 'inline-block',
       boxSizing: 'content-box',
       cursor: 'pointer',

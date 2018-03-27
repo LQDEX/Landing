@@ -59,6 +59,7 @@ export default {
         fontFamily: txtSubheaderFont,
         fontSize: '40px',
         fontWeight: 'semibold',
+        margin: '0 0 39px 0',
         color: text
       }
     }
@@ -72,6 +73,8 @@ export default {
     },
     '& .overlay': {
       extend: 'overlay',
+      display: 'flex',
+      flexDirection: 'column',
       '& .imageWrap': {
         extend: 'imageWrap',
         alignItems: 'center',
@@ -116,6 +119,23 @@ export default {
     '& .imgClip': {
       '-webkit-clip-path': tShape,
       clipPath: tShape
+    },
+    '& .overlay': {
+      extend: 'overlay',
+      display: 'flex',
+      flexDirection: 'column',
+      '& .imageWrap': {
+        extend: 'imageWrap',
+        alignItems: 'center',
+        '& .macBook': { maxWidth: '70%' }
+      },
+      '& .textArea': {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '80%'
+      }
     }
   }
 };

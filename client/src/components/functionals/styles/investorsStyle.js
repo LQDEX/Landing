@@ -31,7 +31,10 @@ export default {
       alignItems: 'center',
       flexWrap: 'wrap',
       minWidth: '100%',
-      '& .investorLogo': { margin: '25px 20px' }
+      '& .investorLogo': {
+        margin: '25px 20px',
+        maxHeight: 50
+      }
     }
   },
   mRoot: {

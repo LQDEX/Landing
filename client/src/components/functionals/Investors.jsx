@@ -13,13 +13,13 @@ class Investors extends Component {
       tablet: classes.root,
       mobile: classes.mRoot
     }[deviceType];
-    
-return (
+
+    return (
       <div className={style}>
         <div className="firstLine">Investors</div>
         <div className="logosRow">
           {investors.map((item, i) =>
-            <img className="investorLogo" src={require(`../../assets/img/${item.logoFile}`)} alt={item.name} key={`item${i}`} />
+            <img className="investorLogo"src={require(`../../assets/img/${item.logoFile}`)} alt={item.name} key={`item${i}`} />
           )}
         </div>
       </div>
@@ -28,9 +28,9 @@ return (
 }
 
 const stateToProps = state => ({
-    investors: state.investors.members,
-    deviceType: state.app.platform.deviceType,
-  });
+  investors: state.investors.members,
+  deviceType: state.app.platform.deviceType
+});
 
 const dispatchToProps = dispatch => ({});
 

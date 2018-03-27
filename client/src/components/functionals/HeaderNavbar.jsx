@@ -12,12 +12,15 @@ import { headerNavbarStyle } from './styles';
 const FontAwesome = require('react-fontawesome');
 
 class HeaderNavbar extends Component {
-  goToPage(page, param) {
-    this.props.goToPage(page, param);
-  }
 
-  scrollTo(section) {
-    window.location.href = section;
+  goTo(section, page) {
+    if (page) {
+      this.props.goToPage(page, null);
+    }
+    if (section) {
+      this.props.navBarActive(section);
+      window.location.href = `#${section}`;
+    }
   }
 
   render() {
@@ -30,23 +33,20 @@ class HeaderNavbar extends Component {
           {navBar.options.map(option =>
             <button
               key={option.name}
-              className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' :''}`}
-              onClick={() => this.scrollTo(option.pointTo)}
+              className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`}
+              onClick={() => this.goTo(option.pointTo, option.pageTo)}
             >
               {option.caption}
             </button>
           )}
           {activePage.page !== 'signUp' &&
-            <button className="btnSubscribe" onClick={() => this.goToPage('signUp')}>Sign up for Updates</button>
+            <button className="btnSubscribe" onClick={() => this.goTo('signUp', 'signUp')}>Sign up for Updates</button>
           }
         </div>}
         {deviceType === 'mobile' &&
           <button className="menuButton" onClick={() => this.props.sideNavToggle()}>
-            <FontAwesome
-              name="bars"
-              size="3x"
-              spin={false}
-            />
+            <i className="fas fa-bars fa-3x"></i>
+
           </button>
         }
       </div>
@@ -62,7 +62,8 @@ const stateToProps = state => ({
 
 const dispatchToProps = dispatch => ({
   sideNavToggle: () => dispatch(actions.sideNavToggle()),
-  goToPage: (page, params) => dispatch(actions.goToPage(page, params))
+  goToPage: (page, params) => dispatch(actions.goToPage(page, params)),
+  navBarActive: option => dispatch(actions.navBarActive(option))
 });
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(headerNavbarStyle)(HeaderNavbar));

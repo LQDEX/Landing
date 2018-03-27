@@ -86,7 +86,19 @@ export default {
             border: 'none',
             padding: '0 0 0 60px'
           }
+
         }
+      },
+      '& .message': {
+        width: '91.5%',
+        fontSize: '16px',
+        fontFamily: txtInputs,
+        margin: '0 0 20px 0',
+        padding: '15px 28px',
+        resize: 'vertical',
+        border: 'none',
+        minHeight: 80
+
       },
       '& .buttonsWraper': {
         display: 'flex',

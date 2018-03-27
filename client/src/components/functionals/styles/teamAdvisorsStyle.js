@@ -7,7 +7,7 @@ const {
     text,
     grey,
     frameBorder,
-    frameShadow,
+    shadowSoft,
     txtHeaderFont,
     txtBodyFont,
     txtCaptionFont
@@ -29,7 +29,7 @@ export default {
       outline: 'none',
       '& .frameContainer': {
         transform: 'scale(0.8)',
-        filter: `drop-shadow(0px 0px 5px ${frameShadow})`,
+        filter: `drop-shadow(0px 0px 5px ${shadowSoft})`,
         '& .frameOutside0': {
           position: 'static',
           background: frameBorder,
@@ -39,19 +39,7 @@ export default {
             position: 'relative',
             transform: 'scale(0.92)',
             '-webkit-clip-path': shape0,
-            clipPath: shape0,
-            '&:hover': {
-              background: primary,
-              cursor: 'pointer',
-              '& .in': { opacity: 1 }
-            },
-            '& img:hover': { opacity: 0.5 },
-            '& .in': {
-              position: 'absolute',
-              top: 130,
-              left: 150,
-              opacity: 0
-            }
+            clipPath: shape0
           }
         },
         '& .frameOutside1': {
@@ -63,19 +51,7 @@ export default {
             position: 'relative',
             transform: 'scale(0.92)',
             '-webkit-clip-path': shape1,
-            clipPath: shape1,
-            '&:hover': {
-              background: primary,
-              cursor: 'pointer',
-              '& .in': { opacity: 1 }
-            },
-            '& img:hover': { opacity: 0.5 },
-            '& .in': {
-              position: 'absolute',
-              top: 130,
-              left: 150,
-              opacity: 0
-            }
+            clipPath: shape1
           }
         },
         '& .frameOutside2': {
@@ -87,19 +63,7 @@ export default {
             position: 'relative',
             transform: 'scale(0.92)',
             '-webkit-clip-path': shape2,
-            clipPath: shape2,
-            '&:hover': {
-              background: primary,
-              cursor: 'pointer',
-              '& .in': { opacity: 1 }
-            },
-            '& img:hover': { opacity: 0.5 },
-            '& .in': {
-              position: 'absolute',
-              top: 130,
-              left: 150,
-              opacity: 0
-            }
+            clipPath: shape2
           }
         },
         '& .frameOutside3': {
@@ -111,19 +75,7 @@ export default {
             position: 'relative',
             transform: 'scale(0.92)',
             '-webkit-clip-path': shape3,
-            clipPath: shape3,
-            '&:hover': {
-              background: primary,
-              cursor: 'pointer',
-              '& .in': { opacity: 1 }
-            },
-            '& img:hover': { opacity: 0.5 },
-            '& .in': {
-              position: 'absolute',
-              top: 130,
-              left: 150,
-              opacity: 0
-            }
+            clipPath: shape3
           }
         },
         '& .frameOutside4': {
@@ -135,20 +87,14 @@ export default {
             position: 'relative',
             transform: 'scale(0.92)',
             '-webkit-clip-path': shape4,
-            clipPath: shape4,
-            '&:hover': {
-              background: primary,
-              cursor: 'pointer',
-              '& .in': { opacity: 1 }
-            },
-            '& img:hover': { opacity: 0.5 },
-            '& .in': {
-              position: 'absolute',
-              top: 130,
-              left: 150,
-              opacity: 0
-            }
+            clipPath: shape4
           }
+        },
+        '& .in': {
+          position: 'absolute',
+          top: 130,
+          left: 150,
+          opacity: 0
         }
       }
     },
@@ -164,32 +110,47 @@ export default {
       flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'center',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       margin: '0 0 100px 0'
     },
     '&  .card': {
-
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      width: '300px'
+      width: '300px',
+      '&:hover': {
+        '& > .mateName': { borderBottom: `1px solid ${primary}` },
+        '& > div > a > div .in': { opacity: 1 },
+        '& > div > a > div > div > div': {
+          background: primary,
+          cursor: 'pointer',
+          '& .avatar': { opacity: 0.5 }
+        }
+      }
+
     },
     '& .mateName': {
       fontFamily: txtHeaderFont,
+      fontSize: 19,
+      fontWeight: 'bold',
       color: primary,
-      margin: '0 0 5px 0'
+      borderBottom: `1px solid ${globalBackground}`,
+      margin: '0 0 15px 0'
 
     },
-    '& .mateTitle': {
+    '& .matePosition': {
       fontFamily: txtCaptionFont,
-      fontWeight: 'semibold',
+      fontSize: 15,
+      fontWeight: 400,
+      lineHeight: '23px',
       color: grey
     },
     '& .mateBrief': {
       fontFamily: txtBodyFont,
-      fontWeight: 'semibold',
+      fontWeight: 400,
       textAlign: 'center',
+      lineHeight: '22px',
       padding: '0 30px',
       color: text,
       margin: '7px 0 0 0'

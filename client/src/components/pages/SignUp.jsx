@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 // Redux actions
 import actions from '../../redux/actions';
@@ -16,9 +17,40 @@ import { signUpStyle } from './styles';
 const FontAwesome = require('react-fontawesome');
 
 class SignUp extends Component {
+  state = {
+    name:'',
+    phone:'',
+    email:''
+  }
 
-  goToPage(page, param) {
-    this.props.goToPage(page, param);
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  goTo(section, page) {
+    if (page) {
+      this.props.goToPage(page, null);
+    }
+    if (section) {
+      this.props.navBarActive(section);
+      window.location.href = `#${section}`;
+    }
+  }
+
+  send() {
+    axios.post('/users/add', {
+      name:this.state.name,
+      email:this.state.email,
+      phone: this.state.phone
+    })
+    .then(res=>console.log(res))
+    .catch(err=> console.log(err));
   }
 
   render() {
@@ -29,40 +61,47 @@ class SignUp extends Component {
     return (
       <div className={style} >
         <div className="signUpWrapper">
-          <div className="closeWrapper">
-            <button className="btnClose" onClick={() => this.goToPage('landing')}>
-              <FontAwesome
-                name="times"
-                size="2x"
-                spin={false}
-              />
-            </button>
-          </div>
           <div className="headerWrapper">
             <span className="firstLine">Subscribe for Updates</span>
+            <button className="btnClose" onClick={() => this.goTo('exchange', 'landing')}><i className="fas fa-times fa-2x"></i></button>
           </div>
-          <div className="inputWraper">
-            <div className="inputIcon"><FontAwesome name="user" size="1x" spin={false} /></div>
-            <span className="inputBox">
-              <input type="text" name="firstname" placeHolder="Name" autofocus/>
-            </span>
-          </div>
-          <div className="inputWraper">
-            <div className="inputIcon"><FontAwesome name="phone" size="1x" spin={false} /></div>
-            <span className="inputBox">
-              <input type="text" name="firstname" placeHolder="Phone Numbre" autofocus/>
-            </span>
-
-          </div>
-          <div className="inputWraper">
-            <div className="inputIcon"><FontAwesome name="envelope" size="1x" spin={false} /></div>
-            <span className="inputBox">
-              <input type="text" name="firstname" placeHolder="Email" autofocus/>
-            </span>
-
-          </div>
-          <div></div>
-
+          <form>
+            <div className="inputWraper">
+              <div className="inputIcon"><i className="fas fa-user"></i></div>
+              <span className="inputBox">
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="Name"
+                  autoFocus
+                  onChange={(event)=>this.handleInputChange(event)} />
+              </span>
+            </div>
+            <div className="inputWraper">
+              <div className="inputIcon"><i className="fas fa-phone"></i></div>
+              <span className="inputBox">
+                <input
+                  name="phone"
+                  type="text"
+                  placeholder="Phone Numbre"
+                  onChange={(event)=>this.handleInputChange(event)} />
+              </span>
+            </div>
+            <div className="inputWraper">
+              <div className="inputIcon"><i className="fas fa-envelope"></i></div>
+              <span className="inputBox">
+                <input
+                name="email"
+                type="text"
+                placeholder="Email"
+                onChange={(event)=>this.handleInputChange(event)} />
+              </span>
+            </div>
+          </form>
+            <div className="buttonsWraper">
+              <button className="btnCancel" onClick={() => this.goTo('exchange', 'landing')}> Cancel</button>
+              <button className="btnSubscribe" onClick={() => this.send()}> Subscribe</button>
+            </div>
 
         </div>
       </div>
@@ -72,6 +111,9 @@ class SignUp extends Component {
 
 const stateToProps = state => ({ });
 
-const dispatchToProps = dispatch => ({ goToPage: (page, params) => dispatch(actions.goToPage(page, params)) });
+const dispatchToProps = dispatch => ({
+  goToPage: (page, params) => dispatch(actions.goToPage(page, params)),
+  navBarActive: option => dispatch(actions.navBarActive(option))
+});
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(signUpStyle)(SignUp));

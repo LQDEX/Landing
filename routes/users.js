@@ -1,17 +1,33 @@
 var express = require('express');
 var router = express.Router();
 
+const table = 'users'
 /* GET users listing. */
-router.get('/', (req, res, next) => {
-  // res.locals.connection.query('SELECT * from users', function(error, results,fields){
-  //   if (error) throw error;
-  //   console.log(results);
-  //   res.send(JSON.stringify(results));
+router.get('/all', (req, res, next) => {
+  const query = 'SELECT * from ' + table;
+  res.locals.connection.query(query, function(error, results,fields){
+    if (error) throw error;
+    console.log(results);
+    res.send(JSON.stringify(results));
+  });
+});
+
+router.post('/add', (req, res, next) => {
+  console.log(req.body);
+  const name = req.body.name;
+  const email = req.body.email;
+  const phone = req.body.phone;
+
+  const query = `INSERT INTO ${table} (name, email, phone) VALUES ('${name}','${email}','${phone}')`;
+  console.log(query);
+  
+  res.locals.connection.query(query, function(error, results,fields){
+     if (error) throw error;
+     console.log(results);
+  res.send(results);
   // });
-  res.json([
-     {id:1, username:'paco'},
-     {id:2, username:'maria'}
-  ]);
+  // res.send(req.body);
+  });
 });
 
 module.exports = router;

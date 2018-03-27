@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var messages = require('./routes/messages');
 
 var app = express();
 
@@ -16,16 +17,16 @@ app.set('view engine', 'jade');
 
 var mysql = require("mysql");
 //Database connection
-// app.use(function(req, res, next){
-// 	res.locals.connection = mysql.createConnection({
-// 		host     : '18.222.98.19',
-// 		user     : 'lqdex_user',
-// 		password : 'XTUdsQmYUD0lmiiA',
-// 		database : 'LQDEX'
-// 	});
-// 	res.locals.connection.connect();
-// 	next();
-// });
+app.use(function(req, res, next){
+	res.locals.connection = mysql.createConnection({
+		host     : '18.222.98.19',
+		user     : 'lqdex_user',
+		password : 'XTUdsQmYUD0lmiiA',
+		database : 'LQDEX'
+	});
+	res.locals.connection.connect();
+	next();
+});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -37,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/messages', messages);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -8,22 +8,25 @@ const initialState = {
   showSidenav: false,
   platform: {},
   navBar: {
-    active: '',
+    active: 'exchange',
     options: [
       {
         name: 'exchange',
         caption: 'EXCHANGE',
-        pointTo: '#Roadmap'
+        pageTo: 'landing',
+        pointTo: 'exchange'
       },
       {
         name: 'aboutUs',
         caption: 'ABOUT US',
-        pointTo: '#Team'
+        pageTo: 'landing',
+        pointTo: 'aboutUs'
       },
       {
         name: 'contact',
         caption: 'CONTACT',
-        pointTo: '#Footer'
+        pageTo: 'contact',
+        pointTo: 'contact'
       }
     ]
   }
@@ -53,6 +56,16 @@ const app = (state = initialState, action) => {
         ...state,
         showSidenav: !state.showSidenav
       };
+    }
+    case constants.APP_NAVBAR_ACTIVE: {
+      const navBar = {
+        ...state.navBar,
+        active: action.data,
+      }
+      return {
+        ...state,
+        navBar
+      }
     }
     default:
       return state;

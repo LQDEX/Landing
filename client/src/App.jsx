@@ -27,7 +27,8 @@ class App extends Component {
      */
     const wWidth = window.innerWidth;
     this.setState({ wWidth });
-    if (wWidth < 768) {
+    // 768
+    if (wWidth < 901) {
       this.props.platformSet({ deviceType: 'mobile' });
 
       return;
@@ -39,6 +40,12 @@ class App extends Component {
     this.props.platformSet({ deviceType: 'desktop' });
   }
 
+  onHashChange() {
+    const section = window.location.hash.split('#')[1];
+    this.props.navBarActive(section);
+//    alert(section);
+
+  }
 
   componentWillMount() {
     this.props.getCryptoData();
@@ -48,6 +55,7 @@ class App extends Component {
     // let timer = setInterval(() => this.tick(), 30 * 24 * 60 * 60 * 1000);
     // this.setState({ timer });
     window.addEventListener('resize', () => this.updateDeviceType());
+    window.addEventListener("hashchange", () => this.onHashChange(), false);
     this.props.platformSet({
       // os: Platform.OS || '',
       // osVersion: Platform.OSVersion || '',
@@ -71,6 +79,7 @@ class App extends Component {
   // }
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateDeviceType.bind(this));
+    window.removeEventListener("hashchange", this.onHashChange.bind(this));
   }
 
   render() {
@@ -102,7 +111,8 @@ const stateToProps = state => ({ app: state.app });
 
 const dispatchToProps = dispatch => ({
   getCryptoData: () => dispatch(actions.getCryptoData()),
-  platformSet: platformInfo => dispatch(actions.platformSet(platformInfo))
+  platformSet: platformInfo => dispatch(actions.platformSet(platformInfo)),
+  navBarActive: option => dispatch(actions.navBarActive(option))
 });
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(reset)(App));
