@@ -18,7 +18,7 @@ router.post('/add', (req, res, next) => {
   const email = req.body.email;
   const phone = req.body.phone;
 
-  const query = 'INSERT INTO ' + table + ' (name, email, phone) VALUES ('+ name + ', ' + email + ', ' + phone +')';
+  const query = `INSERT INTO ${table} (name, email, phone) VALUES ('${name}','${email}','${phone}')`;
   console.log(query);
   
   res.locals.connection.query(query, function(error, results,fields){

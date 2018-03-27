@@ -49,7 +49,8 @@ class SignUp extends Component {
       email:this.state.email,
       phone: this.state.phone
     })
-    .then(res=>console.log(res));    
+    .then(res=>console.log(res))
+    .catch(err=> console.log(err));
   }
 
   render() {
