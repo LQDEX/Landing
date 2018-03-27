@@ -27,20 +27,13 @@ const AvatarFrame = props => {
   );
 };
 
-
-const TeamCard = props =>
+const MemberCard = props =>
   <div className="card">
-    <AvatarFrame imgName={props.mate.avatar} linkTo={props.mate.myLink} i={props.i} />
-    <div className="mateName">{props.mate.name}</div>
-    <div className="matePosition">{props.mate.title}</div>
-  </div>;
-const AdvisorCard = props =>
-  <div className="card">
-    <AvatarFrame imgName={props.advisor.avatar} linkTo={props.advisor.myLink} i={props.i} />
-    <div className="mateName">{props.advisor.name}</div>
-    <div className="matePosition">{props.advisor.advisor}</div>
-    <div className="matePosition">{props.advisor.title}</div>
-    <div className="mateBrief">{props.advisor.brief}</div>
+    <AvatarFrame imgName={props.member.avatar} linkTo={props.member.myLink} i={props.i} />
+    <div className="mateName">{props.member.name}</div>
+    <div className="matePosition">{props.member.advisor}</div>
+    <div className="matePosition">{props.member.title}</div>
+    <div className="mateBrief">{props.member.brief}</div>
   </div>;
 class TeamAdvisors extends Component {
   render() {
@@ -56,14 +49,14 @@ class TeamAdvisors extends Component {
       <div className={style}>
         <div className="firstLine">Team</div>
         <div className="teamRow" >
-          {team.map((mate, i) =>
-            <TeamCard mate={mate} key={`item${i}`} />
+          {team.map((member, i) =>
+            <MemberCard member={member} key={`item${i}`} />
           )}
         </div >
         <div className="firstLine">Advisors</div>
         <div className="teamRow" >
-          {advisors.map((advisor, i) =>
-            <AdvisorCard advisor={advisor} key={`item${i}`} />
+          {advisors.map((member, i) =>
+            <MemberCard member={member} key={`item${i}`} />
           )}
         </div >
       </div>

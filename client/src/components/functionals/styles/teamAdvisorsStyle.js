@@ -110,7 +110,7 @@ export default {
       flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'center',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       margin: '0 0 100px 0'
     },
     '&  .card': {
