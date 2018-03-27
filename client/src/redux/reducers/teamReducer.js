@@ -25,7 +25,7 @@ const initialState = {
       title: 'Co-Founder and CEO',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/Jasmine-Jensen',
-      brief: 'A very short bio'
+      brief: 'A very short bio, if you want'
     },
     {
       avatar: 'avatar4.png',
