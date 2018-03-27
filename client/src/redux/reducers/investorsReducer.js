@@ -3,24 +3,8 @@
 const initialState = {
   members: [
     {
-      name: 'spacex',
-      logoFile: 'logoSpacex.png'
-    },
-    {
-      name: 'tesla',
-      logoFile: 'logoTesla.png'
-    },
-    {
-      name: 'theBoringCompany',
-      logoFile: 'logoBoring.png'
-    },
-    {
-      name: 'solarCity',
-      logoFile: 'logoSolarcity.png'
-    },
-    {
-      name: 'openai',
-      logoFile: 'logoOpenai.png'
+      name: 'boostVc',
+      logoFile: 'boostvc.png'
     }
   ]
 };

@@ -85,7 +85,6 @@ class SignUp extends Component {
                   placeholder="Phone Numbre"
                   onChange={(event)=>this.handleInputChange(event)} />
               </span>
-
             </div>
             <div className="inputWraper">
               <div className="inputIcon"><i className="fas fa-envelope"></i></div>

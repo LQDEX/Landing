@@ -3,37 +3,44 @@
 const initialState = {
   members: [
     {
-      avatar: 'avatar0.png',
-      name: 'Greg Kaling',
-      title: 'Title needed',
+      avatar: 'yog.png',
+      name: 'Yogesh Srihari',
+      title: 'Head of Product',
       advisor: '',
-      myLink: 'https://www.linkedin.com/in/Nataly-Chen',
-      brief: 'Greg Kalin was the Co-Founder of Closetclicks, an investor-backed social fashion startup. Additionally, he spent time working in private wealth management at Morgan Stanley Smith-Barney.'
+      myLink: 'https://www.linkedin.com/in/yogesh-srihari-000b3a33/',
+      brief: 'A very short bio, if you want'
     },
     {
       avatar: 'Sergey-Nikitin-Large.jpg',
       name: 'Sergey Nikitin',
       title: ' Head of Technology',
       advisor: '',
-      myLink: 'https://www.linkedin.com/in/Brandon-Long',
+      myLink: 'https://www.linkedin.com/in/snikitin2/',
       brief: 'Sergey started his career at Microsoft and worked in the IT industry ever since. He is passionate about blockchain technology. Prior to joining LQDEX, Sergey founded xCoins.io, an innovative peer-to-peer cryptocurrency lending platform, which allows nearly instant acquisition of bitcoin. Sergey holds a BS, Computer Science degree from UCSB and an MBA degree from UCLA.'
-
     },
     {
-      avatar: 'yog.png',
-      name: 'Yogesh Srihari',
-      title: 'Co-Founder and CEO',
+      avatar: 'avatar0.png',
+      name: 'Rich Branning',
+      title: 'Head of Bus. Dev.',
       advisor: '',
-      myLink: 'https://www.linkedin.com/in/Jasmine-Jensen',
+      myLink: 'https://www.linkedin.com/in/Rich-Branning',
       brief: 'A very short bio, if you want'
     },
     {
-      avatar: 'avatar4.png',
-      name: 'Mark Williams',
-      title: 'Developer (Back-end)',
+      avatar: 'avatar0.png',
+      name: 'Ram Kumar',
+      title: 'Lead Engineer',
       advisor: '',
-      myLink: 'https://www.linkedin.com/in/Mark-Williams',
-      brief: ''
+      myLink: 'https://www.linkedin.com/in/Ram-Kumard',
+      brief: 'A very short bio, if you want'
+    },
+    {
+      avatar: 'GregKaling.jpg',
+      name: 'Greg Kaling',
+      title: 'Finance',
+      advisor: '',
+      myLink: 'https://www.linkedin.com/in/greg-kalin-b6186554/',
+      brief: 'Greg Kalin was the Co-Founder of Closetclicks, an investor-backed social fashion startup. Additionally, he spent time working in private wealth management at Morgan Stanley Smith-Barney.'
     }
   ]
 };
