@@ -12,4 +12,20 @@ router.get('/all', (req, res, next) => {
   });
 });
 
+router.post('/add', (req, res, next) => {
+  console.log(req.body);
+  const name = req.body.name;
+  const email = req.body.email;
+  const phone = req.body.phone;
+  const message = req.body.message;
+
+  const query = `INSERT INTO ${table} (name, email, phone, message) VALUES ('${name}','${email}','${phone}','${message}')`;
+  
+  res.locals.connection.query(query, function(error, results, fields){
+    if (error) throw error;
+    console.log(results);
+ res.send(results);
+ });
+});
+
 module.exports = router;
