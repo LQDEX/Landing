@@ -42,7 +42,7 @@ class Contact extends Component {
   }
 
   send() {
-    axios.post('/message/add', {
+    axios.post('/messages/add', {
       name:this.state.name,
       email:this.state.email,
       phone: this.state.phone,
