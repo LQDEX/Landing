@@ -13,7 +13,7 @@ const AvatarFrame = props => {
       width: '300px',
       height: '300px'
     }}>
-      <a className="frameLink" href={props.linkTo}>
+      <a className="frameLink" href={props.linkTo} target="_blank">
         <div className="frameContainer">
           <div className={`frameOutside${frameIndex}`}>
             <div className={`frameInside${frameIndex}`}>

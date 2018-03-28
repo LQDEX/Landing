@@ -13,9 +13,6 @@ import { Landing, SignUp, Contact } from '../pages/';
 import injectSheet from 'react-jss';
 import { mobileLandingLayoutStyle } from './styles';
 
-// Import Assets
-const FontAwesome = require('react-fontawesome');
-
 class MobileLandingLayout extends Component {
 
 

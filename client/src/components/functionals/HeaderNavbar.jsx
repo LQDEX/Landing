@@ -8,9 +8,6 @@ import actions from '../../redux/actions';
 import injectSheet from 'react-jss';
 import { headerNavbarStyle } from './styles';
 
-// Import Assets
-const FontAwesome = require('react-fontawesome');
-
 class HeaderNavbar extends Component {
 
   goTo(section, page) {
