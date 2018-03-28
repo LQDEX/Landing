@@ -13,9 +13,6 @@ import {
 import injectSheet from 'react-jss';
 import { signUpStyle } from './styles';
 
-// Import Assets
-const FontAwesome = require('react-fontawesome');
-
 class SignUp extends Component {
   state = {
     name:'',

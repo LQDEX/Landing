@@ -13,9 +13,6 @@ import {
 import injectSheet from 'react-jss';
 import { ContactStyle } from './styles';
 
-// Import Assets
-const FontAwesome = require('react-fontawesome');
-
 class Contact extends Component {
   state = {
     name:'',

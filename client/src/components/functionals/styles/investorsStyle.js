@@ -33,7 +33,7 @@ export default {
       minWidth: '100%',
       '& .investorLogo': {
         margin: '25px 20px',
-        maxHeight: 50
+        maxHeight: 80
       }
     }
   },
