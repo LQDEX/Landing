@@ -1,2 +1,2 @@
-# LiquidX
+# LQDEX
 

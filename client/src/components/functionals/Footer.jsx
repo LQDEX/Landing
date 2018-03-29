@@ -32,8 +32,8 @@ class Footer extends Component {
       <div className={style} >
         <div className="firstLine">Sign up for Updates</div>
         <button className="btnSubscribe" onClick={() => this.goTo('signUp', 'signUp')}>Sign up</button>
-        <div className="copyRights">© 2018 Title of the Ecxhange. All Rights Reserved.</div>
-        <div className="copyRights">Privacy Policy Terms & Conditions</div>
+        <div className="copyRights">© 2018 LQDEX. All Rights Reserved.</div>
+        <div className="copyRights">Privacy Policy, Terms & Conditions.</div>
       </div>
     );
   }

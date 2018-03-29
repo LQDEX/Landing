@@ -91,7 +91,7 @@ class Contact extends Component {
               <input
                 name="phone"
                 type="text"
-                placeholder="Phone Numbre"
+                placeholder="Phone Number"
                 onChange={event => this.handleInputChange(event)} />
             </span>
           </div>

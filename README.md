@@ -1,1 +1,1 @@
-liquidx
+LQDEX
