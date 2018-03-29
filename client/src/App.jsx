@@ -95,7 +95,7 @@ class App extends Component {
         )}
         </ul>
       </div>
-        <Favicon url={require('./assets/img/favicon.svg')} />
+        <Favicon url={require('./assets/img/favicon.ico')} />
         {/* Put here the Mobile Layout */}
         {app.platform.deviceType === 'mobile' && <MobileLandingLayout />}
         {/* Put here the Tablet Layout*/}

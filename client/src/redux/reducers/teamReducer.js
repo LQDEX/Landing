@@ -8,7 +8,7 @@ const initialState = {
       title: 'Head of Product',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/yogesh-srihari-000b3a33/',
-      brief: 'A very short bio, if you want'
+      brief: 'Yogesh co-founded a popular blockchain startup called SpankChain in 2017 and had a successful token sale with raise $11M dollars at the time. Prior to that Yogesh has worked as Lead software engineer at ZEFR , Director of Engineering at Wickr , Software Engineer at Google'
     },
     {
       avatar: 'Sergey-Nikitin-Large.jpg',
@@ -24,7 +24,7 @@ const initialState = {
       title: 'Head of Bus. Dev.',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/Rich-Branning',
-      brief: 'A very short bio, if you want'
+      brief: 'Rich Branning got his degree in economics at Pepperdine University. He worked as District Manager at an Automatic Data Processing leading company and was Co-founder of Closetclicks.'
     },
     {
       avatar: 'avatar0.png',
