@@ -51,7 +51,7 @@ export default {
       '& .firstLine': {
         margin: '0 0 51px 0',
         fontFamily: txtHeaderFont,
-        fontSize: '68px',
+        fontSize: '78px',
         fontWeight: 'bold',
         color: textHeader
       },
@@ -59,7 +59,7 @@ export default {
         fontFamily: txtSubheaderFont,
         fontSize: '40px',
         fontWeight: 'semibold',
-        margin: '0 0 29px 0',
+        margin: '0 0 20px 0',
         color: text
       }
     }
