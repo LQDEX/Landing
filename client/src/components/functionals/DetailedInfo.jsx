@@ -23,7 +23,7 @@ class DetailedInfo extends Component {
             <span className="txtBody">
               {`Introducing a `}
               <span className="txtHighlight">{`proof of stake blockchain`}</span>
-              {` which will enable counter party risk free trading of cross chain digital assets through the issuing of `}
+              {` that will enable counter party risk free trading of cross chain digital assets through the issuing of `}
               <span className="txtHighlight">{`proxy tokens`}</span>.
             </span>
           </div>
@@ -38,8 +38,8 @@ class DetailedInfo extends Component {
             <p className="firstLine">Transparency</p>
 
             <span className="txtBody">
-              {'LiquidX does not take custody of your proxy tokens or external blockchain tokens.'}
-              {' Instead,'} <span className="txtHighlight">{`we provide you with your own LiquidX wallet`}</span>
+              {'LQDEX does not take custody of your proxy tokens or external blockchain tokens.'}
+              {' Instead,'} <span className="txtHighlight">{`we provide you with your own LQDEX wallet`}</span>
               {` to safely and securely hold any tokens involved in the exchange.`}
             </span>
           </div>}
@@ -50,8 +50,8 @@ class DetailedInfo extends Component {
           {deviceType !== 'mobile' && <div className="textBlockRight">
             <p className="firstLine">Transparency</p>
             <span className="txtBody">
-              {'LiquidX does not take custody of your proxy tokens or external blockchain tokens.'}
-              {' Instead,'} <span className="txtHighlight">{`we provide you with your own LiquidX wallet`}</span>
+              {'LQDEX does not take custody of your proxy tokens or external blockchain tokens.'}
+              {' Instead,'} <span className="txtHighlight">{`we provide you with your own LQDEX wallet`}</span>
               {` to safely and securely hold any tokens involved in the exchange.`}
             </span>
           </div>}

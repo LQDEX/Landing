@@ -21,7 +21,7 @@ const initialState = {
     {
       avatar: 'BraytonWilliams.jpg',
       name: 'Brayton Williams',
-      title: 'BoostVC',
+      title: 'Co-Founder, BoostVC',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/braytonwilliams/',
       brief: ''

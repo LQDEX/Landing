@@ -17,7 +17,7 @@ app.set('view engine', 'jade');
 
 var mysql = require("mysql");
 //Database connection
-app.use(function(req, res, next){
+/*app.use(function(req, res, next){
 	res.locals.connection = mysql.createConnection({
 		host     : '18.222.98.19',
 		user     : 'lqdex_user',
@@ -26,7 +26,7 @@ app.use(function(req, res, next){
 	});
 	res.locals.connection.connect();
 	next();
-});
+});*/
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

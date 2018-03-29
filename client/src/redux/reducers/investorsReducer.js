@@ -4,7 +4,8 @@ const initialState = {
   members: [
     {
       name: 'boostVc',
-      logoFile: 'boostvc.png'
+      logoFile: 'boostvc.png',
+      linkTo: 'https://www.boost.vc'
     }
   ]
 };
