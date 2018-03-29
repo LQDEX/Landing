@@ -19,12 +19,12 @@ const initialState = {
       brief: 'Sergey started his career at Microsoft and worked in the IT industry ever since. He is passionate about blockchain technology. Prior to joining LQDEX, Sergey founded xCoins.io, an innovative peer-to-peer cryptocurrency lending platform, which allows nearly instant acquisition of bitcoin. Sergey holds a BS, Computer Science degree from UCSB and an MBA degree from UCLA.'
     },
     {
-      avatar: 'avatar0.png',
+      avatar: 'richardBranning.jpg',
       name: 'Rich Branning',
       title: 'Head of Bus. Dev.',
       advisor: '',
-      myLink: 'https://www.linkedin.com/in/Rich-Branning',
-      brief: 'Rich Branning got his degree in economics at Pepperdine University. He worked as District Manager at an Automatic Data Processing leading company and was Co-founder of Closetclicks.'
+      myLink: 'https://www.linkedin.com/in/richard-branning-0252283b/',
+      brief: 'Rich Branning got his degree in economics at Pepperdine University. He worked as District Manager at an Automatic Data Processing leading company and was Co-founder of Closetclicks and LQDEX.'
     },
     {
       avatar: 'avatar0.png',
