@@ -27,11 +27,11 @@ const initialState = {
       brief: 'Rich Branning got his degree in economics at Pepperdine University. He worked as District Manager at an Automatic Data Processing leading company and was Co-founder of Closetclicks and LQDEX.'
     },
     {
-      avatar: 'avatar0.png',
+      avatar: 'RamKumar.jpg',
       name: 'Ram Kumar',
       title: 'Lead Engineer',
       advisor: '',
-      myLink: 'https://www.linkedin.com/in/Ram-Kumard',
+      myLink: 'https://www.linkedin.com/in/ramkumardevaraj/',
       brief: 'A very short bio, if you want'
     },
     {

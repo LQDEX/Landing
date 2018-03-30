@@ -1,11 +1,12 @@
 {
-  "name": "LQDEX",
+  "name": "lqdex",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "startClient": "cd client && npm start",
-    "build": "cd client && npm run build",
+    "buildClient": "cd client && npm install && npm run build",
+    "deploy": "npm install && npm run buildClient && echo -- Deploy succeed -- Starting... && npm start ",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "dependencies": {
