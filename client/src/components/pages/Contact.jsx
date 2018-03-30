@@ -48,7 +48,16 @@ class Contact extends Component {
       phone: this.state.phone,
       message: this.state.message
     })
-    .then(res=>console.log(res));    
+    .then(res => {
+      const response = res.data;
+      console.log(response);
+      if (response.error) {
+        alert(`Error: ${response.error.errno} - ${response.error.sqlMessage}`);
+      } else {
+        alert(`We recieved your message`);
+      }
+    })
+    .catch(err => alert('ERROR: an error occured, try again in a while'));    
   }
 
   render() {

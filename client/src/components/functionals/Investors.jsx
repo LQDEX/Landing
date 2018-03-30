@@ -19,8 +19,8 @@ class Investors extends Component {
         <div className="firstLine">Investors</div>
         <div className="logosRow">
           {investors.map((item, ii) =>
-            <a className="frameLink" href={item.linkTo} target="_blank">
-              <img className="investorLogo"src={require(`../../assets/img/${item.logoFile}`)} alt={item.name} key={`item${ii}`} />
+            <a className="frameLink" href={item.linkTo} target="_blank" key={`item${ii}`}>
+              <img className="investorLogo"src={require(`../../assets/img/${item.logoFile}`)} alt={item.name} />
             </a>
           )}
         </div>
