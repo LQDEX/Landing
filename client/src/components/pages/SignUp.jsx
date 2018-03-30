@@ -46,8 +46,16 @@ class SignUp extends Component {
       email:this.state.email,
       phone: this.state.phone
     })
-    .then(res=>console.log(res))
-    .catch(err=> console.log(err));
+    .then(res => {
+      const response = res.data;
+      console.log(response);
+      if (response.error) {
+        alert(`Error: ${response.error.errno} - ${response.error.sqlMessage}`);
+      } else {
+        alert(`Welcome, We keep you updated`);
+      }
+    })
+    .catch(err => alert('ERROR: an error occured, try again in a while'));
   }
 
   render() {
@@ -80,7 +88,7 @@ class SignUp extends Component {
                 <input
                   name="phone"
                   type="text"
-                  placeholder="Phone Numbre"
+                  placeholder="Phone Number"
                   onChange={(event)=>this.handleInputChange(event)} />
               </span>
             </div>
