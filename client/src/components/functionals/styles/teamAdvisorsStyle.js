@@ -136,8 +136,16 @@ export default {
       fontWeight: 'bold',
       color: primary,
       borderBottom: `1px solid ${globalBackground}`,
-      margin: '0 0 15px 0'
-
+      margin: '0 0 15px 0',
+      '& .nameLink': {
+        outline: 'none',
+        textDecoration: 'none',
+        color: primary,
+        '&:link': { textDecoration: 'none' },
+        '&visited': { textDecoration: 'none' },
+        '&hover': { textDecoration: 'none' },
+        '&active': { textDecoration: 'none' }
+      }
     },
     '& .matePosition': {
       fontFamily: txtCaptionFont,

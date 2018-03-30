@@ -30,7 +30,7 @@ const AvatarFrame = props => {
 const MemberCard = props =>
   <div className="card">
     <AvatarFrame imgName={props.member.avatar} linkTo={props.member.myLink} i={props.i} />
-    <div className="mateName">{props.member.name}</div>
+    <div className="mateName"><a className="nameLink" href={props.member.myLink} target="_blank">{props.member.name}</a></div>
     <div className="matePosition">{props.member.advisor}</div>
     <div className="matePosition">{props.member.title}</div>
     <div className="mateBrief">{props.member.brief}</div>
