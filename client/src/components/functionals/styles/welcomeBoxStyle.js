@@ -91,7 +91,7 @@ export default {
       '& .firstLine': {
         extend: 'firstLine',
         margin: '30px 0 30px 0',
-        fontSize: '38px'
+        fontSize: '4em'
       },
       '& .txtBody': {
         extend: 'txtBody',
