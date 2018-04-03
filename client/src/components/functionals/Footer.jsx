@@ -9,6 +9,19 @@ import injectSheet from 'react-jss';
 import { footerStyle } from './styles';
 
 class Footer extends Component {
+  state = {
+    eDir: {
+      d1:'mailto:in',
+      d2:'fo@lqd',
+      d3:'ex.com'
+    }
+  }
+
+  eDir (props) {
+    return(
+      <a className="copyRights em" href={`${props.d1}${props.d2}${props.d3}`}>{`in${props.d2}${props.d3}`}</a>
+    )
+  }
 
   goTo(section, page) {
     if (page) {
@@ -33,7 +46,9 @@ class Footer extends Component {
         <div className="firstLine">Sign up for Updates</div>
         <button className="btnSubscribe" onClick={() => this.goTo('signUp', 'signUp')}>Sign up</button>
         <div className="copyRights">© 2018 LQDEX. All Rights Reserved.</div>
-        <div className="copyRights">Privacy Policy, Terms & Conditions.</div>
+        <div className="copyRights">1541 Ocean Ave., Suite 200</div>
+        <div className="copyRights">Santa Monica, CA 90401</div>
+        <div className="copyRights">{this.eDir(this.state.eDir)}</div>
       </div>
     );
   }

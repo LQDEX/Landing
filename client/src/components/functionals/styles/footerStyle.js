@@ -48,9 +48,13 @@ export default {
       margin: '0 0 15px 0',
       display: 'inline-block',
       boxSizing: 'content-box',
-      cursor: 'pointer',
       border: 'none',
-      color: grey
+      color: grey,
+      '& .em': {
+        padding: '0',
+        textDecoration: 'none',
+        fontSize: '14px'
+      }
     }
   },
   mRoot: {

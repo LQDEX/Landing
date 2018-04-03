@@ -14,7 +14,19 @@ import injectSheet from 'react-jss';
 import { mobileLandingLayoutStyle } from './styles';
 
 class MobileLandingLayout extends Component {
+  state = {
+    eDir: {
+      d1:'mailto:in',
+      d2:'fo@lqd',
+      d3:'ex.com'
+    }
+  }
 
+  eDir (props) {
+    return(
+      <a className="copyRights em" href={`${props.d1}${props.d2}${props.d3}`}>{`in${props.d2}${props.d3}`}</a>
+    )
+  }
 
   goTo(section, page) {
     if (page) {
@@ -54,7 +66,11 @@ class MobileLandingLayout extends Component {
               </button>
             )}
             <div className="hr"></div>
-            <span className="privacy" onClick={() => this.goTo('privacy', 'privacy')}>Privacy Policy<br/>Terms & Conditions</span>
+            <div className="privacy" onClick={() => this.goTo('privacy', 'privacy')}>
+              <div className="copyRights">1541 Ocean Ave., Suite 200</div>
+              <div className="copyRights">Santa Monica, CA 90401</div>
+              <div className="copyRights">{this.eDir(this.state.eDir)}</div>
+            </div>
           </div>
         </div>}
         <div>
