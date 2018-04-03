@@ -86,11 +86,20 @@ export default {
           borderBottom: `1px solid ${textNavBar}`
         },
         '& .privacy': {
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'flex-start',
           fontFamily: txtBlueBottonFont,
           fontSize: '14px',
-          lineHeight: '36px',
+          lineHeight: '26px',
           color: greyBlueLight,
-          margin: '10px 30px'
+          margin: '10px 30px',
+          '& .em': {
+            padding: '0',
+            textDecoration: 'none',
+            fontSize: '14px'
+          }
         },
         '& .hr': {
           borderTop: `0.5px solid ${greyLine}`,
