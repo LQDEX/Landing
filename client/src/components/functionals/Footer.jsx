@@ -46,6 +46,7 @@ class Footer extends Component {
         <div className="firstLine">Sign up for Updates</div>
         <button className="btnSubscribe" onClick={() => this.goTo('signUp', 'signUp')}>Sign up</button>
         <div className="copyRights">© 2018 LQDEX. All Rights Reserved.</div>
+        <br/>
         <div className="copyRights">1541 Ocean Ave., Suite 200</div>
         <div className="copyRights">Santa Monica, CA 90401</div>
         <div className="copyRights">{this.eDir(this.state.eDir)}</div>

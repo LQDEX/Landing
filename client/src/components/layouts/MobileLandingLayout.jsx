@@ -66,7 +66,7 @@ class MobileLandingLayout extends Component {
               </button>
             )}
             <div className="hr"></div>
-            <div className="privacy" onClick={() => this.goTo('privacy', 'privacy')}>
+            <div className="privacy" onClick={() => this.goTo('exchange', 'landing')}>
               <div className="copyRights">1541 Ocean Ave., Suite 200</div>
               <div className="copyRights">Santa Monica, CA 90401</div>
               <div className="copyRights">{this.eDir(this.state.eDir)}</div>

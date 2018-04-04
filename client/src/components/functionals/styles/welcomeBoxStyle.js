@@ -78,8 +78,8 @@ export default {
       '& .imageWrap': {
         extend: 'imageWrap',
         alignItems: 'center',
-        margin: '0 0 30px 0',
-        '& .macBook': { maxWidth: '80%' }
+        margin: '30px 0 15px 0',
+        '& .macBook': { maxWidth: '75%' }
       },
       '& .textArea': {
         display: 'flex',
