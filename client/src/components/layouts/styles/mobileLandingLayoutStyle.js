@@ -98,7 +98,8 @@ export default {
           '& .em': {
             padding: '0',
             textDecoration: 'none',
-            fontSize: '14px'
+            fontSize: '14px',
+            '&:hover': { color: primary }
           }
         },
         '& .hr': {
