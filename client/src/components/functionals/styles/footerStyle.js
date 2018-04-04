@@ -16,7 +16,7 @@ export default {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '0 0 100px 0',
+    padding: '0 0 80px 0',
     background: globalBackground,
     '& .firstLine': {
       margin: '0 0 30px 0',
@@ -42,13 +42,12 @@ export default {
       '&:hover': { background: primaryHover }
     },
     '& .copyRights': {
+
       fontFamily: txtBlueBottonFont,
       fontSize: 14,
       fontWeight: 400,
-      margin: '0 0 15px 0',
       display: 'inline-block',
       boxSizing: 'content-box',
-      border: 'none',
       color: grey,
       '& .em': {
         padding: '0',
