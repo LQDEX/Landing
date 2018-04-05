@@ -40,15 +40,11 @@ class WelcomeBox extends Component {
           {deviceType === 'mobile' && <img src={require('../../assets/img/dummy1920x800.png')} alt="" />}
         </div>
         <div className="overlay">
-          {/* deviceType === 'mobile' && <div className="textArea ">
-            <span className="firstLine">LQDEX</span>
-    </div> */}
 
           <div className="imageWrap">
             <img className="macBook" src={require('../../assets/img/macbookScreen.png')} alt="" />
           </div>
           <div className="textArea ">
-            {/* deviceType !== 'mobile' && <span className="firstLine">LQDEX</span>*/}
             <span className="firstLine">LQDEX</span>
             <span className="txtBody">DECENTRALIZED</span>
             <span className="txtBody">TRUSTLESS</span>
