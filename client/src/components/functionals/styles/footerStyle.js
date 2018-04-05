@@ -48,6 +48,7 @@ export default {
       fontWeight: 400,
       display: 'inline-block',
       boxSizing: 'content-box',
+      lineHeight: '1.5em',
       color: grey,
       '& .em': {
         padding: '0',
