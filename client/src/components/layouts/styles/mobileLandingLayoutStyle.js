@@ -92,7 +92,7 @@ export default {
           alignItems: 'flex-start',
           fontFamily: txtBlueBottonFont,
           fontSize: '14px',
-          // lineHeight: '26px',
+          lineHeight: '1.5em',
           color: greyBlueLight,
           margin: '10px 30px',
           '& .em': {

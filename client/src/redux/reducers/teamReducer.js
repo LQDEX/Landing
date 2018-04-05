@@ -31,7 +31,7 @@ const initialState = {
       name: 'Michelle Kim',
       title: 'Head of Operations',
       advisor: '',
-      myLink: 'https://www.linkedin.com/in/michelle-kim-26640325/',
+      myLink: 'https://www.linkedin.com/in/michelle-kim-05086213a/',
       brief: 'Michelle has been passionate about blockchain technology since she started managing operations for a cryptocurrency lending platform in early 2017. She has extensive experience in platform security and operational issues. Michelle holds a BS degree in Cognitive Psychology from UC, Irvine.'
     },
     {
@@ -47,7 +47,7 @@ const initialState = {
       name: 'Patrick Maher',
       title: 'Head of Client Relations',
       advisor: '',
-      myLink: 'https://www.linkedin.com/in/PatrickMaher0/',
+      myLink: 'https://www.linkedin.com/in/patrick-maher-6b7b0b7b/',
       brief: 'Patrick began his career as a data analyst for Coin Dealer Newsletter. His was introduced to bitcoin in early 2014 and started a cryptocurrency mining operation. Patrick graduated from Colorado State with a BS degree in Computer Information Systems.'
     },
     {
