@@ -3,6 +3,14 @@
 const initialState = {
   members: [
     {
+      avatar: 'BraytonWilliams.jpg',
+      name: 'Brayton Williams',
+      title: 'Co-Founder, BoostVC',
+      advisor: '',
+      myLink: 'https://www.linkedin.com/in/braytonwilliams/',
+      brief: ''
+    },
+    {
       avatar: 'JoeUrgo.jpg',
       name: 'Joe Urgo',
       title: 'CEO, District0x',
@@ -16,14 +24,6 @@ const initialState = {
       title: 'CEO, Bloom',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/jesseleimgruber/',
-      brief: ''
-    },
-    {
-      avatar: 'BraytonWilliams.jpg',
-      name: 'Brayton Williams',
-      title: 'Co-Founder, BoostVC',
-      advisor: '',
-      myLink: 'https://www.linkedin.com/in/braytonwilliams/',
       brief: ''
     }
   ]

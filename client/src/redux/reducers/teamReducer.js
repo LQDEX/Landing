@@ -48,7 +48,7 @@ const initialState = {
       title: 'Head of Client Relations',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/patrick-maher-6b7b0b7b/',
-      brief: 'Patrick began his career as a data analyst for Coin Dealer Newsletter. His was introduced to bitcoin in early 2014 and started a cryptocurrency mining operation. Patrick graduated from Colorado State with a BS degree in Computer Information Systems.'
+      brief: 'Patrick began his career as a data analyst for Coin Dealer Newsletter. He was introduced to bitcoin in early 2014 and started a cryptocurrency mining operation. Patrick graduated from Colorado State with a BS degree in Computer Information Systems.'
     },
     {
       avatar: 'RamKumar.jpg',

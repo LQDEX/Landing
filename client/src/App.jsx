@@ -33,7 +33,7 @@ class App extends Component {
 
       return;
     } else if (wWidth < 1200) {
-      this.props.platformSet({ deviceType: 'tablet' });
+      this.props.platformSet({ deviceType: 'mobile' });
 
       return;
     }
