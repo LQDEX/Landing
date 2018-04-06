@@ -26,13 +26,12 @@ export default {
     alignItems: 'center',
     background: globalBackground,
 
-    '& #img-1': { clipPath: 'url(#clip-triangle)' },
+    '& #image-svg': { filter: `drop-shadow(0px 0px 5px ${shadowSoft})` },
 
     '& .frameLink': {
       outline: 'none',
       '& .frameContainer': {
-        transform: 'scale(0.8)',
-        filter: `drop-shadow(0px 0px 5px ${shadowSoft})`,
+        transform: 'scale(0.90)',
         '& .frameOutside0': {
           position: 'static',
           background: frameBorder,

@@ -3,22 +3,24 @@ import { connect } from 'react-redux';
 
 // Import Styles
 import injectSheet from 'react-jss';
-import { teamAdvisorsStyle } from './styles';
+import { teamAdvisorsStyle, palette } from './styles';
 
 const AvatarFrame = props => {
-  const frameIndex = Math.floor(Math.random() * 5);
+  const { shadowSoft } = palette;
+  const margin = { xm: 25, ym: 25 };
   const imgWidth = props.width;
   const imgHeight = props.height;
   const frameShape = [
-    { xP: 0.1, yP: 0.95 },
-    { xP: 0.2, yP: 0.05 },
-    { xP: 0.8, yP: 0.1 },
-    { xP: 0.9, yP: 0.85 }
+    [{ xP: 0.20, yP: 0.00 }, { xP: 0.85, yP: 0.09 }, { xP: 1.00, yP: 0.54 }, { xP: 0.66, yP: 1.00 }, { xP: 0.00, yP: 0.61 }],
+    [{ xP: 0.79, yP: 0.00 }, { xP: 1.00, yP: 0.50 }, { xP: 0.60, yP: 1.00 }, { xP: 0.07, yP: 0.90 }, { xP: 0.00, yP: 0.19 }],
+    [{ xP: 0.60, yP: 0.00 }, { xP: 1.00, yP: 0.30 }, { xP: 0.81, yP: 0.93 }, { xP: 0.25, yP: 1.00 }, { xP: 0.00, yP: 0.47 }],
+    [{ xP: 0.69, yP: 0.00 }, { xP: 1.00, yP: 0.35 }, { xP: 0.90, yP: 1.00 }, { xP: 0.25, yP: 0.94 }, { xP: 0.00, yP: 0.27 }],
+    [{ xP: 0.54, yP: 0.00 }, { xP: 1.00, yP: 0.41 }, { xP: 0.71, yP: 0.91 }, { xP: 0.31, yP: 1.00 }, { xP: 0.00, yP: 0.40 }, { xP: 0.13, yP: 0.10 }]
   ];
+  const frameIndex = Math.floor(Math.random() * (frameShape.length - 1));
   const pointsCalc = () => {
     let points = '';
-    points += frameShape.map(pPoint => `${imgWidth * pPoint.xP} ${imgWidth * pPoint.yP}`);
-    console.log(points);
+    points += frameShape[0].map(pPoint => `${(imgWidth - margin.xm) * pPoint.xP + margin.xm / 2} ${(imgWidth - margin.ym) * pPoint.yP + margin.ym / 2}`);
 
     return points;
   };
@@ -28,45 +30,30 @@ const AvatarFrame = props => {
   return (
     <div style={{
       width: props.width,
-      height: props.height,
-      border: '1px solid red'
+      height: props.height
     }}>
-      {/* <a className="frameLink" href={props.linkTo} target="_blank">*/}
-      <div className="frameContainer">
-        <div className={`frameOutside${frameIndex}`}>
-          <div className={`frameInside${frameIndex}`}>
-            <svg id="image-svg" width={imgWidth} height={imgHeight}>
-              <image id="img-1" className="svg-image" width={imgWidth} height={imgHeight} xlinkHref={require(`../../assets/img/${props.imgName}`) } />
-              <polygon
-                points={pointsCalc()}
-                style={ {
-                  fill: 'none',
-                  stroke: 'purple',
-                  strokeWidth: 10
-                } }
-              />
-            </svg>
-          </div>
+      <a className="frameLink" href={props.linkTo} target="_blank">
+        <div className="frameContainer">
+          <svg id="image-svg" style={{ filter: `drop-shadow(0px 0px 5px ${shadowSoft})` }} width={imgWidth} height={imgHeight}>
+            <image id="img-1" className="svg-image" style={ { clipPath: 'url(#clip-triangle)' } } width={imgWidth} height={imgHeight} xlinkHref={require(`../../assets/img/${props.imgName}`) } />
+            <polygon id="svgFrame" points={pointsCalc()}
+              style={ {
+                fill: 'none',
+                stroke: 'white',
+                strokeWidth: 10,
+                filter: 'drop-shadow( 6px 0 2px hsla(0, 0%, 0%, 0.2))'
+              } }
+            />
+          </svg>
         </div>
-      </div>
-      <svg id="svg-defs">
-        <defs>
-          <clipPath id="clip-triangle">
-            <polygon points={pointsCalc()} style={{
-              fill: 'lime',
-              stroke: 'purple',
-              strokeWidth: 5,
-              fillRule: 'evenodd'
-            }} />
-          </clipPath>
-        </defs>
-      </svg>
-      {/* <img className="avatar" width={imgWidth} height={imgHeight} src={require(`../../assets/img/${props.imgName}`) } alt="avatar" />
-              <img className="in" src={require('../../assets/img/logoLinkedin.png')} alt="in" />
-            </div>
-          </div>
-
-      </a>*/}
+        <svg id="svg-defs">
+          <defs>
+            <clipPath id="clip-triangle">
+              <polygon points={pointsCalc()}/>
+            </clipPath>
+          </defs>
+        </svg>
+      </a>
     </div>
   );
 };
