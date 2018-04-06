@@ -25,6 +25,9 @@ export default {
     justifyContent: 'flex-start',
     alignItems: 'center',
     background: globalBackground,
+
+    '& #img-1': { clipPath: 'url(#clip-triangle)' },
+
     '& .frameLink': {
       outline: 'none',
       '& .frameContainer': {
