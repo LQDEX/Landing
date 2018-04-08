@@ -6,7 +6,7 @@ import injectSheet from 'react-jss';
 import { teamAdvisorsStyle, palette } from './styles';
 
 const AvatarFrame = props => {
-  const { shadowSoft } = palette;
+  const { shadowSoft, primary } = palette;
   const margin = { xm: 25, ym: 25 };
   const imgWidth = props.width;
   const imgHeight = props.height;
@@ -18,9 +18,9 @@ const AvatarFrame = props => {
     [{ xP: 0.54, yP: 0.00 }, { xP: 1.00, yP: 0.41 }, { xP: 0.71, yP: 0.91 }, { xP: 0.31, yP: 1.00 }, { xP: 0.00, yP: 0.40 }, { xP: 0.13, yP: 0.10 }]
   ];
   const frameIndex = Math.floor(Math.random() * (frameShape.length - 1));
-  const pointsCalc = () => {
+  const pointsCalc = index => {
     let points = '';
-    points += frameShape[0].map(pPoint => `${(imgWidth - margin.xm) * pPoint.xP + margin.xm / 2} ${(imgWidth - margin.ym) * pPoint.yP + margin.ym / 2}`);
+    points += frameShape[index].map(pPoint => `${(imgWidth - margin.xm) * pPoint.xP + margin.xm / 2} ${(imgWidth - margin.ym) * pPoint.yP + margin.ym / 2}`);
 
     return points;
   };
@@ -32,11 +32,12 @@ const AvatarFrame = props => {
       width: props.width,
       height: props.height
     }}>
-      <a className="frameLink" href={props.linkTo} target="_blank">
-        <div className="frameContainer">
-          <svg id="image-svg" style={{ filter: `drop-shadow(0px 0px 5px ${shadowSoft})` }} width={imgWidth} height={imgHeight}>
-            <image id="img-1" className="svg-image" style={ { clipPath: 'url(#clip-triangle)' } } width={imgWidth} height={imgHeight} xlinkHref={require(`../../assets/img/${props.imgName}`) } />
-            <polygon id="svgFrame" points={pointsCalc()}
+      <a id="frameLink" style = { { outline: 'none' } } href={props.linkTo} target="_blank">
+        <div id="frameContainer" style = { { transform: 'scale(0.90)' } }>
+          <svg id="svgContainer" style={{ filter: `drop-shadow(0px 0px 5px ${shadowSoft})` }} width={imgWidth} height={imgHeight}>
+            <polygon id="svgBackgound" style={ { fill: primary } } points={pointsCalc(frameIndex)} />
+            <image id="svgImage" style={ { clipPath: `url(#shape${frameIndex})` } } width={imgWidth} height={imgHeight} xlinkHref={require(`../../assets/img/${props.imgName}`) } />
+            <polygon id="svgFrame" points={pointsCalc(frameIndex)}
               style={ {
                 fill: 'none',
                 stroke: 'white',
@@ -44,15 +45,14 @@ const AvatarFrame = props => {
                 filter: 'drop-shadow( 6px 0 2px hsla(0, 0%, 0%, 0.2))'
               } }
             />
+            <image id="svgLogo" x={imgWidth / 2} y={imgHeight / 2} width={32} height={32} xlinkHref={require(`../../assets/img/logoLinkedin.png`) } />
+            <defs>
+              {frameShape.map((pPoint, index) =>
+                <clipPath key={`a${index}`} id={`shape${index}`}><polygon points={pointsCalc(index)}/></clipPath>
+              )}
+            </defs>
           </svg>
         </div>
-        <svg id="svg-defs">
-          <defs>
-            <clipPath id="clip-triangle">
-              <polygon points={pointsCalc()}/>
-            </clipPath>
-          </defs>
-        </svg>
       </a>
     </div>
   );
@@ -60,7 +60,7 @@ const AvatarFrame = props => {
 
 const MemberCard = props =>
   <div className="card">
-    <AvatarFrame imgName={props.member.avatar} linkTo={props.member.myLink} i={props.i} width={300} height={300}/>
+    <AvatarFrame imgName={props.member.avatar} linkTo={props.member.myLink} width={300} height={300}/>
     <div className="mateName"><a className="nameLink" href={props.member.myLink} target="_blank">{props.member.name}</a></div>
     <div className="matePosition">{props.member.advisor}</div>
     <div className="matePosition">{props.member.title}</div>
