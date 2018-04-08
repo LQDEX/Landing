@@ -6,7 +6,7 @@ import actions from '../../redux/actions';
 
 // Import Styles
 import injectSheet from 'react-jss';
-import { welcomeBoxStyle } from './styles';
+import { palette, welcomeBoxStyle } from './styles';
 
 const shapes = {
   desktop: [{ xP: 0.00, yP: 1.00 }, { xP: 0.67, yP: 0.84 }, { xP: 1.00, yP: 1.00 }],
@@ -16,8 +16,10 @@ const shapes = {
 
 class WelcomeBox extends Component {
   state = {
-    wWidth: window.innerWidth,
-    wHeight: 800}
+      wWidth: window.innerWidth,
+      wHeight: 800
+  }
+
   goToPage(page, param) {
     this.props.goToPage(page, param);
   }
@@ -40,6 +42,20 @@ class WelcomeBox extends Component {
     return points;
   }
 
+  updateWindowsDim() {
+    return this.setState({
+      wWidth: window.innerWidth
+    });
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', () => this.updateWindowsDim());
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowsDim.bind(this));
+  }
+
   render() {
     const
       { classes, deviceType } = this.props,
@@ -49,13 +65,10 @@ class WelcomeBox extends Component {
         mobile: classes.mRoot
       }[deviceType];
  
-      console.log(window);
-      
-
     return (
       <div className={style} >
         <svg width={this.state.wWidth} height={this.state.wHeight} >
-          <polygon style={ { fill: 'white' } }points={this.toPoints(this.state.wWidth, this.state.wHeight, shapes[deviceType])}/>
+          <polygon style={ { fill: palette.globalBackground } } points={this.toPoints(this.state.wWidth, this.state.wHeight, shapes[deviceType])}/>
         </svg>
 
         <div className="overlay">

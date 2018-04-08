@@ -1,18 +1,13 @@
 import palette from './palette';
 
 const {
-    globalBackground,
-    textHeader,
-    text,
-    textHighlight,
-    txtHeaderFont,
-    txtBodyFont
-  } = palette,
-
-  dShapeBottom = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0 40%, 40% 99%, 90% 50%, 75% 0, 0 13%)',
-  dShapeTop = 'polygon(0% 0%, 100% 0%, 100% 19%, 75% 0%, 0% 100%, 100% 82%, 100% 100%, 0% 100%)',
-  mShapeBottom = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0 40%, 50% 99%, 100% 60%, 100% 15%, 90% 0, 0 13%)',
-  mShapeTop = 'polygon(0% 0%, 100% 0%, 100% 10%, 65% 0%, 0% 65%, 0% 100% , 100% 90%, 100% 100%, 0% 100%)';
+  globalBackground,
+  textHeader,
+  text,
+  textHighlight,
+  txtHeaderFont,
+  txtBodyFont
+} = palette;
 
 export default {
   root: {
@@ -43,19 +38,8 @@ export default {
         padding: '0 2% 0% 7%'
       },
       '& .imgBlockTop': {
-        // flex: '1 0 auto',
         position: 'relative',
-        display: 'flex',
-        '& .topWindow': {
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          height: '100%',
-          width: '100%',
-          backgroundColor: globalBackground,
-          '-webkit-clip-path': dShapeTop,
-          clipPath: dShapeTop
-        }
+        display: 'flex'
       },
       '& .textBlockRight': {
         display: 'flex',
@@ -70,17 +54,7 @@ export default {
       },
       '& .imgBlockBottom': {
         position: 'relative',
-        // maxHeight: 543,
-        '& .bottomWindow': {
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          height: '100%',
-          width: '100%',
-          backgroundColor: globalBackground,
-          '-webkit-clip-path': dShapeBottom,
-          clipPath: dShapeBottom
-        }
+        display: 'flex'
       },
       '& .firstLine': {
         margin: '0 0 51px 0',
@@ -124,33 +98,6 @@ export default {
         borderBottom: `50px solid ${globalBackground}`,
         width: '91%',
         padding: '0 7% 0 2%'
-      },
-      '& .imgBlockTop': {
-        extend: 'imgBlockTop',
-        '& .topWindow': {
-          extend: 'topWindow',
-          '-webkit-clip-path': mShapeTop,
-          clipPath: mShapeTop
-        }
-        // '& .textRiskFreeWrap': {
-        //   extend: 'textRiskFreeWrap',
-        //   top: '25%',
-        //   left: '60%'
-        // },
-        // '& .textSecureWrap': {
-        //   extend: 'textSecureWrap',
-        //   top: '54%',
-        //   left: '43%'
-        // }
-      },
-      '& .imgBlockBottom': {
-        extend: 'imgBlockBottom',
-        maxHeight: 450,
-        '& .bottomWindow': {
-          extend: 'bottomWindow',
-          '-webkit-clip-path': mShapeBottom,
-          clipPath: mShapeBottom
-        }
       },
       '& .firstLine': {
         extend: 'firstLine',

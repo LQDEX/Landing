@@ -7,6 +7,7 @@ const initialState = {
   },
   showSidenav: false,
   platform: {},
+  wDim: {},
   navBar: {
     active: 'exchange',
     options: [
@@ -69,6 +70,13 @@ const app = (state = initialState, action) => {
     }
     default:
       return state;
+    
+  //  case constants.APP_WINDOW_RESIZE: {
+  //    return {
+  //      ...state,
+  //      wDim: action.data,
+  //    }
+  //  }
   }
 };
 
