@@ -22,7 +22,7 @@ export default {
       display: 'flex',
       flexDirection: 'row',
       flexWrap: 'wrap',
-      justifyContent: 'space-evenly',
+      justifyContent: 'space-around',
       alignItems: 'center',
       minWidth: '100%',
       '& .imageWrap': {
