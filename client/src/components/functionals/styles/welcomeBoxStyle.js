@@ -1,19 +1,15 @@
 import palette from './palette';
 
 const {
-    primary,
-    primaryHover,
-    globalBackground,
-    textHeader,
-    text,
-    txtHeaderFont,
-    txtSubheaderFont,
-    txtBlueBottonFont
-  } = palette,
-
-  dShape = 'polygon(0 100%, 67% 84%, 100% 100%)',
-  mShape = 'polygon(0 100%, 77% 94%, 100% 98%, 100% 100%)',
-  tShape = 'polygon(0 100%, 90% 90%, 100% 94%, 100% 100%)';
+  primary,
+  primaryHover,
+  globalBackground,
+  textHeader,
+  text,
+  txtHeaderFont,
+  txtSubheaderFont,
+  txtBlueBottonFont
+} = palette;
 
 export default {
   root: {
@@ -21,12 +17,6 @@ export default {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    '& .imgClip': {
-      background: globalBackground,
-      width: '100%',
-      '-webkit-clip-path': dShape,
-      clipPath: dShape
-    },
     '& .overlay': {
       position: 'absolute',
       display: 'flex',
@@ -67,10 +57,6 @@ export default {
   mRoot: {
     extend: 'root',
     justifyContent: 'flex-start',
-    '& .imgClip': {
-      '-webkit-clip-path': mShape,
-      clipPath: mShape
-    },
     '& .overlay': {
       extend: 'overlay',
       display: 'flex',
@@ -116,10 +102,6 @@ export default {
   },
   tRoot: {
     extend: 'root',
-    '& .imgClip': {
-      '-webkit-clip-path': tShape,
-      clipPath: tShape
-    },
     '& .overlay': {
       extend: 'overlay',
       display: 'flex',

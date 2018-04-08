@@ -20,7 +20,7 @@ const AvatarFrame = props => {
   const frameIndex = Math.floor(Math.random() * (frameShape.length - 1));
   const pointsCalc = index => {
     let points = '';
-    points += frameShape[index].map(pPoint => `${(imgWidth - margin.xm) * pPoint.xP + margin.xm / 2} ${(imgWidth - margin.ym) * pPoint.yP + margin.ym / 2}`);
+    points += frameShape[index].map(pPoint => `${(imgWidth - margin.xm) * pPoint.xP + margin.xm / 2} ${(imgHeight - margin.ym) * pPoint.yP + margin.ym / 2}`);
 
     return points;
   };
