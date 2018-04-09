@@ -1,4 +1,5 @@
 // Desktop Containers
+import palette from './palette';
 import headerNavbarStyle from './headerNavbarStyle';
 import headerStatsStyle from './headerStatsStyle';
 import welcomeBoxStyle from './welcomeBoxStyle';
@@ -11,6 +12,7 @@ import footerStyle from './footerStyle';
 // Mobile Containers
 
 export {
+  palette,
   headerNavbarStyle,
   headerStatsStyle,
   welcomeBoxStyle,

@@ -29,6 +29,13 @@ export default {
       type: constants.APP_NAVBAR_ACTIVE,
       data: activeOption,
     }
-  }
+  },
+
+//  onWindowResize: (wDim) => {
+//    return {
+//      type: constants.APP_WINDOW_RESIZE,
+//      data: wDim,
+//    }
+//  }
 
 };
