@@ -6,9 +6,20 @@ import actions from '../../redux/actions';
 
 // Import Styles
 import injectSheet from 'react-jss';
-import { welcomeBoxStyle } from './styles';
+import { palette, welcomeBoxStyle } from './styles';
+
+const shapes = {
+  desktop: [{ xP: 0.00, yP: 1.00 }, { xP: 0.67, yP: 0.84 }, { xP: 1.00, yP: 1.00 }],
+  mobile: [{ xP: 0.00, yP: 1.00 }, { xP: 0.77, yP: 0.94 }, { xP: 1.00, yP: 0.98 }, { xP: 1.00, yP: 1.00 }],
+  tablet: [{ xP: 0.00, yP: 1.00 }, { xP: 0.90, yP: 0.90 }, { xP: 1.00, yP: 0.94 }, { xP: 1.00, yP: 1.00 }]
+};
 
 class WelcomeBox extends Component {
+  state = {
+      wWidth: window.innerWidth,
+      wHeight: 800
+  }
+
   goToPage(page, param) {
     this.props.goToPage(page, param);
   }
@@ -23,6 +34,28 @@ class WelcomeBox extends Component {
     }
   }
 
+  toPoints(imgWidth, imgHeight, pointsArray) {
+    const margin = { xm: 0, ym: 0 };
+    let points = '';
+    points += pointsArray.map(pPoint => `${(imgWidth - margin.xm) * pPoint.xP + margin.xm / 2} ${(imgHeight - margin.ym) * pPoint.yP + margin.ym / 2}`);
+
+    return points;
+  }
+
+  updateWindowsDim() {
+    return this.setState({
+      wWidth: window.innerWidth
+    });
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', () => this.updateWindowsDim());
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowsDim.bind(this));
+  }
+
   render() {
     const
       { classes, deviceType } = this.props,
@@ -31,16 +64,14 @@ class WelcomeBox extends Component {
         tablet: classes.tRoot,
         mobile: classes.mRoot
       }[deviceType];
-
-
+ 
     return (
       <div className={style} >
-        <div className="imgClip">
-          {deviceType !== 'mobile' && <img src={require('../../assets/img/dummy1920x800.png')} alt="" />}
-          {deviceType === 'mobile' && <img src={require('../../assets/img/dummy1920x800.png')} alt="" />}
-        </div>
-        <div className="overlay">
+        <svg width={this.state.wWidth} height={this.state.wHeight} >
+          <polygon style={ { fill: palette.globalBackground } } points={this.toPoints(this.state.wWidth, this.state.wHeight, shapes[deviceType])}/>
+        </svg>
 
+        <div className="overlay">
           <div className="imageWrap">
             <img className="macBook" src={require('../../assets/img/macbookScreen.png')} alt="" />
           </div>

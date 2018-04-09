@@ -112,7 +112,8 @@ const stateToProps = state => ({ app: state.app });
 const dispatchToProps = dispatch => ({
   getCryptoData: () => dispatch(actions.getCryptoData()),
   platformSet: platformInfo => dispatch(actions.platformSet(platformInfo)),
-  navBarActive: option => dispatch(actions.navBarActive(option))
+  navBarActive: option => dispatch(actions.navBarActive(option)),
+  onWindowResize: wDim => dispatch(actions.onWindowResize(wDim))
 });
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(reset)(App));
