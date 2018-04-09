@@ -2,15 +2,12 @@ import palette from './palette';
 
 // const { videoBackground, textHeader, text } = palette,
 const {
-    textHeader,
-    globalBackground,
-    txtHeaderFont,
-    txtBodyFont,
-    txtCaptionFont
-  } = palette,
-
-  mShape = 'polygon(20% 7%, 100% 0%, 100% 99%, 65% 95%, 0 99%, 0 5%)',
-  shape = 'polygon(29% 18%, 100% 0, 100% 99%, 65% 86%, 0 96%, 0 10%)';
+  textHeader,
+  globalBackground,
+  txtHeaderFont,
+  txtBodyFont,
+  txtCaptionFont
+} = palette;
 
 export default {
   root: {
@@ -20,11 +17,6 @@ export default {
     alignItems: 'center',
     background: globalBackground,
 
-    '& .imgClip': {
-      width: '100%',
-      '-webkit-clip-path': shape,
-      clipPath: shape
-    },
     '& .overlay': {
       position: 'absolute',
       display: 'flex',
@@ -87,12 +79,6 @@ export default {
   mRoot: {
     extend: 'root',
     borderBottom: `50px solid ${globalBackground}`,
-    '& .imgClip': {
-      extend: 'imgClip',
-      maxHeight: 800,
-      '-webkit-clip-path': mShape,
-      clipPath: mShape
-    },
     '& .overlay': {
       extend: 'overlay',
       '& .firstLine': {
