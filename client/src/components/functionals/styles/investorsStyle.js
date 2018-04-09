@@ -27,7 +27,7 @@ export default {
     '& .logosRow': {
       display: 'flex',
       flexDirection: 'row',
-      justifyContent: 'space-evenly',
+      justifyContent: 'space-around',
       alignItems: 'center',
       flexWrap: 'wrap',
       minWidth: '100%',

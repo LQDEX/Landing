@@ -1,22 +1,15 @@
 import palette from './palette';
 
 const {
-    primary,
-    globalBackground,
-    textHeader,
-    text,
-    grey,
-    frameBorder,
-    shadowSoft,
-    txtHeaderFont,
-    txtBodyFont,
-    txtCaptionFont
-  } = palette,
-  shape0 = 'polygon(20% 0, 85% 9%, 100% 54%, 66% 100%, 0 61%)',
-  shape1 = 'polygon(79% 0, 100% 50%, 60% 100%, 7% 90%, 0 19%)',
-  shape2 = 'polygon(60% 0, 100% 30%, 81% 93%, 25% 100%, 0 47%)',
-  shape3 = 'polygon(69% 0, 100% 35%, 90% 100%, 25% 94%, 0 27%)',
-  shape4 = 'polygon(54% 0, 100% 41%, 71% 91%, 31% 100%, 0 40%, 13% 10%)';
+  primary,
+  globalBackground,
+  textHeader,
+  text,
+  grey,
+  txtHeaderFont,
+  txtBodyFont,
+  txtCaptionFont
+} = palette;
 
 export default {
   root: {
@@ -25,79 +18,7 @@ export default {
     justifyContent: 'flex-start',
     alignItems: 'center',
     background: globalBackground,
-    '& .frameLink': {
-      outline: 'none',
-      '& .frameContainer': {
-        transform: 'scale(0.8)',
-        filter: `drop-shadow(0px 0px 5px ${shadowSoft})`,
-        '& .frameOutside0': {
-          position: 'static',
-          background: frameBorder,
-          '-webkit-clip-path': shape0,
-          clipPath: shape0,
-          '& .frameInside0': {
-            position: 'relative',
-            transform: 'scale(0.92)',
-            '-webkit-clip-path': shape0,
-            clipPath: shape0
-          }
-        },
-        '& .frameOutside1': {
-          position: 'static',
-          background: frameBorder,
-          '-webkit-clip-path': shape1,
-          clipPath: shape1,
-          '& .frameInside1': {
-            position: 'relative',
-            transform: 'scale(0.92)',
-            '-webkit-clip-path': shape1,
-            clipPath: shape1
-          }
-        },
-        '& .frameOutside2': {
-          position: 'static',
-          background: frameBorder,
-          '-webkit-clip-path': shape2,
-          clipPath: shape2,
-          '& .frameInside2': {
-            position: 'relative',
-            transform: 'scale(0.92)',
-            '-webkit-clip-path': shape2,
-            clipPath: shape2
-          }
-        },
-        '& .frameOutside3': {
-          position: 'static',
-          background: frameBorder,
-          '-webkit-clip-path': shape3,
-          clipPath: shape3,
-          '& .frameInside3': {
-            position: 'relative',
-            transform: 'scale(0.92)',
-            '-webkit-clip-path': shape3,
-            clipPath: shape3
-          }
-        },
-        '& .frameOutside4': {
-          position: 'static',
-          background: frameBorder,
-          '-webkit-clip-path': shape4,
-          clipPath: shape4,
-          '& .frameInside4': {
-            position: 'relative',
-            transform: 'scale(0.92)',
-            '-webkit-clip-path': shape4,
-            clipPath: shape4
-          }
-        },
-        '& .in': {
-          position: 'absolute',
-          top: 130,
-          left: 150,
-          opacity: 0
-        }
-      }
-    },
+    '& #svgLogo': { opacity: 0 },
     '& .firstLine': {
       margin: '0 0 51px 0',
       fontFamily: txtHeaderFont,
@@ -121,12 +42,8 @@ export default {
       width: '300px',
       '&:hover': {
         '& > .mateName': { borderBottom: `1px solid ${primary}` },
-        '& > div > a > div .in': { opacity: 1 },
-        '& > div > a > div > div > div': {
-          background: primary,
-          cursor: 'pointer',
-          '& .avatar': { opacity: 0.5 }
-        }
+        '& > div > a > div > svg > #svgLogo': { opacity: 1 },
+        '& > div > a > div > svg > #svgImage': { opacity: 0.5 }
       }
 
     },
