@@ -34,7 +34,9 @@ export default {
     },
     '& .sideNav': {
       height: '100%',
-      width: '75%',
+      width: '30%',
+      '@media only screen and (max-width: 850px)': { width: '50%' },
+      '@media only screen and (max-width: 400px)': { width: '75%' },
       position: 'fixed',
       zIndex: 1000,
       top: 0,

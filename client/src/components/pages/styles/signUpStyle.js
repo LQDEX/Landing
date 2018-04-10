@@ -82,9 +82,12 @@ export default {
             height: '100%',
             width: '100%',
             fontSize: '16px',
-            color: textLight,
+            color: greyDark,
             border: 'none',
-            padding: '0 0 0 60px'
+            padding: '0 0 0 60px',
+            '&::placeholder': { color: textLight, opacity: 1 }, /* Firefox, Chrome,...*/
+            '&:-ms-input-placeholder': { color: textLight, opacity: 1 }, /* Internet Explorer 10-11 */
+            '&::-ms-input-placeholder': { color: textLight, opacity: 1 } /* Microsoft Edge */
           }
         }
       },
