@@ -13,11 +13,28 @@ import {
 import injectSheet from 'react-jss';
 import { signUpStyle } from './styles';
 
+const errorMessages = {
+    name: { required:'A name is required' },
+    phone: { required:'' },
+    email: { required:'An email is required' }
+  
+}
+
 class SignUp extends Component {
   state = {
     name:'',
     phone:'',
-    email:''
+    email:'',
+    errors: {
+      name:'',
+      phone:'',
+      email:''
+    }
+  }
+
+  handleSubmitButton (){
+    const {name, email, errors} = this.state;
+    return name && email && !errors.name && !errors.email
   }
 
   handleInputChange(event) {
@@ -28,6 +45,28 @@ class SignUp extends Component {
     this.setState({
       [name]: value
     });
+  }
+
+  handelErrors(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    let errors = this.state.errors
+    if (!value) {
+      errors[name]=errorMessages[name].required
+    }
+
+    this.setState(errors);
+  }
+
+  resetErrors(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    let errors = this.state.errors
+    errors[name]='',
+
+    this.setState(errors);
   }
 
   goTo(section, page) {
@@ -52,7 +91,7 @@ class SignUp extends Component {
       if (response.error) {
         alert(`Error: ${response.error.errno} - ${response.error.sqlMessage}`);
       } else {
-        alert(`Welcome, We keep you updated`);
+        alert(`Thank you. We will keep you updated.`);
       }
     })
     .catch(err => alert('ERROR: an error occured, try again in a while'));
@@ -71,39 +110,54 @@ class SignUp extends Component {
             <button className="btnClose" onClick={() => this.goTo('exchange', 'landing')}><i className="fas fa-times fa-2x"></i></button>
           </div>
           <form>
-            <div className="inputWraper">
-              <div className="inputIcon"><i className="fas fa-user"></i></div>
-              <span className="inputBox">
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Name"
-                  autoFocus
-                  onChange={(event)=>this.handleInputChange(event)} />
-              </span>
+            <div className="fieldWrapper">
+              <label >{this.state.errors.name}</label>
+              <div className="inputWrapper inputError">
+                <div className="inputIcon"><i className="fas fa-user"></i></div>
+                <span className="inputBox">
+                  <input
+                    name="name"
+                    type="text"
+                    placeholder="Name"
+                    autoFocus
+                    onFocus={(event)=>this.resetErrors(event)}
+                    onBlur={(event)=>this.handelErrors(event)}
+                    onChange={(event)=>this.handleInputChange(event)} />
+                </span>
+              </div>
             </div>
-            <div className="inputWraper">
+            <div className="fieldWrapper">
+            <label >{this.state.errors.phone}</label>
+            <div className="inputWrapper">
               <div className="inputIcon"><i className="fas fa-phone"></i></div>
               <span className="inputBox">
                 <input
                   name="phone"
                   type="text"
                   placeholder="Phone Number"
+                  onFocus={(event)=>this.resetErrors(event)}
+                  onBlur={(event)=>this.handelErrors(event)}
                   onChange={(event)=>this.handleInputChange(event)} />
               </span>
             </div>
-            <div className="inputWraper">
+            </div>
+            <div className="fieldWrapper">
+            <label >{this.state.errors.email}</label>
+            <div className="inputWrapper">
               <div className="inputIcon"><i className="fas fa-envelope"></i></div>
               <span className="inputBox">
                 <input
                 name="email"
                 type="text"
                 placeholder="Email"
+                onFocus={(event)=>this.resetErrors(event)}
+                onBlur={(event)=>this.handelErrors(event)}
                 onChange={(event)=>this.handleInputChange(event)} />
               </span>
             </div>
+            </div>
           </form>
-            <div className="buttonsWraper">
+            <div className="buttonsWrapper">
               <button className="btnCancel" onClick={() => this.goTo('exchange', 'landing')}> Cancel</button>
               <button className="btnSubscribe" onClick={() => this.send()}> Subscribe</button>
             </div>

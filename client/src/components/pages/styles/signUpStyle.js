@@ -54,7 +54,8 @@ export default {
           '&:hover': { color: primaryHover }
         }
       },
-      '& .inputWraper': {
+      '& .fieldWrapper': { color: 'red', fontFamily: txtInputs },
+      '& .inputWrapper': {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-start',
@@ -91,7 +92,7 @@ export default {
           }
         }
       },
-      '& .buttonsWraper': {
+      '& .buttonsWrapper': {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',

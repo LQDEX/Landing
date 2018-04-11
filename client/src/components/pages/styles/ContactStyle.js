@@ -12,7 +12,9 @@ const {
   // Font Family
   txtBlueBottonFont,
   txtHeaderFont,
-  txtInputs
+  txtInputs,
+  greyBlueLight,
+  shadowSoft
 } = palette;
 
 export default {
@@ -54,6 +56,7 @@ export default {
           '&:hover': { color: primaryHover }
         }
       },
+      '& .fieldWrapper': { color: 'red', fontFamily: txtInputs },
       '& .inputWraper': {
         display: 'flex',
         flexDirection: 'row',
@@ -124,7 +127,8 @@ export default {
           outline: 'none',
           background: primary,
           color: globalBackground,
-          '&:hover': { background: primaryHover }
+          '&:hover': { background: primaryHover },
+          '&:disabled': { background: shadowSoft, cursor: 'not-allowed' }
         },
         '& .btnCancel': {
           fontFamily: txtBlueBottonFont,
