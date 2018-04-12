@@ -11,6 +11,14 @@ const initialState = {
       brief: ''
     },
     {
+      avatar: 'michaeldunworth.jpg',
+      name: 'Michael Dunworth',
+      title: 'CEO, Wyre',
+      advisor: '',
+      myLink: 'https://www.linkedin.com/in/michael-dunworth-2833b415/',
+      brief: ''
+    },
+    {
       avatar: 'JoeUrgo.jpg',
       name: 'Joe Urgo',
       title: 'CEO, District0x',
