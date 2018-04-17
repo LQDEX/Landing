@@ -3,6 +3,7 @@ import HeaderNavbar from './HeaderNavbar';
 import WelcomeBox from './WelcomeBox';
 import DetailedInfo from './DetailedInfo';
 import Roadmap from './Roadmap';
+import AboutUs from './AboutUs';
 import TeamAdvisors from './TeamAdvisors';
 import Investors from './Investors';
 import Footer from './Footer';
@@ -13,6 +14,7 @@ export {
   WelcomeBox,
   DetailedInfo,
   Roadmap,
+  AboutUs,
   TeamAdvisors,
   Investors,
   Footer
