@@ -5,6 +5,7 @@ import headerStatsStyle from './headerStatsStyle';
 import welcomeBoxStyle from './welcomeBoxStyle';
 import detailedInfoStyle from './detailedInfoStyle';
 import roadmapStyle from './roadmapStyle';
+import aboutUsStyle from './aboutUsStyle';
 import teamAdvisorsStyle from './teamAdvisorsStyle';
 import investorsStyle from './investorsStyle';
 import footerStyle from './footerStyle';
@@ -18,6 +19,7 @@ export {
   welcomeBoxStyle,
   detailedInfoStyle,
   roadmapStyle,
+  aboutUsStyle,
   teamAdvisorsStyle,
   investorsStyle,
   footerStyle
