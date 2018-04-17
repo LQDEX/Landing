@@ -3,6 +3,7 @@ import HeaderContainer from './HeaderContainer';
 import WelcomeContainer from './WelcomeContainer';
 import DetailedInfoContainer from './DetailedInfoContainer';
 import RoadmapContainer from './RoadmapContainer';
+import AboutUsContainer from './AboutUsContainer';
 import TeamAdvisorsContainer from './TeamAdvisorsContainer';
 import InvestorsContainer from './InvestorsContainer';
 import FooterContainer from './FooterContainer';
@@ -14,6 +15,7 @@ export {
   WelcomeContainer,
   DetailedInfoContainer,
   RoadmapContainer,
+  AboutUsContainer,
   TeamAdvisorsContainer,
   InvestorsContainer,
   FooterContainer

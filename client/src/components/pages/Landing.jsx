@@ -8,6 +8,7 @@ import {
   WelcomeContainer,
   DetailedInfoContainer,
   RoadmapContainer,
+  AboutUsContainer,
   TeamAdvisorsContainer,
   InvestorsContainer,
   FooterContainer
@@ -47,8 +48,11 @@ class Landing extends Component {
         <div key="Roadmap" >
           <RoadmapContainer />
         </div>
+        <div key="About" >
+          <ScrollableAnchor id={'aboutUs'}><AboutUsContainer /></ScrollableAnchor>
+        </div>
         <div key="Team" >
-          <ScrollableAnchor id={'aboutUs'}><TeamAdvisorsContainer /></ScrollableAnchor>
+          <TeamAdvisorsContainer />
         </div>
         <div key="Investors" >
           <InvestorsContainer />
