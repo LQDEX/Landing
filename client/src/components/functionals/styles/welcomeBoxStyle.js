@@ -15,9 +15,10 @@ export default {
   root: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     '& .overlay': {
+      // border: '1px solid red',
       position: 'absolute',
       display: 'flex',
       flexDirection: 'row',
@@ -25,6 +26,7 @@ export default {
       justifyContent: 'space-around',
       alignItems: 'center',
       minWidth: '100%',
+      margin: '80px 0 0 0',
       '& .imageWrap': {
         display: 'flex',
         flexDirection: 'column',
@@ -61,6 +63,7 @@ export default {
       extend: 'overlay',
       display: 'flex',
       flexDirection: 'column',
+      margin: '0 0 0 0',
       '& .imageWrap': {
         extend: 'imageWrap',
         alignItems: 'center',

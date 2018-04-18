@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
 import { aboutUsStyle, palette } from './styles';
 
+const aboutTxt = 'LQDEX (pronounced "Liquid X") is a decentralized cryptocurrency exchange. It allows trustless trading of digital tokens on multiple blockchains without counterparty risk. The network achieves this goal by using proxy tokens backed by corresponding assets combined with cross-blockchain smart contract functionality.'
+
 const sections = [
   {
     name: 'Decentralized',
@@ -42,6 +44,9 @@ class AboutUs extends Component {
     return (
       <div className={style}>
         <div className="firstLine">About Us</div>
+        <div className="txtBody">
+          {aboutTxt}
+        </div>
         <div className="teamRow" >
           {sections.map((section, i) =>
             <AboutCard key={`item${i}`} section={section} item={`i${i}`} width="250" height="250"/>

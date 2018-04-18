@@ -27,6 +27,15 @@ export default {
       fontWeight: 'bold',
       color: textHeader
     },
+    '& .txtBody': {
+      fontFamily: txtBodyFont,
+      fontSize: '22px',
+      fontWeight: 'normal',
+      textAlign: 'justify',
+      maxWidth: '1000px',
+      color: text,
+      margin: '0 25px 30px 25px',
+    },
     '& .teamRow': {
       display: 'flex',
       flexDirection: 'row',
@@ -84,6 +93,6 @@ export default {
     '& .firstLine': {
       extend: 'firstLine',
       fontSize: '38px'
-    }
+    },
   }
 };
