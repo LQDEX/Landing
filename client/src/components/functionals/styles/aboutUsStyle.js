@@ -50,7 +50,7 @@ export default {
       justifyContent: 'center',
       alignItems: 'center',
       width: '300px',
-      margin: '0 0 30px 0',
+      margin: '0 50px 30px 50px'
       
 
     },
