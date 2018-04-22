@@ -79,7 +79,7 @@ class WelcomeBox extends Component {
             <span className="firstLine">LQDEX</span>
             <span className="txtBody">DECENTRALIZED</span>
             <span className="txtBody">TRUSTLESS</span>
-            <span className="txtBody">CROSS CHAIN EXCHANGE</span>
+            <span className="txtBody">CROSS-CHAIN EXCHANGE</span>
           </div>
           {deviceType === 'mobile' && <button className="btnSubscribe" onClick={() => this.goTo('signUp', 'signUp')}>Sign up for Updates</button>}
         </div>

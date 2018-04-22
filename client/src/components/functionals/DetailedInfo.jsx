@@ -62,7 +62,7 @@ class DetailedInfo extends Component {
             <span className="txtBody">
               {`Introducing a `}
               <span className="txtHighlight">{`proof of stake blockchain`}</span>
-              {` that will enable counter party risk free trading of cross chain digital assets through the issuing of `}
+              {` that will enable counter party risk free trading of cross-chain digital assets through the issuing of `}
               <span className="txtHighlight">{`proxy tokens`}</span>.
             </span>
           </div>
