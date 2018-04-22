@@ -5,20 +5,20 @@ import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
 import { aboutUsStyle, palette } from './styles';
 
-const aboutTxt = 'LQDEX (pronounced "Liquid X") is a decentralized cryptocurrency exchange. It allows trustless trading of digital tokens on multiple blockchains without counterparty risk. The network achieves this goal by using proxy tokens backed by corresponding assets combined with cross-blockchain smart contract functionality.'
+const aboutTxt = 'LQDEX (pronounced " liquid-ex") is a decentralized trustless cross-chain digital asset exchange. It allows trading of digital tokens across multiple blockchains without counterparty risk. The system does not use atomic swaps and does not require modifications to the existing blockchains. It runs on its own high-speed POS blockchain without miner fees.'
 
 const sections = [
   {
     name: 'Decentralized',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus imperdiet mattis. Aliquam purus lacus, semper quis convallis et, congue eu velit.',
+    desc: 'LQDEX runs as a dapp on a purpose-built POS blockchain. It is immutable, transparent, and publicly auditable.',
   },
   {
     name: 'Trustless',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus imperdiet mattis. Aliquam purus lacus, semper quis convallis et, congue eu velit.',
+    desc: 'The system does not rely on "trusted" third parties. There is no counterparty risk when using the exchange.',
   },
   {
-    name: 'Crossblockchain',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus imperdiet mattis. Aliquam purus lacus, semper quis convallis et, congue eu velit.',
+    name: 'Cross-Chain',
+    desc: 'The exchange supports trading of digital assets across multiple blockchains. Virtually any pair can be traded, such as Bitcoin and Ether.',
   },
 ];
 
