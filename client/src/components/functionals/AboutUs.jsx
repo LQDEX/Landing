@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 // Import Styles
 import injectSheet from 'react-jss';
-import { aboutUsStyle, palette } from './styles';
+import { aboutUsStyle } from './styles';
 
 const aboutTxt = 'LQDEX (pronounced " liquid-ex") is a decentralized trustless cross-chain digital asset exchange. It allows trading of digital tokens across multiple blockchains without counterparty risk. The system does not use atomic swaps and does not require modifications to the existing blockchains. It runs on its own high-speed POS blockchain without miner fees.'
 

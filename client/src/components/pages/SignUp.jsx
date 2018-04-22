@@ -61,10 +61,9 @@ class SignUp extends Component {
 
   resetErrors(event) {
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-    let errors = this.state.errors
-    errors[name]='',
+    let errors = this.state.errors;
+    errors[name]='';
 
     this.setState(errors);
   }

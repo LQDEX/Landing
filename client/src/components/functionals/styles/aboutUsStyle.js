@@ -6,7 +6,6 @@ const {
   textHeader,
   text,
   grey,
-  greyDark,
   txtHeaderFont,
   txtBodyFont,
   txtCaptionFont
