@@ -13,7 +13,6 @@ const {
   txtBlueBottonFont,
   txtHeaderFont,
   txtInputs,
-  greyBlueLight,
   shadowSoft
 } = palette;
 

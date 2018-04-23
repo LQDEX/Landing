@@ -59,6 +59,14 @@ const initialState = {
       brief: 'Ram co-founded a successful cloud and data startup that scaled from 4 to 100 people over the span of two years. He has gained vast experience in the past 11 years in web, mobile, and algorithm development from notable companies such as Motorola and Texas Instruments.'
     },
     {
+      avatar: 'ajishnew.jpg',
+      name: 'Ajish Pillai',
+      title: 'Solution Architect',
+      advisor: '',
+      myLink: 'https://www.linkedin.com/in/ajish-pillai-7575b0104/',
+      brief: 'Ajish Pillai is a Solution Architect having 17 years of experience & he has built solutions for Fortune 500 companies in the Hedgefund, Banking, Telecom & Ecommerce domains. He has always kept himself up to date on the latest technology advancements & trends.'
+    },
+    {
       avatar: 'AndresCortes.jpg',
       name: 'Andrés Cortés',
       title: 'Full Stack Web Developer',
