@@ -49,7 +49,7 @@ class AboutUs extends Component {
         </div>
         <div className="teamRow" >
           {sections.map((section, i) =>
-            <AboutCard key={`item${i}`} section={section} item={`i${i}`} width="250" height="250"/>
+            <AboutCard key={`item${i}`} section={section} item={`i${i}`} width="190" height="190"/>
           )}
         </div >
       </div>

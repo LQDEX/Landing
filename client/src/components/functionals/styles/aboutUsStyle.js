@@ -30,6 +30,7 @@ export default {
       fontFamily: txtBodyFont,
       fontSize: '22px',
       fontWeight: 'normal',
+      lineHeight: '1.5em',
       textAlign: 'justify',
       maxWidth: '1000px',
       color: text,
@@ -55,7 +56,7 @@ export default {
     },
     '& .mateName': {
       fontFamily: txtHeaderFont,
-      fontSize: 19,
+      fontSize: 32,
       fontWeight: 'bold',
       color: primary,
       borderBottom: `1px solid ${globalBackground}`,
@@ -79,10 +80,12 @@ export default {
     },
     '& .mateBrief': {
       fontFamily: txtBodyFont,
+      fontSize: 22,
       fontWeight: 400,
+      //textAlign: 'justify',
       textAlign: 'center',
       lineHeight: '22px',
-      padding: '0 30px',
+      padding: '0 35px',
       color: text,
       margin: '7px 0 0 0'
     }
