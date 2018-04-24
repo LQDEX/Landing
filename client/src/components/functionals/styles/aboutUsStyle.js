@@ -42,7 +42,7 @@ export default {
       flexWrap: 'wrap',
       justifyContent: 'center',
       alignItems: 'flex-start',
-      margin: '40px 0 100px 0'
+      margin: '25px 0 100px 0'
     },
     '&  .card': {
       display: 'flex',
@@ -50,7 +50,7 @@ export default {
       justifyContent: 'center',
       alignItems: 'center',
       width: '300px',
-      margin: '0 50px 30px 50px'
+      margin: '0 25px 30px 25px'
       
 
     },
@@ -60,7 +60,7 @@ export default {
       fontWeight: 'bold',
       color: primary,
       borderBottom: `1px solid ${globalBackground}`,
-      margin: '50px 0 15px 0',
+      margin: '40px 0 15px 0',
       '& .nameLink': {
         outline: 'none',
         textDecoration: 'none',
@@ -84,7 +84,8 @@ export default {
       fontWeight: 400,
       //textAlign: 'justify',
       textAlign: 'center',
-      lineHeight: '22px',
+      lineHeight: '1.5em',
+      //lineHeight: '22px',
       padding: '0 35px',
       color: text,
       margin: '7px 0 0 0'
