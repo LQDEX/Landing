@@ -34,7 +34,7 @@ export default {
       textAlign: 'justify',
       maxWidth: '1000px',
       color: text,
-      margin: '0 25px 30px 25px',
+      margin: '0 25px 25px 25px',
     },
     '& .teamRow': {
       display: 'flex',
@@ -42,7 +42,7 @@ export default {
       flexWrap: 'wrap',
       justifyContent: 'center',
       alignItems: 'flex-start',
-      margin: '25px 0 100px 0'
+      margin: '0px 0 100px 0'
     },
     '&  .card': {
       display: 'flex',
@@ -50,9 +50,7 @@ export default {
       justifyContent: 'center',
       alignItems: 'center',
       width: '300px',
-      margin: '0 25px 30px 25px'
-      
-
+      margin: '0 0px 30px 0px'
     },
     '& .mateName': {
       fontFamily: txtHeaderFont,
@@ -97,5 +95,22 @@ export default {
       extend: 'firstLine',
       fontSize: '38px'
     },
+    '& .teamRow': {
+      extend: 'teamRow',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minWidth: '100%',
+    },
+    '&  .card': {
+      extend:'card',
+      width: '100%',
+  },
+  '& .mateBrief': {
+    extend: 'mateBrief',
+    textAlign: 'center',
+    padding: '0 15px',
+    color: text,
   }
+}
 };
