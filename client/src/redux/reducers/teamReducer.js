@@ -51,20 +51,20 @@ const initialState = {
       brief: 'Patrick began his career as a data analyst for Coin Dealer Newsletter. He was introduced to bitcoin in early 2014 and started a cryptocurrency mining operation. Patrick graduated from Colorado State with a BS degree in Computer Information Systems.'
     },
     {
-      avatar: 'RamKumar.jpg',
-      name: 'Ram Kumar',
-      title: 'Lead Engineer',
-      advisor: '',
-      myLink: 'https://www.linkedin.com/in/ramkumardevaraj/',
-      brief: 'Ram co-founded a successful cloud and data startup that scaled from 4 to 100 people over the span of two years. He has gained vast experience in the past 11 years in web, mobile, and algorithm development from notable companies such as Motorola and Texas Instruments.'
-    },
-    {
       avatar: 'ajishnew.jpg',
       name: 'Ajish Pillai',
       title: 'Solution Architect',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/ajish-pillai-7575b0104/',
       brief: 'Ajish Pillai is a Solution Architect having 17 years of experience & he has built solutions for Fortune 500 companies in the Hedgefund, Banking, Telecom & Ecommerce domains. He has always kept himself up to date on the latest technology advancements & trends.'
+    },
+    {
+      avatar: 'RamKumar.jpg',
+      name: 'Ram Kumar',
+      title: 'Lead Engineer',
+      advisor: '',
+      myLink: 'https://www.linkedin.com/in/ramkumardevaraj/',
+      brief: 'Ram co-founded a successful cloud and data startup that scaled from 4 to 100 people over the span of two years. He has gained vast experience in the past 11 years in web, mobile, and algorithm development from notable companies such as Motorola and Texas Instruments.'
     },
     {
       avatar: 'AndresCortes.jpg',
