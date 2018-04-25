@@ -56,7 +56,7 @@ const initialState = {
       title: 'Solution Architect',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/ajish-pillai-7575b0104/',
-      brief: 'Ajish Pillai is a Solution Architect having 17 years of experience & he has built solutions for Fortune 500 companies in the Hedgefund, Banking, Telecom & Ecommerce domains. He has always kept himself up to date on the latest technology advancements & trends.'
+      brief: 'Ajish has over 17 years of extensive IT architecture design and development experience with a focus on enterprise applications. He has worked with several Fortune 500 companies in the banking, hedgefund, telecommunication, and e-commerce industries. Ajish strives to stay well informed and up to date with the latest technological advancements and trends.'
     },
     {
       avatar: 'RamKumar.jpg',
