@@ -33,6 +33,14 @@ const initialState = {
       advisor: '',
       myLink: 'https://www.linkedin.com/in/jesseleimgruber/',
       brief: ''
+    },
+    {
+      avatar: 'JamesSowers.jpeg',
+      name: 'James Sowers',
+      title: 'Angel Investor',
+      advisor: '',
+      myLink: 'https://www.linkedin.com/in/james-sowers-925a1b17/',
+      brief: ''
     }
   ]
 };

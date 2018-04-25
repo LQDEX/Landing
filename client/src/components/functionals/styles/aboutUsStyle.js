@@ -30,10 +30,11 @@ export default {
       fontFamily: txtBodyFont,
       fontSize: '22px',
       fontWeight: 'normal',
+      lineHeight: '1.5em',
       textAlign: 'justify',
       maxWidth: '1000px',
       color: text,
-      margin: '0 25px 30px 25px',
+      margin: '0 25px 25px 25px',
     },
     '& .teamRow': {
       display: 'flex',
@@ -41,7 +42,7 @@ export default {
       flexWrap: 'wrap',
       justifyContent: 'center',
       alignItems: 'flex-start',
-      margin: '40px 0 100px 0'
+      margin: '0px 0 100px 0'
     },
     '&  .card': {
       display: 'flex',
@@ -49,17 +50,15 @@ export default {
       justifyContent: 'center',
       alignItems: 'center',
       width: '300px',
-      margin: '0 50px 30px 50px'
-      
-
+      margin: '0 0px 30px 0px'
     },
     '& .mateName': {
       fontFamily: txtHeaderFont,
-      fontSize: 19,
+      fontSize: 32,
       fontWeight: 'bold',
       color: primary,
       borderBottom: `1px solid ${globalBackground}`,
-      margin: '50px 0 15px 0',
+      margin: '40px 0 15px 0',
       '& .nameLink': {
         outline: 'none',
         textDecoration: 'none',
@@ -79,10 +78,13 @@ export default {
     },
     '& .mateBrief': {
       fontFamily: txtBodyFont,
+      fontSize: 22,
       fontWeight: 400,
+      //textAlign: 'justify',
       textAlign: 'center',
-      lineHeight: '22px',
-      padding: '0 30px',
+      lineHeight: '1.5em',
+      //lineHeight: '22px',
+      padding: '0 35px',
       color: text,
       margin: '7px 0 0 0'
     }
@@ -93,5 +95,22 @@ export default {
       extend: 'firstLine',
       fontSize: '38px'
     },
+    '& .teamRow': {
+      extend: 'teamRow',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minWidth: '100%',
+    },
+    '&  .card': {
+      extend:'card',
+      width: '100%',
+  },
+  '& .mateBrief': {
+    extend: 'mateBrief',
+    textAlign: 'center',
+    padding: '0 15px',
+    color: text,
   }
+}
 };
