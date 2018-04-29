@@ -80,7 +80,7 @@ class SignUp extends Component {
     let errors = this.state.errors;
     errors[name]='';
 
-    this.setState(errors);
+    this.setState(errors, () => this.handleSubmitButton());
   }
 
   goTo(section, page) {
