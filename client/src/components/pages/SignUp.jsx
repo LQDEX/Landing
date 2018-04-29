@@ -69,9 +69,7 @@ class SignUp extends Component {
         errors[name]=errorMessages[name].wrongEmail
       }
     }
-    console.log('ACZ 2 ----->', errors);
     this.setState(errors, () => this.handleSubmitButton());
-    
   }
 
   resetErrors(event) {
