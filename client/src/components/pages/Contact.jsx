@@ -16,17 +16,18 @@ import { ContactStyle } from './styles';
 const errorMessages = {
   name: { required:'A name is required' },
   phone: { required:'' },
-  email: { required:'An email is required' },
+  email: { required:'An email is required',
+           wrongEmail: 'Email wrong format' },
   message: {required:'A message is required' },
 
 }
 
 class Contact extends Component {
   state = {
-    name:'',
-    phone:'',
-    email:'',
-    message:'',
+    nameValue:'',
+    phoneValue:'',
+    emailValue:'',
+    messageValue:'',
     canSubmit: true,
     errors: {
       name:'',
@@ -37,22 +38,23 @@ class Contact extends Component {
   }
 
 
-  handleSubmitButton (){
-    const {name, email, errors, message} = this.state;
-    console.log('canSubmit:', name && email && message && !errors.name && !errors.email && !errors.message);
-    
-    return this.setState({ canSubmit:true})
+  handleSubmitButton(){
+    const {nameValue, phoneValue, emailValue, messageValue, errors} = this.state;
+    const hasError = !!errors.name || !!errors.phone || !!errors.email || !!errors.message;
+    const hasRequired = !!nameValue && !!emailValue && !!messageValue;
+    const canSubmit = hasRequired && !hasError;
+    console.log('ACZ ---> hasRequired', hasRequired);
+    console.log('ACZ ---> hasError', hasError);
+    console.log('ACZ ---> canSubmit', canSubmit);
+    this.setState({canSubmit});
   }
 
   handleInputChange(event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
+    this.setState({[`${name}Value`]: value}, () => this.handleSubmitButton());
 
-    this.setState({
-      [name]: value
-    });
-    this.handleSubmitButton();
   }
 
   handelErrors(event) {
@@ -63,9 +65,14 @@ class Contact extends Component {
     if (!value) {
       errors[name]=errorMessages[name].required
     }
-
-    this.setState(errors);
-    this.handleSubmitButton();
+    if (name === 'email' && value){
+      const emaiRegex = /^[a-z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)?@[a-z][a-zA-Z-0-9]*\.[a-z]+(\.[a-z]+)?$/;
+      const isValidEmail = emaiRegex.test(value) ? true : false;
+      if (!isValidEmail){
+        errors[name]=errorMessages[name].wrongEmail
+      }
+    }
+    this.setState(errors, () => this.handleSubmitButton());
   }
 
   resetErrors(event) {
@@ -74,8 +81,7 @@ class Contact extends Component {
     let errors = this.state.errors;
     errors[name]='';
 
-    this.setState(errors);
-    this.handleSubmitButton();
+    this.setState(errors, () => this.handleSubmitButton());
   }
 
   goTo(section, page) {
@@ -89,11 +95,12 @@ class Contact extends Component {
   }
 
   send() {
+    console.log('ACZ ----> STATE', this.state);
     axios.post('/messages/add', {
-      name:this.state.name,
-      email:this.state.email,
-      phone: this.state.phone,
-      message: this.state.message
+      name:this.state.nameValue,
+      email:this.state.emailValue,
+      phone: this.state.phoneValue,
+      message: this.state.messageValue,
     })
     .then(res => {
       const response = res.data;
