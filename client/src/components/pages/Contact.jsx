@@ -16,7 +16,8 @@ import { ContactStyle } from './styles';
 const errorMessages = {
   name: { required:'A name is required' },
   phone: { required:'' },
-  email: { required:'An email is required' },
+  email: { required:'An email is required',
+           wrongEmail: 'Email wrong format' },
   message: {required:'A message is required' },
 
 }
@@ -63,7 +64,13 @@ class Contact extends Component {
     if (!value) {
       errors[name]=errorMessages[name].required
     }
-
+    if (name === 'email' && value){
+      const emaiRegex = /^[a-z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)?@[a-z][a-zA-Z-0-9]*\.[a-z]+(\.[a-z]+)?$/;
+      const isValidEmail = emaiRegex.test(value) ? true : false;
+      if (!isValidEmail){
+        errors[name]=errorMessages[name].wrongEmail
+      }
+    }
     this.setState(errors);
     this.handleSubmitButton();
   }

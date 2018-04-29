@@ -9,10 +9,11 @@ const {
   textLight,
   textHeader,
   greyDark,
-  // Font Family
+  //Font Family
   txtBlueBottonFont,
   txtHeaderFont,
-  txtInputs
+  txtInputs,
+  shadowSoft  
 } = palette;
 
 export default {
@@ -110,7 +111,8 @@ export default {
           outline: 'none',
           background: primary,
           color: globalBackground,
-          '&:hover': { background: primaryHover }
+          '&:hover': { background: primaryHover },
+          '&:disabled': { background: shadowSoft, cursor: 'not-allowed' }
         },
         '& .btnCancel': {
           fontFamily: txtBlueBottonFont,

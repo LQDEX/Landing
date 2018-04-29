@@ -43,7 +43,6 @@ class App extends Component {
   onHashChange() {
     const section = window.location.hash.split('#')[1];
     this.props.navBarActive(section);
-//    alert(section);
 
   }
 

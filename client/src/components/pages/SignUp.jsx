@@ -16,47 +16,62 @@ import { signUpStyle } from './styles';
 const errorMessages = {
     name: { required:'A name is required' },
     phone: { required:'' },
-    email: { required:'An email is required' }
+    email: { required:'An email is required',
+             wrongEmail: 'Email wrong format' }
   
 }
 
 class SignUp extends Component {
   state = {
-    name:'',
-    phone:'',
-    email:'',
+    canSubmit: false,
+    nameValue:'',
+    phoneValue:'',
+    emailValue:'',
     errors: {
       name:'',
       phone:'',
       email:''
-    }
+    },
   }
 
-  handleSubmitButton (){
-    const {name, email, errors} = this.state;
-    return name && email && !errors.name && !errors.email
+  handleSubmitButton() {
+    const {nameValue, emailValue, phoneValue, errors} = this.state;
+    const hasError = !!errors.name || !!errors.phone || !!errors.email
+    const hasRequired = !!nameValue && !!emailValue;
+    const canSubmit = hasRequired && !hasError;
+    console.log('ACZ ---> hasRequired', hasRequired);
+    console.log('ACZ ---> hasError', hasError);
+    console.log('ACZ ---> canSubmit', canSubmit);
+    this.setState({canSubmit});
+
   }
 
   handleInputChange(event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-
-    this.setState({
-      [name]: value
-    });
+    this.setState({[`${name}Value`]: value}, () => this.handleSubmitButton());
   }
 
   handelErrors(event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-    let errors = this.state.errors
+    let errors = this.state.errors;
+    
     if (!value) {
       errors[name]=errorMessages[name].required
     }
-
-    this.setState(errors);
+    if (name === 'email' && value){
+      const emaiRegex = /^[a-z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)?@[a-z][a-zA-Z-0-9]*\.[a-z]+(\.[a-z]+)?$/;
+      const isValidEmail = emaiRegex.test(value) ? true : false;
+      if (!isValidEmail){
+        errors[name]=errorMessages[name].wrongEmail
+      }
+    }
+    console.log('ACZ 2 ----->', errors);
+    this.setState(errors, () => this.handleSubmitButton());
+    
   }
 
   resetErrors(event) {
@@ -79,10 +94,11 @@ class SignUp extends Component {
   }
 
   send() {
+    
     axios.post('/users/add', {
-      name:this.state.name,
-      email:this.state.email,
-      phone: this.state.phone
+      name:this.state.nameValue,
+      email:this.state.emailValue,
+      phone: this.state.phoneValue
     })
     .then(res => {
       const response = res.data;
@@ -158,7 +174,7 @@ class SignUp extends Component {
           </form>
             <div className="buttonsWrapper">
               <button className="btnCancel" onClick={() => this.goTo('exchange', 'landing')}> Cancel</button>
-              <button className="btnSubscribe" onClick={() => this.send()}> Subscribe</button>
+              <button className="btnSubscribe" disabled={!this.state.canSubmit} onClick={() => this.send()}> Subscribe</button>
             </div>
 
         </div>

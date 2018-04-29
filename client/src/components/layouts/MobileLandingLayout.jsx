@@ -42,7 +42,6 @@ class MobileLandingLayout extends Component {
     const
       { classes, app, showSidePanel, navBar } = this.props,
       style = classes.root;
-    // alert(showSidePanel);
 
     return (
       <div className={style} >
