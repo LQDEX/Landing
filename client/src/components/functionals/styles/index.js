@@ -9,6 +9,7 @@ import aboutUsStyle from './aboutUsStyle';
 import teamAdvisorsStyle from './teamAdvisorsStyle';
 import investorsStyle from './investorsStyle';
 import footerStyle from './footerStyle';
+import modalStyle from './modalStyle';
 
 // Mobile Containers
 
@@ -22,5 +23,6 @@ export {
   aboutUsStyle,
   teamAdvisorsStyle,
   investorsStyle,
-  footerStyle
+  footerStyle,
+  modalStyle
 };

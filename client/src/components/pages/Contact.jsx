@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
+import { Modal } from '../functionals';
+
+
 // Redux actions
 import actions from '../../redux/actions';
 
@@ -28,6 +31,10 @@ class Contact extends Component {
     phoneValue:'',
     emailValue:'',
     messageValue:'',
+    modal: {
+      showModal: false,
+      message: '',
+    },
     canSubmit: true,
     errors: {
       name:'',
@@ -37,6 +44,15 @@ class Contact extends Component {
     }
   }
 
+  showModal = (message) => {
+    const modal = {showModal: true, message};
+    this.setState({ modal });
+  };
+
+  hideModal = () => {
+    const modal = {showModal: false, message:''};
+    this.setState({ modal });
+  };
 
   handleSubmitButton(){
     const {nameValue, phoneValue, emailValue, messageValue, errors} = this.state;
@@ -93,6 +109,20 @@ class Contact extends Component {
       window.location.href = `#${section}`;
     }
   }
+  
+  handleErrorMsg (error) {
+    switch (error.errno) {
+      case 1062: //Duplicate primary key (email)
+        return 'You are already subscribed for updates.'
+        break;
+      case 500:
+        return 'ERROR: an error occured, try again in a while'
+        break;
+      default:
+        return `ERROR: ${error.errno} - ${error.sqlMessage}`
+        break;
+    }
+  }
 
   send() {
     console.log('ACZ ----> STATE', this.state);
@@ -106,12 +136,12 @@ class Contact extends Component {
       const response = res.data;
       console.log(response);
       if (response.error) {
-        alert(`Error: ${response.error.errno} - ${response.error.sqlMessage}`);
+        this.showModal (this.handleErrorMsg(response.error));
       } else {
-        alert(`We recieved your message`);
+        this.showModal (`Your message has been received. Thank you for contacting LQDEX.`);
       }
     })
-    .catch(err => alert('ERROR: an error occured, try again in a while'));    
+    .catch(err => this.showModal (this.handleErrorMsg({errno: 500})));    
   }
 
   render() {
@@ -121,6 +151,9 @@ class Contact extends Component {
 
     return (
       <div className={style} >
+        <Modal show={this.state.modal.showModal} handleClose={() => this.hideModal()}>
+          <p>{this.state.modal.message}</p>
+        </Modal>
         <div className="signUpWrapper">
           <div className="headerWrapper">
             <span className="firstLine">Get in Touch</span>
