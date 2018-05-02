@@ -7,6 +7,7 @@ import AboutUs from './AboutUs';
 import TeamAdvisors from './TeamAdvisors';
 import Investors from './Investors';
 import Footer from './Footer';
+import Modal from './Modal';
 
 export {
   HeaderStats,
@@ -17,5 +18,6 @@ export {
   AboutUs,
   TeamAdvisors,
   Investors,
-  Footer
+  Footer,
+  Modal
 };

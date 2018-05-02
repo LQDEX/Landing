@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
+import { Modal } from '../functionals';
+
 // Redux actions
 import actions from '../../redux/actions';
 
@@ -27,6 +29,10 @@ class SignUp extends Component {
     nameValue:'',
     phoneValue:'',
     emailValue:'',
+    modal: {
+      showModal: false,
+      message: '',
+    },
     errors: {
       name:'',
       phone:'',
@@ -34,14 +40,21 @@ class SignUp extends Component {
     },
   }
 
+  showModal = (message) => {
+    const modal = {showModal: true, message};
+    this.setState({ modal });
+  };
+
+  hideModal = () => {
+    const modal = {showModal: false, message:''};
+    this.setState({ modal });
+  };
+
   handleSubmitButton() {
     const {nameValue, emailValue, phoneValue, errors} = this.state;
     const hasError = !!errors.name || !!errors.phone || !!errors.email
     const hasRequired = !!nameValue && !!emailValue;
     const canSubmit = hasRequired && !hasError;
-    console.log('ACZ ---> hasRequired', hasRequired);
-    console.log('ACZ ---> hasError', hasError);
-    console.log('ACZ ---> canSubmit', canSubmit);
     this.setState({canSubmit});
 
   }
@@ -90,9 +103,22 @@ class SignUp extends Component {
       window.location.href = `#${section}`;
     }
   }
+  
+handleErrorMsg (error) {
+  switch (error.errno) {
+    case 1062: //Duplicate primary key (email)
+      return 'You are already subscribed for updates.'
+      break;
+    case 500:
+      return 'ERROR: an error occured, try again in a while'
+      break;
+    default:
+      return `ERROR: ${error.errno} - ${error.sqlMessage}`
+      break;
+  }
+}
 
   send() {
-    
     axios.post('/users/add', {
       name:this.state.nameValue,
       email:this.state.emailValue,
@@ -102,12 +128,12 @@ class SignUp extends Component {
       const response = res.data;
       console.log(response);
       if (response.error) {
-        alert(`Error: ${response.error.errno} - ${response.error.sqlMessage}`);
+        this.showModal (this.handleErrorMsg(response.error));
       } else {
-        alert(`Thank you. We will keep you updated.`);
+        this.showModal (`Thank you. We will keep you updated.`);
       }
     })
-    .catch(err => alert('ERROR: an error occured, try again in a while'));
+    .catch(err => this.showModal (this.handleErrorMsg({errno: 500})));
   }
 
   render() {
@@ -117,6 +143,9 @@ class SignUp extends Component {
 
     return (
       <div className={style} >
+        <Modal show={this.state.modal.showModal} handleClose={() => this.hideModal()}>
+          <p>{this.state.modal.message}</p>
+        </Modal>
         <div className="signUpWrapper">
           <div className="headerWrapper">
             <span className="firstLine">Subscribe for Updates</span>
