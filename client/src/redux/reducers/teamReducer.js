@@ -51,6 +51,14 @@ const initialState = {
       brief: 'Patrick began his career as a data analyst for Coin Dealer Newsletter. He was introduced to bitcoin in early 2014 and started a cryptocurrency mining operation. Patrick graduated from Colorado State with a BS degree in Computer Information Systems.'
     },
     {
+      avatar: 'EthanReynolds.jpg',
+      name: 'Ethan Reynolds',
+      title: 'Head of Public Relations',
+      advisor: '',
+      myLink: 'https://www.linkedin.com/in/ethan-reynolds-73b50663/',
+      brief: 'Since 2012, Ethan has specialized in the creation, incubation and promotion of digital and startup companies. He has successfully launched international brands, and placed in top-tier publications including TechCrunch and Forbes.'
+    },
+    {
       avatar: 'ajishnew.jpg',
       name: 'Ajish Pillai',
       title: 'Solutions Architect',
