@@ -38,7 +38,7 @@ export default {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'center',
-      margin: '30px 0 0 0',
+      margin: '45px 0 0 0',
       '& .icon': {
         padding: '8px 20px',
         textDecoration: 'none',
