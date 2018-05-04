@@ -24,7 +24,7 @@ class MobileLandingLayout extends Component {
 
   eDir (props) {
     return(
-      <a className="copyRights em" href={`${props.d1}${props.d2}${props.d3}`}>{`in${props.d2}${props.d3}`}</a>
+      <a className="em" href={`${props.d1}${props.d2}${props.d3}`}>{`in${props.d2}${props.d3}`}</a>
     )
   }
 
