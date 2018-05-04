@@ -8,7 +8,7 @@ const initialState = {
       title: 'Head of Product',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/yogesh-srihari-000b3a33/',
-      brief: 'Yogesh co-founded a popular blockchain startup, SpankChain, in 2017, which raised $11 million in token sales. Prior to founding SpankChain, Yogesh worked as Lead Software Engineer at ZEFR, Director of Engineering at Wickr, and Software Engineer at Google. He holds a Masters degree in Computer Science from Stony Brook University under professor Joseph Mitchell.'
+      brief: 'Yogesh co-founded a popular blockchain startup, SpankChain, in 2017, which raised $6 million in token sales. Prior to founding SpankChain, Yogesh worked as Lead Software Engineer at ZEFR, Director of Engineering at Wickr, and Software Engineer at Google. He holds a Masters degree in Computer Science from Stony Brook University under professor Joseph Mitchell.'
     },
     {
       avatar: 'Sergey-Nikitin-Large.jpg',

@@ -32,12 +32,13 @@ export default {
       flexDirection: 'column',
       justifyContent: 'center',
       fontFamily: txtBlueBottonFont,
-      margin: '0 0 70px 0',
+      margin: '0 0 30px 0',
     },
     '& .socialIcons': {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'center',
+      margin: '30px 0 0 0',
       '& .icon': {
         padding: '8px 20px',
         textDecoration: 'none',

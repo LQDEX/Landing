@@ -14,7 +14,7 @@ const initialState = {
     },
     {
       _id: 2,
-      date: 'April 2018',
+      date: 'May 2018',
       desc: 'Public whitepaper published'
     },
     {

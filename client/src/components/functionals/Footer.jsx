@@ -17,8 +17,8 @@ const Social = () => {
   return (
     <div className='socialIcons'>
       <a className='icon' href={socialLinks.Twitter} target="_blank"><i className="fab fa-twitter fa-2x" ></i></a>
-      <a className='icon' href={socialLinks.LinkedIn} target="_blank"><i className="fab fa-linkedin-in fa-2x" ></i></a>
       <a className='icon' href={socialLinks.Facebook} target="_blank"><i className="fab fa-facebook-f fa-2x" ></i></a>
+      <a className='icon' href={socialLinks.LinkedIn} target="_blank"><i className="fab fa-linkedin-in fa-2x" ></i></a>
     </div>
   );}
 
@@ -61,13 +61,13 @@ class Footer extends Component {
         <div className="firstLine">Sign up for Updates</div>
         <div className="contactWrapper">
           <button className="btnSubscribe" onClick={() => this.goTo('signUp', 'signUp')}>Sign up</button>
-          <Social />
         </div>
         <div className="copyRights">© 2018 LQDEX. All Rights Reserved.</div>
         <br/>
         <div className="copyRights">1541 Ocean Ave., Suite 200</div>
         <div className="copyRights">Santa Monica, CA 90401</div>
         <div className="copyRights">{this.eDir(this.state.eDir)}</div>
+        <Social />
       </div>
     );
   }
