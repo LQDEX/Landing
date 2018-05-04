@@ -27,13 +27,31 @@ export default {
       color: textHeader,
       minWidth: '100%'
     },
+    '& .contactWrapper': {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      fontFamily: txtBlueBottonFont,
+      margin: '0 0 70px 0',
+    },
+    '& .socialIcons': {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      '& .icon': {
+        padding: '8px 20px',
+        textDecoration: 'none',
+        color: grey,
+        '&:hover': { color: primaryHover }
+      },
+    },
     '& .btnSubscribe': {
       fontFamily: txtBlueBottonFont,
       fontSize: '1em',
       fontWeight: 'semi-Bold',
       display: 'inline-block',
       padding: '1em 3.5em',
-      margin: '0 0 70px 0',
+      margin: '0 0 30px 0',
       boxSizing: 'content-box',
       cursor: 'pointer',
       border: 'none',

@@ -8,6 +8,21 @@ import actions from '../../redux/actions';
 import injectSheet from 'react-jss';
 import { footerStyle } from './styles';
 
+const Social = () => {
+  const socialLinks = {
+    Twitter: 'https://twitter.com/LQDEX_',
+    LinkedIn: 'https://www.linkedin.com/company/lqdex/',
+    Facebook: 'https://www.facebook.com/LQDEX/'
+  }
+  return (
+    <div className='socialIcons'>
+      <a className='icon' href={socialLinks.Twitter} target="_blank"><i className="fab fa-twitter fa-2x" ></i></a>
+      <a className='icon' href={socialLinks.LinkedIn} target="_blank"><i className="fab fa-linkedin-in fa-2x" ></i></a>
+      <a className='icon' href={socialLinks.Facebook} target="_blank"><i className="fab fa-facebook-f fa-2x" ></i></a>
+    </div>
+  );}
+
+
 class Footer extends Component {
   state = {
     eDir: {
@@ -44,7 +59,10 @@ class Footer extends Component {
     return (
       <div className={style} >
         <div className="firstLine">Sign up for Updates</div>
-        <button className="btnSubscribe" onClick={() => this.goTo('signUp', 'signUp')}>Sign up</button>
+        <div className="contactWrapper">
+          <button className="btnSubscribe" onClick={() => this.goTo('signUp', 'signUp')}>Sign up</button>
+          <Social />
+        </div>
         <div className="copyRights">© 2018 LQDEX. All Rights Reserved.</div>
         <br/>
         <div className="copyRights">1541 Ocean Ave., Suite 200</div>
