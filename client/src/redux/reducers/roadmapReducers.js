@@ -25,7 +25,7 @@ const initialState = {
     {
       _id: 4,
       date: 'December 2018',
-      desc: 'Token sale'
+      desc: 'Alpha version released'
     },
     {
       _id: 5,
