@@ -1,6 +1,9 @@
 import constants from '../constants';
 
 const initialState = {
+  config: {
+    backgroundVideo: false,
+  },
   activePage: {
     page: 'landing',
     params: ''
@@ -36,6 +39,16 @@ const initialState = {
 /* eslint-disable */
 const app = (state = initialState, action) => {
   switch (action.type) {
+    case constants.APP_CONFIG_SET: {
+      console.log('ACZ ---> action.data', action.data);
+      
+      const config = state.config;
+      config[action.data.prop] = action.data.value;
+      return {
+        ...state,
+        config
+      };
+    }
     case constants.APP_SHOW_PAGE: {
       return {
         ...state,

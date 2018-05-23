@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// Redux actions
+import actions from '../../redux/actions';
 
 // Import Components
 import { HeaderContainer } from '../containers';
@@ -15,15 +17,16 @@ class DesktopLayout extends Component {
   render() {
     // const { classes, deviceType } = this.props;
     const
-      { classes, app } = this.props,
+      { classes, app, showBgVideo } = this.props,
       style = classes.root;
 
     return (
       <div className={style} >
         <div className="bkTone"></div>
+        {showBgVideo && 
         <video autoPlay muted loop className="movingLines">
           <source src={require('../../assets/img/movingLines.mp4')} type="video/mp4" />
-        </video>
+        </video>}
         <div>
           <HeaderContainer />
           <div>

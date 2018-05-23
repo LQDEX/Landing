@@ -29,7 +29,7 @@ const initialState = {
     {
       avatar: 'JesseLeimgruber.jpg',
       name: 'Jesse Leimgruber',
-      title: 'CEO, Bloom',
+      title: 'Co-Founder, Bloom',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/jesseleimgruber/',
       brief: ''
