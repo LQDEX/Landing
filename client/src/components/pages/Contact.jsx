@@ -59,9 +59,6 @@ class Contact extends Component {
     const hasError = !!errors.name || !!errors.phone || !!errors.email || !!errors.message;
     const hasRequired = !!nameValue && !!emailValue && !!messageValue;
     const canSubmit = hasRequired && !hasError;
-    console.log('ACZ ---> hasRequired', hasRequired);
-    console.log('ACZ ---> hasError', hasError);
-    console.log('ACZ ---> canSubmit', canSubmit);
     this.setState({canSubmit});
   }
 
@@ -125,7 +122,6 @@ class Contact extends Component {
   }
 
   send() {
-    console.log('ACZ ----> STATE', this.state);
     axios.post('/messages/add', {
       name:this.state.nameValue,
       email:this.state.emailValue,

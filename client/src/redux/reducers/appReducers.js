@@ -40,8 +40,6 @@ const initialState = {
 const app = (state = initialState, action) => {
   switch (action.type) {
     case constants.APP_CONFIG_SET: {
-      console.log('ACZ ---> action.data', action.data);
-      
       const config = state.config;
       config[action.data.prop] = action.data.value;
       return {
