@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// Redux actions
-import actions from '../../redux/actions';
-
 // Import Components
 import { HeaderContainer } from '../containers';
 import { Landing, SignUp, Contact } from '../pages/';

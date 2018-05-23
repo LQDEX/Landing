@@ -55,7 +55,7 @@ class Contact extends Component {
   };
 
   handleSubmitButton(){
-    const {nameValue, phoneValue, emailValue, messageValue, errors} = this.state;
+    const {nameValue, emailValue, messageValue, errors} = this.state;
     const hasError = !!errors.name || !!errors.phone || !!errors.email || !!errors.message;
     const hasRequired = !!nameValue && !!emailValue && !!messageValue;
     const canSubmit = hasRequired && !hasError;
@@ -111,13 +111,10 @@ class Contact extends Component {
     switch (error.errno) {
       case 1062: //Duplicate primary key (email)
         return 'You are already subscribed for updates.'
-        break;
       case 500:
         return 'ERROR: an error occured, try again in a while'
-        break;
       default:
         return `ERROR: ${error.errno} - ${error.sqlMessage}`
-        break;
     }
   }
 

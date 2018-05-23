@@ -4,9 +4,6 @@ const {
   primary,
   primaryHover,
   globalBackground,
-  grey,
-  textHeader,
-  txtHeaderFont,
   txtBlueBottonFont,
   txtBodyFont
 } = palette;
