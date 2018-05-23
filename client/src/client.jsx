@@ -14,7 +14,7 @@ import {
 
 import App from './App';
 
-//import AppRoutes from './routes';
+import AppRoutes from './routes';
 
 // Redux Imports
 import reducers from './redux/reducers';
@@ -31,8 +31,8 @@ const store = createStore(reducers, {}, composeEnhancers(middlewares));
 
 const app = (
   <Provider store={store} >
-    {/*<AppRoutes />*/}
-    <App />
+    <AppRoutes />
+    {/*<App />*/}
   </Provider>
 );
 

@@ -1,5 +1,8 @@
 export default {
 
+  // App Config
+  APP_CONFIG_SET: 'APP_CONFIG_SET',
+
   // App States
   APP_SHOW_PAGE: 'APP_SHOW_PAGE',
   APP_PLATFORM_SET: 'APP_PLATFORM_SET',

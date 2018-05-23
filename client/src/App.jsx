@@ -48,6 +48,8 @@ class App extends Component {
 
   componentWillMount() {
     this.props.getCryptoData();
+    const showGbVideo = this.props.match.path === "/lite" ? false : true;
+    this.props.setBgVideo(showGbVideo);
   }
 
   componentDidMount() {
@@ -100,7 +102,7 @@ class App extends Component {
         {/* Put here the Tablet Layout*/}
         {app.platform.deviceType === 'tablet' && <DesktopLandingLayout />}
         {/* Put here the Desktop Layout*/}
-        {app.platform.deviceType === 'desktop' && <DesktopLandingLayout /> }
+        {app.platform.deviceType === 'desktop' && <DesktopLandingLayout showBgVideo={app.config.backgroundVideo}/> }
       </div>
     );
   }
@@ -112,7 +114,8 @@ const dispatchToProps = dispatch => ({
   getCryptoData: () => dispatch(actions.getCryptoData()),
   platformSet: platformInfo => dispatch(actions.platformSet(platformInfo)),
   navBarActive: option => dispatch(actions.navBarActive(option)),
-  onWindowResize: wDim => dispatch(actions.onWindowResize(wDim))
+  onWindowResize: wDim => dispatch(actions.onWindowResize(wDim)),
+  setBgVideo: (value) => dispatch(actions.setAppConfig('backgroundVideo', value)),
 });
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(reset)(App));
