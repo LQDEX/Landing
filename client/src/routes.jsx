@@ -5,7 +5,6 @@ import {
   Switch,
 } from 'react-router-dom';
 import App from './App';
-import About from './components/functionals/Roadmap.jsx';
 
 export default () => {
   return (

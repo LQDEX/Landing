@@ -51,7 +51,7 @@ class SignUp extends Component {
   };
 
   handleSubmitButton() {
-    const {nameValue, emailValue, phoneValue, errors} = this.state;
+    const {nameValue, emailValue, errors} = this.state;
     const hasError = !!errors.name || !!errors.phone || !!errors.email
     const hasRequired = !!nameValue && !!emailValue;
     const canSubmit = hasRequired && !hasError;
@@ -108,13 +108,10 @@ handleErrorMsg (error) {
   switch (error.errno) {
     case 1062: //Duplicate primary key (email)
       return 'You are already subscribed for updates.'
-      break;
     case 500:
       return 'ERROR: an error occured, try again in a while'
-      break;
     default:
       return `ERROR: ${error.errno} - ${error.sqlMessage}`
-      break;
   }
 }
 
