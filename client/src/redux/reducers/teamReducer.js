@@ -8,7 +8,7 @@ const initialState = {
       title: 'Head of Product',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/yogesh-srihari-000b3a33/',
-      brief: 'Yogesh co-founded a popular blockchain startup, SpankChain, in 2017, which raised $6 million in token sales. Prior to founding SpankChain, Yogesh worked as Lead Software Engineer at ZEFR, Director of Engineering at Wickr, and Software Engineer at Google. He holds a Masters degree in Computer Science from Stony Brook University under professor Joseph Mitchell.'
+      brief: 'Yogesh co-founded a popular blockchain startup, SpankChain, in 2017, which raised $11 million in token sales. Prior to founding SpankChain, Yogesh worked as Lead Software Engineer at ZEFR, Director of Engineering at Wickr, and Software Engineer at Google. He holds a Masters degree in Computer Science from Stony Brook University under professor Joseph Mitchell.'
     },
     {
       avatar: 'Sergey-Nikitin-Large.jpg',
@@ -34,14 +34,14 @@ const initialState = {
       myLink: 'https://www.linkedin.com/in/michelle-kim-05086213a/',
       brief: 'Michelle has been passionate about blockchain technology since she started managing operations for a cryptocurrency lending platform in early 2017. She has extensive experience in platform security and operational issues. Michelle holds a BS degree in Cognitive Psychology from UC, Irvine.'
     },
-    {
-      avatar: 'GregKalin.jpg',
-      name: 'Greg Kalin',
-      title: 'Finance',
-      advisor: '',
-      myLink: 'https://www.linkedin.com/in/greg-kalin-b6186554/',
-      brief: 'Greg spent his career in finance working in private wealth management at Morgan Stanley Smith-Barney. Additionally, he co-founded Closetclicks, an investor-backed social fashion startup.'
-    },
+    //{
+    //  avatar: 'GregKalin.jpg',
+    //  name: 'Greg Kalin',
+    //  title: 'Finance',
+    //  advisor: '',
+    //  myLink: 'https://www.linkedin.com/in/greg-kalin-b6186554/',
+    //  brief: 'Greg spent his career in finance working in private wealth management at Morgan Stanley Smith-Barney. Additionally, he co-founded Closetclicks, an investor-backed social fashion startup.'
+    //},
     {
       avatar: 'PatrickMaher.jpg',
       name: 'Patrick Maher',

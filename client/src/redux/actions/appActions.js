@@ -31,11 +31,11 @@ export default {
     }
   },
 
-//  onWindowResize: (wDim) => {
-//    return {
-//      type: constants.APP_WINDOW_RESIZE,
-//      data: wDim,
-//    }
-//  }
+  setAppConfig: (prop, value) => {
+    return {
+      type: constants.APP_CONFIG_SET,
+      data: {prop, value}
+    };
+  }
 
 };
