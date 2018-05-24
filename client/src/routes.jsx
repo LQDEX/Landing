@@ -10,8 +10,7 @@ export default () => {
   return (
     <BrowserRouter >
       <Switch >
-        <Route exact path="/" component={App} />
-        <Route path="/lite" component={App} />
+        <Route path="/" component={App} />
       </Switch>
     </BrowserRouter>
   )

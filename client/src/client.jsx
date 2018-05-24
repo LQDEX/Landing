@@ -20,8 +20,6 @@ import AppRoutes from './routes';
 import reducers from './redux/reducers';
 import middlewares from './redux/middleware';
 
-// ant Styles
-
 //Redux Entry Point
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
