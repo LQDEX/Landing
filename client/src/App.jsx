@@ -48,8 +48,6 @@ class App extends Component {
 
   componentWillMount() {
     this.props.getCryptoData();
-    const showGbVideo = this.props.match.path === "/lite" ? false : true;
-    this.props.setBgVideo(showGbVideo);
   }
 
   componentDidMount() {
@@ -85,7 +83,7 @@ class App extends Component {
 
   render() {
     const { classes, app } = this.props;
-    console.log(app.platform.deviceType);
+    // console.log(app.platform.deviceType);
 
     return (
       <div className={classes.root}>

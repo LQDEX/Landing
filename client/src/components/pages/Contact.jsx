@@ -127,7 +127,7 @@ class Contact extends Component {
     })
     .then(res => {
       const response = res.data;
-      console.log(response);
+      // console.log(response);
       if (response.error) {
         this.showModal (this.handleErrorMsg(response.error));
       } else {
