@@ -20,13 +20,13 @@ app.set('view engine', 'jade');
 var mysql = require("mysql");
 //Database connection
 app.use(function(req, res, next){
-	res.locals.connection = mysql.createConnection({
+	res.locals.connection = mysql.createPool({
 		host     : process.env.DB_SERVER_IP,
 		user     : 'lqdex_user',
 		password : 'XTUdsQmYUD0lmiiA',
 		database : 'LQDEX'
 	});
-	res.locals.connection.connect();
+	// res.locals.connection.connect();
 	next();
 });
 
