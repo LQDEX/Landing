@@ -2,7 +2,7 @@ import constants from '../constants';
 
 const initialState = {
   config: {
-    backgroundVideo: true,
+    backgroundVideo: false,
   },
   activePage: {
     page: 'landing',
