@@ -26,7 +26,6 @@ app.use(function(req, res, next){
 		password : 'XTUdsQmYUD0lmiiA',
 		database : 'LQDEX'
 	});
-	// res.locals.connection.connect();
 	next();
 });
 
