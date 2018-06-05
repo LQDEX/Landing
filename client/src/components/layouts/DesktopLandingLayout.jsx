@@ -22,7 +22,7 @@ class DesktopLayout extends Component {
         <div className="bkTone"></div>
         {showBgVideo && 
         <video autoPlay muted loop className="movingLines">
-          <source src={require('../../assets/img/movingLines.mp4')} type="video/mp4" />
+          <source src={require(`../../assets/img/movingLines${app.config.backgroundVideoRes}.mp4`)} type="video/mp4" />
         </video>}
         <div>
           <HeaderContainer />

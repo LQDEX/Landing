@@ -114,6 +114,7 @@ const dispatchToProps = dispatch => ({
   navBarActive: option => dispatch(actions.navBarActive(option)),
   onWindowResize: wDim => dispatch(actions.onWindowResize(wDim)),
   setBgVideo: (value) => dispatch(actions.setAppConfig('backgroundVideo', value)),
+  setBgVideoRes: (value) => dispatch(actions.setAppConfig('backgroundVideoRes', value)),
 });
 
 export default connect(stateToProps, dispatchToProps)(injectSheet(reset)(App));
