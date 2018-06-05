@@ -73,10 +73,10 @@ class SignUp extends Component {
     let errors = this.state.errors;
     
     if (!value) {
-      errors[name]=errorMessages[name].required
+      errors[name] = errorMessages[name].required
     }
     if (name === 'email' && value){
-      const emaiRegex = /^[a-z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)?@[a-z][a-zA-Z-0-9]*\.[a-z]+(\.[a-z]+)?$/;
+      const emaiRegex = /^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)?@[a-zA-Z][a-zA-Z-0-9]*\.[a-zA-Z]+(\.[a-zA-Z]+)?$/;
       const isValidEmail = emaiRegex.test(value) ? true : false;
       if (!isValidEmail){
         errors[name]=errorMessages[name].wrongEmail
@@ -145,7 +145,7 @@ handleErrorMsg (error) {
         </Modal>
         <div className="signUpWrapper">
           <div className="headerWrapper">
-            <span className="firstLine">Subscribe for Updates</span>
+            <span className="firstLine">Sign up for Updates</span>
             <button className="btnClose" onClick={() => this.goTo('exchange', 'landing')}><i className="fas fa-times fa-2x"></i></button>
           </div>
           <form>
@@ -165,7 +165,7 @@ handleErrorMsg (error) {
                 </span>
               </div>
             </div>
-            <div className="fieldWrapper">
+            {/* <div className="fieldWrapper">
             <label >{this.state.errors.phone}</label>
             <div className="inputWrapper">
               <div className="inputIcon"><i className="fas fa-phone"></i></div>
@@ -179,7 +179,7 @@ handleErrorMsg (error) {
                   onChange={(event)=>this.handleInputChange(event)} />
               </span>
             </div>
-            </div>
+            </div> */}
             <div className="fieldWrapper">
             <label >{this.state.errors.email}</label>
             <div className="inputWrapper">
