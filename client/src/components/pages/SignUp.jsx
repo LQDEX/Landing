@@ -73,10 +73,10 @@ class SignUp extends Component {
     let errors = this.state.errors;
     
     if (!value) {
-      errors[name]=errorMessages[name].required
+      errors[name] = errorMessages[name].required
     }
     if (name === 'email' && value){
-      const emaiRegex = /^[a-z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)?@[a-z][a-zA-Z-0-9]*\.[a-z]+(\.[a-z]+)?$/;
+      const emaiRegex = /^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)?@[a-zA-Z][a-zA-Z-0-9]*\.[a-zA-Z]+(\.[a-zA-Z]+)?$/;
       const isValidEmail = emaiRegex.test(value) ? true : false;
       if (!isValidEmail){
         errors[name]=errorMessages[name].wrongEmail
