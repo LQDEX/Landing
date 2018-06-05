@@ -46,9 +46,9 @@ class MobileLandingLayout extends Component {
     return (
       <div className={style} >
         <div className="bkTone"></div>
-        <video autoPlay muted loop className="movingLines">
+        {/* <video autoPlay muted loop className="movingLines">
           <source src={require('../../assets/img/movingLines.mp4')} type="video/mp4" />
-        </video>
+        </video> */}
 
         {showSidePanel && <div id="mySidenav" className="sideNav">
           <button className="menuButton" onClick={() => this.props.sideNavToggle()}>
