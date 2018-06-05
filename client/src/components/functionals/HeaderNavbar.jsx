@@ -37,7 +37,6 @@ class HeaderNavbar extends Component {
             </button>
           )}
           {activePage.page !== 'signUp' &&
-            /*<button className="btnSubscribe" onClick={() => this.goTo('signUp', 'signUp')}>Sign up for Updates</button>*/
             <button className="btnSubscribe" >
               <a className="btnLink" href={require('../../assets/doc/LQDEX-White-Paper.pdf')} target="_blank">
                 Download White Paper

@@ -145,7 +145,7 @@ handleErrorMsg (error) {
         </Modal>
         <div className="signUpWrapper">
           <div className="headerWrapper">
-            <span className="firstLine">Subscribe for Updates</span>
+            <span className="firstLine">Sign up for Updates</span>
             <button className="btnClose" onClick={() => this.goTo('exchange', 'landing')}><i className="fas fa-times fa-2x"></i></button>
           </div>
           <form>
@@ -165,7 +165,7 @@ handleErrorMsg (error) {
                 </span>
               </div>
             </div>
-            <div className="fieldWrapper">
+            {/* <div className="fieldWrapper">
             <label >{this.state.errors.phone}</label>
             <div className="inputWrapper">
               <div className="inputIcon"><i className="fas fa-phone"></i></div>
@@ -179,7 +179,7 @@ handleErrorMsg (error) {
                   onChange={(event)=>this.handleInputChange(event)} />
               </span>
             </div>
-            </div>
+            </div> */}
             <div className="fieldWrapper">
             <label >{this.state.errors.email}</label>
             <div className="inputWrapper">
