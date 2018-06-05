@@ -39,7 +39,7 @@ class HeaderNavbar extends Component {
           {activePage.page !== 'signUp' &&
             <button className="btnSubscribe" >
               <a className="btnLink" href={require('../../assets/doc/LQDEX-White-Paper.pdf')} target="_blank">
-                Download White Paper
+                Whitepaper
               </a>
             </button>
           }
