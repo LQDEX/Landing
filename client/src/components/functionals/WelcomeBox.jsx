@@ -81,7 +81,13 @@ class WelcomeBox extends Component {
             <span className="txtBody">TRUSTLESS</span>
             <span className="txtBody">CROSS-CHAIN EXCHANGE</span>
           </div>
-          {deviceType === 'mobile' && <button className="btnSubscribe" onClick={() => this.goTo('signUp', 'signUp')}>Sign up for Updates</button>}
+          {deviceType === 'mobile' &&
+            <button className="btnSubscribe" >
+              <a className="btnLink" href={require('../../assets/doc/LQDEX-White-Paper.pdf')} target="_blank">
+                Download White Paper
+              </a>
+            </button>
+          }
         </div>
       </div>
     );

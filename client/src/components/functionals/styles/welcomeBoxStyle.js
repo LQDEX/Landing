@@ -99,7 +99,11 @@ export default {
         border: 'none',
         background: primary,
         color: globalBackground,
-        '&:hover': { background: primaryHover }
+        '&:hover': { background: primaryHover },
+        '& .btnLink': {
+          color: globalBackground,
+          textDecoration: 'none'         
+        }
       }
     }
   },
