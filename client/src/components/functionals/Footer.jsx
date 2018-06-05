@@ -64,10 +64,10 @@ class Footer extends Component {
 
     return (
       <div className={style} >
-        <div className="firstLine">Sign up for Updates</div>
+        {/* <div className="firstLine">Sign up for Updates</div>
         <div className="contactWrapper">
           <button className="btnSubscribe" onClick={() => this.goTo('signUp', 'signUp')}>Sign up</button>
-        </div>
+        </div>  */}
         <div className="copyRights">© 2018 LQDEX. All Rights Reserved.</div>
         <br/>
         <div className="copyRights">1541 Ocean Ave., Suite 200</div>

@@ -16,7 +16,7 @@ export default {
     background: globalBackground,
 
     '& .firstLine': {
-      margin: '0 0 80px 0',
+      margin: '0 0 40px 0',
       fontFamily: txtHeaderFont,
       fontSize: '48px',
       fontWeight: 'bold',
@@ -32,7 +32,7 @@ export default {
       flexWrap: 'wrap',
       minWidth: '100%',
       '& .investorLogo': {
-        margin: '25px 20px',
+        margin: '0px 20px 20px 25px',
         maxHeight: 80
       }
     }
