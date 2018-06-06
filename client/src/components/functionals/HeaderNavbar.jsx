@@ -55,24 +55,26 @@ class HeaderNavbar extends Component {
 
             <button
                 key={'blog'}
-                className={`btnMenu ${'aboutUs' === navBar.active ? 'btnMenuActive' : ''}`}
+                className={`btnMenu ${'blog' === navBar.active ? 'btnMenuActive' : ''}`}
+                onClick={() => this.goTo(null, 'exchange')}
               >
               <a className="navLink" href="https://medium.com/lqdex" target="_blank">{'BLOG'}</a>
             </button>
 
             <button
                 key={'contact'}
-                className={`btnMenu ${'aboutUs' === navBar.active ? 'btnMenuActive' : ''}`}
+                className={`btnMenu ${'contact' === navBar.active ? 'btnMenuActive' : ''}`}
                 onClick={() => this.goTo('contact', 'contact')}
               >
                 {'CONTACT'}
             </button>
 
             <button
-                key={'blog'}
+                key={'telegram'}
                 className="btnMenuIcon"
+                onClick={() => this.goTo(null, 'exchange')}
               >
-              <a className='navLink' href="https://t.me/LQDEX" target="_blank">
+              <a className='navLinkIcon' href="https://t.me/LQDEX" target="_blank">
                 <i className="fab fa-telegram fa-3x" ></i>
               </a>
             </button>

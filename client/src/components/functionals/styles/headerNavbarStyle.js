@@ -84,6 +84,10 @@ export default {
       '& .navLink': {
         color: textNavBar,
         textDecoration: 'none' ,
+      },
+      '& .navLinkIcon': {
+        color: textNavBar,
+        textDecoration: 'none' ,
         '&:hover': { color: primaryHover, }       
       },
     }
