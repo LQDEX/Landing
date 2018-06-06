@@ -81,7 +81,22 @@ export default {
           border: 'none',
           background: 'none',
           color: textNavBar,
-          '&:hover': { color: primaryHover }
+          '&:hover': { color: primaryHover },
+          '& .btnLink': {
+            outline: 'none',
+          fontFamily: txtCaptionFont,
+          fontSize: '14px',
+          fontWeight: '400',
+          display: 'inline-block',
+          boxSizing: 'content-box',
+          cursor: 'pointer',
+          margin: '0 30px 0 -32px',
+          border: 'none',
+          background: 'none',
+          color: textNavBar,
+            textDecoration: 'none',
+            '&:hover': { color: primaryHover },     
+          }
         },
         '& .btnMenuActive': {
           extend: 'btnMenu',

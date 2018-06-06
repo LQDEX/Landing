@@ -55,14 +55,34 @@ class MobileLandingLayout extends Component {
             <i className="fa fa-bars fa-3x"></i>
           </button>
           <div className="menuWraper">
-            {navBar.options.map(option =>
-              <button
-                key={option.name}
-                className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`}
-                onClick={() => this.goTo(option.pageTo, option.pointTo)}
-              >
+            {navBar.options.map(option =>{
+
+
+              if (!option.href) {
+return(
+                  <button
+                    key={option.name}
+                    className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`}
+                    onClick={() => this.goTo(option.pageTo, option.pointTo)}
+                  >
+                    {option.caption}
+                  </button>)
+              } else {
+return (
+              <button className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`} >
+                <a className="btnLink" href={option.href} target="_blank">
                 {option.caption}
+                </a>
               </button>
+)
+            }
+
+
+
+
+
+
+            }
             )}
             <div className="hr"></div>
             <div className="privacy" onClick={() => this.goTo('landing', 'exchange')}>
