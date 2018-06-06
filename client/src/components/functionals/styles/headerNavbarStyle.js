@@ -6,7 +6,8 @@ const {
   primaryHover,
   textNavBar,
   txtCaptionFont,
-  txtBlueBottonFont
+  txtBlueBottonFont,
+  grey
 } = palette;
 
 export default {
@@ -75,7 +76,6 @@ export default {
         border: 'none',
         borderBottom: `1px solid transparent`,
         background: 'none',
-        color: textNavBar,
       },
       '& .btnMenuActive': {
         extend: 'btnMenu',
@@ -86,9 +86,19 @@ export default {
         textDecoration: 'none' ,
       },
       '& .navLinkIcon': {
+
+        display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+
         color: textNavBar,
+        // color: grey,
         textDecoration: 'none' ,
-        '&:hover': { color: primaryHover, }       
+        '&:hover': { color: primaryHover, },
+        '& .iconMargin': {
+          margin: '0 0 0 10px',
+        }
       },
     }
 

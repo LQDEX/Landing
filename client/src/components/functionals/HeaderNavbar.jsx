@@ -75,7 +75,7 @@ class HeaderNavbar extends Component {
                 onClick={() => this.goTo(null, 'exchange')}
               >
               <a className='navLinkIcon' href="https://t.me/LQDEX" target="_blank">
-                <i className="fab fa-telegram fa-3x" ></i>
+              JOIN US ON TELEGRAM <span className="iconMargin"><i className="fab fa-telegram-plane fa-2x" ></i></span>
               </a>
             </button>
 
