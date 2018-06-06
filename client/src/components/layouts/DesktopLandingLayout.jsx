@@ -20,10 +20,10 @@ class DesktopLayout extends Component {
     return (
       <div className={style} >
         <div className="bkTone"></div>
-        {/*showBgVideo && 
+        {showBgVideo && 
         <video autoPlay muted loop className="movingLines">
           <source src={require(`../../assets/img/movingLines${app.config.backgroundVideoRes}.mp4`)} type="video/mp4" />
-        </video>*/}
+        </video>}
         <div>
           <HeaderContainer />
           <div>
