@@ -21,7 +21,7 @@ const errorMessages = {
   phone: { required:'' },
   email: { required:'An email is required',
            wrongEmail: 'Email wrong format' },
-  message: {required:'A message is required' },
+  message: {required:'Required field.' },
 
 }
 
@@ -168,7 +168,7 @@ class Contact extends Component {
         </Modal>
         <div className="signUpWrapper">
           <div className="headerWrapper">
-            <span className="firstLine">Get in Touch</span>
+            <span className="firstLine">Contact</span>
             <button className="btnClose" onClick={() => this.goTo('landing', 'exchange')}><i className="fas fa-times fa-2x"></i></button>
           </div>
           <form>
@@ -211,7 +211,7 @@ class Contact extends Component {
                 <input
                   name="phone"
                   type="text"
-                  placeholder="Phone Number"
+                  placeholder="Phone Number (Optional)"
                   onFocus={(event)=>this.resetErrors(event)}
                   onBlur={(event)=>this.handelErrors(event)}
                   onChange={event => this.handleInputChange(event)} />
@@ -233,7 +233,7 @@ class Contact extends Component {
           </div>
           </form>
           <div className="buttonsWraper">
-            <button className="btnCancel" onClick={() => this.goTo('landing', 'exchange')}> Cancel</button>
+            {/* <button className="btnCancel" onClick={() => this.goTo('landing', 'exchange')}> Cancel</button> */}
             <button className="btnSubscribe" disabled={!this.state.canSubmit} onClick={() => this.send()}>Send</button>
           </div>
         </div>

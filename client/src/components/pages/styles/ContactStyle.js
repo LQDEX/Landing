@@ -111,7 +111,7 @@ export default {
       '& .buttonsWraper': {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         margin: '0 0 0 0px',
         '& .btnSubscribe': {
           fontFamily: txtBlueBottonFont,
