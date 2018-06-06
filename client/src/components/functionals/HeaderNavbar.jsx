@@ -25,7 +25,7 @@ class HeaderNavbar extends Component {
 
     return (
       <div className={classes.root}>
-        <img src={require('../../assets/img/logoLiquidx.png')} alt="Logo" onClick={() => this.goTo('landing', 'exchange')}/>
+        <img className="logo" src={require('../../assets/img/logoLiquidx.png')} alt="Logo" onClick={() => this.goTo('landing', 'exchange')}/>
         {deviceType !== 'mobile' &&
            <div className="menuWraper">
             {/*navBar.options.map(option =>
