@@ -45,11 +45,11 @@ class Landing extends Component {
         <div key="Detail" >
           <DetailedInfoContainer />
         </div>
-        <div key="Roadmap" >
-          <RoadmapContainer />
-        </div>
         <div key="About" >
           <ScrollableAnchor id={'aboutUs'}><AboutUsContainer /></ScrollableAnchor>
+        </div>
+        <div key="Roadmap" >
+          <RoadmapContainer />
         </div>
         <div key="Team" >
           <TeamAdvisorsContainer />
