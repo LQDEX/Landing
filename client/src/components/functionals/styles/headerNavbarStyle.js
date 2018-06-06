@@ -100,6 +100,11 @@ export default {
           margin: '0 0 0 10px',
         }
       },
+    },
+    '& .logo': {
+      '&:hover': {
+        cursor: 'pointer'
+      }
     }
 
   }
