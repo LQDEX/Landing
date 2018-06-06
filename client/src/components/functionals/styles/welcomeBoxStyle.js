@@ -6,6 +6,7 @@ const {
   globalBackground,
   textHeader,
   text,
+  txtCaptionFont,
   txtHeaderFont,
   txtSubheaderFont,
   txtBlueBottonFont
@@ -88,7 +89,7 @@ export default {
         fontSize: '30px'
       },
       '& .btnSubscribe': {
-        fontFamily: txtBlueBottonFont,
+        fontFamily: txtCaptionFont,
         fontSize: '1em',
         fontWeight: 'semi-Bold',
         display: 'inline-block',

@@ -17,36 +17,38 @@ const initialState = {
     options: [
       {
         name: 'aboutUs',
-        caption: 'ABOUT US',
-        linkTo: '',
+        caption: 'ABOUT',
+        href: '',
         pageTo: 'landing',
         pointTo: 'aboutUs'
       },
       {
         name: 'whitepaper',
         caption: 'WHITEPAPER',
-        linkTo: 'https://liquidx-dev.herokuapp.com/static/media/LQDEX-White-Paper.ceb2033b.pdf',
+        // href: '../../assets/doc/LQDEX-White-Paper.pdf',
+        // href: '../../assets/doc/LQDEX-White-Paper.pdf',
+        href: '/static/media/LQDEX-White-Paper.ceb2033b.pdf',
         pageTo: '',
         pointTo: ''
       },
       {
         name: 'blog',
         caption: 'BLOG',
-        linkTo: 'https://medium.com/lqdex',
+        href: 'https://medium.com/lqdex',
         pageTo: '',
         pointTo: ''
       },
       {
         name: 'contact',
         caption: 'CONTACT',
-        linkTo: '',
+        href: '',
         pageTo: 'contact',
         pointTo: 'contact'
       },
       {
         name: 'telegram',
         caption: 'TELEGRAM ',
-        linkTo: 'https://t.me/LQDEX',
+        href: 'https://t.me/LQDEX',
         pageTo: '',
         pointTo: ''
       },
