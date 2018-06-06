@@ -9,7 +9,8 @@ export default {
       position: 'fixed',
       top: 0,
       left: 0,
-      height:'100%',
+      height:'120%',
+      width:'100%',
       zIndex: -2
     },
     '& .bkTone': {
