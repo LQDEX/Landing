@@ -68,6 +68,7 @@ class DetailedInfo extends Component {
           </div>
           <div className="imgBlockTop">
             <svg width={this.state.wWidth} height={this.state.wHeight} >
+              {/* <image width={this.state.wWidth} height={this.state.wHeight} xlinkHref={require(`../../assets/img/flyingCoins.gif`) } /> */}
               <image width={this.state.wWidth} height={this.state.wHeight} xlinkHref={require(`../../assets/img/flyingCoins.gif`) } />
               <polygon style={ { fill: palette.globalBackground } }points={this.toPoints(this.state.wWidth, this.state.wHeight, shapes[`${deviceType}T`])}/>
             </svg>

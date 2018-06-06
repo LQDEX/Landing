@@ -16,7 +16,7 @@ const initialState = {
       title: ' Head of Technology',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/snikitin2/',
-      brief: 'Sergey started his career at Microsoft and has since worked in the IT industry. Prior to joining LQDEX, he founded xCoins.io, an innovative peer-to-peer cryptocurrency lending platform that allows nearly instant acquisition of bitcoin. Sergey holds a BS degree in Computer Science and an MBA degree from University of California.'
+      brief: 'Sergey started his career at Microsoft and has since worked in the IT industry. Prior to joining LQDEX, he founded xCoins.io, an innovative peer-to-peer cryptocurrency lending platform that allows nearly instant acquisition of bitcoin. Sergey holds a BS degree in Computer Science and an MBA degree from University of California, Los Angeles.'
     },
     {
       avatar: 'richardBranning.jpg',
@@ -32,7 +32,7 @@ const initialState = {
       title: 'Head of Operations',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/michelle-kim-05086213a/',
-      brief: 'Michelle has been passionate about blockchain technology since she started managing operations for a cryptocurrency lending platform in early 2017. She has extensive experience in platform security and operational issues. Michelle holds a BS degree in Cognitive Psychology from UC, Irvine.'
+      brief: 'Michelle has been passionate about blockchain technology since she started managing operations for a cryptocurrency lending platform in early 2017. She has extensive experience in platform security and operational issues. Michelle holds a BS degree in Cognitive Psychology from University of California, Irvine.'
     },
     //{
     //  avatar: 'GregKalin.jpg',
