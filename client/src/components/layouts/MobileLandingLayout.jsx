@@ -28,7 +28,7 @@ class MobileLandingLayout extends Component {
     )
   }
 
-  goTo(section, page) {
+  goTo(page, section) {
     if (page) {
       this.props.goToPage(page, null);
     }
@@ -59,13 +59,13 @@ class MobileLandingLayout extends Component {
               <button
                 key={option.name}
                 className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`}
-                onClick={() => this.goTo(option.pointTo, option.pageTo)}
+                onClick={() => this.goTo(option.pageTo, option.pointTo)}
               >
                 {option.caption}
               </button>
             )}
             <div className="hr"></div>
-            <div className="privacy" onClick={() => this.goTo('exchange', 'landing')}>
+            <div className="privacy" onClick={() => this.goTo('landing', 'exchange')}>
               <div className="copyRights">1541 Ocean Ave., Suite 200</div>
               <div className="copyRights">Santa Monica, CA 90401</div>
               <div className="copyRights">{this.eDir(this.state.eDir)}</div>

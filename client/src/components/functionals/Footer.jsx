@@ -45,7 +45,7 @@ class Footer extends Component {
     )
   }
 
-  goTo(section, page) {
+  goTo(page, section) {
     if (page) {
       this.props.goToPage(page, null);
     }

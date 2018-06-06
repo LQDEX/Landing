@@ -16,12 +16,6 @@ const initialState = {
     active: 'exchange',
     options: [
       {
-        name: 'exchange',
-        caption: 'EXCHANGE',
-        pageTo: 'landing',
-        pointTo: 'exchange'
-      },
-      {
         name: 'aboutUs',
         caption: 'ABOUT US',
         pageTo: 'landing',
@@ -32,7 +26,19 @@ const initialState = {
         caption: 'CONTACT',
         pageTo: 'contact',
         pointTo: 'contact'
-      }
+      },
+      {
+        name: 'blog',
+        caption: 'BLOG',
+        pageTo: 'blog',
+        pointTo: 'blog'
+      },
+      {
+        name: 'exchange',
+        caption: 'EXCHANGE',
+        pageTo: 'landing',
+        pointTo: 'exchange'
+      },
     ]
   }
 };

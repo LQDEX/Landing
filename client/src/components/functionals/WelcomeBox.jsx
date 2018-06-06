@@ -24,7 +24,7 @@ class WelcomeBox extends Component {
     this.props.goToPage(page, param);
   }
 
-  goTo(section, page) {
+  goTo(page, section) {
     if (page) {
       this.props.goToPage(page, null);
     }
