@@ -2,8 +2,8 @@ import constants from '../constants';
 
 const initialState = {
   config: {
-    backgroundVideo: false,
-    backgroundVideoRes: 'HD', // HD, 2K, 4K
+    backgroundVideo: true,
+    backgroundVideoRes: 'SD', // SD, HD, 2K, 4K
   },
   activePage: {
     page: 'landing',

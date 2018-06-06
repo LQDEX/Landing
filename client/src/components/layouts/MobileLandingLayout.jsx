@@ -40,15 +40,16 @@ class MobileLandingLayout extends Component {
 
   render() {
     const
-      { classes, app, showSidePanel, navBar } = this.props,
+      { classes, app, showSidePanel, navBar, showBgVideo } = this.props,
       style = classes.root;
 
     return (
       <div className={style} >
         <div className="bkTone"></div>
-        {/* <video autoPlay muted loop className="movingLines">
-          <source src={require('../../assets/img/movingLines.mp4')} type="video/mp4" />
-        </video> */}
+        {showBgVideo && 
+        <video autoPlay muted loop className="movingLines">
+          <source src={require(`../../assets/img/movingLines${app.config.backgroundVideoRes}.mp4`)} type="video/mp4" />
+        </video>}
 
         {showSidePanel && <div id="mySidenav" className="sideNav">
           <button className="menuButton" onClick={() => this.props.sideNavToggle()}>

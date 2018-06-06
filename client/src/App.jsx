@@ -96,9 +96,9 @@ class App extends Component {
       </div>
         <Favicon url={require('./assets/img/favicon.ico')} />
         {/* Put here the Mobile Layout */}
-        {app.platform.deviceType === 'mobile' && <MobileLandingLayout />}
+        {app.platform.deviceType === 'mobile' && <MobileLandingLayout showBgVideo={app.config.backgroundVideo}/>}
         {/* Put here the Tablet Layout*/}
-        {app.platform.deviceType === 'tablet' && <DesktopLandingLayout />}
+        {app.platform.deviceType === 'tablet' && <DesktopLandingLayout showBgVideo={app.config.backgroundVideo}/>}
         {/* Put here the Desktop Layout*/}
         {app.platform.deviceType === 'desktop' && <DesktopLandingLayout showBgVideo={app.config.backgroundVideo}/> }
       </div>
