@@ -43,7 +43,7 @@ class HeaderNavbar extends Component {
                 className={`btnMenu ${'aboutUs' === navBar.active ? 'btnMenuActive' : ''}`}
                 onClick={() => this.goTo('landing', 'aboutUs')}
               >
-                {'ABOUT US'}
+                {'ABOUT'}
             </button>
 
               <button className="btnMenuSubscribe" >
