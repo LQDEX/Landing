@@ -17,9 +17,9 @@ import injectSheet from 'react-jss';
 import { ContactStyle } from './styles';
 
 const errorMessages = {
-  name: { required:'A name is required' },
+  name: { required:'Required field.' },
   phone: { required:'' },
-  email: { required:'An email is required',
+  email: { required:'Required field.',
            wrongEmail: 'Email wrong format' },
   message: {required:'Required field.' },
 
