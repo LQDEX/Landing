@@ -36,7 +36,21 @@ class Contact extends Component {
       message: '',
     },
     canSubmit: true,
-    errors: {
+    formFieldStatus: {
+      name:{
+        touched: false
+      },
+      phone:{
+        touched: false
+      },
+      email:{
+        touched: false
+      },
+      message:{
+        touched: false
+      },
+    },
+    formErrors: {
       name:'',
       phone:'',
       email:'',
@@ -55,8 +69,8 @@ class Contact extends Component {
   };
 
   handleSubmitButton(){
-    const {nameValue, emailValue, messageValue, errors} = this.state;
-    const hasError = !!errors.name || !!errors.phone || !!errors.email || !!errors.message;
+    const {nameValue, emailValue, messageValue, formErrors} = this.state;
+    const hasError = !!formErrors.name || !!formErrors.phone || !!formErrors.email || !!formErrors.message;
     const hasRequired = !!nameValue && !!emailValue && !!messageValue;
     const canSubmit = hasRequired && !hasError;
     this.setState({canSubmit});
@@ -66,6 +80,9 @@ class Contact extends Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
+    const formFieldStatus = this.state.formFieldStatus[name];
+    formFieldStatus.touched = true;
+    this.setState(formFieldStatus);
     this.setState({[`${name}Value`]: value}, () => this.handleSubmitButton());
 
   }
@@ -74,8 +91,10 @@ class Contact extends Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-    let errors = this.state.errors
-    if (!value) {
+    const fieldState = this.state.formFieldStatus[name];
+    let errors = this.state.formErrors
+
+    if (!value && fieldState.touched) {
       errors[name]=errorMessages[name].required
     }
     if (name === 'email' && value){
@@ -91,7 +110,7 @@ class Contact extends Component {
   resetErrors(event) {
     const target = event.target;
     const name = target.name;
-    let errors = this.state.errors;
+    let errors = this.state.formErrors;
     errors[name]='';
 
     this.setState(errors, () => this.handleSubmitButton());
@@ -141,7 +160,7 @@ class Contact extends Component {
     const
       { classes } = this.props,
       style = classes.root;
-
+    
     return (
       <div className={style} >
         <Modal show={this.state.modal.showModal} handleClose={() => this.hideModal()}>
@@ -154,7 +173,7 @@ class Contact extends Component {
           </div>
           <form>
           <div className="fieldWrapper">
-            <label >{this.state.errors.name}</label>
+            <label >{this.state.formErrors.name}</label>
             <div className="inputWraper">
               <div className="inputIcon"><i className="fas fa-user"></i></div>
               <span className="inputBox">
@@ -170,7 +189,7 @@ class Contact extends Component {
             </div>
           </div>
           <div className="fieldWrapper">
-            <label >{this.state.errors.email}</label>
+            <label >{this.state.formErrors.email}</label>
             <div className="inputWraper">
               <div className="inputIcon"><i className="fas fa-envelope"></i></div>
               <span className="inputBox">
@@ -185,7 +204,7 @@ class Contact extends Component {
             </div>
           </div>
           <div className="fieldWrapper">
-            <label >{this.state.errors.phone}</label>
+            <label >{this.state.formErrors.phone}</label>
             <div className="inputWraper">
               <div className="inputIcon"><i className="fas fa-phone"></i></div>
               <span className="inputBox">
@@ -200,7 +219,7 @@ class Contact extends Component {
             </div>
           </div>
           <div className="fieldWrapper">
-            <label >{this.state.errors.message}</label>
+            <label >{this.state.formErrors.message}</label>
             <textarea
               className="message"
               rows="4" cols="50"
