@@ -107,7 +107,7 @@ class SignUp extends Component {
 handleErrorMsg (error) {
   switch (error.errno) {
     case 1062: //Duplicate primary key (email)
-      return 'You are already subscribed for updates.'
+      return 'You are already subscribed, Thank you.'
     case 500:
       return 'ERROR: an error occured, try again in a while'
     default:
@@ -127,7 +127,7 @@ handleErrorMsg (error) {
       if (response.error) {
         this.showModal (this.handleErrorMsg(response.error));
       } else {
-        this.showModal (`Thank you. We will keep you updated.`);
+        this.showModal (`Thank you. You're subscribed!`);
       }
     })
     .catch(err => this.showModal (this.handleErrorMsg({errno: 500})));

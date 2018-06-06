@@ -110,7 +110,7 @@ class Contact extends Component {
   handleErrorMsg (error) {
     switch (error.errno) {
       case 1062: //Duplicate primary key (email)
-        return 'You are already subscribed for updates.'
+        return 'You are already subscribed, Thank you.'
       case 500:
         return 'ERROR: an error occured, try again in a while'
       default:
@@ -131,7 +131,7 @@ class Contact extends Component {
       if (response.error) {
         this.showModal (this.handleErrorMsg(response.error));
       } else {
-        this.showModal (`Your message has been received. Thank you for contacting LQDEX.`);
+        this.showModal (`Message received!`);
       }
     })
     .catch(err => this.showModal (this.handleErrorMsg({errno: 500})));    
