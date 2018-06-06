@@ -33,6 +33,7 @@ export default {
         fontSize: '16px',
         fontWeight: '500',
         display: 'inline-block',
+        margin: '0 45px 0 0',
         padding: '1em 1.25em',
         boxSizing: 'content-box',
         cursor: 'pointer',
@@ -61,10 +62,30 @@ export default {
         color: textNavBar,
         '&:hover': { borderBottom: `1px solid ${textNavBar}` }
       },
+      '& .btnMenuIcon': {
+        fontFamily: txtCaptionFont,
+        fontSize: '15px',
+        fontWeight: 'normal',
+        display: 'inline-block',
+        margin: '0 45px 0 0',
+        padding: '5px 0',
+        boxSizing: 'content-box',
+        cursor: 'pointer',
+        outline: 'none',
+        border: 'none',
+        borderBottom: `1px solid transparent`,
+        background: 'none',
+        color: textNavBar,
+      },
       '& .btnMenuActive': {
         extend: 'btnMenu',
-        borderBottom: `1px solid ${textNavBar}`
-      }
+        borderBottom: `1px solid ${textNavBar}`,
+      },
+      '& .navLink': {
+        color: textNavBar,
+        textDecoration: 'none' ,
+        '&:hover': { color: primaryHover, }       
+      },
     }
 
   }

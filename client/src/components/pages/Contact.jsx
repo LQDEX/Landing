@@ -97,7 +97,7 @@ class Contact extends Component {
     this.setState(errors, () => this.handleSubmitButton());
   }
 
-  goTo(section, page) {
+  goTo(page, section) {
     if (page) {
       this.props.goToPage(page, null);
     }
@@ -150,7 +150,7 @@ class Contact extends Component {
         <div className="signUpWrapper">
           <div className="headerWrapper">
             <span className="firstLine">Get in Touch</span>
-            <button className="btnClose" onClick={() => this.goTo('exchange', 'landing')}><i className="fas fa-times fa-2x"></i></button>
+            <button className="btnClose" onClick={() => this.goTo('landing', 'exchange')}><i className="fas fa-times fa-2x"></i></button>
           </div>
           <form>
           <div className="fieldWrapper">
@@ -214,7 +214,7 @@ class Contact extends Component {
           </div>
           </form>
           <div className="buttonsWraper">
-            <button className="btnCancel" onClick={() => this.goTo('exchange', 'landing')}> Cancel</button>
+            <button className="btnCancel" onClick={() => this.goTo('landing', 'exchange')}> Cancel</button>
             <button className="btnSubscribe" disabled={!this.state.canSubmit} onClick={() => this.send()}>Send</button>
           </div>
         </div>
