@@ -47,6 +47,26 @@ export default {
           textDecoration: 'none'         
         }
       },
+      '& .btnMenuSubscribe': {
+        fontFamily: txtCaptionFont,
+        fontSize: '15px',
+        fontWeight: 'normal',
+        display: 'inline-block',
+        margin: '0 45px 0 0',
+        padding: '5px 0',
+        boxSizing: 'content-box',
+        cursor: 'pointer',
+        outline: 'none',
+        border: 'none',
+        borderBottom: `1px solid transparent`,
+        background: 'none',
+        color: textNavBar,
+        '&:hover': { borderBottom: `1px solid ${primary}` },
+        '& .btnLink': {
+          color: primary,
+          textDecoration: 'none'         
+        }
+      },
       '& .btnMenu': {
         fontFamily: txtCaptionFont,
         fontSize: '15px',
