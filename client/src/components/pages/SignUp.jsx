@@ -25,7 +25,6 @@ const errorMessages = {
 
 class SignUp extends Component {
   state = {
-    canSubmit: false,
     nameValue:'',
     phoneValue:'',
     emailValue:'',
@@ -33,7 +32,22 @@ class SignUp extends Component {
       showModal: false,
       message: '',
     },
-    errors: {
+    canSubmit: false,
+    formFieldStatus: {
+      name:{
+        touched: false
+      },
+      phone:{
+        touched: false
+      },
+      email:{
+        touched: false
+      },
+      message:{
+        touched: false
+      },
+    },
+    formErrors: {
       name:'',
       phone:'',
       email:''
@@ -51,8 +65,8 @@ class SignUp extends Component {
   };
 
   handleSubmitButton() {
-    const {nameValue, emailValue, errors} = this.state;
-    const hasError = !!errors.name || !!errors.phone || !!errors.email
+    const {nameValue, emailValue, formErrors} = this.state;
+    const hasError = !!formErrors.name || !!formErrors.phone || !!formErrors.email
     const hasRequired = !!nameValue && !!emailValue;
     const canSubmit = hasRequired && !hasError;
     this.setState({canSubmit});
@@ -63,6 +77,9 @@ class SignUp extends Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
+    const formFieldStatus = this.state.formFieldStatus[name];
+    formFieldStatus.touched = true;
+    this.setState(formFieldStatus);
     this.setState({[`${name}Value`]: value}, () => this.handleSubmitButton());
   }
 
@@ -70,9 +87,10 @@ class SignUp extends Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-    let errors = this.state.errors;
+    const fieldState = this.state.formFieldStatus[name];
+    let errors = this.state.formErrors;
     
-    if (!value) {
+    if (!value && fieldState.touched) {
       errors[name] = errorMessages[name].required
     }
     if (name === 'email' && value){
@@ -88,7 +106,7 @@ class SignUp extends Component {
   resetErrors(event) {
     const target = event.target;
     const name = target.name;
-    let errors = this.state.errors;
+    let errors = this.state.formErrors;
     errors[name]='';
 
     this.setState(errors, () => this.handleSubmitButton());
@@ -107,7 +125,7 @@ class SignUp extends Component {
 handleErrorMsg (error) {
   switch (error.errno) {
     case 1062: //Duplicate primary key (email)
-      return 'You are already subscribed for updates.'
+      return 'You are already subscribed, Thank you.'
     case 500:
       return 'ERROR: an error occured, try again in a while'
     default:
@@ -127,7 +145,7 @@ handleErrorMsg (error) {
       if (response.error) {
         this.showModal (this.handleErrorMsg(response.error));
       } else {
-        this.showModal (`Thank you. We will keep you updated.`);
+        this.showModal (`Thank you. You're subscribed!`);
       }
     })
     .catch(err => this.showModal (this.handleErrorMsg({errno: 500})));
@@ -150,7 +168,7 @@ handleErrorMsg (error) {
           </div>
           <form>
             <div className="fieldWrapper">
-              <label >{this.state.errors.name}</label>
+              <label >{this.state.formErrors.name}</label>
               <div className="inputWrapper inputError">
                 <div className="inputIcon"><i className="fas fa-user"></i></div>
                 <span className="inputBox">
@@ -181,7 +199,7 @@ handleErrorMsg (error) {
             </div>
             </div> */}
             <div className="fieldWrapper">
-            <label >{this.state.errors.email}</label>
+            <label >{this.state.formErrors.email}</label>
             <div className="inputWrapper">
               <div className="inputIcon"><i className="fas fa-envelope"></i></div>
               <span className="inputBox">
