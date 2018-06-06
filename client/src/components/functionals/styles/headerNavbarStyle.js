@@ -30,7 +30,7 @@ export default {
       justifyContent: 'flex-end',
       alignItems: 'center',
       '& .btnSubscribe': {
-        fontFamily: txtBlueBottonFont,
+        fontFamily: txtCaptionFont,
         fontSize: '16px',
         fontWeight: '500',
         display: 'inline-block',

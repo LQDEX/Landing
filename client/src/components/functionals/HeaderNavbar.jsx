@@ -48,7 +48,7 @@ class HeaderNavbar extends Component {
 
               <button className="btnSubscribe" >
                 <a className="btnLink" href={require('../../assets/doc/LQDEX-White-Paper.pdf')} target="_blank">
-                  Whitepaper
+                  WHITEPAPER
                 </a>
               </button>
             
@@ -74,8 +74,7 @@ class HeaderNavbar extends Component {
                 className="btnMenuIcon"
                 onClick={() => this.goTo(null, 'exchange')}
               >
-              <a className='navLinkIcon' href="https://t.me/LQDEX" target="_blank">
-              JOIN US ON TELEGRAM <span className="iconMargin"><i className="fab fa-telegram-plane fa-2x" ></i></span>
+              <a className='navLinkIcon' title="JOIN US ON TELEGRAM" href="https://t.me/LQDEX" target="_blank"><span ><i className="fab fa-telegram-plane fa-3x" ></i></span>
               </a>
             </button>
 
