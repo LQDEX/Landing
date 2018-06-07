@@ -1,26 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-
 // Redux actions
 import actions from '../../redux/actions';
 
 // Import Styles
 import injectSheet from 'react-jss';
-import { palette, welcomeBoxStyle } from './styles';
-
-import { WelcomeForm } from '.';
+import { palette, welcomeFormStyle } from './styles';
 
 const shapes = {
-  desktop: [{ xP: 0.00, yP: 1.00 }, { xP: 0.67, yP: 0.84 }, { xP: 1.00, yP: 1.00 }],
-  mobile: [{ xP: 0.00, yP: 1.00 }, { xP: 0.77, yP: 0.94 }, { xP: 1.00, yP: 0.98 }, { xP: 1.00, yP: 1.00 }],
-  tablet: [{ xP: 0.00, yP: 1.00 }, { xP: 0.90, yP: 0.90 }, { xP: 1.00, yP: 0.94 }, { xP: 1.00, yP: 1.00 }]
+  desktop: [{ xP: 0.00, yP: 0.00 }, { xP: 0.67, yP: 0.14 }, { xP: 1.00, yP: 1.00 }],
+  mobile:  [{ xP: 0.00, yP: 1.00 }, { xP: 0.77, yP: 0.94 }, { xP: 1.00, yP: 0.98 }, { xP: 1.00, yP: 1.00 }],
+  tablet:  [{ xP: 0.00, yP: 1.00 }, { xP: 0.90, yP: 0.90 }, { xP: 1.00, yP: 0.94 }, { xP: 1.00, yP: 1.00 }]
 };
 
-class WelcomeBox extends Component {
+class WelcomeForm extends Component {
   state = {
-      wWidth: window.innerWidth,
-      wHeight: 800
+    wWidth: 500,
+    wHeight: 80,
+    emailValue:'',
+    formFieldStatus: {
+      email:{
+        touched: false
+      },
+    },
+    formErrors: {
+      email:'ljhlskdjf'
+    },
   }
 
   goToPage(page, param) {
@@ -70,33 +76,27 @@ class WelcomeBox extends Component {
  
     return (
       <div className={style} >
-        <svg width={this.state.wWidth} height={this.state.wHeight} >
+        {/* <svg width={this.state.wWidth} height={this.state.wHeight} >
           <polygon style={ { fill: palette.globalBackground } } points={this.toPoints(this.state.wWidth, this.state.wHeight, shapes[deviceType])}/>
-        </svg>
-
-        <div className="overlay">
-          <div className="imageWrap">
-            <img className="macBook" src={require('../../assets/img/macbookScreen.png')} alt="" />
-          </div>
-          <div className="textWrap">
-            <div className="textArea ">
-              <span className="firstLine">LQDEX</span>
-              <span className="txtBody">DECENTRALIZED</span>
-              <span className="txtBody">TRUSTLESS</span>
-              <span className="txtBody">CROSS-CHAIN EXCHANGE</span>
-            </div>
-            <div className="subcribeArea">
-              <WelcomeForm deviceType={deviceType}/>
-            </div>
-          </div>
-
-          {deviceType === 'mobile' &&
-            <button className="btnSubscribe" >
-              <a className="btnLink" href={require('../../assets/doc/LQDEX-White-Paper.pdf')} target="_blank">
-              WHITEPAPER
-              </a>
-            </button>
-          }
+        </svg> */}
+        <div className="formWrap">
+          <form>
+              <div className="inputWrapper">
+                <span className="inputBox">
+                  <input
+                    name="email"
+                    type="text"
+                    placeholder="Email"
+                    onFocus={(event)=>this.resetErrors(event)}
+                    onBlur={(event)=>this.handelErrors(event)}
+                    onChange={(event)=>this.handleInputChange(event)} />
+                </span>
+                <button className="btnSubscribe" disabled={!this.state.canSubmit} onClick={() => this.send()}> Subscribe</button>
+              </div>
+          </form>
+        </div>
+        <div  className="errorLabel">
+          <label >{this.state.formErrors.email}</label>
         </div>
       </div>
     );
@@ -110,4 +110,4 @@ const dispatchToProps = dispatch => ({
   navBarActive: option => dispatch(actions.navBarActive(option))
 });
 
-export default connect(stateToProps, dispatchToProps)(injectSheet(welcomeBoxStyle)(WelcomeBox));
+export default connect(stateToProps, dispatchToProps)(injectSheet(welcomeFormStyle)(WelcomeForm));
