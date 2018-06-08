@@ -151,8 +151,7 @@ handleErrorMsg (error) {
 }
 
   send(event) {
-    console.log(event);
-    /*if (this.state.emailValue) {
+    if (this.state.emailValue) {
       axios.post('/users/add', {
         name:'QuickSubcriber',
         email:this.state.emailValue,
@@ -173,8 +172,8 @@ handleErrorMsg (error) {
         this.showModal (this.handleErrorMsg({errno: 500}))
     });
     } else {
-      alert ('jajajajajajaja');
-    } */
+     /*   */
+    }
   }
 
   render() {
