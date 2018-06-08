@@ -213,7 +213,7 @@ handleErrorMsg (error) {
                     onBlur={(event)=>this.handelErrors(event)}
                     onChange={(event)=>this.handleInputChange(event)} />
                 </span>
-                <button className="btnSubscribe" disabled={!this.state.canSubmit} onClick={(event) => this.send(event)}> Subscribe</button>
+                <button className="btnSubscribe" disabled={!this.state.canSubmit} onClick={(event) => this.send(event)}>SUBSCRIBE</button>
               </div>
           </form>
         </div>
