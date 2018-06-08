@@ -39,6 +39,9 @@ class WelcomeForm extends Component {
         touched: false
       },
     },
+    formSuccess: {
+      email:''
+    },
     formErrors: {
       email:''
     },
@@ -151,7 +154,8 @@ handleErrorMsg (error) {
 }
 
   send(event) {
-    if (this.state.emailValue) {
+    let formSuccess = this.state.formSuccess;
+    let formErrors = this.state.formErrors;
       axios.post('/users/add', {
         name:'QuickSubcriber',
         email:this.state.emailValue,
@@ -171,8 +175,12 @@ handleErrorMsg (error) {
 
         this.showModal (this.handleErrorMsg({errno: 500}))
     });
+    if(!this.state.emailValue) {
+      formErrors.email = errorMessages.email.requiredOnSubscribe;
+      this.setState(formErrors);
     } else {
-     /*   */
+      formSuccess.email='Thank you';
+      this.setState(formSuccess);
     }
   }
 
@@ -210,7 +218,8 @@ handleErrorMsg (error) {
           </form>
         </div>
         <div  className="errorLabel">
-          <label >{this.state.formErrors.email}</label>
+        <label >{this.state.formErrors.email}</label>
+        <label className="successLabel" >{this.state.formSuccess.email}</label>
         </div>
       </div>
     );
