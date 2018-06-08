@@ -65,17 +65,19 @@ class Footer extends Component {
 
     return (
       <div className={style} >
-        <div className="copyRights">© 2018 LQDEX. All Rights Reserved.</div>
-        <br/>
-        <div className="copyRights">1541 Ocean Ave., Suite 200</div>
-        <div className="copyRights">Santa Monica, CA 90401</div>
-        <div className="copyRights">{this.eDir(this.state.eDir)}</div>
         <div className='socialIcons'>
           <div>
             <a className='icon' onClick={() => this.goTo('signUp', 'signUp')}><i className="far fa-envelope fa-2x" ></i></a>
           </div>
           <Social />
         </div>
+        <br/>
+        <br/>
+        <div className="copyRights">© 2018 LQDEX. All Rights Reserved.</div>
+        <br/>
+        <div className="copyRights">1541 Ocean Ave., Suite 200</div>
+        <div className="copyRights">Santa Monica, CA 90401</div>
+        <div className="copyRights">{this.eDir(this.state.eDir)}</div>
       </div>
     );
   }

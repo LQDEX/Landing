@@ -1,6 +1,7 @@
 import HeaderStats from './HeaderStats';
 import HeaderNavbar from './HeaderNavbar';
 import WelcomeBox from './WelcomeBox';
+import WelcomeForm from './WelcomeForm';
 import DetailedInfo from './DetailedInfo';
 import Roadmap from './Roadmap';
 import AboutUs from './AboutUs';
@@ -13,6 +14,7 @@ export {
   HeaderStats,
   HeaderNavbar,
   WelcomeBox,
+  WelcomeForm,
   DetailedInfo,
   Roadmap,
   AboutUs,

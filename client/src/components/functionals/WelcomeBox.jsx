@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+
 // Redux actions
 import actions from '../../redux/actions';
 
 // Import Styles
 import injectSheet from 'react-jss';
 import { palette, welcomeBoxStyle } from './styles';
+
+import { WelcomeForm } from '.';
 
 const shapes = {
   desktop: [{ xP: 0.00, yP: 1.00 }, { xP: 0.67, yP: 0.84 }, { xP: 1.00, yP: 1.00 }],
@@ -75,12 +78,18 @@ class WelcomeBox extends Component {
           <div className="imageWrap">
             <img className="macBook" src={require('../../assets/img/macbookScreen.png')} alt="" />
           </div>
-          <div className="textArea ">
-            <span className="firstLine">LQDEX</span>
-            <span className="txtBody">DECENTRALIZED</span>
-            <span className="txtBody">TRUSTLESS</span>
-            <span className="txtBody">CROSS-CHAIN EXCHANGE</span>
+          <div className="textWrap">
+            <div className="textArea ">
+              <span className="firstLine">LQDEX</span>
+              <span className="txtBody">DECENTRALIZED</span>
+              <span className="txtBody">TRUSTLESS</span>
+              <span className="txtBody">CROSS-CHAIN EXCHANGE</span>
+            </div>
+            <div className="subcribeArea">
+              <WelcomeForm deviceType={deviceType}/>
+            </div>
           </div>
+
           {deviceType === 'mobile' &&
             <button className="btnSubscribe" >
               <a className="btnLink" href={require('../../assets/doc/LQDEX-White-Paper.pdf')} target="_blank">

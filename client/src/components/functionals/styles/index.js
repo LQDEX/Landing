@@ -3,6 +3,7 @@ import palette from './palette';
 import headerNavbarStyle from './headerNavbarStyle';
 import headerStatsStyle from './headerStatsStyle';
 import welcomeBoxStyle from './welcomeBoxStyle';
+import welcomeFormStyle from './welcomeFormStyle';
 import detailedInfoStyle from './detailedInfoStyle';
 import roadmapStyle from './roadmapStyle';
 import aboutUsStyle from './aboutUsStyle';
@@ -18,6 +19,7 @@ export {
   headerNavbarStyle,
   headerStatsStyle,
   welcomeBoxStyle,
+  welcomeFormStyle,
   detailedInfoStyle,
   roadmapStyle,
   aboutUsStyle,

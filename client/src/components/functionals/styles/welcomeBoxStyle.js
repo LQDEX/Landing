@@ -25,7 +25,7 @@ export default {
       flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'space-around',
-      alignItems: 'center',
+      alignItems: 'strech',
       minWidth: '100%',
       margin: '80px 0 0 0',
       '& .imageWrap': {
@@ -34,26 +34,32 @@ export default {
         justifyContent: 'flex-start',
         '& .macBook': { maxWidth: '100%' }
       },
-      '& .textArea': {
+      '& .textWrap':{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'flex-end',
-        minHeight: '80%'
-      },
-      '& .firstLine': {
-        margin: '0 0 51px 0',
-        fontFamily: txtHeaderFont,
-        fontSize: '78px',
-        fontWeight: 'bold',
-        color: textHeader
-      },
-      '& .txtBody': {
-        fontFamily: txtSubheaderFont,
-        fontSize: '40px',
-        fontWeight: 'semibold',
-        margin: '0 0 20px 0',
-        color: text
+        '& .textArea': {
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'flex-end',
+          margin:'0px 0 0 0',
+          //minHeight: '70%'
+        },
+        '& .firstLine': {
+          margin: '0 0 51px 0',
+          fontFamily: txtHeaderFont,
+          fontSize: '78px',
+          fontWeight: 'bold',
+          color: textHeader
+        },
+        '& .txtBody': {
+          fontFamily: txtSubheaderFont,
+          fontSize: '40px',
+          fontWeight: 'semibold',
+          margin: '0 0 20px 0',
+          color: text
+        },
       }
     }
   },

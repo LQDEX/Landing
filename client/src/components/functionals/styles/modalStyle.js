@@ -4,6 +4,7 @@ const {
   primary,
   primaryHover,
   globalBackground,
+  text,
   txtBlueBottonFont,
   txtBodyFont
 } = palette;
@@ -46,6 +47,7 @@ export default {
     },
     '& .modalBody': {
       fontFamily: txtBlueBottonFont,
+      color: text,
       margin: '20px',
     },
     '& .display-block': {
