@@ -19,7 +19,7 @@ export default {
     justifyContent: 'flex-start',
     alignItems: 'center',
     '& .overlay': {
-      border: '1px solid red',
+      // border: '1px solid red',
       position: 'absolute',
       display: 'flex',
       flexDirection: 'row',
@@ -35,17 +35,16 @@ export default {
         '& .macBook': { maxWidth: '100%' }
       },
       '& .textWrap':{
-        border: '1px solid blue',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         '& .textArea': {
-          border: '1px solid green',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'flex-end',
-          //minHeight: '80%'
+          margin:'0px 0 0 0',
+          //minHeight: '70%'
         },
         '& .firstLine': {
           margin: '0 0 51px 0',

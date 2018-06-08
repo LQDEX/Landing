@@ -18,37 +18,35 @@ const {
 
 export default {
   root: {
-    border: '1px solid cyan',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'flex-end',
+    alignItems: 'stretch',
+    margin: '2% 0 0 0',
+    fontFamily: txtInputs,
+    color: 'red',
     '& .formWrap': {
-      border: '1px solid orange',
       // position: 'absolute',
       display: 'flex',
-      flexDirection: 'row',
+      flexDirection: 'column',
       justifyContent: 'center',
-      alignItems: 'center',
+      alignItems: 'stretch',
       padding: '5px',
+      background: globalBackground,
       '& .inputWrapper': {
-        border: '1px solid red',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
         margin: '0 0 0px 0px',
-        height: 45,
-        minWidth: '100%',
+        height: 40,
         '& .inputBox': {
-          border: '1px solid green',
           position: 'relative',
           padding: '0 0 0 10px',
           margin: 0,
           // display: 'block',
           width: '100%',
           height: '100%',
-          background: 'red',
           fontFamily: txtInputs,
           '& input': {
             margin: 0,
@@ -68,8 +66,8 @@ export default {
           fontSize: '16px',
           fontWeight: '500',
           display: 'inline-block',
-          padding: '1em 0',
-          width: '47%',
+          width: '35%',
+          height: '100%',
           boxSizing: 'content-box',
           cursor: 'pointer',
           border: 'none',
@@ -82,8 +80,8 @@ export default {
       },
     },
     '& .errorLabel':{
-      border: '1px solid brown',
-margin: '5px 0',
+      margin: '10px 0',
+      padding: '0 10px',
     }
   },
   mRoot: {

@@ -14,6 +14,13 @@ const shapes = {
   tablet:  [{ xP: 0.00, yP: 1.00 }, { xP: 0.90, yP: 0.90 }, { xP: 1.00, yP: 0.94 }, { xP: 1.00, yP: 1.00 }]
 };
 
+
+const errorMessages = {
+  email: { requiredOnSubscribe:'Required field.',
+           wrongEmail: 'Email wrong format' }
+
+}
+
 class WelcomeForm extends Component {
   state = {
     wWidth: 500,
@@ -25,15 +32,15 @@ class WelcomeForm extends Component {
       },
     },
     formErrors: {
-      email:'ljhlskdjf'
+      email:''
     },
   }
 
-  goToPage(page, param) {
+/*   goToPage(page, param) {
     this.props.goToPage(page, param);
-  }
+  } */
 
-  goTo(page, section) {
+  /* goTo(page, section) {
     if (page) {
       this.props.goToPage(page, null);
     }
@@ -41,6 +48,54 @@ class WelcomeForm extends Component {
       this.props.navBarActive(section);
       window.location.href = `#${section}`;
     }
+  } */
+
+  handleSubmitButton() {
+    const {emailValue} = this.state;
+    const hasError = !!this.state.formErrors.email
+    const hasRequired = false; // !!emailValue;
+    const canSubmit = !hasError;
+    this.setState({canSubmit});
+
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    const formFieldStatus = this.state.formFieldStatus[name];
+    formFieldStatus.touched = true;
+    this.setState(formFieldStatus);
+    this.setState({[`${name}Value`]: value}, () => this.handleSubmitButton());
+  }
+
+  handelErrors(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    const fieldState = this.state.formFieldStatus[name];
+    let errors = this.state.formErrors;
+    
+    if (!value && fieldState.touched) {
+      errors[name] = errorMessages[name].required
+    }
+    if (name === 'email' && value){
+      const emaiRegex = /^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)?@[a-zA-Z][a-zA-Z-0-9]*\.[a-zA-Z]+(\.[a-zA-Z]+)?$/;
+      const isValidEmail = emaiRegex.test(value) ? true : false;
+      if (!isValidEmail){
+        errors[name]=errorMessages[name].wrongEmail
+      }
+    }
+    this.setState(errors, () => this.handleSubmitButton());
+  }
+
+  resetErrors(event) {
+    const target = event.target;
+    const name = target.name;
+    let errors = this.state.formErrors;
+    errors[name]='';
+
+    this.setState(errors, () => this.handleSubmitButton());
   }
 
   toPoints(imgWidth, imgHeight, pointsArray) {
@@ -86,7 +141,7 @@ class WelcomeForm extends Component {
                   <input
                     name="email"
                     type="text"
-                    placeholder="Email"
+                    placeholder="Your email address"
                     onFocus={(event)=>this.resetErrors(event)}
                     onBlur={(event)=>this.handelErrors(event)}
                     onChange={(event)=>this.handleInputChange(event)} />
