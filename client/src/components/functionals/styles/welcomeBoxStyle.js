@@ -94,7 +94,7 @@ export default {
         margin: '0 0 10px 0',
         fontSize: '30px'
       },
-      '& .btnSubscribe': {
+      '& .btnWhitepaper': {
         fontFamily: txtCaptionFont,
         fontSize: '1em',
         fontWeight: 'semi-Bold',
@@ -111,6 +111,9 @@ export default {
           color: globalBackground,
           textDecoration: 'none'         
         }
+      },
+      '& .subscribeArea': {
+        margin: '0 20px'
       }
     }
   },

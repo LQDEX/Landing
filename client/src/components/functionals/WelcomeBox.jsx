@@ -8,7 +8,7 @@ import actions from '../../redux/actions';
 // Import Styles
 import injectSheet from 'react-jss';
 import { palette, welcomeBoxStyle } from './styles';
-
+     
 import { WelcomeForm } from '.';
 
 const shapes = {
@@ -85,13 +85,13 @@ class WelcomeBox extends Component {
               <span className="txtBody">TRUSTLESS</span>
               <span className="txtBody">CROSS-CHAIN EXCHANGE</span>
             </div>
-            <div className="subcribeArea">
+            <div className="subscribeArea">
               <WelcomeForm deviceType={deviceType}/>
             </div>
           </div>
 
           {deviceType === 'mobile' &&
-            <button className="btnSubscribe" >
+            <button className="btnWhitepaper" >
               <a className="btnLink" href={require('../../assets/doc/LQDEX-White-Paper.pdf')} target="_blank">
               WHITEPAPER
               </a>
