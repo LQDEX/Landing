@@ -15,7 +15,8 @@ const Social = () => {
     Facebook: 'https://www.facebook.com/LQDEX/',
     Telegram: 'https://t.me/LQDEX',
     Instagram: 'https://www.instagram.com/lqdex/',
-    Medium: 'https://medium.com/lqdex'
+    Medium: 'https://medium.com/lqdex',
+    Reddit: 'https://www.reddit.com/r/LQDEX/'
   }
   
   return (
@@ -26,10 +27,11 @@ const Social = () => {
       <a className='icon' href={socialLinks.Telegram} target="_blank"><i className="fab fa-telegram-plane fa-2x" ></i></a>
       <a className='icon' href={socialLinks.Instagram} target="_blank"><i className="fab fa-instagram fa-2x" ></i></a>
       <a className='icon' href={socialLinks.Medium} target="_blank"><i className="fab fa-medium-m fa-2x" ></i></a>
+      <a className='icon' href={socialLinks.Reddit} target="_blank"><i className="fab fa-reddit-alien fa-2x" ></i></a>
     </div>
   );}
 
-
+  
 class Footer extends Component {
   state = {
     eDir: {
