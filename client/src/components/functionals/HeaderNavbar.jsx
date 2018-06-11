@@ -21,7 +21,7 @@ class HeaderNavbar extends Component {
   }
 
   render() {
-    const { classes, deviceType, activePage, navBar } = this.props;
+    const { classes, deviceType, navBar } = this.props;
 
     return (
       <div className={classes.root}>
@@ -58,7 +58,7 @@ class HeaderNavbar extends Component {
                 className={`btnMenu ${'blog' === navBar.active ? 'btnMenuActive' : ''}`}
                 onClick={() => this.goTo(null, 'exchange')}
               >
-              <a className="navLink" href="https://medium.com/lqdex" target="_blank">{'BLOG'}</a>
+              <a className="navLink" href="https://medium.com/lqdex" target="_blank" rel="noopener noreferrer">{'BLOG'}</a>
             </button>
 
             <button
@@ -74,7 +74,7 @@ class HeaderNavbar extends Component {
                 className="btnMenuIcon"
                 onClick={() => this.goTo(null, 'exchange')}
               >
-              <a className='navLinkIcon' title="JOIN US ON TELEGRAM" href="https://t.me/LQDEX" target="_blank">
+              <a className='navLinkIcon' title="JOIN US ON TELEGRAM" href="https://t.me/LQDEX" target="_blank" rel="noopener noreferrer">
                 <span ><i className="fab fa-telegram-plane fa-2x" ></i></span>
               </a>
             </button>

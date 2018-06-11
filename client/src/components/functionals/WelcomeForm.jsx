@@ -2,20 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-import { Modal } from '../functionals';
 
 // Redux actions
 import actions from '../../redux/actions';
 
 // Import Styles
 import injectSheet from 'react-jss';
-import { palette, welcomeFormStyle } from './styles';
+import { welcomeFormStyle } from './styles';
 
-const shapes = {
+/* const shapes = {
   desktop: [{ xP: 0.00, yP: 0.00 }, { xP: 0.67, yP: 0.14 }, { xP: 1.00, yP: 1.00 }],
   mobile:  [{ xP: 0.00, yP: 1.00 }, { xP: 0.77, yP: 0.94 }, { xP: 1.00, yP: 0.98 }, { xP: 1.00, yP: 1.00 }],
   tablet:  [{ xP: 0.00, yP: 1.00 }, { xP: 0.90, yP: 0.90 }, { xP: 1.00, yP: 0.94 }, { xP: 1.00, yP: 1.00 }]
-};
+}; */
 
 
 const errorMessages = {
@@ -72,9 +71,7 @@ class WelcomeForm extends Component {
   };
 
   handleSubmitButton() {
-    const {emailValue} = this.state;
     const hasError = !!this.state.formErrors.email
-    const hasRequired = false; // !!emailValue;
     const canSubmit = !hasError;
     this.setState({canSubmit});
 
@@ -162,19 +159,19 @@ handleErrorMsg (error) {
         phone: ''
       })
       .then(res => {
-        const response = res.data;
         console.log(res);
-        if (response.error) {
+        /* const response = res.data; */
+        /* if (response.error) {
           this.showModal (this.handleErrorMsg(response.error));
         } else {
           this.showModal (`Thank you. You're subscribed!`);
-        }
-      })
+        }*/
+      }) 
       .catch(err => {
         console.log(err);
-
-        this.showModal (this.handleErrorMsg({errno: 500}))
-    });
+/* 
+        this.showModal (this.handleErrorMsg({errno: 500})) */
+      });
     if(!this.state.emailValue) {
       formErrors.email = errorMessages.email.requiredOnSubscribe;
       this.setState(formErrors);
@@ -195,9 +192,9 @@ handleErrorMsg (error) {
  
     return (
       <div className={style} >
-      <Modal show={this.state.modal.showModal} handleClose={() => this.hideModal()}>
+      {/* <Modal show={this.state.modal.showModal} handleClose={() => this.hideModal()}>
           <p>{this.state.modal.message}</p>
-        </Modal>
+        </Modal> */}
         {/* <svg width={this.state.wWidth} height={this.state.wHeight} >
           <polygon style={ { fill: palette.globalBackground } } points={this.toPoints(this.state.wWidth, this.state.wHeight, shapes[deviceType])}/>
         </svg> */}

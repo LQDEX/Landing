@@ -9,7 +9,6 @@ const {
   txtCaptionFont,
   txtHeaderFont,
   txtSubheaderFont,
-  txtBlueBottonFont
 } = palette;
 
 export default {
@@ -86,7 +85,7 @@ export default {
       },
       '& .firstLine': {
         extend: 'firstLine',
-        margin: '30px 0 30px 0',
+        margin: '0px 0 30px 0',
         fontSize: '4em'
       },
       '& .txtBody': {
@@ -112,9 +111,6 @@ export default {
           textDecoration: 'none'         
         }
       },
-      '& .subscribeArea': {
-        margin: '0 20px'
-      }
     }
   },
   tRoot: {

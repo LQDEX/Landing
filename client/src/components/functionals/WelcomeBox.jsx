@@ -20,7 +20,7 @@ const shapes = {
 class WelcomeBox extends Component {
   state = {
       wWidth: window.innerWidth,
-      wHeight: 800
+      wHeight: 850
   }
 
   goToPage(page, param) {
