@@ -8,7 +8,7 @@ const initialState = {
       title: 'Head of Product',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/yogesh-srihari-000b3a33/',
-      brief: 'Yogesh co-founded a popular blockchain startup, SpankChain, in 2017, which raised $11 million in token sales. Prior to founding SpankChain, Yogesh worked as Lead Software Engineer at ZEFR, Director of Engineering at Wickr, and Software Engineer at Google. He holds a Masters degree in Computer Science from Stony Brook University under professor Joseph Mitchell.'
+      brief: 'Co-founded Spankchain in 2017, which raised $11 million in token sales.Prior to Spankchain, Yogesh worked as Lead Software Engineer at ZEFR, Director ofEngineering at Wickr, and Software Engineer at Google. Yogesh holds a Mastersdegree from Stony Brook University, under Joseph Mitchell.'
     },
     {
       avatar: 'Sergey-Nikitin-Large.jpg',
@@ -16,7 +16,7 @@ const initialState = {
       title: ' Head of Technology',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/snikitin2/',
-      brief: 'Sergey started his career at Microsoft and has since worked in the IT industry. Prior to joining LQDEX, he founded xCoins.io, an innovative peer-to-peer cryptocurrency lending platform that allows nearly instant acquisition of bitcoin. Sergey holds a BS degree in Computer Science and an MBA degree from University of California, Los Angeles.'
+      brief: '​Founded xCoins.io, an innovative peer-to-peer cryptocurrency lending platformthat allows nearly instant acquisition of bitcoin. Prior to xCoins.io, Sergey worked atMicrosoft. Sergey holds a BS degree in Computer Science and an MBA degree fromUniversity of California, Los Angeles.'
     },
     {
       avatar: 'richardBranning.jpg',
@@ -32,7 +32,7 @@ const initialState = {
       title: 'Head of Operations',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/michelle-kim-05086213a/',
-      brief: 'Michelle has been passionate about blockchain technology since she started managing operations for a cryptocurrency lending platform in early 2017. She has extensive experience in platform security and operational issues. Michelle holds a BS degree in Cognitive Psychology from University of California, Irvine.'
+      brief: 'Leading operations at LQDEX, Michelle has a focus on management andensuring employee success. After studying Cognitive Psychology at the University ofCalifornia - Irvine, Michelle dived into crypto and blockchain technology, joiningxCoins.io in January 2017.'
     },
     //{
     //  avatar: 'GregKalin.jpg',
@@ -48,7 +48,7 @@ const initialState = {
       title: 'Head of Client Relations',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/patrick-maher-6b7b0b7b/',
-      brief: 'Patrick began his career as a data analyst for Coin Dealer Newsletter. He was introduced to bitcoin in early 2014 and started a cryptocurrency mining operation. Patrick graduated from Colorado State with a BS degree in Computer Information Systems.'
+      brief: 'Managing client relations, Patrick promises customer satisfaction. Since 2014,Patrick has been a self-proclaimed cryptocurrency aficionado, with a passion for mining.Patrick holds a Bachelor of Science degree in Computer Information Systems fromColorado State University.'
     },
     {
       avatar: 'EthanReynolds.jpg',
@@ -56,7 +56,7 @@ const initialState = {
       title: 'Head of Public Relations',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/ethan-reynolds-73b50663/',
-      brief: 'Since 2012, Ethan has specialized in the creation, incubation and promotion of digital and startup companies. He has successfully launched international brands, and placed in top-tier publications including TechCrunch and Forbes.'
+      brief: 'Directing all public relations and social media efforts, Ethan focuses on creatinga cohesive brand message. Ethan has launched several international brands, resultingin placements in top-tier publications including TechCrunch and Forbes. Ethan holds aBachelor of Science degree in Communication and Public Relations from FlaglerCollege.'
     },
     {
       avatar: 'ajishnew.jpg',
@@ -64,7 +64,7 @@ const initialState = {
       title: 'Solutions Architect',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/ajish-pillai-7575b0104/',
-      brief: 'Ajish has over 17 years of extensive IT architecture design and development experience with a focus on enterprise applications. He has worked with several Fortune 500 companies in the banking, hedgefund, telecommunication, and e-commerce industries.'
+      brief: 'As Solutions Architect, Ajish enables innovation. Ajish has extensive ITarchitecture design and development experience, with a focus on enterpriseapplications. Ajish has worked with several banking, hedge fund, telecommunicationand e-commerce Fortune 500 companies.'
     },
     {
       avatar: 'RamKumar.jpg',
@@ -72,7 +72,23 @@ const initialState = {
       title: 'Lead Engineer',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/ramkumardevaraj/',
-      brief: 'Ram co-founded a successful cloud and data startup that scaled from 4 to 100 people over the span of two years. He has gained vast experience in the past 11 years in web, mobile, and algorithm development from notable companies such as Motorola and Texas Instruments.'
+      brief: 'Serving as the lead engineer, Ram drives innovative strategies. Prior to LQDEX,Ram co-founded a successful cloud and data startup, which scaled more than 2,000%in two years. Ram has substantial experience in web, mobile and algorithmdevelopment with Motorola and Texas Instruments, among others.'
+    },
+    {
+      avatar: 'erikHan.jpg',
+      name: 'Erik Han',
+      title: 'Software Engineer',
+      advisor: '',
+      myLink: 'https://www.linkedin.com/in/erik-han-406814a1/',
+      brief: 'Having developed over 20 websites for global and regional companies,​​Erik hasstrong capabilities in producing aesthetically pleasing, functional websites. Erikgraduated from Shanghai University’s School of Computer Engineering and Sciencewith a degree in Computer Science.'
+    },
+    {
+      avatar: 'viktoriaBovenko.jpg',
+      name: 'Viktoria Bovenko',
+      title: 'UX/UI Designer',
+      advisor: '',
+      myLink: 'https://www.linkedin.com/in/viktoria-bovtenko-9844794a/',
+      brief: 'With more than 10 years of experience in modern UX and UI, Viktoria contributes innovate techniques to visual and interactive design.'
     },
     {
       avatar: 'AndresCortes.jpg',
@@ -80,7 +96,7 @@ const initialState = {
       title: 'Full Stack Web Developer',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/andr%C3%A9s-cort%C3%A9s-zald%C3%ADvar-69a3a766/',
-      brief: 'Andrés is a well-versed developer with over five years of experience in web, mobile, and desktop applications with some highly recognized companies in Spain. He advised in two proof-of-concept projects based on blockchain technology.'
+      brief: 'Andrés handles logic, database interactions, and user authentication. Andrésis a well-versed developer with more than five years of experience in web, mobile anddesktop applications. Andrés has advised two proof-of-concept projects based onblockchain technology.'
     }
   ]
 };
