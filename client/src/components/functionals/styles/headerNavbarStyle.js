@@ -6,8 +6,6 @@ const {
   primaryHover,
   textNavBar,
   txtCaptionFont,
-  txtBlueBottonFont,
-  grey
 } = palette;
 
 export default {

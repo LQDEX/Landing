@@ -7,15 +7,10 @@ const {
   primary,
   primaryHover,
   globalBackground,
-  textHeader,
-  text,
   textLight,
   txtInputs,
   shadowSoft,
   txtCaptionFont,
-  txtHeaderFont,
-  txtSubheaderFont,
-  txtBlueBottonFont,
 } = palette;
 
 export default {
@@ -33,6 +28,7 @@ export default {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'stretch',
+      margin: '30px 0 0 0',
       padding: '0px 0',
       background: globalBackground,
       boxShadow: `0px 2px 10px 0px ${shadowSoft}`,
