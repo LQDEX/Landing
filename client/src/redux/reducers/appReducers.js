@@ -27,7 +27,7 @@ const initialState = {
         caption: 'WHITEPAPER',
         // href: '../../assets/doc/LQDEX-White-Paper.pdf',
         // href: '../../assets/doc/LQDEX-White-Paper.pdf',
-        href: '/static/media/LQDEX-White-Paper.ceb2033b.pdf',
+        href: 'doc/LQDEX-White-Paper.pdf',
         pageTo: '',
         pointTo: ''
       },
