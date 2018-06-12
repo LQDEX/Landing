@@ -83,7 +83,7 @@ export default {
       padding: '0 10px',
       color: down,
       '& .successLabel': {
-        color: up
+        color: primary
       }
     }
   },
