@@ -19,7 +19,7 @@ const errorMessages = {
     name: { required:'Required field.' },
     phone: { required:'' },
     email: { required:'Required field.',
-             wrongEmail: 'Email wrong format' }
+             wrongEmail: 'Email address in invalid format' }
   
 }
 

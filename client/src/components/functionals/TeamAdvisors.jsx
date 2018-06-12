@@ -36,7 +36,7 @@ const AvatarFrame = props => {
         <div id="frameContainer" style = { { transform: 'scale(0.90)' } }>
           <svg id="svgContainer" style={{ filter: `drop-shadow(0px 0px 5px ${shadowSoft})` }} width={imgWidth} height={imgHeight}>
             <polygon id="svgBackgound" style={ { fill: primary } } points={pointsCalc(frameIndex)} />
-            <image id="svgImage" style={ { clipPath: `url(#shape${frameIndex})` } } width={imgWidth} height={imgHeight} xlinkHref={require(`../../assets/img/${props.imgName}`) } />
+            <image id="svgImage" filter="url(#grayscale)" style={ { clipPath: `url(#shape${frameIndex})`} } width={imgWidth} height={imgHeight} xlinkHref={require(`../../assets/img/${props.imgName}`) } />
             <polygon id="svgFrame" points={pointsCalc(frameIndex)}
               style={ {
                 fill: 'none',
@@ -45,6 +45,9 @@ const AvatarFrame = props => {
                 filter: 'drop-shadow( 6px 0 2px hsla(0, 0%, 0%, 0.2))'
               } }
             />
+            <filter id="grayscale">
+              <feColorMatrix type="saturate" values="0"/>
+            </filter>
             <image id="svgLogo" x={imgWidth / 2} y={imgHeight / 2} width={32} height={32} xlinkHref={require(`../../assets/img/logoLinkedin.png`) } />
             <defs>
               {frameShape.map((pPoint, index) =>

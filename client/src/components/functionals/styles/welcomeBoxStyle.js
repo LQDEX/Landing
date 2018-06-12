@@ -34,6 +34,7 @@ export default {
         '& .macBook': { maxWidth: '100%' }
       },
       '& .textWrap':{
+        border: '1px solid red',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -69,6 +70,7 @@ export default {
       extend: 'overlay',
       display: 'flex',
       flexDirection: 'column',
+      alignItems: 'center',
       margin: '0 0 0 0',
       '& .imageWrap': {
         extend: 'imageWrap',
@@ -76,41 +78,46 @@ export default {
         margin: '30px 0 15px 0',
         '& .macBook': { maxWidth: '75%' }
       },
-      '& .textArea': {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '80%'
+      '& .textWrap':{
+        maxWidth:500,
+        '& .textArea': {
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: '80%'
+        },
+        '& .firstLine': {
+          extend: 'firstLine',
+          margin: '0px 0 30px 0',
+          fontSize: '4em'
+        },
+        '& .txtBody': {
+          extend: 'txtBody',
+          margin: '0 0 10px 0',
+          fontSize: '30px'
+        },
       },
-      '& .firstLine': {
-        extend: 'firstLine',
-        margin: '0px 0 30px 0',
-        fontSize: '4em'
-      },
-      '& .txtBody': {
-        extend: 'txtBody',
-        margin: '0 0 10px 0',
-        fontSize: '30px'
-      },
-      '& .btnWhitepaper': {
-        fontFamily: txtCaptionFont,
-        fontSize: '1em',
-        fontWeight: 'semi-Bold',
-        display: 'inline-block',
-        margin: 20,
-        padding: '1em 1.25em',
-        boxSizing: 'content-box',
-        cursor: 'pointer',
-        border: 'none',
-        background: primary,
-        color: globalBackground,
-        '&:hover': { background: primaryHover },
-        '& .btnLink': {
+        '& .btnWhitepaper': {
+          fontFamily: txtCaptionFont,
+          fontSize: '1em',
+          fontWeight: 'semi-Bold',
+          display: 'inline-block',
+          margin: 20,
+          padding: '1em 1.25em',
+          boxSizing: 'content-box',
+          cursor: 'pointer',
+          border: 'none',
+          background: primary,
           color: globalBackground,
-          textDecoration: 'none'         
-        }
-      },
+          maxWidth:500,
+          '&:hover': { background: primaryHover },
+          '& .btnLink': {
+            color: globalBackground,
+            textDecoration: 'none'         
+          }
+        },
+      
     }
   },
   tRoot: {

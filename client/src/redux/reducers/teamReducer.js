@@ -18,14 +18,14 @@ const initialState = {
       myLink: 'https://www.linkedin.com/in/snikitin2/',
       brief: '​Founded xCoins.io, an innovative peer-to-peer cryptocurrency lending platformthat allows nearly instant acquisition of bitcoin. Prior to xCoins.io, Sergey worked atMicrosoft. Sergey holds a BS degree in Computer Science and an MBA degree fromUniversity of California, Los Angeles.'
     },
-    {
+    /* {
       avatar: 'richardBranning.jpg',
       name: 'Rich Branning',
       title: 'Head of Bus. Dev.',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/richard-branning-0252283b/',
       brief: 'Rich co-founded Closetclicks, an investor-backed social fashion startup. Prior to that he worked as District Manager at ADP, a leading automatic data processing company. He obtained his degree in Economics at Pepperdine University.'
-    },
+    }, */
     {
       avatar: 'MichelleKim.jpg',
       name: 'Michelle Kim',

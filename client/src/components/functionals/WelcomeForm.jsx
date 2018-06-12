@@ -19,7 +19,7 @@ import { welcomeFormStyle } from './styles';
 
 const errorMessages = {
   email: { requiredOnSubscribe:'Required field.',
-           wrongEmail: 'Email wrong format' }
+           wrongEmail: 'Email address in invalid format' }
 
 }
 
@@ -205,7 +205,7 @@ handleErrorMsg (error) {
                   <input
                     name="email"
                     type="text"
-                    placeholder="Your email address"
+                    placeholder="Email address"
                     onFocus={(event)=>this.resetErrors(event)}
                     onBlur={(event)=>this.handelErrors(event)}
                     onChange={(event)=>this.handleInputChange(event)} />
