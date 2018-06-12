@@ -18,14 +18,6 @@ const initialState = {
       myLink: 'https://www.linkedin.com/in/snikitin2/',
       brief: '​Sergey founded xCoins.io, an innovative peer-to-peer cryptocurrency lending platform that allows nearly instant acquisition of bitcoin. Prior to xCoins.io, Sergey worked at Microsoft. Sergey holds a BS degree in Computer Science and an MBA degree from University of California - Los Angeles.'
     },
-    // {
-    //   avatar: 'richardBranning.jpg',
-    //   name: 'Rich Branning',
-    //   title: 'Head of Bus. Dev.',
-    //   advisor: '',
-    //   myLink: 'https://www.linkedin.com/in/richard-branning-0252283b/',
-    //   brief: 'Rich co-founded Closetclicks, an investor-backed social fashion startup. Prior to that he worked as District Manager at ADP, a leading automatic data processing company. He obtained his degree in Economics at Pepperdine University.'
-    // },
     {
       avatar: 'MichelleKim.jpg',
       name: 'Michelle Kim',
@@ -34,14 +26,6 @@ const initialState = {
       myLink: 'https://www.linkedin.com/in/michelle-kim-05086213a/',
       brief: 'Leading operations at LQDEX, Michelle has a focus on management and ensuring employee success. After studying Cognitive Psychology at the University of California - Irvine, Michelle dived into crypto and blockchain technology, joining xCoins.io in January 2017.'
     },
-    //{
-    //  avatar: 'GregKalin.jpg',
-    //  name: 'Greg Kalin',
-    //  title: 'Finance',
-    //  advisor: '',
-    //  myLink: 'https://www.linkedin.com/in/greg-kalin-b6186554/',
-    //  brief: 'Greg spent his career in finance working in private wealth management at Morgan Stanley Smith-Barney. Additionally, he co-founded Closetclicks, an investor-backed social fashion startup.'
-    //},
     {
       avatar: 'PatrickMaher.jpg',
       name: 'Patrick Maher',
