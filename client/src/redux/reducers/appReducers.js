@@ -25,9 +25,9 @@ const initialState = {
       {
         name: 'whitepaper',
         caption: 'WHITEPAPER',
-        // href: '../../assets/doc/LQDEX-White-Paper.pdf',
-        // href: '../../assets/doc/LQDEX-White-Paper.pdf',
-        href: 'doc/LQDEX-White-Paper.pdf',
+        // href: '../../assets/doc/LQDEX-Whitepaper.pdf',
+        // href: '../../assets/doc/LQDEX-Whitepaper.pdf',
+        href: '/doc/LQDEX-Whitepaper.pdf',
         pageTo: '',
         pointTo: ''
       },
