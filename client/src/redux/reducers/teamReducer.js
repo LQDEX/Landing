@@ -18,14 +18,6 @@ const initialState = {
       myLink: 'https://www.linkedin.com/in/snikitin2/',
       brief: '​Founded xCoins.io, an innovative peer-to-peer cryptocurrency lending platformthat allows nearly instant acquisition of bitcoin. Prior to xCoins.io, Sergey worked atMicrosoft. Sergey holds a BS degree in Computer Science and an MBA degree fromUniversity of California, Los Angeles.'
     },
-    /* {
-      avatar: 'richardBranning.jpg',
-      name: 'Rich Branning',
-      title: 'Head of Bus. Dev.',
-      advisor: '',
-      myLink: 'https://www.linkedin.com/in/richard-branning-0252283b/',
-      brief: 'Rich co-founded Closetclicks, an investor-backed social fashion startup. Prior to that he worked as District Manager at ADP, a leading automatic data processing company. He obtained his degree in Economics at Pepperdine University.'
-    }, */
     {
       avatar: 'MichelleKim.jpg',
       name: 'Michelle Kim',
@@ -34,14 +26,6 @@ const initialState = {
       myLink: 'https://www.linkedin.com/in/michelle-kim-05086213a/',
       brief: 'Leading operations at LQDEX, Michelle has a focus on management andensuring employee success. After studying Cognitive Psychology at the University ofCalifornia - Irvine, Michelle dived into crypto and blockchain technology, joiningxCoins.io in January 2017.'
     },
-    //{
-    //  avatar: 'GregKalin.jpg',
-    //  name: 'Greg Kalin',
-    //  title: 'Finance',
-    //  advisor: '',
-    //  myLink: 'https://www.linkedin.com/in/greg-kalin-b6186554/',
-    //  brief: 'Greg spent his career in finance working in private wealth management at Morgan Stanley Smith-Barney. Additionally, he co-founded Closetclicks, an investor-backed social fashion startup.'
-    //},
     {
       avatar: 'PatrickMaher.jpg',
       name: 'Patrick Maher',
@@ -57,6 +41,14 @@ const initialState = {
       advisor: '',
       myLink: 'https://www.linkedin.com/in/ethan-reynolds-73b50663/',
       brief: 'Directing all public relations and social media efforts, Ethan focuses on creatinga cohesive brand message. Ethan has launched several international brands, resultingin placements in top-tier publications including TechCrunch and Forbes. Ethan holds aBachelor of Science degree in Communication and Public Relations from FlaglerCollege.'
+    },
+    {
+      avatar: 'viktoriaBovenko.jpg',
+      name: 'Viktoria Bovenko',
+      title: 'UX/UI Designer',
+      advisor: '',
+      myLink: 'https://www.linkedin.com/in/viktoria-bovtenko-9844794a/',
+      brief: 'With more than 10 years of experience in modern UX and UI, Viktoria contributes innovate techniques to visual and interactive design.'
     },
     {
       avatar: 'ajishnew.jpg',
@@ -81,14 +73,6 @@ const initialState = {
       advisor: '',
       myLink: 'https://www.linkedin.com/in/erik-han-406814a1/',
       brief: 'Having developed over 20 websites for global and regional companies,​​Erik hasstrong capabilities in producing aesthetically pleasing, functional websites. Erikgraduated from Shanghai University’s School of Computer Engineering and Sciencewith a degree in Computer Science.'
-    },
-    {
-      avatar: 'viktoriaBovenko.jpg',
-      name: 'Viktoria Bovenko',
-      title: 'UX/UI Designer',
-      advisor: '',
-      myLink: 'https://www.linkedin.com/in/viktoria-bovtenko-9844794a/',
-      brief: 'With more than 10 years of experience in modern UX and UI, Viktoria contributes innovate techniques to visual and interactive design.'
     },
     {
       avatar: 'AndresCortes.jpg',

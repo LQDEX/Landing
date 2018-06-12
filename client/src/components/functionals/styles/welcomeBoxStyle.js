@@ -33,7 +33,6 @@ export default {
         '& .macBook': { maxWidth: '100%' }
       },
       '& .textWrap':{
-         red',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
