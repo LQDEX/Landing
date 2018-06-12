@@ -18,7 +18,6 @@ export default {
     justifyContent: 'flex-start',
     alignItems: 'center',
     '& .overlay': {
-      // border: '1px solid red',
       position: 'absolute',
       display: 'flex',
       flexDirection: 'row',
@@ -34,7 +33,7 @@ export default {
         '& .macBook': { maxWidth: '100%' }
       },
       '& .textWrap':{
-        border: '1px solid red',
+         red',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
