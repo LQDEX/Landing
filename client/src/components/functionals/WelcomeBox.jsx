@@ -92,7 +92,7 @@ class WelcomeBox extends Component {
 
           {deviceType === 'mobile' &&
             <button className="btnWhitepaper" >
-              <a className="btnLink" href={require('../../assets/doc/LQDEX-White-Paper.pdf')} target="_blank">
+              <a className="btnLink" href="/doc/LQDEX-Whitepaper.pdf" target="_blank">
               WHITEPAPER
               </a>
             </button>

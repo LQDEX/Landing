@@ -83,7 +83,8 @@ export default {
       padding: '0 10px',
       color: down,
       '& .successLabel': {
-        color: up
+        fontFamily: txtCaptionFont,
+        color: primary
       }
     }
   },

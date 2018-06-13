@@ -176,7 +176,7 @@ handleErrorMsg (error) {
       formErrors.email = errorMessages.email.requiredOnSubscribe;
       this.setState(formErrors);
     } else {
-      formSuccess.email='Thank you';
+      formSuccess.email='THANK YOU!';
       this.setState(formSuccess);
     }
   }
