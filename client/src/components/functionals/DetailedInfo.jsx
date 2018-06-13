@@ -35,7 +35,6 @@ class DetailedInfo extends Component {
       } else {
         this.setState({wWidth: 600})
       };
-      // console.log(this.state.wWidth, this.state.deviceType);
     }
 
   componentDidMount() {

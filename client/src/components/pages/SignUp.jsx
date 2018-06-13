@@ -183,21 +183,6 @@ handleErrorMsg (error) {
                 </span>
               </div>
             </div>
-            {/* <div className="fieldWrapper">
-            <label >{this.state.errors.phone}</label>
-            <div className="inputWrapper">
-              <div className="inputIcon"><i className="fas fa-phone"></i></div>
-              <span className="inputBox">
-                <input
-                  name="phone"
-                  type="text"
-                  placeholder="Phone Number"
-                  onFocus={(event)=>this.resetErrors(event)}
-                  onBlur={(event)=>this.handelErrors(event)}
-                  onChange={(event)=>this.handleInputChange(event)} />
-              </span>
-            </div>
-            </div> */}
             <div className="fieldWrapper">
             <label >{this.state.formErrors.email}</label>
             <div className="inputWrapper">
