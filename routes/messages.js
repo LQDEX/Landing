@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var SqlString = require('sqlstring');
 
 const table = 'messages'
 /* GET users listing. */
 router.get('/all', (req, res, next) => {
   const query = 'SELECT * from ' + table;
-  res.locals.connection.query(query, function(error, results,fields){
+  res.locals.connection.query(query, function(error, results, fields){
     if (error) throw error;
     console.log(results);
     res.send(JSON.stringify(results));
@@ -13,12 +14,12 @@ router.get('/all', (req, res, next) => {
 });
 
 router.post('/add', (req, res, next) => {
-  const name = req.body.name;
-  const email = req.body.email;
-  const phone = req.body.phone;
-  const message = req.body.message;
+  const name = SqlString.escape(req.body.name);
+  const email = SqlString.escape(req.body.email);
+  const phone = SqlString.escape(req.body.phone);
+  const message = SqlString.escape(req.body.message);
 
-  const query = `INSERT INTO ${table} (name, email, phone, message) VALUES ('${name}','${email}','${phone}','${message}')`;
+  const query = `INSERT INTO ${table} (name, email, phone, message) VALUES (${name},${email},${phone},${message})`;
   console.log(query);
 
 	res.locals.connection.getConnection((err, conn) => {
