@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var SqlString = require('sqlstring');
+
 
 const table = 'users'
 /* GET users listing. */
@@ -13,11 +15,11 @@ router.get('/all', (req, res, next) => {
 });
 
 router.post('/add', (req, res, next) => {
-  const name = req.body.name;
-  const email = req.body.email;
-  const phone = req.body.phone;
+  const name = SqlString.escape(req.body.name);
+  const email = SqlString.escape(req.body.email);
+  const phone = SqlString.escape(req.body.phone);
 
-  const query = `INSERT INTO ${table} (name, email, phone) VALUES ('${name}','${email}','${phone}')`;
+  const query = `INSERT INTO ${table} (name, email, phone) VALUES (${name},${email},${phone})`;
   console.log(query);
 
   res.locals.connection.getConnection((err, conn) => {
