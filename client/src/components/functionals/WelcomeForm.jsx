@@ -29,10 +29,6 @@ class WelcomeForm extends Component {
     wHeight: 80,
     emailValue:'',
     canSubmit: true,
-    modal: {
-      showModal: false,
-      message: '',
-    },
     formFieldStatus: {
       email:{
         touched: false
@@ -45,30 +41,6 @@ class WelcomeForm extends Component {
       email:''
     },
   }
-
-/*   goToPage(page, param) {
-    this.props.goToPage(page, param);
-  } */
-
-  /* goTo(page, section) {
-    if (page) {
-      this.props.goToPage(page, null);
-    }
-    if (section) {
-      this.props.navBarActive(section);
-      window.location.href = `#${section}`;
-    }
-  } */
-
-  showModal = (message) => {
-    const modal = {showModal: true, message};
-    this.setState({ modal });
-  };
-
-  hideModal = () => {
-    const modal = {showModal: false, message:''};
-    this.setState({ modal });
-  };
 
   handleSubmitButton() {
     const hasError = !!this.state.formErrors.email
@@ -111,17 +83,11 @@ class WelcomeForm extends Component {
     const target = event.target;
     const name = target.name;
     let errors = this.state.formErrors;
+    let success = this.state.formSuccess;
     errors[name]='';
+    success[name]='';
 
     this.setState(errors, () => this.handleSubmitButton());
-  }
-
-  toPoints(imgWidth, imgHeight, pointsArray) {
-    const margin = { xm: 0, ym: 0 };
-    let points = '';
-    points += pointsArray.map(pPoint => `${(imgWidth - margin.xm) * pPoint.xP + margin.xm / 2} ${(imgHeight - margin.ym) * pPoint.yP + margin.ym / 2}`);
-
-    return points;
   }
 
   updateWindowsDim() {
@@ -138,46 +104,44 @@ class WelcomeForm extends Component {
     window.removeEventListener('resize', this.updateWindowsDim.bind(this));
   }
 
-    
-handleErrorMsg (error) {
-  switch (error.errno) {
-    case 1062: //Duplicate primary key (email)
-      return 'You are already subscribed, Thank you.'
-    case 500:
-      return 'ERROR: an error occured, try again in a while'
-    default:
-      return `ERROR: ${error.errno} - ${error.sqlMessage}`
+  handleErrorMsg (error) {
+    switch (error.errno) {
+      case 1062: //Duplicate primary key (email)
+        return 'You are already subscribed, Thank you.'
+      case 500:
+        return 'ERROR: an error occured, try again in a while'
+      default:
+        return `ERROR: ${error.errno} - ${error.sqlMessage}`
+    }
   }
-}
-
-  send(event) {
+  send() {
+     
     let formSuccess = this.state.formSuccess;
     let formErrors = this.state.formErrors;
+    if (this.state.emailValue){
       axios.post('/users/add', {
         name:'QuickSubcriber',
         email:this.state.emailValue,
         phone: ''
       })
       .then(res => {
-        console.log(res);
-        /* const response = res.data; */
-        /* if (response.error) {
-          this.showModal (this.handleErrorMsg(response.error));
-        } else {
-          this.showModal (`Thank you. You're subscribed!`);
-        }*/
-      }) 
-      .catch(err => {
-        console.log(err);
-/* 
-        this.showModal (this.handleErrorMsg({errno: 500})) */
-      });
-    if(!this.state.emailValue) {
-      formErrors.email = errorMessages.email.requiredOnSubscribe;
-      this.setState(formErrors);
+        // console.log('Wellcome --> Respose: ',res);
+        const response = res.data;
+    if (response.error) {
+      formSuccess.email = this.handleErrorMsg(response.error);
+      this.setState(formSuccess);
     } else {
       formSuccess.email='THANK YOU!';
-      this.setState(formSuccess);
+        this.setState(formSuccess);
+    }    
+      }) 
+      .catch(err => {
+        // console.log('Wellcome --> Error: ',err);
+        
+      });
+    } else {
+      formErrors.email = errorMessages.email.requiredOnSubscribe;
+      this.setState(formErrors);
     }
   }
 
@@ -192,27 +156,21 @@ handleErrorMsg (error) {
  
     return (
       <div className={style} >
-      {/* <Modal show={this.state.modal.showModal} handleClose={() => this.hideModal()}>
-          <p>{this.state.modal.message}</p>
-        </Modal> */}
-        {/* <svg width={this.state.wWidth} height={this.state.wHeight} >
-          <polygon style={ { fill: palette.globalBackground } } points={this.toPoints(this.state.wWidth, this.state.wHeight, shapes[deviceType])}/>
-        </svg> */}
         <div className="formWrap">
-          <form>
-              <div className="inputWrapper">
-                <span className="inputBox">
-                  <input
-                    name="email"
-                    type="text"
-                    placeholder="Email address"
-                    onFocus={(event)=>this.resetErrors(event)}
-                    onBlur={(event)=>this.handelErrors(event)}
-                    onChange={(event)=>this.handleInputChange(event)} />
-                </span>
-                <button className="btnSubscribe" disabled={!this.state.canSubmit} onClick={(event) => this.send(event)}>SUBSCRIBE</button>
-              </div>
-          </form>
+          <div className="inputWrapper">
+            <form>
+              <span className="inputBox">
+                <input
+                  name="email"
+                  type="text"
+                  placeholder="Email address"
+                  onFocus={(event)=>this.resetErrors(event)}
+                  onBlur={(event)=>this.handelErrors(event)}
+                  onChange={(event)=>this.handleInputChange(event)} />
+              </span>
+            </form>
+            <button className="btnSubscribe" disabled={!this.state.canSubmit} onClick={() => this.send()}>SUBSCRIBE</button>
+          </div>
         </div>
         <div  className="errorLabel">
         <label >{this.state.formErrors.email}</label>

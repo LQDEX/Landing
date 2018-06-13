@@ -1,7 +1,6 @@
 import palette from './palette';
 
 const {
-  up,
   down,
   greyDark,
   primary,
@@ -17,9 +16,10 @@ export default {
   root: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'stretch',
     margin: '2% 0 0 0',
+    minHeight: 116,
     fontFamily: txtInputs,
     color: 'red',
     '& .formWrap': {
@@ -35,20 +35,20 @@ export default {
       '& .inputWrapper': {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         alignItems: 'center',
         margin: '0 0 0px 0px',
         height: 50,
         '& .inputBox': {
           position: 'relative',
-          padding: '0 0 0 10px',
-          margin: 0,
+          padding: '0 0 0 0px',
+          margin: ' 0 0 0 10px',
           width: '100%',
           height: '100%',
           '& input': {
             margin: 0,
             height: '100%',
-            width: '100%',
+            width: '111%',
             fontFamily: txtCaptionFont,
             fontSize: '16px',
             color: greyDark,
@@ -81,9 +81,9 @@ export default {
     '& .errorLabel':{
       margin: '10px 0',
       padding: '0 10px',
+      fontFamily: txtCaptionFont,
       color: down,
       '& .successLabel': {
-        fontFamily: txtCaptionFont,
         color: primary
       }
     }

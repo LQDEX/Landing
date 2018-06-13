@@ -9,7 +9,7 @@ router.get('/all', (req, res, next) => {
   const query = 'SELECT * from ' + table;
   res.locals.connection.query(query, function(error, results,fields){
     if (error) throw error;
-    console.log(results);
+    console.log('Response: ',results);
     res.send(JSON.stringify(results));
   });
 });
@@ -20,7 +20,7 @@ router.post('/add', (req, res, next) => {
   const phone = SqlString.escape(req.body.phone);
 
   const query = `INSERT INTO ${table} (name, email, phone) VALUES (${name},${email},${phone})`;
-  console.log(query);
+  console.log('SQL sent: ',query);
 
   res.locals.connection.getConnection((err, conn) => {
     conn.query(query, function(error, results, fields) {

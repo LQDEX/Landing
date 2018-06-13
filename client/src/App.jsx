@@ -83,7 +83,6 @@ class App extends Component {
 
   render() {
     const { classes, app } = this.props;
-    // console.log(app.platform.deviceType);
 
     return (
       <div className={classes.root}>
