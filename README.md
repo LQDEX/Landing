@@ -13,5 +13,5 @@
     The exchange supports trading of digital assets across multiple blockchains. Virtually any pair can be traded, such as Bitcoin and Ether.
       
 ---
-### Visit us: lqdex.com
+### Visit us: www.lqdex.com
 ---
