@@ -101,7 +101,7 @@ export default {
       },
       '& .navLink': {
         color: textNavBar,
-        textDecoration: 'none' ,
+        textDecoration: 'none',
       },
       '& .navLinkIcon': {
 

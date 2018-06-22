@@ -8,47 +8,46 @@ import actions from '../../redux/actions';
 import injectSheet from 'react-jss';
 import { newsFeedsStyle } from './styles';
 
-const Social = () => {
-  const newsFeeds = [
+const newsFeeds = [
     {
       name: 'CryptoDaily',
       caption: 'CryptoDaily',
-      logo: 'https://cryptodaily.co.uk/wp-content/uploads/2018/04/crypto-daily-big-with-R.png',
-      link: '',
+      logo: 'newFeed_cryptoDaily.png',
+      link: 'https://cryptodaily.co.uk/2018/06/5-decentralized-exchanges-to-watch-in-2018/',
     },
     {
       name: 'Buzzfeed',
       caption: 'Buzzfeed',
-      logo: 'https://cdn.worldvectorlogo.com/logos/buzzfeed.svg',
-      link: 'https://cryptodaily.co.uk/2018/06/5-decentralized-exchanges-to-watch-in-2018/',
+      logo: 'newFeed_buzzFeed.png',
+      link: 'https://www.buzzfeed.com/ethrey/5-things-crypto-newbies-should-know-3fo6s?utm_term=.nkwdylEaWR#.gv4eKP0E6V',
     },
     {
       name: 'CryptoDisrupt',
       caption: 'CryptoDisrupt',
-      logo: 'https://cryptodisrupt.com/wp-content/uploads/2018/05/5adecd12050ac3fb2639a31a_Asset-2-2.png',
-      link: 'https://www.buzzfeed.com/ethrey/5-things-crypto-newbies-should-know-3fo6s?utm_term=.nkwdylEaWR#.gv4eKP0E6V',
+      logo: 'newFeed_cryptoDisrupt.png',
+      link: 'https://cryptodisrupt.com/lqdex-releases-details-about-their-decentralised-cross-chain-exchange/',
     },
     {
       name: 'BTCExchangeGuide',
       caption: 'BTCExchangeGuide',
-      logo: 'https://3mgj4y44nc15fnv8d303d8zb-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/LogoBEG-white.png',
-      link: 'https://www.buzzfeed.com/ethrey/5-things-crypto-newbies-should-know-3fo6s?utm_term=.nkwdylEaWR#.gv4eKP0E6V',
+      logo: 'newFeed_BEG.png',
+      link: 'https://bitcoinexchangeguide.com/lqdex-ico-lqd-token/',
     },
     {
       name: 'TOSHITIMES',
       caption: 'TOSHI TIMES',
-      logo: 'https://toshitimes.com/wp-content/uploads/2018/03/nonRetina.png',
+      logo: 'newFeed_toshiTimes.png',
       link: 'https://toshitimes.com/decentralised-or-centralised-exchanges-which-should-you-be-using/',
     },
     {
       name: 'COINRIVET',
       caption: 'COINRIVET',
-      logo: 'https://static1.squarespace.com/static/5ad7a50d7e3c3a2a26fd9e46/t/5afdf59970a6ad7131cfaff6/1529593737449/?format=1500w',
+      logo: 'newFeed_coinRivet.png',
       link: 'https://www.coinrivet.com/stories/21/6/2018/what-are-decentralised-exchanges-and-why-are-they-important',
     }
   ]
   
-  return (
+/*   return (
     <div >
       <a className='icon' href={socialLinks.Twitter} target="_blank"><i className="fab fa-twitter fa-2x" ></i></a>
       <a className='icon' href={socialLinks.Facebook} target="_blank"><i className="fab fa-facebook-f fa-2x" ></i></a>
@@ -59,23 +58,10 @@ const Social = () => {
       <a className='icon' href={socialLinks.Reddit} target="_blank"><i className="fab fa-reddit-alien fa-2x" ></i></a>
     </div>
   );}
-
+ */
   
 class Footer extends Component {
-  state = {
-    eDir: {
-      d1:'mailto:in',
-      d2:'fo@lqd',
-      d3:'ex.com'
-    }
-  }
-
-  eDir (props) {
-    return(
-      <a className="copyRights em" href={`${props.d1}${props.d2}${props.d3}`}>{`in${props.d2}${props.d3}`}</a>
-    )
-  }
-
+  
   goTo(page, section) {
     if (page) {
       this.props.goToPage(page, null);
@@ -96,11 +82,14 @@ class Footer extends Component {
 
     return (
       <div className={style} >
-        <div className='socialIcons'>
-          <div>
-            <a className='icon' onClick={() => this.goTo('signUp', 'signUp')}><i className="far fa-envelope fa-2x" ></i></a>
-          </div>
-          <Social />
+        <div className="firstLine">News Feeds</div>
+        <div className="newsFeedCardWrapper">
+          {newsFeeds.map( feed => 
+            <a className='newsFeedCard' href={feed.link} target="_blank">
+              <img width='200' src={require(`../../assets/img/${feed.logo}`)} />
+              <p className='feedName' > {feed.caption} </p>
+            </a>
+          )}
         </div>
       </div>
     );

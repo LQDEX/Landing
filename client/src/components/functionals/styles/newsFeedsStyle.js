@@ -7,16 +7,18 @@ const {
   grey,
   textHeader,
   txtHeaderFont,
-  txtBlueBottonFont
+  txtBlueBottonFont,
+  txtCaptionFont
 } = palette;
 
 export default {
   root: {
+    border: '1px solid red',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '0 0 80px 0',
+    padding: '0 0 30px 0',
     background: globalBackground,
     '& .firstLine': {
       margin: '0 0 30px 0',
@@ -27,55 +29,53 @@ export default {
       color: textHeader,
       minWidth: '100%'
     },
-    '& .contactWrapper': {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      fontFamily: txtBlueBottonFont,
-      margin: '0 0 30px 0',
-    },
-    '& .socialIcons': {
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'center',
-      margin: '45px 0 0 0',
-      '& .icon': {
-        padding: '8px 20px',
+    '& .newsFeedCardWrapper': {
+      border: '1px solid blue',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+      '& .newsFeedCard': {
+        border: '1px solid green',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        margin: '0 20px',
+        minHeight: 110,
         textDecoration: 'none',
-        color: grey,
-        '&:hover': { color: primaryHover }
+        '& .icon': {
+          padding: '8px 20px',
+          textDecoration: 'none',
+          color: grey,
+          '&:hover': { color: primaryHover }
+        },
       },
     },
-    '& .btnSubscribe': {
-      fontFamily: txtBlueBottonFont,
-      fontSize: '1em',
-      fontWeight: 'semi-Bold',
-      display: 'inline-block',
-      padding: '1em 3.5em',
-      margin: '0 0 30px 0',
-      boxSizing: 'content-box',
-      cursor: 'pointer',
-      border: 'none',
-      background: primary,
-      color: globalBackground,
-      '&:hover': { background: primaryHover }
-    },
-    '& .copyRights': {
-
-      fontFamily: txtBlueBottonFont,
-      fontSize: 14,
-      fontWeight: 400,
-      display: 'inline-block',
-      boxSizing: 'content-box',
-      lineHeight: '1.5em',
-      color: grey,
-      '& .em': {
-        padding: '0',
+    '& .feedName': {
+      fontFamily: txtHeaderFont,
+      fontSize: 19,
+      fontWeight: 'bold',
+      color: primary,
+      borderBottom: `1px solid ${globalBackground}`,
+      margin: '15px 0 0 0',
+      '& .nameLink': {
+        outline: 'none',
         textDecoration: 'none',
-        fontSize: '14px',
-        '&:hover': { color: primary }
+        color: primary,
+        '&:link': { textDecoration: 'none' },
+        '&visited': { textDecoration: 'none' },
+        '&hover': { textDecoration: 'none' },
+        '&active': { textDecoration: 'none' }
       }
-    }
+    },
+    '& .feedPosition': {
+      fontFamily: txtCaptionFont,
+      fontSize: 15,
+      fontWeight: 400,
+      lineHeight: '23px',
+      color: grey
+    },
   },
   mRoot: {
     extend: 'root',
