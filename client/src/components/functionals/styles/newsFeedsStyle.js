@@ -73,6 +73,7 @@ export default {
       fontSize: 15,
       fontWeight: 400,
       lineHeight: '23px',
+      margin: '0 0 30px 0',
       color: grey
     },
     '& .copyRights': {

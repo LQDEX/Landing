@@ -89,10 +89,10 @@ class Footer extends Component {
           </div>
           <Social />
         </div>
-        <br/>
+        {/* <br/>
         <div className="feedPosition">
           {this.e2Dir(this.state.e2Dir)}
-        </div>
+        </div> */}
         <br/>
         <br/>
         <div className="copyRights">© 2018 LQDEX. All Rights Reserved.</div>
