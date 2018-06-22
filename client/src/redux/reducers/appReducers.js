@@ -16,24 +16,37 @@ const initialState = {
     active: 'exchange',
     options: [
       {
+        name: 'newsFeeds',
+        type: 'btnMenu',
+        caption: 'NEWS FEEDS',
+        class: 'btnMenu',
+        href: '',
+        pageTo: 'landing',
+        pointTo: 'newsFeeds'
+      },
+      {
         name: 'aboutUs',
+        type: '',
         caption: 'ABOUT',
+        class: 'btnMenu',
         href: '',
         pageTo: 'landing',
         pointTo: 'aboutUs'
       },
       {
         name: 'whitepaper',
+        type: 'link',
         caption: 'WHITEPAPER',
-        // href: '../../assets/doc/LQDEX-Whitepaper.pdf',
-        // href: '../../assets/doc/LQDEX-Whitepaper.pdf',
+        class: 'btnMenuSubscribe',
         href: '/doc/LQDEX-Whitepaper.pdf',
         pageTo: '',
         pointTo: ''
       },
       {
         name: 'blog',
+        type: 'link',
         caption: 'BLOG',
+        class: 'btnMenu',
         href: 'https://medium.com/lqdex',
         pageTo: '',
         pointTo: ''
@@ -41,13 +54,17 @@ const initialState = {
       {
         name: 'contact',
         caption: 'CONTACT',
+        class: 'btnMenu',
+        type: '',
         href: '',
         pageTo: 'contact',
         pointTo: 'contact'
       },
       {
         name: 'telegram',
+        type: 'linkIcon',
         caption: 'TELEGRAM ',
+        class: 'btnMenu',
         href: 'https://t.me/LQDEX',
         pageTo: '',
         pointTo: ''
