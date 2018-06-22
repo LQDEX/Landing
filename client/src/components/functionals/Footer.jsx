@@ -38,7 +38,22 @@ class Footer extends Component {
       d1:'mailto:in',
       d2:'fo@lqd',
       d3:'ex.com'
+    },
+    e2Dir: {
+      d0: 'For media inquiries please email ',
+      d1:'mailto:et',
+      d2:'han@LQD',
+      d3:'EX.com'
     }
+  }
+
+ e2Dir (props) {
+    return(
+      <span className="copyRights">
+        {props.d0}
+        <a className="mediaLink" href={`${props.d1}${props.d2}${props.d3}`}>{`Et${props.d2}${props.d3}`}</a>
+      </span>
+    )
   }
 
   eDir (props) {
@@ -67,11 +82,16 @@ class Footer extends Component {
 
     return (
       <div className={style} >
+      <div className="firstLine">Social</div>
         <div className='socialIcons'>
           <div>
             <a className='icon' onClick={() => this.goTo('signUp', 'signUp')}><i className="far fa-envelope fa-2x" ></i></a>
           </div>
           <Social />
+        </div>
+        <br/>
+        <div className="feedPosition">
+          {this.e2Dir(this.state.e2Dir)}
         </div>
         <br/>
         <br/>

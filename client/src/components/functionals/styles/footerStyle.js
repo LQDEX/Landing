@@ -16,7 +16,7 @@ export default {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '0 0 80px 0',
+    padding: '40px 0 80px 0',
     background: globalBackground,
     '& .firstLine': {
       margin: '0 0 30px 0',
@@ -38,7 +38,7 @@ export default {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'center',
-      margin: '45px 0 0 0',
+      margin: '30px 0 50px 0',
       '& .icon': {
         padding: '8px 20px',
         textDecoration: 'none',

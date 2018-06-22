@@ -62,6 +62,7 @@ const newsFeeds = [
   
 class Footer extends Component {
   
+
   goTo(page, section) {
     if (page) {
       this.props.goToPage(page, null);
@@ -82,12 +83,12 @@ class Footer extends Component {
 
     return (
       <div className={style} >
-        <div className="firstLine">News Feeds</div>
+        <div className="firstLine">Press</div>
         <div className="newsFeedCardWrapper">
           {newsFeeds.map( feed => 
             <a className='newsFeedCard' href={feed.link} target="_blank">
               <img width='200' src={require(`../../assets/img/${feed.logo}`)} />
-              <p className='feedName' > {feed.caption} </p>
+              {/* <p className='feedName' > {feed.caption} </p> */}
             </a>
           )}
         </div>

@@ -13,12 +13,11 @@ const {
 
 export default {
   root: {
-    border: '1px solid red',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '0 0 30px 0',
+    padding: '0 0 0 0',
     background: globalBackground,
     '& .firstLine': {
       margin: '0 0 30px 0',
@@ -30,19 +29,19 @@ export default {
       minWidth: '100%'
     },
     '& .newsFeedCardWrapper': {
-      border: '1px solid blue',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'flex-start',
+        alignItems: 'center',
+        '&:hover':{
+          cursor: 'pointer',
+        },
       '& .newsFeedCard': {
-        border: '1px solid green',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
-        margin: '0 20px',
-        minHeight: 110,
+        margin: '0 30px',
         textDecoration: 'none',
         '& .icon': {
           padding: '8px 20px',
@@ -76,6 +75,19 @@ export default {
       lineHeight: '23px',
       color: grey
     },
+    '& .copyRights': {
+      fontFamily: txtBlueBottonFont,
+      fontSize: 14,
+      fontWeight: 400,
+      display: 'inline-block',
+      boxSizing: 'content-box',
+      lineHeight: '1.5em',
+      margin: '15px 0 0 0',
+      //color: grey,
+      '& .mediaLink': {
+        textDecoration: 'none',
+      }
+    }
   },
   mRoot: {
     extend: 'root',
