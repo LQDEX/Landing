@@ -28,57 +28,43 @@ class HeaderNavbar extends Component {
         <img className="logo" src={require('../../assets/img/logoLiquidx.png')} alt="Logo" onClick={() => this.goTo('landing', 'exchange')}/>
         {deviceType !== 'mobile' &&
            <div className="menuWraper">
-            {/*navBar.options.map(option =>
-              <button
-                key={option.name}
-                className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`}
-                onClick={() => this.goTo(option.pageTo, option.pointTo)}
-              >
-                {option.caption}
-              </button>
-            )*/}
 
-            <button
-                key={'aboutUs'}
-                className={`btnMenu ${'aboutUs' === navBar.active ? 'btnMenuActive' : ''}`}
-                onClick={() => this.goTo('landing', 'aboutUs')}
-              >
-                {'ABOUT'}
-            </button>
-
-              <button className="btnMenuSubscribe" >
-                <a className="btnLink" href="/doc/LQDEX-Whitepaper.pdf" target="_blank">
-                  WHITEPAPER
-                </a>
-              </button>
-            
-
-            <button
-                key={'blog'}
-                className={`btnMenu ${'blog' === navBar.active ? 'btnMenuActive' : ''}`}
-                onClick={() => this.goTo(null, 'exchange')}
-              >
-              <a className="navLink" href="https://medium.com/lqdex" target="_blank" rel="noopener noreferrer">{'BLOG'}</a>
-            </button>
-
-            <button
-                key={'contact'}
-                className={`btnMenu ${'contact' === navBar.active ? 'btnMenuActive' : ''}`}
-                onClick={() => this.goTo('contact', 'contact')}
-              >
-                {'CONTACT'}
-            </button>
-
-            <button
-                key={'telegram'}
-                className="btnMenuIcon"
-                onClick={() => this.goTo(null, 'exchange')}
-              >
-              <a className='navLinkIcon' title="JOIN US ON TELEGRAM" href="https://t.me/LQDEX" target="_blank" rel="noopener noreferrer">
-                <span ><i className="fab fa-telegram-plane fa-2x" ></i></span>
-              </a>
-            </button>
-
+            {navBar.options.map(option => {
+              switch (option.type) {
+                case 'link':
+                  return (
+                    <button 
+                      key={option.name}
+                      className={`${option.class} ${option.name === navBar.active ? 'btnMenuActive' : ''}`} >
+                        <a className="btnLink navLink" href={option.href} target="_blank">
+                      {option.caption}
+                      </a>
+                    </button>
+                  )
+                case 'linkIcon':
+                  return (
+                    <button
+                      key={option.name}
+                      className="btnMenuIcon"
+                      onClick={() => this.goTo(null, 'exchange')}
+                    >
+                      <a className='navLinkIcon' title="JOIN US ON TELEGRAM" href="https://t.me/LQDEX" target="_blank" rel="noopener noreferrer">
+                        <span ><i className="fab fa-telegram-plane fa-2x" ></i></span>
+                      </a>
+                    </button>
+                  )
+                default:
+                 return (
+                  <button
+                    key={option.name}
+                    className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`}
+                    onClick={() => this.goTo(option.pageTo, option.pointTo)}
+                  >
+                    {option.caption}
+                  </button>
+                 )
+              }
+            })}
           </div>
         }
         {deviceType === 'mobile' &&

@@ -58,31 +58,25 @@ class MobileLandingLayout extends Component {
           <div className="menuWraper">
             {navBar.options.map(option =>{
 
-
               if (!option.href) {
-return(
+                return(
                   <button
                     key={option.name}
                     className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`}
                     onClick={() => this.goTo(option.pageTo, option.pointTo)}
                   >
                     {option.caption}
-                  </button>)
+                  </button>
+                )
               } else {
-return (
-              <button className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`} >
-                <a className="btnLink" href={option.href} target="_blank">
-                {option.caption}
-                </a>
-              </button>
-)
-            }
-
-
-
-
-
-
+                return (
+                  <button className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`} >
+                    <a className="btnLink" href={option.href} target="_blank">
+                    {option.caption}
+                    </a>
+                  </button>
+                )
+              }
             }
             )}
             <div className="hr"></div>
