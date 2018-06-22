@@ -61,6 +61,23 @@ const newsFeeds = [
  */
   
 class Footer extends Component {
+  state = {
+    e2Dir: {
+      d0: 'For media inquiries please email ',
+      d1:'mailto:et',
+      d2:'han@LQD',
+      d3:'EX.com'
+    }
+  }
+
+ e2Dir (props) {
+    return(
+      <span className="copyRights">
+        {props.d0}
+        <a className="mediaLink" href={`${props.d1}${props.d2}${props.d3}`}>{`Et${props.d2}${props.d3}`}</a>
+      </span>
+    )
+  }
   
 
   goTo(page, section) {
@@ -91,6 +108,10 @@ class Footer extends Component {
               {/* <p className='feedName' > {feed.caption} </p> */}
             </a>
           )}
+        </div>
+       
+        <div className="feedPosition">
+          {this.e2Dir(this.state.e2Dir)}
         </div>
       </div>
     );
