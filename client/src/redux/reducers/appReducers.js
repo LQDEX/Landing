@@ -18,7 +18,7 @@ const initialState = {
       {
         name: 'newsFeeds',
         type: 'btnMenu',
-        caption: 'NEWS FEEDS',
+        caption: 'PRESS',
         class: 'btnMenu',
         href: '',
         pageTo: 'landing',
