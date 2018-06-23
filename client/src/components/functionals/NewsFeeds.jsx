@@ -104,7 +104,7 @@ class Footer extends Component {
         <div className="newsFeedCardWrapper">
           {newsFeeds.map( feed => 
             <a className='newsFeedCard' href={feed.link} target="_blank">
-              <img width='200' src={require(`../../assets/img/${feed.logo}`)} />
+              <img width='200' src={require(`../../assets/img/${feed.logo}`)} alt={feed.caption} />
               {/* <p className='feedName' > {feed.caption} </p> */}
             </a>
           )}
