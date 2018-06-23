@@ -31,6 +31,7 @@ export default {
     '& .newsFeedCardWrapper': {
         display: 'flex',
         flexDirection: 'row',
+        flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'center',
         '&:hover':{
@@ -39,9 +40,10 @@ export default {
       '& .newsFeedCard': {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
-        margin: '0 30px',
+        minHeight: 80,
+        margin: '5px 30px',
         textDecoration: 'none',
         '& .icon': {
           padding: '8px 20px',
