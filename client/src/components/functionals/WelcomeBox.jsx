@@ -81,9 +81,9 @@ class WelcomeBox extends Component {
           <div className="textWrap">
             <div className="textArea ">
               <span className="firstLine">LQDEX</span>
-              <span className="txtBody">DECENTRALIZED</span>
-              <span className="txtBody">TRUSTLESS</span>
-              <span className="txtBody">CROSS-CHAIN EXCHANGE</span>
+              <span className="txtBody">I N T E R - B L O C K C H A I N</span>
+              <span className="txtBody">T R A D I N G</span>
+              <span className="txtBody">P L A T F O R M</span>
             </div>
             <div className="subscribeArea">
               <WelcomeForm deviceType={deviceType}/>
