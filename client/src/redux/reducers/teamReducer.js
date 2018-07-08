@@ -52,20 +52,20 @@ const initialState = {
       brief: 'Andrés handles logic, database interactions, and user authentication. Andrés is a well-versed developer with more than five years of experience in web, mobile and desktop applications. Andrés has advised two proof-of-concept projects based on blockchain technology. '
     },
     {
-      avatar: 'ajishnew.jpg',
-      name: 'Ajish Pillai',
-      title: 'Solutions Architect',
+      avatar: 'T_DenisPetrenko.png',
+      name: 'Denis Petrenko',
+      title: 'Blockchain Developer',
       advisor: '',
-      myLink: 'https://www.linkedin.com/in/ajish-pillai-7575b0104/',
-      brief: 'As Solutions Architect, Ajish enables innovation. Ajish has extensive IT architecture design and development experience, with a focus on enterprise applications. Ajish has worked with several banking, hedge fund, telecommunication and e-commerce Fortune 500 companies. '
+      myLink: 'http://www.linkedin.com/in/imperchik-b2a3aa109',
+      brief: 'Leading blockchain development, Denis is a passionate developer who thrives at understanding how things work at every level. Denis graduated from Nizhyn State University, and went on to pursue a career where we could create, discover and improve ways of utilizing blockchain processes.'
     },
     {
-      avatar: 'RamKumar.jpg',
-      name: 'Ram Kumar',
-      title: 'Lead Engineer',
+      avatar: 'T_BorisSavic.jpg',
+      name: 'Boris Savic',
+      title: 'Sr. Software Engineer',
       advisor: '',
-      myLink: 'https://www.linkedin.com/in/ramkumardevaraj/',
-      brief: 'Serving as the lead engineer, Ram drives innovative strategies. Prior to LQDEX, Ram co-founded a successful cloud and data startup, which scaled more than 2,000% in two years. Ram has substantial experience in web, mobile and algorithm development with Motorola and Texas Instruments, among others.'
+      myLink: 'https://www.linkedin.com/in/sava999/',
+      brief: 'Having almost a decade worth of experience in web development, Boris is dedicated to research, design, programming and testing. Prior to LQDEX, Boris co-founded CodeBlueStudio, a company that specialized in the development of hybrid mobile applications.'
     },
     {
       avatar: 'erikHan.jpg',
