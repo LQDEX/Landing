@@ -70,7 +70,7 @@ const initialState = {
     {
       avatar: 'erikHan.jpg',
       name: 'Erik Han',
-      title: 'Software Engineer',
+      title: 'Sr. Software Engineer',
       advisor: '',
       myLink: 'https://www.linkedin.com/in/erik-han-406814a1/',
       brief: 'Having developed over 20 websites for global and regional companies, Erik has strong capabilities in producing aesthetically pleasing, functional websites. Erik graduated from Shanghai University’s School of Computer Engineering and Science with a degree in Computer Science. '
