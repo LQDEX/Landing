@@ -19,7 +19,7 @@ const newsFeeds = [
       name: 'Buzzfeed',
       caption: 'Buzzfeed',
       logo: 'newFeed_buzzFeed.png',
-      link: 'https://www.buzzfeed.com/ethrey/5-things-crypto-newbies-should-know-3fo6s?utm_term=.nkwdylEaWR#.gv4eKP0E6V',
+      link: 'https://www.buzzfeed.com/fintechguru/buzzfeed-5-things-crypto-newbies-should-know-3j661?utm_term=.hevRAyyqx#.bozP3YY2D',
     },
     {
       name: 'CryptoDisrupt',
