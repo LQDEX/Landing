@@ -1,5 +1,5 @@
 /* eslint-disable */
-import constants from '../constants';
+import constants from '../../constants';
 
 export default {
   

@@ -6,9 +6,9 @@ import actions from '../../redux/actions';
 
 // Import Styles
 import injectSheet from 'react-jss';
-import { newsFeedsStyle } from './styles';
+import { pressStyle } from './styles';
 
-const newsFeeds = [
+const press = [
     {
       name: 'CryptoDaily',
       caption: 'CryptoDaily',
@@ -47,20 +47,7 @@ const newsFeeds = [
     }
   ]
   
-/*   return (
-    <div >
-      <a className='icon' href={socialLinks.Twitter} target="_blank"><i className="fab fa-twitter fa-2x" ></i></a>
-      <a className='icon' href={socialLinks.Facebook} target="_blank"><i className="fab fa-facebook-f fa-2x" ></i></a>
-      <a className='icon' href={socialLinks.LinkedIn} target="_blank"><i className="fab fa-linkedin-in fa-2x" ></i></a>
-      <a className='icon' href={socialLinks.Telegram} target="_blank"><i className="fab fa-telegram-plane fa-2x" ></i></a>
-      <a className='icon' href={socialLinks.Instagram} target="_blank"><i className="fab fa-instagram fa-2x" ></i></a>
-      <a className='icon' href={socialLinks.Medium} target="_blank"><i className="fab fa-medium-m fa-2x" ></i></a>
-      <a className='icon' href={socialLinks.Reddit} target="_blank"><i className="fab fa-reddit-alien fa-2x" ></i></a>
-    </div>
-  );}
- */
-  
-class Footer extends Component {
+class Press extends Component {
   state = {
     e2Dir: {
       d0: 'For media inquiries please email ',
@@ -102,7 +89,7 @@ class Footer extends Component {
       <div className={style} >
         <div className="firstLine">Press</div>
         <div className="newsFeedCardWrapper">
-          {newsFeeds.map( feed => 
+          {press.map( feed => 
             <a className='newsFeedCard' href={feed.link} target="_blank">
               <img width='200' src={require(`../../assets/img/${feed.logo}`)} alt={feed.caption} />
               {/* <p className='feedName' > {feed.caption} </p> */}
@@ -125,4 +112,4 @@ const dispatchToProps = dispatch => ({
   navBarActive: option => dispatch(actions.navBarActive(option))
 });
 
-export default connect(stateToProps, dispatchToProps)(injectSheet(newsFeedsStyle)(Footer));
+export default connect(stateToProps, dispatchToProps)(injectSheet(pressStyle)(Press));
