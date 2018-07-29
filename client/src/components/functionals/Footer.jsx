@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import constants from '../../constants'
 
 // Redux actions
 import actions from '../../redux/actions';
@@ -10,13 +11,14 @@ import { footerStyle } from './styles';
 
 const Social = () => {
   const socialLinks = {
-    Twitter: 'https://twitter.com/LQDEX_',
-    LinkedIn: 'https://www.linkedin.com/company/lqdex/',
-    Facebook: 'https://www.facebook.com/LQDEX/',
-    Telegram: 'https://t.me/LQDEX',
-    Instagram: 'https://www.instagram.com/lqdex/',
-    Medium: 'https://medium.com/lqdex',
-    Reddit: 'https://www.reddit.com/r/LQDEX/'
+    Twitter: constants.TWITTER,
+    Facebook: constants.FACEBOOK,
+    LinkedIn: constants.LINKEDIN,
+    Telegram: constants.TELEGRAM,
+    Instagram: constants.INSTAGRAM,
+    Medium: constants.MEDIUM,
+    Reddit: constants.REDDIT
+    
   }
   
   return (

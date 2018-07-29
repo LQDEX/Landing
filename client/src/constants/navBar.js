@@ -29,6 +29,15 @@ export default {
       pointTo: ''
     },
     {
+      name: 'news',
+      type: 'btnMenu',
+      caption: 'NEWS',
+      class: 'btnMenu',
+      href: '',
+      pageTo: 'news',
+      pointTo: 'news'
+    },
+    {
       name: 'press',
       type: 'btnMenu',
       caption: 'PRESS',
