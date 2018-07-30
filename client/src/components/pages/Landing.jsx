@@ -11,7 +11,7 @@ import {
   AboutUsContainer,
   TeamAdvisorsContainer,
   InvestorsContainer,
-  NewsFeedsContainer,
+  PressContainer,
   FooterContainer
 } from '../containers/';
 
@@ -58,8 +58,8 @@ class Landing extends Component {
         <div key="Investors" >
           <InvestorsContainer />
         </div>
-        <div key="NewsFeeds" >
-          <ScrollableAnchor id={'newsFeeds'}><NewsFeedsContainer /></ScrollableAnchor>
+        <div key="Press" >
+          <ScrollableAnchor id={'press'}><PressContainer /></ScrollableAnchor>
         </div>
         <div key="Footer" >
           <FooterContainer />

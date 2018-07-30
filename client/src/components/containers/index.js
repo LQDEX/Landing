@@ -6,7 +6,7 @@ import RoadmapContainer from './RoadmapContainer';
 import AboutUsContainer from './AboutUsContainer';
 import TeamAdvisorsContainer from './TeamAdvisorsContainer';
 import InvestorsContainer from './InvestorsContainer';
-import NewsFeedsContainer from './NewsFeedsContainer';
+import PressContainer from './PressContainer';
 import FooterContainer from './FooterContainer';
 
 // Mobile Containers
@@ -19,6 +19,6 @@ export {
   AboutUsContainer,
   TeamAdvisorsContainer,
   InvestorsContainer,
-  NewsFeedsContainer,
+  PressContainer,
   FooterContainer
 };

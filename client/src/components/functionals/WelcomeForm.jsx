@@ -2,20 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-
 // Redux actions
 import actions from '../../redux/actions';
 
 // Import Styles
 import injectSheet from 'react-jss';
 import { welcomeFormStyle } from './styles';
-
-/* const shapes = {
-  desktop: [{ xP: 0.00, yP: 0.00 }, { xP: 0.67, yP: 0.14 }, { xP: 1.00, yP: 1.00 }],
-  mobile:  [{ xP: 0.00, yP: 1.00 }, { xP: 0.77, yP: 0.94 }, { xP: 1.00, yP: 0.98 }, { xP: 1.00, yP: 1.00 }],
-  tablet:  [{ xP: 0.00, yP: 1.00 }, { xP: 0.90, yP: 0.90 }, { xP: 1.00, yP: 0.94 }, { xP: 1.00, yP: 1.00 }]
-}; */
-
 
 const errorMessages = {
   email: { requiredOnSubscribe:'Required field.',

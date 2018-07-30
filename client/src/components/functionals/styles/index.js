@@ -9,7 +9,7 @@ import roadmapStyle from './roadmapStyle';
 import aboutUsStyle from './aboutUsStyle';
 import teamAdvisorsStyle from './teamAdvisorsStyle';
 import investorsStyle from './investorsStyle';
-import newsFeedsStyle from './newsFeedsStyle';
+import pressStyle from './pressStyle';
 import footerStyle from './footerStyle';
 import modalStyle from './modalStyle';
 
@@ -26,7 +26,7 @@ export {
   aboutUsStyle,
   teamAdvisorsStyle,
   investorsStyle,
-  newsFeedsStyle,
+  pressStyle,
   footerStyle,
   modalStyle
 };
