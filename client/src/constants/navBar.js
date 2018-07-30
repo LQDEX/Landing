@@ -20,24 +20,6 @@ export default {
       pointTo: ''
     },
     {
-      name: 'blog',
-      type: 'link',
-      caption: 'BLOG',
-      class: 'btnMenu',
-      href: 'https://medium.com/lqdex',
-      pageTo: '',
-      pointTo: ''
-    },
-    {
-      name: 'news',
-      type: 'btnMenu',
-      caption: 'NEWS',
-      class: 'btnMenu',
-      href: '',
-      pageTo: 'news',
-      pointTo: 'news'
-    },
-    {
       name: 'press',
       type: 'btnMenu',
       caption: 'PRESS',
@@ -45,6 +27,15 @@ export default {
       href: '',
       pageTo: 'landing',
       pointTo: 'press'
+    },
+    {
+      name: 'blog',
+      type: 'link',
+      caption: 'BLOG',
+      class: 'btnMenu',
+      href: 'https://medium.com/lqdex',
+      pageTo: '',
+      pointTo: ''
     },
     {
       name: 'contact',
