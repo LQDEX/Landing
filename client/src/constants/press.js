@@ -33,6 +33,13 @@ export default [
     name: 'COINRIVET',
     caption: 'COINRIVET',
     logo: 'newFeed_coinRivet.png',
-    link: 'https://www.coinrivet.com/stories/21/6/2018/what-are-decentralised-exchanges-and-why-are-they-important',
+    link: 'https://coinrivet.com/guide/what-are-decentralised-exchanges-and-why-are-they-important/',
+  },
+  {
+    name: 'INVESTING',
+    caption: 'INVESTING',
+    logo: 'newFeed_investing-com-logo.png',
+    link: 'https://www.investing.com/analysis/3-cryptocurrency-trends-to-keep-an-eye-on-200336723',
   }
+
 ]
