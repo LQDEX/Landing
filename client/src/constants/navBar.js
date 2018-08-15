@@ -2,6 +2,15 @@ export default {
   active: 'exchange',
   options: [
     {
+      name: 'press',
+      type: 'btnMenu',
+      caption: 'PRESS',
+      class: 'btnMenu',
+      href: '',
+      pageTo: 'landing',
+      pointTo: 'press'
+    },
+    {
       name: 'aboutUs',
       type: '',
       caption: 'ABOUT',
@@ -18,15 +27,6 @@ export default {
       href: '/doc/LQDEX-Whitepaper.pdf',
       pageTo: '',
       pointTo: ''
-    },
-    {
-      name: 'press',
-      type: 'btnMenu',
-      caption: 'PRESS',
-      class: 'btnMenu',
-      href: '',
-      pageTo: 'landing',
-      pointTo: 'press'
     },
     {
       name: 'blog',
