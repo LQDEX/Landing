@@ -46,6 +46,9 @@ class Landing extends Component {
         <div key="Detail" >
           <DetailedInfoContainer />
         </div>
+        <div key="Press" >
+          <ScrollableAnchor id={'press'}><PressContainer /></ScrollableAnchor>
+        </div>
         <div key="About" >
           <ScrollableAnchor id={'aboutUs'}><AboutUsContainer /></ScrollableAnchor>
         </div>
@@ -57,9 +60,6 @@ class Landing extends Component {
         </div>
         <div key="Investors" >
           <InvestorsContainer />
-        </div>
-        <div key="Press" >
-          <ScrollableAnchor id={'press'}><PressContainer /></ScrollableAnchor>
         </div>
         <div key="Footer" >
           <FooterContainer />
