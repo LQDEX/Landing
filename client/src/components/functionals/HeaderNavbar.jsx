@@ -51,7 +51,7 @@ class HeaderNavbar extends Component {
       case 'dropdown':
         return (
           <div className="dropdown">
-            <button className="dropMenu">{item.caption}</button>
+            <button className="dropMenu">{item.caption} <i class="fas fa-caret-down"></i></button>
             <div className="dropdown-content">
               {item.content.map(option => <a className="dropMenu dropMenuOption" href="#">{option}</a>)}
             </div>
