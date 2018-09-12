@@ -6,6 +6,7 @@ const {
   primaryHover,
   textNavBar,
   txtCaptionFont,
+  shadowSoft,
 } = palette;
 
 export default {
@@ -110,21 +111,21 @@ export default {
           background: 'none',
           color: textNavBar
         },
-        '& .dropdown-content': {
+        '& .dropdownContent': {
           display: 'none',
           position: 'absolute',
           backgroundColor: globalBackground,
-          boxShadow: '0px 8px 16px 0px rgba(0,0,0,0.2)',
+          boxShadow: `0px 8px 16px 0px ${shadowSoft}`,
           '& .dropMenuOption': {
             padding: '12px 16px',
             textDecoration: 'none',
             display: 'block',
             '&:hover': {
-              backgroundColor: '#ddd'
+              textDecoration: 'underline',
             }
           },
         },
-        '&:hover .dropdown-content': {
+        '&:hover .dropdownContent': {
           display: 'block'
         }
       }
