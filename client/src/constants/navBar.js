@@ -1,6 +1,14 @@
 export default {
   active: 'exchange',
-  options: [
+  menuDef: [
+    'press',
+    'aboutUs',
+    'whitepaper',
+    'contact',
+    'medium',
+    'telegram'
+  ],
+  items: [
     {
       name: 'press',
       type: 'btnMenu',
@@ -29,15 +37,6 @@ export default {
       pointTo: ''
     },
     {
-      name: 'blog',
-      type: 'link',
-      caption: 'BLOG',
-      class: 'btnMenu',
-      href: 'https://medium.com/lqdex',
-      pageTo: '',
-      pointTo: ''
-    },
-    {
       name: 'contact',
       caption: 'CONTACT',
       class: 'btnMenu',
@@ -48,10 +47,23 @@ export default {
     },
     {
       name: 'telegram',
-      type: 'linkIcon',
       caption: 'TELEGRAM ',
+      type: 'linkIcon',
+      icon: 'fa-telegram-plane',
+      title:'JOIN US ON TELEGRAM',
       class: 'btnMenu',
       href: 'https://t.me/LQDEX',
+      pageTo: '',
+      pointTo: ''
+    },
+    {
+      name: 'medium',
+      caption: '',
+      type: 'linkIcon',
+      icon: 'fa-medium-m',
+      title:'FOLLOW US ON MEDIUM',
+      class: 'btnMenu',
+      href: 'https://medium.com/lqdex',
       pageTo: '',
       pointTo: ''
     },
