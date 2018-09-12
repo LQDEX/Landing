@@ -48,6 +48,15 @@ class HeaderNavbar extends Component {
             </a>
           </button>
         )
+      case 'dropdown':
+        return (
+          <div className="dropdown">
+            <button className="dropMenu">{item.caption}</button>
+            <div className="dropdown-content">
+              {item.content.map(option => <a className="dropMenu dropMenuOption" href="#">{option}</a>)}
+            </div>
+          </div>
+        )
       default:
        return (
         <button

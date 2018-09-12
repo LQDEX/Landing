@@ -4,6 +4,7 @@ export default {
     'press',
     'aboutUs',
     'whitepaper',
+    'products',
     'contact',
     'medium',
     'telegram'
@@ -66,6 +67,15 @@ export default {
       href: 'https://medium.com/lqdex',
       pageTo: '',
       pointTo: ''
+    },
+    {
+      name: 'products',
+      type: 'dropdown',
+      caption: 'PRODUCTS',
+      class: 'btnMenu',
+      content: [
+        'BRIDGE'
+      ]
     },
   ]
 }
