@@ -53,7 +53,7 @@ class HeaderNavbar extends Component {
           <div className="dropdown">
             <button className="dropMenu">{item.caption} <i class="fas fa-caret-down"></i></button>
             <div className="dropdownContent">
-              {item.content.map(option => <a className="dropMenu dropMenuOption" href="#">{option}</a>)}
+              {item.content.map(option => <a className="dropMenu dropMenuOption" href="https://medium.com/lqdex" target="_blank" >{option}</a>)}
             </div>
           </div>
         )
