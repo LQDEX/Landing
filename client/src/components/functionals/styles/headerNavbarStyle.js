@@ -6,6 +6,7 @@ const {
   primaryHover,
   textNavBar,
   txtCaptionFont,
+  shadowSoft,
 } = palette;
 
 export default {
@@ -16,35 +17,11 @@ export default {
     margin: '0 7% 0 7%',
     alignItems: 'center',
     height: 80,
-    '& .menuButton': {
-      outline: 'none',
-      border: 'none',
-      background: 'none',
-      color: primary
-    },
     '& .menuWraper': {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'flex-end',
       alignItems: 'center',
-      '& .btnSubscribe': {
-        fontFamily: txtCaptionFont,
-        fontSize: '16px',
-        fontWeight: '500',
-        display: 'inline-block',
-        margin: '0 45px 0 0',
-        padding: '1em 1.25em',
-        boxSizing: 'content-box',
-        cursor: 'pointer',
-        border: 'none',
-        background: primary,
-        color: globalBackground,
-        '&:hover': { background: primaryHover },
-        '& .btnLink': {
-          color: globalBackground,
-          textDecoration: 'none'         
-        }
-      },
       '& .btnMenuSubscribe': {
         fontFamily: txtCaptionFont,
         fontSize: '15px',
@@ -118,6 +95,40 @@ export default {
           margin: '0 0 0 10px',
         }
       },
+      '& .dropdown': {
+        '& .dropMenu': {
+          fontFamily: txtCaptionFont,
+          fontSize: '15px',
+          fontWeight: 'normal',
+          display: 'inline-block',
+          margin: '0 45px 0 0',
+          padding: '5px 0',
+          boxSizing: 'content-box',
+          cursor: 'pointer',
+          outline: 'none',
+          border: 'none',
+          borderBottom: `1px solid transparent`,
+          background: 'none',
+          color: textNavBar
+        },
+        '& .dropdownContent': {
+          display: 'none',
+          position: 'absolute',
+          backgroundColor: globalBackground,
+          boxShadow: `0px 8px 16px 0px ${shadowSoft}`,
+          '& .dropMenuOption': {
+            padding: '12px 16px',
+            textDecoration: 'none',
+            display: 'block',
+            '&:hover': {
+              textDecoration: 'underline',
+            }
+          },
+        },
+        '&:hover .dropdownContent': {
+          display: 'block'
+        }
+      }
     },
     '& .logo': {
       '&:hover': {
