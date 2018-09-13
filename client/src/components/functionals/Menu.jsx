@@ -4,13 +4,15 @@ import { connect } from 'react-redux';
 // Redux actions
 import actions from '../../redux/actions';
 
+
+
 // Import Styles
 import injectSheet from 'react-jss';
 import { headerNavbarStyle } from './styles';
 
 class HeaderNavbar extends Component {
 
-  goTo( page, section) {
+  goTo(page, section) {
     if (page) {
       this.props.goToPage(page, null);
     }
@@ -20,19 +22,19 @@ class HeaderNavbar extends Component {
     }
   }
 
-  itemSelection (item, itemArray) {
-    return itemArray.find( element => element.name === item);
+  itemSelection(item, itemArray) {
+    return itemArray.find(element => element.name === item);
   }
 
-  itemToRender (item, activeItem) {
+  itemToRender(item, activeItem) {
     switch (item.type) {
       case 'link':
         return (
-          <button 
+          <button
             key={item.name}
             className={`${item.class} ${item.name === activeItem ? 'btnMenuActive' : ''}`} >
-              <a className="btnLink navLink" href={item.href} target="_blank">
-            {item.caption}
+            <a className="btnLink navLink" href={item.href} target="_blank">
+              {item.caption}
             </a>
           </button>
         )
@@ -58,37 +60,32 @@ class HeaderNavbar extends Component {
           </div>
         )
       default:
-       return (
-        <button
-          key={item.name}
-          className={`btnMenu ${item.name === activeItem ? 'btnMenuActive' : ''}`}
-          onClick={() => this.goTo(item.pageTo, item.pointTo)}
-        >
-          {item.caption}
-        </button>
-       )
+        return (
+          <button
+            key={item.name}
+            className={`btnMenu ${item.name === activeItem ? 'btnMenuActive' : ''}`}
+            onClick={() => this.goTo(item.pageTo, item.pointTo)}
+          >
+            {item.caption}
+          </button>
+        )
     }
   }
 
   render() {
     const { classes, deviceType, navBar } = this.props;
+    const style = {
+      desktop: classes.root,
+      tablet: classes.root,
+      mobile: classes.mRoot
+    }[deviceType];
 
     return (
-      <div className={classes.root}>
-        <img className="logo" src={require('../../assets/img/logoLiquidx.png')} alt="Logo" onClick={() => this.goTo('landing', 'exchange')}/>
-        {deviceType !== 'mobile' &&
-           <div className="menuWraper">
-            {navBar.menuDef.map(item => {
-              const itemObj = this.itemSelection(item, navBar.items);
-              return this.itemToRender(itemObj, navBar.active)
-            })}
-          </div>
-        }
-        {deviceType === 'mobile' &&
-          <button className="menuButton" onClick={() => this.props.sideNavToggle()}>
-            <i className="fas fa-bars fa-3x"></i>
-          </button>
-        }
+      <div className="menuWraper">
+        {navBar.menuDef.map(item => {
+          const itemObj = this.itemSelection(item, navBar.items);
+          return this.itemToRender(itemObj, navBar.active)
+        })}
       </div>
     );
   }

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import actions from '../../redux/actions';
 
 // Import Components
+import { Menu } from '../functionals'
 import { HeaderContainer } from '../containers';
 import { Landing, SignUp, Contact } from '../pages/';
 
@@ -38,6 +39,56 @@ class MobileLandingLayout extends Component {
     }
   }
 
+  itemSelection (item, itemArray) {
+    return itemArray.find( element => element.name === item);
+  }
+
+  itemToRender (item, activeItem) {
+    switch (item.type) {
+      case 'link':
+        return (
+          <button 
+            key={item.name}
+            className={`${item.class} ${item.name === activeItem ? 'btnMenuActive' : ''}`} >
+              <a className="btnLink navLink" href={item.href} target="_blank">
+            {item.caption}
+            </a>
+          </button>
+        )
+      case 'linkIcon':
+        return (
+          <button
+            key={item.name}
+            className="btnMenuIcon"
+            onClick={() => this.goTo(null, 'exchange')}
+          >
+            <a className='navLinkIcon' title={item.title} href={item.href} target="_blank" rel="noopener noreferrer">
+              <span ><i className={`fab ${item.icon} fa-2x`} ></i></span>
+            </a>
+          </button>
+        )
+      case 'dropdown':
+        return (
+          <div className="dropdown">
+            <button className="dropMenu">{item.caption} <i class="fas fa-caret-down"></i></button>
+            <div className="dropdownContent">
+              {item.content.map(option => <a className="dropMenu dropMenuOption" href="https://medium.com/lqdex" target="_blank" >{option}</a>)}
+            </div>
+          </div>
+        )
+      default:
+       return (
+        <button
+          key={item.name}
+          className={`btnMenu ${item.name === activeItem ? 'btnMenuActive' : ''}`}
+          onClick={() => this.goTo(item.pageTo, item.pointTo)}
+        >
+          {item.caption}
+        </button>
+       )
+    }
+  }
+
   render() {
     const
       { classes, app, showSidePanel, navBar, showBgVideo } = this.props,
@@ -55,8 +106,9 @@ class MobileLandingLayout extends Component {
           <button className="menuButton" onClick={() => this.props.sideNavToggle()}>
             <i className="fa fa-bars fa-3x"></i>
           </button>
+          <Menu />
           <div className="menuWraper">
-            {navBar.options.map(option =>{
+            {/*navBar.options.map(option =>{
 
               if (!option.href) {
                 return(
@@ -78,7 +130,7 @@ class MobileLandingLayout extends Component {
                 )
               }
             }
-            )}
+          )*/}
             <div className="hr"></div>
             <div className="privacy" onClick={() => this.goTo('landing', 'exchange')}>
               <div className="copyRights">1541 Ocean Ave., Suite 200</div>
