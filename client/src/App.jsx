@@ -14,7 +14,7 @@ import reset from 'reset-jss';
 import { DesktopLandingLayout, MobileLandingLayout } from './components/layouts';
 
 class App extends Component {
-  state = {users:[]}
+  state = { users: [] }
 
   updateDeviceType() {
 
@@ -48,13 +48,6 @@ class App extends Component {
 
   componentWillMount() {
     this.props.getCryptoData();
-  }
-
-  componentDidMount() {
-    // let timer = setInterval(() => this.tick(), 30 * 24 * 60 * 60 * 1000);
-    // this.setState({ timer });
-    window.addEventListener('resize', () => this.updateDeviceType());
-    window.addEventListener("hashchange", () => this.onHashChange(), false);
     this.props.platformSet({
       // os: Platform.OS || '',
       // osVersion: Platform.OSVersion || '',
@@ -67,10 +60,18 @@ class App extends Component {
       // deviceVendor: Platform.DeviceVendor || '',
       // ua: Platform.UA || ''
     });
+  }
+
+  componentDidMount() {
+    // let timer = setInterval(() => this.tick(), 30 * 24 * 60 * 60 * 1000);
+    // this.setState({ timer });
+    window.addEventListener('resize', () => this.updateDeviceType());
+    window.addEventListener("hashchange", () => this.onHashChange(), false);
+
     //fetch('/users')
     //  .then(res => res.json())
     //  .then(users => this.setState({ users }));
-  
+
   }
 
   // tick() {
@@ -86,20 +87,21 @@ class App extends Component {
 
     return (
       <div className={classes.root}>
-      <div>
-        <ul>
-        {this.state.users.map(user =>
-          <li key={user.id}>{user.username}</li>
-        )}
-        </ul>
-      </div>
+        <div>
+          <ul>
+            {this.state.users.map(user =>
+              <li key={user.id}>{user.username}</li>
+            )}
+          </ul>
+        </div>
         <Favicon url={require('./assets/img/favicon.ico')} />
-        {/* Put here the Mobile Layout */}
-        {app.platform.deviceType === 'mobile' && <MobileLandingLayout showBgVideo={app.config.backgroundVideo}/>}
-        {/* Put here the Tablet Layout*/}
-        {app.platform.deviceType === 'tablet' && <DesktopLandingLayout showBgVideo={app.config.backgroundVideo}/>}
-        {/* Put here the Desktop Layout*/}
-        {app.platform.deviceType === 'desktop' && <DesktopLandingLayout showBgVideo={app.config.backgroundVideo}/> }
+        {
+          {
+            mobile: <MobileLandingLayout showBgVideo={app.config.backgroundVideo} />,
+            tablet: <MobileLandingLayout showBgVideo={app.config.backgroundVideo} />,
+            desktop: <DesktopLandingLayout showBgVideo={app.config.backgroundVideo} />
+          }[app.platform.deviceType]
+        }
       </div>
     );
   }

@@ -1,3 +1,4 @@
+import Menu from './Menu';
 import HeaderStats from './HeaderStats';
 import HeaderNavbar from './HeaderNavbar';
 import WelcomeBox from './WelcomeBox';
@@ -12,6 +13,7 @@ import Footer from './Footer';
 import Modal from './Modal';
 
 export {
+  Menu,
   HeaderStats,
   HeaderNavbar,
   WelcomeBox,

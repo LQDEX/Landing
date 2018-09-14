@@ -37,7 +37,7 @@ class AboutUs extends Component {
 
     const style = {
       desktop: classes.root,
-      tablet: classes.root,
+      tablet: classes.mRoot,
       mobile: classes.mRoot
     }[deviceType];
 

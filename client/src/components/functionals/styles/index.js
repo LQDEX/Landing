@@ -1,5 +1,6 @@
 // Desktop Containers
 import palette from './palette';
+import menuStyle from './menuStyle';
 import headerNavbarStyle from './headerNavbarStyle';
 import headerStatsStyle from './headerStatsStyle';
 import welcomeBoxStyle from './welcomeBoxStyle';
@@ -17,6 +18,7 @@ import modalStyle from './modalStyle';
 
 export {
   palette,
+  menuStyle,
   headerNavbarStyle,
   headerStatsStyle,
   welcomeBoxStyle,
