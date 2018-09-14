@@ -4,14 +4,13 @@ import { connect } from 'react-redux';
 // Redux actions
 import actions from '../../redux/actions';
 
-// Import Components
-import { Menu } from '../functionals'
+
 
 // Import Styles
 import injectSheet from 'react-jss';
-import { headerNavbarStyle } from './styles';
+import { menuStyle } from './styles';
 
-class HeaderNavbar extends Component {
+class Menu extends Component {
 
   goTo(page, section) {
     if (page) {
@@ -28,13 +27,14 @@ class HeaderNavbar extends Component {
   }
 
   itemToRender(item, activeItem) {
+    const { deviceType } = this.props;
     switch (item.type) {
       case 'link':
         return (
           <button
             key={item.name}
             className={`${item.class} ${item.name === activeItem ? 'btnMenuActive' : ''}`} >
-            <a className="btnLink navLink" href={item.href} target="_blank">
+            <a className="btnLink navLink" href={item.href} target="_blank" rel="noopener noreferrer">
               {item.caption}
             </a>
           </button>
@@ -43,11 +43,11 @@ class HeaderNavbar extends Component {
         return (
           <button
             key={item.name}
-            className="btnMenuIcon"
+            className={item.class}
             onClick={() => this.goTo(null, 'exchange')}
           >
             <a className='navLinkIcon' title={item.title} href={item.href} target="_blank" rel="noopener noreferrer">
-              <span ><i className={`fab ${item.icon} fa-2x`} ></i></span>
+              <span ><i className={`fab ${item.icon} ${deviceType !== 'mobile' ? 'fa-2x' : ''}`} ></i></span>
             </a>
           </button>
         )
@@ -56,9 +56,7 @@ class HeaderNavbar extends Component {
           <div className="dropdown">
             <button className="dropMenu">{item.caption} <i class="fas fa-caret-down"></i></button>
             <div className="dropdownContent">
-              {item.content.map(option =>
-                <a className="dropMenu dropMenuOption" href="https://medium.com/lqdex" target="_blank" rel="noopener noreferrer">{option}</a>
-              )}
+              {item.content.map(option => <a className="dropMenu dropMenuOption" href="https://medium.com/lqdex" target="_blank" rel="noopener noreferrer">{option}</a>)}
             </div>
           </div>
         )
@@ -76,17 +74,19 @@ class HeaderNavbar extends Component {
   }
 
   render() {
-    const { classes, deviceType } = this.props;
+    const { classes, deviceType, navBar } = this.props;
+    const style = {
+      desktop: classes.root,
+      tablet: classes.root,
+      mobile: classes.mRoot
+    }[deviceType];
 
     return (
-      <div className={classes.root}>
-        <img className="logo" src={require('../../assets/img/logoLiquidx.png')} alt="Logo" onClick={() => this.goTo('landing', 'exchange')} />
-        {deviceType == 'desktop' && <Menu />}
-        {deviceType !== 'desktop' &&
-          <button className="menuButton" onClick={() => this.props.sideNavToggle()}>
-            <i className="fas fa-bars fa-3x"></i>
-          </button>
-        }
+      <div className={style}>
+        {navBar.menuDef.map(item => {
+          const itemObj = this.itemSelection(item, navBar.items);
+          return this.itemToRender(itemObj, navBar.active)
+        })}
       </div>
     );
   }
@@ -104,4 +104,4 @@ const dispatchToProps = dispatch => ({
   navBarActive: option => dispatch(actions.navBarActive(option))
 });
 
-export default connect(stateToProps, dispatchToProps)(injectSheet(headerNavbarStyle)(HeaderNavbar));
+export default connect(stateToProps, dispatchToProps)(injectSheet(menuStyle)(Menu));

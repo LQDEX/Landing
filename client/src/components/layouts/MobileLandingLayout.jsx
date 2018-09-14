@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import actions from '../../redux/actions';
 
 // Import Components
+import { Menu } from '../functionals'
 import { HeaderContainer } from '../containers';
 import { Landing, SignUp, Contact } from '../pages/';
 
@@ -40,7 +41,7 @@ class MobileLandingLayout extends Component {
 
   render() {
     const
-      { classes, app, showSidePanel, navBar, showBgVideo } = this.props,
+      { classes, app, showSidePanel, showBgVideo } = this.props,
       style = classes.root;
 
     return (
@@ -55,30 +56,10 @@ class MobileLandingLayout extends Component {
           <button className="menuButton" onClick={() => this.props.sideNavToggle()}>
             <i className="fa fa-bars fa-3x"></i>
           </button>
-          <div className="menuWraper">
-            {navBar.options.map(option =>{
-
-              if (!option.href) {
-                return(
-                  <button
-                    key={option.name}
-                    className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`}
-                    onClick={() => this.goTo(option.pageTo, option.pointTo)}
-                  >
-                    {option.caption}
-                  </button>
-                )
-              } else {
-                return (
-                  <button className={`btnMenu ${option.name === navBar.active ? 'btnMenuActive' : ''}`} >
-                    <a className="btnLink" href={option.href} target="_blank">
-                    {option.caption}
-                    </a>
-                  </button>
-                )
-              }
-            }
-            )}
+          <div>
+            <Menu />
+          </div>
+          <div className="sideNavFooter">
             <div className="hr"></div>
             <div className="privacy" onClick={() => this.goTo('landing', 'exchange')}>
               <div className="copyRights">1541 Ocean Ave., Suite 200</div>

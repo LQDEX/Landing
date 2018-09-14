@@ -32,7 +32,7 @@ export default {
       name: 'whitepaper',
       type: 'link',
       caption: 'WHITEPAPER',
-      class: 'btnMenuSubscribe',
+      class: 'btnMenu',
       href: '/doc/LQDEX-Whitepaper.pdf',
       pageTo: '',
       pointTo: ''
@@ -52,7 +52,7 @@ export default {
       type: 'linkIcon',
       icon: 'fa-telegram-plane',
       title:'JOIN US ON TELEGRAM',
-      class: 'btnMenu',
+      class: 'btnMenuIcon',
       href: 'https://t.me/LQDEX',
       pageTo: '',
       pointTo: ''
@@ -63,7 +63,7 @@ export default {
       type: 'linkIcon',
       icon: 'fa-medium-m',
       title:'FOLLOW US ON MEDIUM',
-      class: 'btnMenu',
+      class: 'btnMenuIcon',
       href: 'https://medium.com/lqdex',
       pageTo: '',
       pointTo: ''
