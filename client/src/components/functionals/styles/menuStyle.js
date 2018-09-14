@@ -77,6 +77,9 @@ export default {
       }
     },
     '& .dropdown': {
+      '&:hover .dropdownContent': {
+        display: 'block',
+      },
       '& .dropMenu': {
         fontFamily: txtCaptionFont,
         fontSize: '15px',
@@ -90,7 +93,7 @@ export default {
         border: 'none',
         borderBottom: `1px solid transparent`,
         background: 'none',
-        color: textNavBar
+        color: textNavBar,
       },
       '& .dropdownContent': {
         display: 'none',
@@ -106,9 +109,6 @@ export default {
           }
         },
       },
-      '&:hover .dropdownContent': {
-        display: 'block'
-      }
     }
   },
   mRoot: {
