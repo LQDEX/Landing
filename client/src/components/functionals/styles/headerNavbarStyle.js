@@ -1,14 +1,3 @@
-import palette from './palette';
-
-const {
-  globalBackground,
-  primary,
-  primaryHover,
-  textNavBar,
-  txtCaptionFont,
-  shadowSoft,
-} = palette;
-
 export default {
   root: {
     display: 'flex',

@@ -81,7 +81,7 @@ class HeaderNavbar extends Component {
     return (
       <div className={classes.root}>
         <img className="logo" src={require('../../assets/img/logoLiquidx.png')} alt="Logo" onClick={() => this.goTo('landing', 'exchange')} />
-        {deviceType == 'desktop' && <Menu />}
+        {deviceType === 'desktop' && <Menu />}
         {deviceType !== 'desktop' &&
           <button className="menuButton" onClick={() => this.props.sideNavToggle()}>
             <i className="fas fa-bars fa-3x"></i>
