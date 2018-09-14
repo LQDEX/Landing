@@ -8,9 +8,9 @@ import actions from '../../redux/actions';
 
 // Import Styles
 import injectSheet from 'react-jss';
-import { headerNavbarStyle } from './styles';
+import { menuStyle } from './styles';
 
-class HeaderNavbar extends Component {
+class Menu extends Component {
 
   goTo(page, section) {
     if (page) {
@@ -55,7 +55,7 @@ class HeaderNavbar extends Component {
           <div className="dropdown">
             <button className="dropMenu">{item.caption} <i class="fas fa-caret-down"></i></button>
             <div className="dropdownContent">
-              {item.content.map(option => <a className="dropMenu dropMenuOption" href="https://medium.com/lqdex" target="_blank" >{option}</a>)}
+              {item.content.map(option => <a className="dropMenu dropMenuOption" href="https://medium.com/lqdex" target="_blank" rel="noopener noreferrer">{option}</a>)}
             </div>
           </div>
         )
@@ -103,4 +103,4 @@ const dispatchToProps = dispatch => ({
   navBarActive: option => dispatch(actions.navBarActive(option))
 });
 
-export default connect(stateToProps, dispatchToProps)(injectSheet(headerNavbarStyle)(HeaderNavbar));
+export default connect(stateToProps, dispatchToProps)(injectSheet(menuStyle)(Menu));
