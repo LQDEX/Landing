@@ -27,13 +27,14 @@ class Menu extends Component {
   }
 
   itemToRender(item, activeItem) {
+    const { deviceType } = this.props;
     switch (item.type) {
       case 'link':
         return (
           <button
             key={item.name}
             className={`${item.class} ${item.name === activeItem ? 'btnMenuActive' : ''}`} >
-            <a className="btnLink navLink" href={item.href} target="_blank">
+            <a className="btnLink navLink" href={item.href} target="_blank" rel="noopener noreferrer">
               {item.caption}
             </a>
           </button>
@@ -42,11 +43,11 @@ class Menu extends Component {
         return (
           <button
             key={item.name}
-            className="btnMenuIcon"
+            className={item.class}
             onClick={() => this.goTo(null, 'exchange')}
           >
             <a className='navLinkIcon' title={item.title} href={item.href} target="_blank" rel="noopener noreferrer">
-              <span ><i className={`fab ${item.icon} fa-2x`} ></i></span>
+              <span ><i className={`fab ${item.icon} ${deviceType !== 'mobile' ? 'fa-2x' : ''}`} ></i></span>
             </a>
           </button>
         )
@@ -81,7 +82,7 @@ class Menu extends Component {
     }[deviceType];
 
     return (
-      <div className="menuWraper">
+      <div className={style}>
         {navBar.menuDef.map(item => {
           const itemObj = this.itemSelection(item, navBar.items);
           return this.itemToRender(itemObj, navBar.active)

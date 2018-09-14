@@ -15,26 +15,6 @@ export default {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
-    '& .btnMenuSubscribe': {
-      fontFamily: txtCaptionFont,
-      fontSize: '15px',
-      fontWeight: 'normal',
-      display: 'inline-block',
-      margin: '0 45px 0 0',
-      padding: '5px 0',
-      boxSizing: 'content-box',
-      cursor: 'pointer',
-      outline: 'none',
-      border: 'none',
-      borderBottom: `1px solid transparent`,
-      background: 'none',
-      color: textNavBar,
-      '&:hover': { borderBottom: `1px solid ${primary}` },
-      '& .btnLink': {
-        color: primary,
-        textDecoration: 'none'
-      }
-    },
     '& .btnMenu': {
       fontFamily: txtCaptionFont,
       fontSize: '15px',
@@ -49,7 +29,15 @@ export default {
       borderBottom: `1px solid transparent`,
       background: 'none',
       color: textNavBar,
-      '&:hover': { borderBottom: `1px solid ${textNavBar}` }
+      '& .btnLink': {
+        color: primary,
+        textDecoration: 'none',
+      },
+      '&:hover': { borderBottom: `1px solid ${textNavBar}` },
+      '&:hover .btnLink': {
+        padding: '0 0 5px 0',
+        borderBottom: `1px solid ${primary}`
+      }
     },
     '& .btnMenuIcon': {
       fontFamily: txtCaptionFont,
@@ -120,6 +108,27 @@ export default {
       },
       '&:hover .dropdownContent': {
         display: 'block'
+      }
+    }
+  },
+  mRoot: {
+    extend: 'root',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    '& .btnMenu': {
+      margin: '0 0 0 35px',
+      '& .btnLink': {
+        margin: 0,
+        padding: 0,
+        fontSize: '15px',
+      }
+    },
+    '& .dropdown': {
+      margin: '0 0 0 35px'
+    },
+    '& .btnMenuIcon': {
+      '& .navLinkIcon': {
+        padding: '0 0 0 32px',
       }
     }
   }
