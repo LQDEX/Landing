@@ -56,7 +56,7 @@ class Menu extends Component {
           <div className="dropdown">
             <button className="dropMenu">{item.caption} <i class="fas fa-caret-down"></i></button>
             <div className="dropdownContent">
-              {item.content.map(option => <a className="dropMenu dropMenuOption" href="https://medium.com/lqdex" target="_blank" rel="noopener noreferrer">{option}</a>)}
+              {item.content.map(option => <a className={`dropMenu ${option.class}`} href={option.href} target="_blank" rel="noopener noreferrer">{option.caption}</a>)}
             </div>
           </div>
         )
