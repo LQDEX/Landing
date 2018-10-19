@@ -74,7 +74,17 @@ export default {
       caption: 'PRODUCTS',
       class: 'btnMenu',
       content: [
-        'BRIDGE'
+        {
+          name: 'bridge',
+          caption: 'BRIDGE',
+          type: '',
+          icon: '',
+          title:'',
+          class: 'dropMenuOption',
+          href: 'https://bridge.lqdex.com/',
+          pageTo: '',
+          pointTo: ''
+        },
       ]
     },
   ]
